@@ -70,3 +70,6 @@
 [submodule "p/Marks-Browser"]
 	path = p/Marks-Browser
 	url = git://github.com/vim-scripts/Marks-Browser.git
+[submodule "p/mru"]
+	path = p/mru
+	url = git://github.com/vim-scripts/mru.vim.git
