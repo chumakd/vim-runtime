@@ -25,3 +25,6 @@
 [submodule "p/diffchanges"]
 	path = p/diffchanges
 	url = git://github.com/vim-scripts/diffchanges.vim.git
+[submodule "p/DirDiff"]
+	path = p/DirDiff
+	url = git://github.com/vim-scripts/DirDiff.vim.git
