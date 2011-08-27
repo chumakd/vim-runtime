@@ -10,3 +10,6 @@
 [submodule "p/a"]
 	path = p/a
 	url = git://github.com/vim-scripts/a.vim.git
+[submodule "p/BlockDiff"]
+	path = p/BlockDiff
+	url = git://github.com/vim-scripts/BlockDiff.git
