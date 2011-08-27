@@ -79,3 +79,6 @@
 [submodule "p/LaTeX-Suite-aka-Vim-LaTeX"]
 	path = p/LaTeX-Suite-aka-Vim-LaTeX
 	url = git://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
+[submodule "p/The-NERD-tree"]
+	path = p/The-NERD-tree
+	url = git://github.com/vim-scripts/The-NERD-tree.git
