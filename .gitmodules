@@ -64,3 +64,6 @@
 [submodule "p/gnupg"]
 	path = p/gnupg
 	url = git://github.com/vim-scripts/gnupg.git
+[submodule "p/greplace"]
+	path = p/greplace
+	url = git://github.com/vim-scripts/greplace.vim.git
