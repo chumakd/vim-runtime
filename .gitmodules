@@ -123,3 +123,6 @@
 [submodule "p/Gundo"]
 	path = p/Gundo
 	url = git://github.com/vim-scripts/Gundo.git
+[submodule "p/patchreview"]
+	path = p/patchreview
+	url = git://github.com/vim-scripts/patchreview.vim.git
