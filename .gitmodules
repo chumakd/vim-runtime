@@ -58,3 +58,6 @@
 [submodule "p/FuzzyFinder"]
 	path = p/FuzzyFinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
+[submodule "p/grep"]
+	path = p/grep
+	url = git://github.com/vim-scripts/grep.vim.git
