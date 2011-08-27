@@ -28,3 +28,6 @@
 [submodule "p/DirDiff"]
 	path = p/DirDiff
 	url = git://github.com/vim-scripts/DirDiff.vim.git
+[submodule "p/DoxygenToolkit"]
+	path = p/DoxygenToolkit
+	url = git://github.com/vim-scripts/DoxygenToolkit.vim.git
