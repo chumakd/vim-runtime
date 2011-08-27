@@ -46,3 +46,6 @@
 [submodule "p/tlib"]
 	path = p/tlib
 	url = git://github.com/vim-scripts/tlib.git
+[submodule "p/DrawIt"]
+	path = p/DrawIt
+	url = git://github.com/vim-scripts/DrawIt.git
