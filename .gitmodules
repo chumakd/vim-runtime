@@ -7,3 +7,6 @@
 [submodule "p/Align"]
 	path = p/Align
 	url = git://github.com/vim-scripts/Align.git
+[submodule "p/a"]
+	path = p/a
+	url = git://github.com/vim-scripts/a.vim.git
