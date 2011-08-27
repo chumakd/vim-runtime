@@ -34,3 +34,6 @@
 [submodule "p/EnhCommentify"]
 	path = p/EnhCommentify
 	url = git://github.com/vim-scripts/EnhCommentify.vim.git
+[submodule "p/genutils"]
+	path = p/genutils
+	url = git://github.com/vim-scripts/genutils.git
