@@ -16,3 +16,6 @@
 [submodule "p/bufexplorer"]
 	path = p/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "p/cecutil"]
+	path = p/cecutil
+	url = git://github.com/vim-scripts/cecutil.git
