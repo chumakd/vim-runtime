@@ -120,3 +120,6 @@
 [submodule "p/tagselect"]
 	path = p/tagselect
 	url = git://github.com/vim-scripts/tagselect.git
+[submodule "p/Gundo"]
+	path = p/Gundo
+	url = git://github.com/vim-scripts/Gundo.git
