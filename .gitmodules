@@ -43,3 +43,6 @@
 [submodule "p/L9"]
 	path = p/L9
 	url = git://github.com/vim-scripts/L9.git
+[submodule "p/tlib"]
+	path = p/tlib
+	url = git://github.com/vim-scripts/tlib.git
