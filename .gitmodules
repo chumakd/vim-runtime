@@ -73,3 +73,6 @@
 [submodule "p/mru"]
 	path = p/mru
 	url = git://github.com/vim-scripts/mru.vim.git
+[submodule "p/MultipleSearch"]
+	path = p/MultipleSearch
+	url = git://github.com/vim-scripts/MultipleSearch.git
