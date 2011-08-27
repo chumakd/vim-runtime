@@ -49,3 +49,6 @@
 [submodule "p/DrawIt"]
 	path = p/DrawIt
 	url = git://github.com/vim-scripts/DrawIt.git
+[submodule "p/Conque-Shell"]
+	path = p/Conque-Shell
+	url = git://github.com/vim-scripts/Conque-Shell.git
