@@ -13,3 +13,6 @@
 [submodule "p/BlockDiff"]
 	path = p/BlockDiff
 	url = git://github.com/vim-scripts/BlockDiff.git
+[submodule "p/bufexplorer"]
+	path = p/bufexplorer
+	url = git://github.com/vim-scripts/bufexplorer.zip.git
