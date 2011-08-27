@@ -40,3 +40,6 @@
 [submodule "p/multvals"]
 	path = p/multvals
 	url = git://github.com/vim-scripts/multvals.vim.git
+[submodule "p/L9"]
+	path = p/L9
+	url = git://github.com/vim-scripts/L9.git
