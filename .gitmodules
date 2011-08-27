@@ -94,3 +94,6 @@
 [submodule "p/surround"]
 	path = p/surround
 	url = git://github.com/vim-scripts/surround.vim.git
+[submodule "p/ShowMarks"]
+	path = p/ShowMarks
+	url = git://github.com/vim-scripts/ShowMarks.git
