@@ -52,3 +52,6 @@
 [submodule "p/Conque-Shell"]
 	path = p/Conque-Shell
 	url = git://github.com/vim-scripts/Conque-Shell.git
+[submodule "p/fugitive"]
+	path = p/fugitive
+	url = git://github.com/vim-scripts/fugitive.vim.git
