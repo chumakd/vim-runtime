@@ -4,3 +4,6 @@
 [submodule "p/GetLatestVimScripts"]
 	path = p/GetLatestVimScripts
 	url = git://github.com/vim-scripts/GetLatestVimScripts.git
+[submodule "p/Align"]
+	path = p/Align
+	url = git://github.com/vim-scripts/Align.git
