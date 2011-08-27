@@ -55,3 +55,6 @@
 [submodule "p/fugitive"]
 	path = p/fugitive
 	url = git://github.com/vim-scripts/fugitive.vim.git
+[submodule "p/FuzzyFinder"]
+	path = p/FuzzyFinder
+	url = git://github.com/vim-scripts/FuzzyFinder.git
