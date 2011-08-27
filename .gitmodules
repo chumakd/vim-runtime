@@ -101,3 +101,6 @@
 [submodule "p/snipMate"]
 	path = p/snipMate
 	url = git://github.com/vim-scripts/snipMate.git
+[submodule "p/taglist"]
+	path = p/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
