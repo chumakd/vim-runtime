@@ -37,3 +37,6 @@
 [submodule "p/genutils"]
 	path = p/genutils
 	url = git://github.com/vim-scripts/genutils.git
+[submodule "p/multvals"]
+	path = p/multvals
+	url = git://github.com/vim-scripts/multvals.vim.git
