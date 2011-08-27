@@ -22,3 +22,6 @@
 [submodule "p/deb"]
 	path = p/deb
 	url = git://github.com/vim-scripts/deb.vim.git
+[submodule "p/diffchanges"]
+	path = p/diffchanges
+	url = git://github.com/vim-scripts/diffchanges.vim.git
