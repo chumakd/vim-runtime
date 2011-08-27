@@ -61,3 +61,6 @@
 [submodule "p/grep"]
 	path = p/grep
 	url = git://github.com/vim-scripts/grep.vim.git
+[submodule "p/gnupg"]
+	path = p/gnupg
+	url = git://github.com/vim-scripts/gnupg.git
