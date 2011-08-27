@@ -1,0 +1,7 @@
+# This file is placed here to add this directory into git
+# so it would be created on repository clone.
+# Contents of this directory is ignored
+
+*
+.*
+!.gitignore
