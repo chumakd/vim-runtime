@@ -91,3 +91,6 @@
 [submodule "p/repeat"]
 	path = p/repeat
 	url = git://github.com/vim-scripts/repeat.vim.git
+[submodule "p/surround"]
+	path = p/surround
+	url = git://github.com/vim-scripts/surround.vim.git
