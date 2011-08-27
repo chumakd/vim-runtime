@@ -113,3 +113,4 @@
 [submodule "p/xml"]
 	path = p/xml
 	url = git://github.com/vim-scripts/xml.vim.git
+	ignore = untracked
