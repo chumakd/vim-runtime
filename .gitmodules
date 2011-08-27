@@ -67,3 +67,6 @@
 [submodule "p/greplace"]
 	path = p/greplace
 	url = git://github.com/vim-scripts/greplace.vim.git
+[submodule "p/Marks-Browser"]
+	path = p/Marks-Browser
+	url = git://github.com/vim-scripts/Marks-Browser.git
