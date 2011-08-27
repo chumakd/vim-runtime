@@ -110,3 +110,6 @@
 [submodule "p/VisIncr"]
 	path = p/VisIncr
 	url = git://github.com/vim-scripts/VisIncr.git
+[submodule "p/xml"]
+	path = p/xml
+	url = git://github.com/vim-scripts/xml.vim.git
