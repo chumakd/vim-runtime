@@ -104,3 +104,6 @@
 [submodule "p/taglist"]
 	path = p/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "p/TVO--The-Vim-Outliner"]
+	path = p/TVO--The-Vim-Outliner
+	url = git://github.com/vim-scripts/TVO--The-Vim-Outliner.git
