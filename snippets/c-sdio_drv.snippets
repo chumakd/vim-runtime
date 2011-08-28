@@ -1,0 +1,53 @@
+# sqn_pr_dbg
+snippet spd
+	sqn_pr_dbg("${1}\n"${2});${3}
+# sqn_pr_info
+snippet spi
+	sqn_pr_info("${1}\n"${2});${3}
+# sqn_pr_xxx
+snippet spr sqn_pr_dbg
+	sqn_pr_dbg("${1}\n"${2});${3}
+snippet spr sqn_pr_info
+	sqn_pr_info("${1}\n"${2});${3}
+snippet spr sqn_pr_warn
+	sqn_pr_warn("${1}\n"${2});${3}
+snippet spr sqn_pr_err
+	sqn_pr_err("${1}\n"${2});${3}
+# sqn_pr_feature
+snippet spdtx
+	sqn_pr_dump_tx_pkt("${1}\n", ${2}, ${3});${4}
+snippet spdrx
+	sqn_pr_dump_rx_pkt("${1}\n", ${2}, ${3});${4}
+snippet spdl
+	sqn_pr_dump_lsp_pkt("${1}\n", ${2}, ${3});${4}
+snippet spdt
+	sqn_pr_dump_thp_pkt("${1}\n", ${2}, ${3});${4}
+snippet spvt
+	sqn_pr_verbose_thp_hdr("${1}\n", ${2});${3}
+snippet spvl
+	sqn_pr_verbose_lsp("${1}\n", ${2});${3}
+snippet spwl
+	sqn_pr_wake_lock("${1}\n", ${2});${3}
+# sqn_pr_enter
+snippet spe
+	sqn_pr_enter();
+# sqn_pr_leave
+snippet spl
+	sqn_pr_leave();
+# sqn_ function
+snippet sfunc
+	int `Filename('sqn_$1')`${1}(${2:struct sqn_sdio_card *card})
+	{
+		int rv = 0;
+		${3}
+
+		sqn_pr_enter();
+
+	out:
+		sqn_pr_leave();
+		return rv;
+	}
+snippet ifhtc
+	#ifdef SQN_ANDROID_HTC
+		${1}
+	#endif

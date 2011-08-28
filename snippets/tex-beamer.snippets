@@ -1,0 +1,18 @@
+# subsection frame
+snippet sframe
+	\subsection{${1:title}}
+	\frame{\frametitle{\insertsubsection}
+		${2}
+	}
+# frame
+snippet frame
+	\frame{\frametitle{${1:\insertsubsection}}
+		${2}
+	}
+# fragile frame
+snippet fframe
+	\begin{frame}[fragile]
+		\frametitle{${1:\insertsubsection}}
+		${2}
+	\end{frame}}
+	
