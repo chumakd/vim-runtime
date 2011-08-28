@@ -129,3 +129,6 @@
 [submodule "p/cscope_macros"]
 	path = p/cscope_macros
 	url = git://github.com/vim-scripts/cscope_macros.vim.git
+[submodule "p/CCTree"]
+	path = p/CCTree
+	url = git://github.com/vim-scripts/CCTree.git
