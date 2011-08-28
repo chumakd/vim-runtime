@@ -1,4 +1,5 @@
 ScriptID SourceID Filename
 --------------------------
 2048 7817 :AutoInstall: blockdiff.vim
+51   171  :AutoInstall: cscope_macros.vim
 1282 4356 :AutoInstall: tagselect.vim

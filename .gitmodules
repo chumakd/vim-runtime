@@ -126,3 +126,6 @@
 [submodule "p/patchreview"]
 	path = p/patchreview
 	url = git://github.com/vim-scripts/patchreview.vim.git
+[submodule "p/cscope_macros"]
+	path = p/cscope_macros
+	url = git://github.com/vim-scripts/cscope_macros.vim.git
