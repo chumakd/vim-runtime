@@ -301,6 +301,15 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 "
 let g:GetLatestVimScripts_allowautoinstall= 0
 
+" CCTree ----------------------------------------------------------------- {{{2
+"
+let g:CCTreeOrientation = "rightbelow"
+let g:CCTreeRecursiveDepth = 3
+let g:CCTreeMinVisibleDepth = 1
+let g:CCTreeWindowMinWidth = -1
+"let g:CCTreeDisplayMode = 2
+let g:CCTreeWindowVertical = 1
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
@@ -465,8 +474,14 @@ nmap <silent> <Leader>at :AT<CR>
 
 " FuzzyFinder Settings
 nmap ,fb :FufBuffer<CR>
+nmap ,fm :FufBookmarkFile<CR>
+nmap ,fma :FufBookmarkFileAdd<CR>
 nmap ,ff :FufFile<CR>
-nmap ,ft :FufTag<CR>
+nmap ,fo :FufCoverageFile<CR>
+nmap ,ft :FufBufferTag<CR>
+nmap ,fj :FufJumpList<CR>
+nmap ,fc :FufChangeList<CR>
+nmap ,fl :FufLine<CR>
 
 " Color shceme
 " nmap <Leader>\]  :call NextColorScheme()<CR>
@@ -482,6 +497,10 @@ vmap <A-j> <Plug>IMAP_JumpForward
 " DiffChanges
 nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
 nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
+
+" BlockDiff
+vmap ,b1 :call BlockDiff_GetBlock1()<CR>
+vmap ,b2 :call BlockDiff_GetBlock2()<CR>
 
 " Auto commands  ========================================================= {{{1
 "
