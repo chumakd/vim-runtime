@@ -132,3 +132,6 @@
 [submodule "p/CCTree"]
 	path = p/CCTree
 	url = git://github.com/vim-scripts/CCTree.git
+[submodule "p/Mark--Karkat"]
+	path = p/Mark--Karkat
+	url = git://github.com/vim-scripts/Mark--Karkat.git
