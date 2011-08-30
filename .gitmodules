@@ -138,3 +138,6 @@
 [submodule "p/cscope-quickfix"]
 	path = p/cscope-quickfix
 	url = git://github.com/vim-scripts/cscope-quickfix.git
+[submodule "p/ColorSchemeEditor"]
+	path = p/ColorSchemeEditor
+	url = git://github.com/vim-scripts/ColorSchemeEditor.git
