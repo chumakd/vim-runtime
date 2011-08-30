@@ -119,23 +119,23 @@ function! s:RunCscope(...)
 	let openwin = g:Cscope_OpenQuickfixWindow
 	let jumperr =  g:Cscope_JumpError
 	if cscope_opt == '0' || cscope_opt == 's'
-		let cmd = "cscope -L -0 " . pattern
+		let cmd = "cscope -q -k -R -L -0 " . pattern
 	elseif cscope_opt == '1' || cscope_opt == 'g'
-		let cmd = "cscope -L -1 " . pattern
+		let cmd = "cscope -q -k -R -L -1 " . pattern
 	elseif cscope_opt == '2' || cscope_opt == 'd'
-		let cmd = "cscope -L -2 " . pattern
+		let cmd = "cscope -q -k -R -L -2 " . pattern
 	elseif cscope_opt == '3' || cscope_opt == 'c'
-		let cmd = "cscope -L -3 " . pattern
+		let cmd = "cscope -q -k -R -L -3 " . pattern
 	elseif cscope_opt == '4' || cscope_opt == 't'
-		let cmd = "cscope -L -4 " . pattern
+		let cmd = "cscope -q -k -R -L -4 " . pattern
 	elseif cscope_opt == '6' || cscope_opt == 'e'
-		let cmd = "cscope -L -6 " . pattern
+		let cmd = "cscope -q -k -R -L -6 " . pattern
 	elseif cscope_opt == '7' || cscope_opt == 'f'
-		let cmd = "cscope -L -7 " . pattern
+		let cmd = "cscope -q -k -R -L -7 " . pattern
 		let openwin = 0
 		let jumperr = 1
 	elseif cscope_opt == '8' || cscope_opt == 'i'
-		let cmd = "cscope -L -8 " . pattern
+		let cmd = "cscope -q -k -R -L -8 " . pattern
 	else
 		echohl WarningMsg | echomsg usage | echohl None
 		return
