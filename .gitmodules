@@ -144,3 +144,6 @@
 [submodule "p/EasyGrep"]
 	path = p/EasyGrep
 	url = git://github.com/vim-scripts/EasyGrep.git
+[submodule "p/Source-Explorer-srcexpl"]
+	path = p/Source-Explorer-srcexpl
+	url = git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
