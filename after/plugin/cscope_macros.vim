@@ -1,6 +1,9 @@
-" use only ctag without cscope for 'ctrl-]', ':ta', and 'vim -t'
-set nocscopetag
+if has("cscope")
 
-" search tags database before cscope database
-set csto=1
+    " use only ctag without cscope for 'ctrl-]', ':ta', and 'vim -t'
+    set nocscopetag
 
+    " search tags database before cscope database
+    set csto=1
+
+endif
