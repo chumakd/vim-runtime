@@ -141,3 +141,6 @@
 [submodule "p/ColorSchemeEditor"]
 	path = p/ColorSchemeEditor
 	url = git://github.com/vim-scripts/ColorSchemeEditor.git
+[submodule "p/EasyGrep"]
+	path = p/EasyGrep
+	url = git://github.com/vim-scripts/EasyGrep.git
