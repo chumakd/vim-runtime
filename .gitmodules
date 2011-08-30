@@ -135,3 +135,6 @@
 [submodule "p/Mark--Karkat"]
 	path = p/Mark--Karkat
 	url = git://github.com/vim-scripts/Mark--Karkat.git
+[submodule "p/cscope-quickfix"]
+	path = p/cscope-quickfix
+	url = git://github.com/vim-scripts/cscope-quickfix.git
