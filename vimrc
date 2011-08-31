@@ -220,7 +220,7 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 "
 let MRU_Max_Entries = 1000
 let MRU_Add_Menu = 0
-let MRU_Auto_Close = 0
+let MRU_Auto_Close = 1
 
 " NERDTree --------------------------------------------------------------- {{{2
 "
@@ -309,6 +309,13 @@ let g:CCTreeMinVisibleDepth = 1
 let g:CCTreeWindowMinWidth = -1
 "let g:CCTreeDisplayMode = 2
 let g:CCTreeWindowVertical = 1
+
+" cscope_quickfix -------------------------------------------------------- {{{2
+"
+let g:Cscope_OpenQuickfixWindow = 1
+let g:Cscope_JumpError = 0
+let g:Cscope_PopupMenu = 0
+let g:Cscope_ToolsMenu = 0
 
 " Mappings =============================================================== {{{1
 "
@@ -442,14 +449,17 @@ noremap <silent> ,w= :wincmd =<CR>
 
 " Plugin mappings -------------------------------------------------------- {{{2
 "
-" build ctags/cscope for C/Asm project in current dir
-nmap <F2>   :!mktags -acxs<CR>
-" build ctags for Asm/C/C++/Perl/Python project in current dir
-nmap <S-F2> :!mktags -acxpys<CR>
+" build ctags/cscope for Asm/C/C++/Perl/Make project in current dir
+nmap <F2> :!mktags -acxpms<CR>
+" same as above but without Make
+nmap <S-F2> :!mktags -acxps<CR>
 
 " Project
-nmap <S-F3> :Project vimproject<CR>
-nmap <F3>   <Plug>ToggleProject
+"nmap <S-F3> :Project vimproject<CR>
+"nmap <F3>   <Plug>ToggleProject
+
+" MRU
+nmap <F3>   :MRU<CR>
 
 " TagList
 nmap <F4>   :TlistToggle<CR>
@@ -501,6 +511,11 @@ nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
 " BlockDiff
 vmap ,b1 :call BlockDiff_GetBlock1()<CR>
 vmap ,b2 :call BlockDiff_GetBlock2()<CR>
+
+" CCTree
+nmap <silent> ,ctl :CCTreeLoadDB<CR>
+nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
+nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
 
 " Auto commands  ========================================================= {{{1
 "
@@ -564,8 +579,21 @@ function! MyToggleTabstop()
     echo 'tabstop(' &ts ')' 'shiftwidth(' &sw ')' 'expandtab(' &et ')'
 endfunction
 
-nmap <silent> ,tt :call MyToggleTabstop()<CR>
+" Toggle quickfix window ------------------------------------------------- {{{2
+function! MyToggleQuickFix()
+    for i in range(1, winnr('$'))
+        let bnum = winbufnr(i)
+        if getbufvar(bnum, '&buftype') == 'quickfix'
+            cclose
+            return
+        endif
+    endfor
 
+    copen
+endfunction
+nmap <silent> ,tq :call MyToggleQuickFix()<CR>
+
+" Toggle column highlighting --------------------------------------------- {{{2
 if version >= 703
     " Toggle textwidth end column highlighting
     function! MyToggleColorcolumn()
@@ -598,7 +626,7 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 "   let label = v:lnum
 "   let label .= ') '
 "   let bufnrlist = tabpagebuflist(v:lnum)
-" 
+"
 "   " Add '+' if one of the buffers in the tab page is modified
 "   for bufnr in bufnrlist
 "     if getbufvar(bufnr, "&modified")
@@ -606,7 +634,7 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 "       break
 "     endif
 "   endfor
-" 
+"
 "   " Append the number of windows in the tab page if more than one
 "   let wincount = tabpagewinnr(v:lnum, '$')
 "   if wincount > 1
@@ -615,17 +643,17 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 "   if label != ''
 "     let label .= ' '
 "   endif
-" 
+"
 "   " Append the buffer name
 "   return label . pathshorten(bufname(bufnrlist[tabpagewinnr(v:lnum) - 1]))
 " endfunction
-" 
+"
 " function MyTabLabel(n)
 "   let buflist = tabpagebuflist(a:n)
 "   let winnr = tabpagewinnr(a:n)
 "   return bufname(buflist[winnr - 1])
 " endfunction
-" 
+"
 " function MyTabLine()
 "   let s = ''
 "   for i in range(tabpagenr('$'))
@@ -635,22 +663,22 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 "     else
 "       let s .= '%#TabLine#'
 "     endif
-" 
+"
 "     " set the tab page number (for mouse clicks)
 "     let s .= '%' . (i + 1) . 'T'
-" 
+"
 "     " the label is made by MyTabLabel()
 "     let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
 "   endfor
-" 
+"
 "   " after the last tab fill with TabLineFill and reset tab page nr
 "   let s .= '%#TabLineFill#%T'
-" 
+"
 "   " right-align the label to close the current tab page
 "   if tabpagenr('$') > 1
 "     let s .= '%=%#TabLine#%999Xclose'
 "   endif
-" 
+"
 "   return s
 " endfunction
 
