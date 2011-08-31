@@ -185,7 +185,7 @@ function! s:RunCscope(...)
 
 	" Open the cscope output window
 	if openwin == 1
-		botright copen
+		belowright copen
 	endif
 
 	" Jump to the first error
