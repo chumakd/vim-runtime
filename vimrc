@@ -578,6 +578,7 @@ function! MyToggleTabstop()
     endif
     echo 'tabstop(' &ts ')' 'shiftwidth(' &sw ')' 'expandtab(' &et ')'
 endfunction
+nmap <silent> ,tt :call MyToggleTabstop()<CR>
 
 " Toggle quickfix window ------------------------------------------------- {{{2
 function! MyToggleQuickFix()
