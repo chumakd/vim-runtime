@@ -153,3 +153,6 @@
 [submodule "p/QFixToggle"]
 	path = p/QFixToggle
 	url = git://github.com/vim-scripts/QFixToggle.git
+[submodule "p/info"]
+	path = p/info
+	url = git://github.com/vim-scripts/info.vim.git
