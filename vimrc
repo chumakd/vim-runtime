@@ -323,45 +323,67 @@ let g:Cscope_ToolsMenu = 0
 "
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
+
 " map CTRL-s to do what ',' used to do
 nnoremap <c-s> ,
 vnoremap <c-s> ,
+
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
+
 " toggle highlight search
 "nmap <silent> ,tn :set invhls<CR>:set hls?<CR>
+
 " disable current highlight search
 nmap <silent> ,tn :nohlsearch<CR>
+
 " toggle text wrapping
 nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
+
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
+
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
+
+" toggle scrollbind
+nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
+
 " cd to the directory containing the file in the buffer
 nmap <silent> ,cd :lcd %:h<CR>
+
 " Make the directory that contains the file in the current buffer.
 " This is useful when you edit a file in a directory that doesn't
 " (yet) exist
-nmap <silent> ,md :!mkdir -p %:p:h<CR>
+"nmap <silent> ,md :!mkdir -p %:p:h<CR>
+
 " split buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,sp :sp %:p:h/<C-X>
+
 " Show all available VIM servers
 "nmap <silent> ,ss :echo serverlist()<CR>
+
 " Run the command that was just yanked
 "nmap <silent> ,rc :@"<cr>
+
 " edit the vimrc file
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
+
 " make vertical scrolling easier
 nmap <silent> ,se 10<C-e>
 nmap <silent> ,sy 10<C-y>
+
 " make horizontal scrolling easier
 nmap <silent> ,sl 10zl
 nmap <silent> ,sh 10zh
+
 " search of selected text in visual mode
 vmap X y/<C-R>"<CR>
+
+" run make in current directory
+nmap ,m :make<CR>
 
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
@@ -404,6 +426,8 @@ cnoremap <M-b>  <S-Left>
 cnoremap <M-f>  <S-Right>
 cnoremap <ESC>b <S-Left>
 cnoremap <ESC>f <S-Right>
+" remap <C-f> (which is used to open command-line window) to <C-y>
+set cedit=<C-Y>
 " allow command line completion with Alt key
 cnoremap <M-p>  <Up>
 cnoremap <M-n>  <Down>
@@ -426,8 +450,10 @@ noremap <silent> ,ch :wincmd h<CR>:close<CR>
 noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " close current window
 noremap <silent> ,cc :close<CR>
-" close quickfix window
-noremap <silent> ,cw :cclose<CR>
+" close current window
+noremap <silent> ,ct :tabclose<CR>
+" close quickfix window (not used now becaue QF is toggled by ,tq)
+"noremap <silent> ,cw :cclose<CR>
 " adjust window size by one
 noremap <silent> <C-Left>   <C-W><
 noremap <silent> <C-Up>     <C-W>+
@@ -443,9 +469,12 @@ nmap <C-J> <C-W>j<C-W>_
 nmap <C-K> <C-W>k<C-W>_
 nmap <C-H> <C-W>h<C-W>\|
 nmap <C-L> <C-W>l<C-W>\|
-" switch window with full expand
+" full expand current window
 noremap <silent> ,wf :wincmd _<CR>
+" make windows sizes equal
 noremap <silent> ,w= :wincmd =<CR>
+" exchange current and pervious windows
+noremap <silent> ,wx :wincmd x<CR>
 
 " Plugin mappings -------------------------------------------------------- {{{2
 "
