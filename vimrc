@@ -47,7 +47,7 @@ set foldopen+=insert,jump
 
 " Indent ----------------------------------------------------------------- {{{2
 "
-set noautoindent
+set autoindent
 set nocindent
 set nosmartindent
 
