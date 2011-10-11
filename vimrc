@@ -11,6 +11,7 @@ set nocompatible
 " Filetype --------------------------------------------------------------- {{{2
 "
 filetype plugin on
+filetype indent on
 runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
@@ -46,8 +47,9 @@ set foldopen+=insert,jump
 
 " Indent ----------------------------------------------------------------- {{{2
 "
-set autoindent
+set noautoindent
 set nocindent
+set nosmartindent
 
 " Tabstop ---------------------------------------------------------------- {{{2
 "
@@ -241,7 +243,8 @@ let g:secure_modelines_verbose=1
 
 " Alternate -------------------------------------------------------------- {{{2
 "
-let g:alternateNoDefaultAlternate=1
+let g:alternateNoDefaultAlternate=0
+let g:alternateRelativeFiles=1
 "let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
 
 " MultipleSearch --------------------------------------------------------- {{{2
