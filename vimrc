@@ -113,20 +113,27 @@ endif
 " Display ---------------------------------------------------------------- {{{2
 "
 set listchars=eol:$,tab:>-,trail:.
+
 " Don't update the display while executing macros
 set lazyredraw
+
 set novisualbell
+
 " hide the mouse pointer while typing
 set mousehide
+
 " When the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
 "set scrolloff=8
+"
 if version >= 703
   " Show line numbers relative to cursor position
   set relativenumber
 endif
+
 set numberwidth=3
-" Highlight textwidth column
+
+" highlight textwidth column
 "set colorcolumn=78
 
 " Tags ------------------------------------------------------------------- {{{2
@@ -564,8 +571,12 @@ nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
 "augroup END
 
 " reading Ms-Word documents, requires antiword
-:autocmd BufReadPre *.doc set ro
-:autocmd BufReadPost *.doc %!antiword "%"
+autocmd BufReadPre *.doc set ro
+autocmd BufReadPost *.doc %!antiword "%"
+
+" highlight trailing whitespaces with color of TODO hl group
+autocmd BufRead * match Todo /\s\+$/
+autocmd BufNew  * match Todo /\s\+$/
 
 " Abbreviations ========================================================== {{{1
 "
