@@ -54,7 +54,7 @@
 	url = git://github.com/vim-scripts/Conque-Shell.git
 [submodule "p/fugitive"]
 	path = p/fugitive
-	url = git://github.com/vim-scripts/fugitive.vim.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "p/FuzzyFinder"]
 	path = p/FuzzyFinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
