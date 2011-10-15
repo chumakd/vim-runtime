@@ -367,10 +367,6 @@ nmap <silent> ,cd :lcd %:h<CR>
 " (yet) exist
 "nmap <silent> ,md :!mkdir -p %:p:h<CR>
 
-" split buffer with file from the same directory as current one
-" allowing to autocomplete the name with <Tab>
-nmap <silent> ,sp :sp %:p:h/<C-X>
-
 " Show all available VIM servers
 "nmap <silent> ,ss :echo serverlist()<CR>
 
@@ -485,6 +481,16 @@ noremap <silent> ,wf :wincmd _<CR>
 noremap <silent> ,w= :wincmd =<CR>
 " exchange current and pervious windows
 noremap <silent> ,wx :wincmd x<CR>
+
+" split buffer with file from the same directory as current one
+" allowing to autocomplete the name with <Tab>
+nmap <silent> ,sp :sp %:p:h/<C-X>
+
+" open empty buffer in split window
+nmap <silent> ,nw :new <CR>
+
+" open empty buffer in new tab
+nmap <silent> ,nt :tabnew <CR>
 
 " Plugin mappings -------------------------------------------------------- {{{2
 "
