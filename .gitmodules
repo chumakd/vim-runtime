@@ -156,3 +156,6 @@
 [submodule "p/info"]
 	path = p/info
 	url = git://github.com/vim-scripts/info.vim.git
+[submodule "p/nerdcommenter"]
+	path = p/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
