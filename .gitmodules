@@ -159,3 +159,6 @@
 [submodule "p/nerdcommenter"]
 	path = p/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "p/SudoEdit"]
+	path = p/SudoEdit
+	url = git://github.com/vim-scripts/SudoEdit.vim.git
