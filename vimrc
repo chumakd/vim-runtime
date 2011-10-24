@@ -169,8 +169,9 @@ endif
 
 " Other ------------------------------------------------------------------ {{{2
 "
-set sessionoptions-=curdir
-set sessionoptions+=sesdir
+" save only opened windows with :mksession without any
+" mapping/options/buffers/etc...
+set sessionoptions=
 
 " Plugin options ========================================================= {{{1
 " bash syntax ------------------------------------------------------------ {{{2
@@ -583,6 +584,7 @@ autocmd BufReadPost *.doc %!antiword "%"
 " highlight trailing whitespaces with color of TODO hl group
 autocmd BufRead * match Todo /\s\+$/
 autocmd BufNew  * match Todo /\s\+$/
+"autocmd BufAdd  * match Todo /\s\+$/
 
 " Abbreviations ========================================================== {{{1
 "
