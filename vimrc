@@ -328,6 +328,10 @@ let g:Cscope_JumpError = 0
 let g:Cscope_PopupMenu = 0
 let g:Cscope_ToolsMenu = 0
 
+" SessionMan ------------------------------------------------------------- {{{2
+"
+let sessionman_save_on_exit = 0
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
