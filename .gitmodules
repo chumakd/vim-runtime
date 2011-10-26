@@ -162,3 +162,6 @@
 [submodule "p/SudoEdit"]
 	path = p/SudoEdit
 	url = git://github.com/vim-scripts/SudoEdit.vim.git
+[submodule "p/sessionman"]
+	path = p/sessionman
+	url = git://github.com/vim-scripts/sessionman.vim.git
