@@ -169,9 +169,9 @@ endif
 
 " Other ------------------------------------------------------------------ {{{2
 "
-" save only opened windows with :mksession without any
+" save only opened windows and tabs with :mksession without any
 " mapping/options/buffers/etc...
-set sessionoptions=
+set sessionoptions=tabpages
 
 " Plugin options ========================================================= {{{1
 " bash syntax ------------------------------------------------------------ {{{2
@@ -566,6 +566,12 @@ vmap ,b2 :call BlockDiff_GetBlock2()<CR>
 nmap <silent> ,ctl :CCTreeLoadDB<CR>
 nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
 nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
+
+" SessionMan
+nmap <silent> \so :SessionOpen <C-X>
+nmap <silent> \sc :SessionClose<CR>
+nmap <silent> \ss :SessionSave<CR>
+nmap <silent> \sl :SessionList<CR>
 
 " Auto commands  ========================================================= {{{1
 "
