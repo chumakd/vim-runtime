@@ -682,6 +682,21 @@ endfunction
 
 nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 
+" Toggle fold marker ----------------------------------------------------- {{{2
+let s:old_fdm = ''
+function! MyToggleFoldMarker()
+    if &foldmarker == "{{{,}}}"
+        let s:old_fdm = &foldmethod
+        setl foldmethod=marker foldmarker=<<<<<<<,>>>>>>>
+    else
+        let &foldmethod = s:old_fdm
+        setl foldmarker={{{,}}}
+    endif
+    set foldmethod? foldmarker?
+endfunction
+
+nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
+
 " tabline  --------------------------------------------------------------- {{{2
 "
 " function MyTabline()
