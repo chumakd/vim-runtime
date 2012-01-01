@@ -165,3 +165,6 @@
 [submodule "p/sessionman"]
 	path = p/sessionman
 	url = git://github.com/vim-scripts/sessionman.vim.git
+[submodule "p/git_patch_tags"]
+	path = p/git_patch_tags
+	url = git://github.com/vim-scripts/git_patch_tags.vim.git
