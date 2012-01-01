@@ -763,6 +763,14 @@ endfunction
 
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
+" Reload cscope db ------------------------------------------------------- {{{2
+function! MyCscopeReload()
+    cs kill 0
+    cs add cscope.out
+endfunction
+
+nmap <silent> ,csr :call MyCscopeReload()<CR>
+
 " tabline  --------------------------------------------------------------- {{{2
 "
 " function MyTabline()
