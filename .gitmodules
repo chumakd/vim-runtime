@@ -168,3 +168,7 @@
 [submodule "p/git_patch_tags"]
 	path = p/git_patch_tags
 	url = git://github.com/vim-scripts/git_patch_tags.vim.git
+[submodule "p/errormarker"]
+	path = p/errormarker
+	url = git://github.com/vim-scripts/errormarker.vim.git
+	ignore = untracked
