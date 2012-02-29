@@ -763,6 +763,20 @@ endfunction
 
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
+" Toggle doxygen syntax -------------------------------------------------- {{{2
+let s:old_syntax = ''
+function! MyToggleDoxygenSyntax()
+    if &syntax != "cpp.doxygen"
+        let s:old_syntax = &syntax
+        setl syntax=cpp.doxygen
+    else
+        let &syntax=s:old_syntax
+    endif
+    set syntax?
+endfunction
+
+nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
+
 " Reload cscope db ------------------------------------------------------- {{{2
 function! MyCscopeReload()
     cs kill 0
