@@ -385,8 +385,8 @@ nmap <silent> ,cd :lcd %:h<CR>
 "nmap <silent> ,rc :@"<cr>
 
 " edit the vimrc file
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
+nmap <silent> ,ve :e $MYVIMRC<CR>
+nmap <silent> ,vs :so $MYVIMRC<CR>
 
 " make vertical scrolling easier
 nmap <silent> ,se 10<C-e>
