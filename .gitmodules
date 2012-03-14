@@ -175,3 +175,6 @@
 [submodule "p/camelcasemotion"]
 	path = p/camelcasemotion
 	url = git://github.com/vim-scripts/camelcasemotion.git
+[submodule "p/argtextobj"]
+	path = p/argtextobj
+	url = git://github.com/vim-scripts/argtextobj.vim.git
