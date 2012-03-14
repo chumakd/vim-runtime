@@ -12,4 +12,6 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.patch	setfiletype git
   " Colibri FOP declaration files
   au! BufRead,BufNewFile *.ff		setfiletype c
+  " tmux config files
+  au! BufRead,BufNewFile .tmux.conf*,tmux.conf*     setfiletype tmux
 augroup END
