@@ -172,3 +172,6 @@
 	path = p/errormarker
 	url = git://github.com/vim-scripts/errormarker.vim.git
 	ignore = untracked
+[submodule "p/camelcasemotion"]
+	path = p/camelcasemotion
+	url = git://github.com/vim-scripts/camelcasemotion.git
