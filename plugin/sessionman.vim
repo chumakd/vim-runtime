@@ -106,7 +106,7 @@ endfunction
 
 function! s:OpenSession(name)
 	if a:name != '' && a:name[0] != '"'
-		call s:RestoreDefaults()
+		"call s:RestoreDefaults()
 		if has('cscope')
 			silent! cscope kill -1
 		endif
@@ -135,7 +135,7 @@ endfunction
 "============================================================================"
 
 function! s:CloseSession()
-	call s:RestoreDefaults()
+	"call s:RestoreDefaults()
 	execute 'silent! 1,' . bufnr('$') . 'bwipeout!'
 	if has('cscope')
 		silent! cscope kill -1
