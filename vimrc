@@ -349,6 +349,9 @@ nnoremap g#  g#N
 nnoremap <c-s> ,
 vnoremap <c-s> ,
 
+" save current buffer
+nmap ,u :update<CR>
+
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
 
