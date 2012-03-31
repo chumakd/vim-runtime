@@ -1,6 +1,6 @@
 " Set window size
-set columns=147
-set lines=53
+set columns=133
+set lines=40
 
 
 "
