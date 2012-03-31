@@ -240,6 +240,7 @@ let NERDTreeWinPos="right"
 " show the bookmarks table on startup
 "let NERDTreeShowBookmarks=1
 " don't display these kinds of files
+let NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
 "let NERDTreeIgnore=[ '\.ncb$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
             " \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$',
             " \ '\.embed\.manifest$', '\.embed\.manifest.res$',
@@ -331,6 +332,11 @@ let g:Cscope_ToolsMenu = 0
 " SessionMan ------------------------------------------------------------- {{{2
 "
 let sessionman_save_on_exit = 0
+
+" Gundo ------------------------------------------------------------------ {{{2
+"
+let g:gundo_width = 75
+"let g:gundo_preview_bottom = 1
 
 " Mappings =============================================================== {{{1
 "
@@ -586,6 +592,9 @@ nmap <F4>   :TlistToggle<CR>
 " MarksBrowser
 nmap <F5>   :MarksBrowser<CR>
 
+" Gundo
+nmap <F6>   :GundoToggle<CR>
+
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
@@ -641,6 +650,10 @@ nmap <silent> \so :SessionOpen <C-X>
 nmap <silent> \sc :SessionClose<CR>
 nmap <silent> \ss :SessionSave<CR>
 nmap <silent> \sl :SessionList<CR>
+
+" Fugitive
+nmap <silent> ,gs :Git status<CR>
+nmap <silent> ,gd :Git diff<CR>
 
 " Auto commands  ========================================================= {{{1
 "
