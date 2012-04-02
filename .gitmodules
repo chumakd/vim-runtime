@@ -178,3 +178,6 @@
 [submodule "p/argtextobj"]
 	path = p/argtextobj
 	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "p/CSApprox"]
+	path = p/CSApprox
+	url = git://github.com/vim-scripts/CSApprox.git
