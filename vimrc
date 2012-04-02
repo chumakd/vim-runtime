@@ -338,6 +338,13 @@ let sessionman_save_on_exit = 0
 let g:gundo_width = 75
 "let g:gundo_preview_bottom = 1
 
+" CSApprox --------------------------------------------------------------- {{{2
+"
+" disabled due to Konsole uses 8-colors terminal by default
+let g:CSApprox_loaded = 1
+" tune color palette for Konsole
+let g:CSApprox_konsole = 1
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
@@ -410,6 +417,9 @@ vmap X y/<C-R>"<CR>
 
 " run make in current directory
 nmap ,m :make<CR>
+
+" quit all windows (by analogy with ZZ and ZQ)
+nmap ZA :qa<CR>
 
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
