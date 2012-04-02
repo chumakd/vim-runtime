@@ -181,3 +181,6 @@
 [submodule "p/CSApprox"]
 	path = p/CSApprox
 	url = git://github.com/vim-scripts/CSApprox.git
+[submodule "p/ScrollColors"]
+	path = p/ScrollColors
+	url = git://github.com/vim-scripts/ScrollColors.git
