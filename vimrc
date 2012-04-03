@@ -426,19 +426,19 @@ nmap ZA :qa<CR>
 
 " Search the current file for what's currently in the search
 " register and display matches
-"nmap <silent> ,gs
-     " \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+nmap <silent> ,g/
+      \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Search the current file for the word under the cursor and display matches
-"nmap <silent> ,gw
-     " \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+nmap <silent> ,gw
+      \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Search the current file for the WORD under the cursor and display matches
-"nmap <silent> ,gW
-     " \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:set nohls<CR>
+nmap <silent> ,gW
+      \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Swap two words
-"nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
 "nmap <silent> ,ul :t.\|s/./=/g\|set nohls<cr>
@@ -661,9 +661,14 @@ nmap <silent> \sc :SessionClose<CR>
 nmap <silent> \ss :SessionSave<CR>
 nmap <silent> \sl :SessionList<CR>
 
-" Fugitive
+" Fugitive/Git
 nmap <silent> ,gs :Git status<CR>
 nmap <silent> ,gd :Git diff<CR>
+nmap <silent> ,gt :!tig<CR>
+
+" Tagselect
+" open current file in new tab and do :Tselect on a word  under cursor
+nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
 " Auto commands  ========================================================= {{{1
 "
