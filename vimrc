@@ -16,6 +16,8 @@ runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
 syntax enable
+" also enable syntax highlighting for perl POD documentation
+let perl_include_pod = 1
 " set path for file search operations
 "set path=.,,/usr/local/include/**,/usr/include/**
 "set path+=include/
@@ -345,10 +347,9 @@ let g:CSApprox_loaded = 1
 " tune color palette for Konsole
 let g:CSApprox_konsole = 1
 
-" Yankstack -------------------------------------------------------------- {{{2
+" Zencoding -------------------------------------------------------------- {{{2
 "
-nmap <C-p> <Plug>yankstack_substitute_older_paste
-nmap <C-P> <Plug>yankstack_substitute_older_paste
+let g:user_zen_leader_key = '\z'
 
 " Mappings =============================================================== {{{1
 "
@@ -676,6 +677,11 @@ nmap <silent> ,gt :!tig<CR>
 " Tagselect
 " open current file in new tab and do :Tselect on a word  under cursor
 nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
+
+" Yankstack -------------------------------------------------------------- {{{2
+"
+nmap <C-p> <Plug>yankstack_substitute_older_paste
+nmap <C-P> <Plug>yankstack_substitute_older_paste
 
 " Auto commands  ========================================================= {{{1
 "
