@@ -345,10 +345,17 @@ let g:CSApprox_loaded = 1
 " tune color palette for Konsole
 let g:CSApprox_konsole = 1
 
+" Yankstack -------------------------------------------------------------- {{{2
+"
+nmap <C-p> <Plug>yankstack_substitute_older_paste
+nmap <C-P> <Plug>yankstack_substitute_older_paste
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
 "
+" let yankstack plugin to know that we remap default Y behavior
+call yankstack#setup()
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
 
