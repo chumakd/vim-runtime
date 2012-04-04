@@ -190,3 +190,6 @@
 [submodule "p/molokai"]
 	path = p/molokai
 	url = git://github.com/tomasr/molokai.git
+[submodule "p/vim-yankstack"]
+	path = p/vim-yankstack
+	url = git://github.com/maxbrunsfeld/vim-yankstack.git
