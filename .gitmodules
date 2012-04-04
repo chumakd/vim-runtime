@@ -193,3 +193,6 @@
 [submodule "p/vim-yankstack"]
 	path = p/vim-yankstack
 	url = git://github.com/maxbrunsfeld/vim-yankstack.git
+[submodule "p/dbext"]
+	path = p/dbext
+	url = git://github.com/vim-scripts/dbext.vim.git
