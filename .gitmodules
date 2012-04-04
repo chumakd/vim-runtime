@@ -196,3 +196,6 @@
 [submodule "p/dbext"]
 	path = p/dbext
 	url = git://github.com/vim-scripts/dbext.vim.git
+[submodule "p/perlhelp"]
+	path = p/perlhelp
+	url = git://github.com/vim-scripts/perlhelp.vim.git
