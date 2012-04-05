@@ -100,7 +100,7 @@
 	ignore = dirty
 [submodule "p/snipMate"]
 	path = p/snipMate
-	url = git://github.com/vim-scripts/snipMate.git
+	url = git://github.com/msanders/snipmate.vim.git
 [submodule "p/taglist"]
 	path = p/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
