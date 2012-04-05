@@ -202,3 +202,6 @@
 [submodule "p/zencoding-vim"]
 	path = p/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim.git
+[submodule "p/tregisters_vim"]
+	path = p/tregisters_vim
+	url = git://github.com/tomtom/tregisters_vim.git
