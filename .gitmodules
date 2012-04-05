@@ -205,3 +205,6 @@
 [submodule "p/tregisters_vim"]
 	path = p/tregisters_vim
 	url = git://github.com/tomtom/tregisters_vim.git
+[submodule "p/ttoc_vim"]
+	path = p/ttoc_vim
+	url = git://github.com/tomtom/ttoc_vim.git
