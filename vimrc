@@ -196,6 +196,7 @@ let g:netrw_altv = 1
 let g:bufExplorerFindActive=0
 let g:bufExplorerSplitRight=0
 let g:bufExplorerSplitBelow=1
+let g:bufExplorerShowRelativePath=1
 
 " Taglist ---------------------------------------------------------------- {{{2
 "
