@@ -208,3 +208,6 @@
 [submodule "p/ttoc_vim"]
 	path = p/ttoc_vim
 	url = git://github.com/tomtom/ttoc_vim.git
+[submodule "p/clang_complete"]
+	path = p/clang_complete
+	url = git@github.com:chumakd/clang_complete.git
