@@ -211,3 +211,6 @@
 [submodule "p/clang_complete"]
 	path = p/clang_complete
 	url = git@github.com:chumakd/clang_complete.git
+[submodule "p/vim-colors-solarized"]
+	path = p/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
