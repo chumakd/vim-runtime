@@ -354,7 +354,8 @@ let g:user_zen_leader_key = '\z'
 
 " clang_complete --------------------------------------------------------- {{{2
 "
-let g:clang_complete_auto = 0
+"let g:clang_complete_auto = 0
+let g:clang_omnicppcomplete_compliance = 1
 
 " Mappings =============================================================== {{{1
 "
@@ -701,6 +702,10 @@ nmap <C-P> <Plug>yankstack_substitute_older_paste
     " au BufWritePost *.bin if &bin | %!xxd
     " au BufWritePost *.bin set nomod | endif
 "augroup END
+
+" check perl code with :make
+au FileType perl set makeprg=perl\ -c\ %\ $*
+"au FileType perl set errorformat=%f:%l:%m
 
 " reading Ms-Word documents, requires antiword
 autocmd BufReadPre *.doc set ro
