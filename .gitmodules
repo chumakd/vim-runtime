@@ -214,3 +214,6 @@
 [submodule "p/vim-colors-solarized"]
 	path = p/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "p/delimitMate"]
+	path = p/delimitMate
+	url = git://github.com/Raimondi/delimitMate.git
