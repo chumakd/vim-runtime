@@ -684,6 +684,9 @@ nmap <silent> ,gt :!tig<CR>
 " open current file in new tab and do :Tselect on a word  under cursor
 nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
+" DelimitMate
+nmap <silent> ,tdm :DelimitMateSwitch<CR>
+
 " Yankstack -------------------------------------------------------------- {{{2
 "
 nmap <C-p> <Plug>yankstack_substitute_older_paste
