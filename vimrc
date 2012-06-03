@@ -16,8 +16,6 @@ runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
 syntax enable
-" also enable syntax highlighting for perl POD documentation
-let perl_include_pod = 1
 " set path for file search operations
 "set path=.,,/usr/local/include/**,/usr/include/**
 "set path+=include/
@@ -183,6 +181,8 @@ let g:sh_fold_enabled= 1
 
 " perl syntax ------------------------------------------------------------ {{{2
 "
+" enable syntax highlighting for perl POD documentation
+let perl_include_pod = 1
 let perl_fold = 1
 let perl_fold_blocks = 1
 
@@ -706,6 +706,15 @@ nmap <C-P> <Plug>yankstack_substitute_older_paste
 " check perl code with :make
 au FileType perl set makeprg=perl\ -c\ %\ $*
 "au FileType perl set errorformat=%f:%l:%m
+" format code with perltidy (using '=' key)
+"au Filetype perl :set equalprg=perltidy
+
+" format sql code
+"au Filetype sql :set equalprg=sql-beautify.pl
+"command! -range SQLF :'<,'>!$HOME/bin/sql-beautify
+
+" escape symbols with html codes
+"command! -range Entities :'<,'>!$HOME/bin/html-entities
 
 " reading Ms-Word documents, requires antiword
 autocmd BufReadPre *.doc set ro
