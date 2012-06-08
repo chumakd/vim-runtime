@@ -357,6 +357,10 @@ let g:user_zen_leader_key = '\z'
 "let g:clang_complete_auto = 0
 let g:clang_omnicppcomplete_compliance = 1
 
+" DelimitMate ------------------------------------------------------------ {{{2
+"
+let delimitMate_offByDefault = 1
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
