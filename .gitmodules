@@ -226,3 +226,6 @@
 [submodule "p/SQLUtilities"]
 	path = p/SQLUtilities
 	url = git://github.com/vim-scripts/SQLUtilities.git
+[submodule "p/tagbar"]
+	path = p/tagbar
+	url = git://github.com/majutsushi/tagbar.git
