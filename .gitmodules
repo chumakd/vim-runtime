@@ -51,7 +51,8 @@
 	url = git://github.com/vim-scripts/DrawIt.git
 [submodule "p/Conque-Shell"]
 	path = p/Conque-Shell
-	url = git://github.com/vim-scripts/Conque-Shell.git
+	url = git://github.com/chumakd/conque-shell-mirror.git
+	;url = git://github.com/vim-scripts/Conque-Shell.git
 [submodule "p/fugitive"]
 	path = p/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -84,7 +85,8 @@
 	url = git://github.com/vim-scripts/The-NERD-tree.git
 [submodule "p/OmniCppComplete"]
 	path = p/OmniCppComplete
-	url = git://github.com/vim-scripts/OmniCppComplete.git
+	url = git://github.com/MasterKey/OmniCppComplete.git
+	;url = git://github.com/vim-scripts/OmniCppComplete.git
 [submodule "p/project"]
 	path = p/project
 	url = git://github.com/vim-scripts/project.tar.gz.git
@@ -123,6 +125,7 @@
 [submodule "p/Gundo"]
 	path = p/Gundo
 	url = git://github.com/vim-scripts/Gundo.git
+	;url = git://github.com/sjl/gundo.vim.git
 [submodule "p/patchreview"]
 	path = p/patchreview
 	url = git://github.com/vim-scripts/patchreview.vim.git
@@ -175,6 +178,7 @@
 [submodule "p/camelcasemotion"]
 	path = p/camelcasemotion
 	url = git://github.com/vim-scripts/camelcasemotion.git
+	;url = git://github.com/bkad/CamelCaseMotion.git
 [submodule "p/argtextobj"]
 	path = p/argtextobj
 	url = git://github.com/vim-scripts/argtextobj.vim.git
@@ -210,7 +214,8 @@
 	url = git://github.com/tomtom/ttoc_vim.git
 [submodule "p/clang_complete"]
 	path = p/clang_complete
-	url = git@github.com:chumakd/clang_complete.git
+	url = git://github.com/chumakd/clang_complete.git
+	; url = git://github.com/Rip-Rip/clang_complete.git
 [submodule "p/vim-colors-solarized"]
 	path = p/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
