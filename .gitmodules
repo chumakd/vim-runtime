@@ -220,3 +220,6 @@
 [submodule "p/vim-css-color"]
 	path = p/vim-css-color
 	url = git://github.com/skammer/vim-css-color.git
+[submodule "p/SearchComplete"]
+	path = p/SearchComplete
+	url = git://github.com/vim-scripts/SearchComplete.git
