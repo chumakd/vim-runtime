@@ -711,8 +711,10 @@ nmap <C-P> <Plug>yankstack_substitute_older_paste
 "augroup END
 
 " check perl code with :make
-au FileType perl set makeprg=perl\ -c\ %\ $*
+au FileType perl set makeprg=/usr/share/vim/vim73/tools/efm_perl.pl\ %\ $*
+"au FileType perl set makeprg=perl\ -c\ %\ $*
 "au FileType perl set errorformat=%f:%l:%m
+
 " format code with perltidy (using '=' key)
 "au Filetype perl :set equalprg=perltidy
 
