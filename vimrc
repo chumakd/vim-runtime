@@ -361,6 +361,11 @@ let g:clang_omnicppcomplete_compliance = 1
 "
 let delimitMate_offByDefault = 1
 
+" Tagbar ----------------------------------------------------------------- {{{2
+"
+let g:tagbar_left = 1
+let g:tagbar_width = 35
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
@@ -617,6 +622,10 @@ nmap <F3>   :MRU<CR>
 " TagList
 nmap <F4>   :TlistToggle<CR>
 
+" Tagbar
+"
+nmap <S-F4> :TagbarToggle<CR>
+
 " MarksBrowser
 nmap <F5>   :MarksBrowser<CR>
 
@@ -691,7 +700,7 @@ nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
 
-" Yankstack -------------------------------------------------------------- {{{2
+" Yankstack
 "
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-P> <Plug>yankstack_substitute_older_paste
