@@ -229,3 +229,6 @@
 [submodule "p/tagbar"]
 	path = p/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "p/taskpaper"]
+	path = p/taskpaper
+	url = git://github.com/davidoc/taskpaper.vim.git
