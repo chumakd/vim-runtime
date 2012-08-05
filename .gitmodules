@@ -223,3 +223,6 @@
 [submodule "p/SearchComplete"]
 	path = p/SearchComplete
 	url = git://github.com/vim-scripts/SearchComplete.git
+[submodule "p/SQLUtilities"]
+	path = p/SQLUtilities
+	url = git://github.com/vim-scripts/SQLUtilities.git
