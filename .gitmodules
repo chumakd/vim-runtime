@@ -237,3 +237,6 @@
 [submodule "p/taskpaper"]
 	path = p/taskpaper
 	url = git://github.com/davidoc/taskpaper.vim.git
+[submodule "p/atp-vim-mirror"]
+	path = p/atp-vim-mirror
+	url = git://github.com/chumakd/atp-vim-mirror.git
