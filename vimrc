@@ -605,6 +605,11 @@ nnoremap <silent><M-S-k> :call TabMoveRight()<CR>
 inoremap <silent><M-S-k> <C-O>:call TabMoveRight()<CR>
 vnoremap <silent><M-S-k> <ESC>:call TabMoveRight()<CR>
 
+" Perl mappings ---------------------------------------------------------- {{{2
+"
+nmap ,pt :.!perltidy<CR>
+vmap ,pt :!perltidy<CR>
+
 " Plugin mappings -------------------------------------------------------- {{{2
 "
 " build ctags/cscope for Asm/C/C++/Perl/Make project in current dir
@@ -720,7 +725,7 @@ nmap <C-P> <Plug>yankstack_substitute_older_paste
 "augroup END
 
 " check perl code with :make
-au FileType perl set makeprg=/usr/share/vim/vim73/tools/efm_perl.pl\ %\ $*
+"au FileType perl set makeprg=/usr/share/vim/vim73/tools/efm_perl.pl\ %\ $*
 "au FileType perl set makeprg=perl\ -c\ %\ $*
 "au FileType perl set errorformat=%f:%l:%m
 
@@ -865,6 +870,43 @@ function! MyCscopeReload()
 endfunction
 
 nmap <silent> ,csr :call MyCscopeReload()<CR>
+
+" Run perlcritic on current file ----------------------------------------- {{{2
+function! MyPerlcritic(level)
+    let l:old_makeprg = &makeprg
+    let l:cmd = 'perlcritic --severity ' . a:level . ' --quiet --verbose "\%f:\%l:\%m\n" %'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+nmap ,pc1 :call MyPerlcritic(1)<CR>
+nmap ,pc2 :call MyPerlcritic(2)<CR>
+nmap ,pc3 :call MyPerlcritic(3)<CR>
+nmap ,pc4 :call MyPerlcritic(4)<CR>
+nmap ,pc5 :call MyPerlcritic(5)<CR>
+
+" Run perl -c on current file ------------------------------------------- {{{2
+function! MyPerlcompile()
+    let l:old_makeprg = &makeprg
+    let l:cmd = '/usr/share/vim/vim73/tools/efm_perl.pl -c % $*'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+nmap ,pm :call MyPerlcompile()<CR>
+
+" Run perl -c on current file ------------------------------------------- {{{2
+function! MyPerlrun()
+    let l:old_makeprg = &makeprg
+    let l:cmd = 'perl % $*'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+nmap ,pr :call MyPerlrun()<CR>
 
 " tabline  --------------------------------------------------------------- {{{2
 "
