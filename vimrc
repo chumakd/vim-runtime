@@ -897,7 +897,7 @@ endfunction
 
 nmap ,pm :call MyPerlcompile()<CR>
 
-" Run perl -c on current file ------------------------------------------- {{{2
+" Run perl on current file ---------------------------------------------- {{{2
 function! MyPerlrun()
     let l:old_makeprg = &makeprg
     let l:cmd = 'perl % $*'
