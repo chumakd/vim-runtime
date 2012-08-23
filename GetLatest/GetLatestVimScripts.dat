@@ -5,3 +5,4 @@ ScriptID SourceID Filename
 2010 15599 :AutoInstall: sessionman.vim
 1282 4356  :AutoInstall: tagselect.vim
 273  7701  :AutoInstall: taglist.vim
+1488 5966  :AutoInstall: ScrollColor.vim
