@@ -535,12 +535,19 @@ noremap <silent> ,w= :wincmd =<CR>
 " exchange current and pervious windows
 noremap <silent> ,wx :wincmd x<CR>
 
+" edit buffer with file from the same directory as current one
+" allowing to autocomplete the name with <Tab>
+nmap <silent> ,ee :e %:p:h/<C-X>
+
 " split buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,sp :sp %:p:h/<C-X>
 
+" open empty buffer in current window
+nmap <silent> ,ne :enew <CR>
+
 " open empty buffer in split window
-nmap <silent> ,nw :new <CR>
+nmap <silent> ,ns :new <CR>
 
 " open empty buffer in new tab
 nmap <silent> ,nt :tabnew <CR>
