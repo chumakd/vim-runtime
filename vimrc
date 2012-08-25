@@ -366,6 +366,18 @@ let delimitMate_offByDefault = 1
 let g:tagbar_left = 1
 let g:tagbar_width = 35
 
+" Powerline -------------------------------------------------------------- {{{2
+"
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
+let g:Powerline_stl_path_style = 'relative'
+
+"let g:Powerline_theme = 'skwp'
+let g:Powerline_colorscheme = 'chumakd'
+
+" add total line number segment after lineinfo
+"call Pl#Theme#InsertSegment('charcode', 'before', 'scrollpercent')
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
