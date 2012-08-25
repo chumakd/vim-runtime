@@ -231,3 +231,6 @@
 [submodule "p/taskpaper"]
 	path = p/taskpaper
 	url = git://github.com/davidoc/taskpaper.vim.git
+[submodule "p/vim-powerline"]
+	path = p/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
