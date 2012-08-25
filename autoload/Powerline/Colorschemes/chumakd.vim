@@ -42,7 +42,7 @@ call Pl#Hi#Allocate({
 let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 	\ Pl#Hi#Segments(['SPLIT'], {
 		\ 'n': ['white', 'gray2'],
-		\ 'N': ['white', 'gray0'],
+		\ 'N': ['white', 'gray5'],
 		\ 'i': ['white', 'darkestblue'],
 		\ }),
 	\
@@ -56,19 +56,19 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['branch', 'scrollpercent', 'raw', 'filesize'], {
 		\ 'n': ['gray9', 'gray4'],
-		\ 'N': ['gray4', 'gray1'],
+		\ 'N': ['gray3', 'gray8'],
 		\ 'i': ['mediumcyan', 'darkblue'],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo', 'filename'], {
 		\ 'n': ['white', 'gray4', ['bold']],
-		\ 'N': ['gray7', 'gray0', ['bold']],
+		\ 'N': ['gray2', 'gray7', ['bold']],
 		\ 'i': ['white', 'darkblue', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo.filepath'], {
 		\ 'n': ['gray10'],
-		\ 'N': ['gray5'],
+		\ 'N': ['gray2'],
 		\ 'i': ['mediumcyan'],
 		\ }),
 	\
@@ -91,7 +91,7 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['lineinfo'], {
 		\ 'n': ['gray2', 'gray10', ['bold']],
-		\ 'N': ['gray7', 'gray1', ['bold']],
+		\ 'N': ['gray9', 'gray5', ['bold']],
 		\ 'i': ['darkestcyan', 'mediumcyan', ['bold']],
 		\ }),
 	\
@@ -102,7 +102,7 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['lineinfo.line.tot'], {
 		\ 'n': ['gray6'],
-		\ 'N': ['gray5'],
+		\ 'N': ['gray9'],
 		\ 'i': ['darkestcyan'],
 		\ }),
 	\
