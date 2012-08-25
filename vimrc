@@ -29,6 +29,12 @@ colorscheme elflord
 " enable 256 colors in terminal
 "set t_Co=256
 
+" disable Powerline plugin if we don't have full color terminal
+" because it makes status line tatally black in such mode
+if &t_Co == 8
+    let g:Powerline_loaded = 1
+endif
+
 " Search  ---------------------------------------------------------------- {{{2
 "
 set ignorecase
