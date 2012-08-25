@@ -234,3 +234,6 @@
 [submodule "p/vim-powerline"]
 	path = p/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "p/xterm-color-table"]
+	path = p/xterm-color-table
+	url = git://github.com/guns/xterm-color-table.vim.git
