@@ -25,6 +25,13 @@ call Pl#Hi#Allocate({
 	\
 	\ 'brightorange'   : 208,
 	\ 'brightestorange': 214,
+	\ 'mudorange'      : 136,
+	\ 'darkestorange'  : 130,
+	\ 'yellow'         : 226,
+	\ 'darkyellow'     : 178,
+	\ 'orange'         : 172,
+	\ 'orange1'        : 220,
+	\ 'orange2'        : 202,
 	\
 	\ 'gray0'          : 233,
 	\ 'gray1'          : 235,
@@ -56,8 +63,14 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['branch', 'scrollpercent', 'raw', 'filesize'], {
 		\ 'n': ['gray9', 'gray4'],
-		\ 'N': ['gray3', 'gray8'],
+		\ 'N': ['gray3', 'gray7'],
 		\ 'i': ['mediumcyan', 'darkblue'],
+		\ }),
+	\
+	\ Pl#Hi#Segments(['branch'], {
+		\ 'n': ['gray1', 'orange'],
+		\ 'N': ['gray2', 'gray8'],
+		\ 'i': ['mediumcyan', 'darkestblue'],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo', 'filename'], {
