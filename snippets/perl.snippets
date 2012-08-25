@@ -1,0 +1,4 @@
+# use name of current file to name a package
+snippet pkg
+	package `substitute(substitute(expand("%:p:r"), '/', '::', 'g'), '^.*lib::', '', '')`;
+	${1}
