@@ -68,8 +68,8 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['branch'], {
-		\ 'n': ['gray1', 'orange'],
-		\ 'N': ['gray2', 'gray8'],
+		\ 'n': ['orange1', 'gray4', ['bold']],
+		\ 'N': ['gray1', 'gray6'],
 		\ 'i': ['mediumcyan', 'darkestblue'],
 		\ }),
 	\
@@ -114,7 +114,7 @@ let g:Powerline#Colorschemes#chumakd#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['lineinfo.line.tot'], {
-		\ 'n': ['gray6'],
+		\ 'n': ['gray2'],
 		\ 'N': ['gray9'],
 		\ 'i': ['darkestcyan'],
 		\ }),
