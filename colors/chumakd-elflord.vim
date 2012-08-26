@@ -25,6 +25,8 @@ hi Ignore				ctermfg=black		guifg=bg
 hi Error	term=reverse ctermbg=Red ctermfg=White guibg=Red guifg=White
 hi Todo	term=standout ctermbg=Yellow ctermfg=Black guifg=Blue guibg=Yellow
 
+if &t_Co == 256
+
 hi Folded	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 hi FoldColumn	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 hi WildMenu	term=bold	ctermbg=Brown		ctermfg=White
@@ -43,6 +45,8 @@ hi SpellLocal								ctermfg=darkgray
 
 "hi link CursorLine CursorColumn
 "hi link FoldColumn Folded
+
+endif
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
