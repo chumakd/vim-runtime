@@ -24,10 +24,11 @@ syntax enable
 
 " Colors  ---------------------------------------------------------------- {{{2
 "
-colorscheme elflord
-"
 " enable 256 colors in terminal
-"set t_Co=256
+set t_Co=256
+"
+"colorscheme elflord
+colorscheme chumakd-elflord
 
 " disable Powerline plugin if we don't have full color terminal
 " because it makes status line tatally black in such mode
@@ -90,7 +91,9 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 "
 set ruler
 " display in ruler: current: symbol decimal/hex, column, line/total, line in percepts
-set ruf=%43([%3b/0x%-2B]\ Col:%-3v\ Line:%4l/%-4L\ [%P]%)
+"set ruf=%43([%3b/0x%-2B]\ Col:%-3v\ Line:%4l/%-4L\ [%P]%)
+"set ruf=%43([%3b/0x%-2B]\ %y\ Line:%4l:%-2v/\ %-4L\ [%P]%)
+set statusline=%f\ %=\ <\ ch:%3b/0x%-02B\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 set nowrap
 set showcmd
 set wmh=0
@@ -99,6 +102,7 @@ set wildmenu
 set laststatus=2
 " let yourself know what mode you're in
 set showmode
+set fillchars=fold:-
 "set textwidth=100
 " turn on cursor highliting for current window
 "set cursorline
@@ -552,6 +556,14 @@ noremap <silent> ,wf :wincmd _<CR>
 noremap <silent> ,w= :wincmd =<CR>
 " exchange current and pervious windows
 noremap <silent> ,wx :wincmd x<CR>
+" split window
+noremap <silent> ,ws :wincmd s<CR>
+" split window vertically
+noremap <silent> ,wv :wincmd v<CR>
+" edit new empty buffer in current window
+noremap <silent> ,we :enew<CR>
+" split new empty buffer
+noremap <silent> ,wn :new<CR>
 
 " edit buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
@@ -734,6 +746,11 @@ nmap <silent> ,tdm :DelimitMateSwitch<CR>
 "
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-P> <Plug>yankstack_substitute_older_paste
+
+" Commands =============================================================== {{{1
+"
+" show current highlight groups in new buffer
+command Hitest so $VIMRUNTIME/syntax/hitest.vim
 
 " Auto commands  ========================================================= {{{1
 "
