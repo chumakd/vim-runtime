@@ -492,10 +492,20 @@ nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
 
 " find highlight group of symbol under cursor
-"nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-     " \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
-     " \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
-     " \ . ">"<CR>
+nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+      \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
+      \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+      \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
+      \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
+
+" Show syntax highlighting groups for word under cursor
+nmap <S-F9> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " Cmdline editing -------------------------------------------------------- {{{2
 "
@@ -750,7 +760,8 @@ nmap <C-P> <Plug>yankstack_substitute_older_paste
 " Commands =============================================================== {{{1
 "
 " show current highlight groups in new buffer
-command Hitest so $VIMRUNTIME/syntax/hitest.vim
+command Hitest    runtime syntax/hitest.vim
+command Colortest runtime syntax/colortest.vim
 
 " Auto commands  ========================================================= {{{1
 "
