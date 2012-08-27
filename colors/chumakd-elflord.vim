@@ -31,17 +31,27 @@ hi Folded	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 hi FoldColumn	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 hi WildMenu	term=bold	ctermbg=Brown		ctermfg=White
 hi MatchParen			ctermbg=Blue		ctermfg=LightGray
-hi CursorLine	cterm=NONE	ctermbg=23     ctermfg=White
-hi CursorColumn	cterm=NONE	ctermbg=23     ctermfg=White
-hi TabLine	cterm=bold	ctermbg=31     ctermfg=White
-hi TabLineFill	cterm=bold	ctermbg=31     ctermfg=White
-hi TabLineSel	cterm=bold	ctermbg=24     ctermfg=White
-hi Pmenu		cterm=NONE	ctermbg=98     ctermfg=White
-hi PmenuSel		cterm=NONE	ctermbg=92     ctermfg=White
+"hi CursorLine	cterm=NONE	ctermbg=23     ctermfg=White
+"hi CursorColumn	cterm=NONE	ctermbg=23     ctermfg=White
+hi CursorLine	cterm=NONE	ctermbg=25     ctermfg=White
+hi CursorColumn	cterm=NONE	ctermbg=25     ctermfg=White
+hi TabLine	cterm=NONE	ctermbg=235     ctermfg=White
+hi TabLineFill	cterm=NONE	ctermbg=235     ctermfg=White
+hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=85
+"hi Pmenu		cterm=NONE	ctermbg=98     ctermfg=White
+"hi PmenuSel		cterm=NONE	ctermbg=92     ctermfg=White
+hi Pmenu		cterm=NONE	ctermbg=103     ctermfg=White
+hi PmenuSel		cterm=NONE	ctermbg=97     ctermfg=White
 hi SpellBad								   ctermfg=White
 hi SpellCap								   ctermfg=White
 hi SpellRare								ctermfg=White
 hi SpellLocal								ctermfg=darkgray
+"hi Search                   ctermbg=227
+hi Search                   ctermbg=172
+"hi Search                   ctermbg=Cyan
+"hi Search                   ctermbg=214
+"hi Search                   ctermbg=208
+hi Visual                   ctermbg=172     ctermfg=black
 
 "hi link CursorLine CursorColumn
 "hi link FoldColumn Folded
