@@ -43,34 +43,85 @@ hi MatchParen			ctermbg=Blue		ctermfg=LightGray
 hi Folded	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 hi FoldColumn	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
 
-"hi CursorLine	cterm=NONE	ctermbg=23     ctermfg=White
-"hi CursorColumn	cterm=NONE	ctermbg=23     ctermfg=White
-hi CursorLine	cterm=NONE	ctermbg=25     ctermfg=White
-hi CursorColumn	cterm=NONE	ctermbg=25     ctermfg=White
-"hi CursorLine	cterm=NONE	ctermbg=117     ctermfg=black
-"hi CursorColumn	cterm=NONE	ctermbg=117     ctermfg=black
+" VimDiff --------------------------------------------------------------- {{{2
+"
+"hi DiffAdd	    cterm=NONE		ctermbg=122     ctermfg=22
+hi DiffAdd	    cterm=NONE		ctermbg=122     ctermfg=235
+hi DiffDelete	cterm=NONE		ctermbg=182     ctermfg=176
+hi DiffChange	cterm=NONE		ctermbg=69     ctermfg=17
+hi DiffText	    cterm=NONE		ctermbg=178     ctermfg=234
+"hi DiffText	    cterm=bold		ctermbg=63     ctermfg=17
 
-hi TabLine	cterm=NONE	ctermbg=235     ctermfg=White
-hi TabLineFill	cterm=NONE	ctermbg=235     ctermfg=White
-hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=85
+"hi DiffAdd	    cterm=NONE		ctermbg=72     ctermfg=234
+"hi DiffDelete	cterm=NONE		ctermbg=145     ctermfg=139
+"hi DiffChange	cterm=NONE		ctermbg=67     ctermfg=234
+"hi DiffText	    cterm=NONE		ctermbg=178     ctermfg=234
+""hi DiffText	    cterm=bold		ctermbg=61     ctermfg=17
+""hi DiffText	    cterm=bold		ctermbg=67     ctermfg=227
 
+" Pmenu ----------------------------------------------------------------- {{{2
+"
 hi Pmenu		cterm=NONE	ctermbg=103     ctermfg=black
 hi PmenuSel		cterm=NONE	ctermbg=97     ctermfg=White
 "hi Pmenu		cterm=NONE	ctermbg=37     ctermfg=black
 "hi PmenuSel		cterm=NONE	ctermbg=26     ctermfg=White
+hi PmenuSbar								ctermfg=black
 
-hi SpellBad								   ctermfg=White
-hi SpellCap								   ctermfg=White
+" Spell ----------------------------------------------------------------- {{{2
+hi SpellBad				ctermbg=124				   ctermfg=White
+hi SpellCap				ctermbg=25				   ctermfg=White
 hi SpellRare								ctermfg=White
-hi SpellLocal								ctermfg=darkgray
+hi SpellLocal			ctermbg=44					ctermfg=black
 
+" Tabline --------------------------------------------------------------- {{{2
+"
+hi TabLine	cterm=NONE	ctermbg=235     ctermfg=White
+hi TabLineFill	cterm=NONE	ctermbg=235     ctermfg=White
+hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=85
+
+" Cursor ---------------------------------------------------------------- {{{2
+"
+"hi CursorLine	cterm=NONE	ctermbg=23     ctermfg=White
+"hi CursorColumn	cterm=NONE	ctermbg=23     ctermfg=White
+
+"hi CursorLine	cterm=NONE	ctermbg=25     ctermfg=White
+"hi CursorColumn	cterm=NONE	ctermbg=25     ctermfg=White
+
+"hi CursorLine	cterm=NONE	ctermbg=117     ctermfg=black
+"hi CursorColumn	cterm=NONE	ctermbg=117     ctermfg=black
+
+hi CursorLine	cterm=NONE	ctermbg=237     ctermfg=White
+hi CursorColumn	cterm=NONE	ctermbg=237     ctermfg=White
+
+" Search ---------------------------------------------------------------- {{{2
+"
 "hi Search                   ctermbg=227
 hi Search                   ctermbg=172
 "hi Search                   ctermbg=Cyan
 "hi Search                   ctermbg=214
 "hi Search                   ctermbg=208
 
-hi Visual                   ctermbg=172     ctermfg=black
+" Visual ---------------------------------------------------------------- {{{2
+"
+"hi Visual                   ctermbg=172     ctermfg=black
+hi Visual                   ctermbg=247     ctermfg=black
+
+" Code ------------------------------------------------------------------ {{{2
+"
+
+" default value for Comment is 6 (cyan)
+hi Comment        cterm=NONE                ctermfg=30
+
+hi Identifier     cterm=NONE
+hi Special        cterm=NONE                ctermfg=89
+hi PreProc        cterm=NONE                ctermfg=45
+hi Type        cterm=NONE                   ctermfg=48
+
+" Other ----------------------------------------------------------------- {{{2
+"
+hi Error        cterm=NONE   ctermbg=196             ctermfg=White
+"hi Tcterm=
+
 
 "hi link CursorLine CursorColumn
 "hi link FoldColumn Folded
