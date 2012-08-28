@@ -243,3 +243,6 @@
 [submodule "p/vim-easymotion"]
 	path = p/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "p/github-theme"]
+	path = p/github-theme
+	url = git://github.com/vim-scripts/github-theme.git
