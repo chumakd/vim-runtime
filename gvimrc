@@ -40,7 +40,7 @@ set guioptions +=c
 set vb t_vb=
 
 " set color shceme
-colorscheme local-desertEx-dchumak-edition
+colorscheme chumakd-desertEx
 
 " set different cursor color when local keymap is used
 highlight lCursor guifg=NONE guibg=Cyan
