@@ -388,6 +388,11 @@ let g:Powerline_colorscheme = 'chumakd'
 " add total line number segment after lineinfo
 "call Pl#Theme#InsertSegment('charcode', 'before', 'scrollpercent')
 
+" EasyMotion ------------------------------------------------------------- {{{2
+"
+hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
+hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
