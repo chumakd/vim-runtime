@@ -29,15 +29,22 @@ if &t_Co == 256
 
 hi Normal   ctermfg=LightGray    ctermbg=black		guifg=LightGray			guibg=black
 
-hi StatusLine	cterm=NONE		ctermbg=LightGray		ctermfg=black
+hi StatusLine	cterm=NONE		ctermbg=235		ctermfg=White
+"hi StatusLine	cterm=NONE		ctermbg=LightGray		ctermfg=black
 hi StatusLineNC	cterm=NONE		ctermbg=DarkGray		ctermfg=black
 
 hi VertSplit	cterm=NONE		ctermbg=DarkGray		ctermfg=black
 
-hi Title	                                            ctermfg=219
+hi Directory                                            ctermfg=45
+hi Title	                                            ctermfg=213
 hi WarningMsg	                                        ctermfg=211
-hi WildMenu	term=bold	ctermbg=96		ctermfg=White
+
+hi WildMenu	cterm=bold	ctermbg=232		ctermfg=41
+"hi WildMenu	cterm=bold	ctermbg=148		ctermfg=233
+"hi WildMenu	cterm=bold	ctermbg=235		ctermfg=White
+"hi WildMenu	term=bold	ctermbg=96		ctermfg=White
 "hi WildMenu	term=bold	ctermbg=130		ctermfg=White
+
 hi MatchParen			ctermbg=Blue		ctermfg=LightGray
 
 hi Folded	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
@@ -77,7 +84,8 @@ hi SpellLocal			ctermbg=44					ctermfg=black
 "
 hi TabLine	cterm=NONE	ctermbg=235     ctermfg=White
 hi TabLineFill	cterm=NONE	ctermbg=235     ctermfg=White
-hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=85
+"hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=85
+hi TabLineSel	cterm=bold	ctermbg=232     ctermfg=41
 
 " Cursor ---------------------------------------------------------------- {{{2
 "
@@ -120,11 +128,12 @@ hi Type        cterm=NONE                   ctermfg=48
 " Other ----------------------------------------------------------------- {{{2
 "
 hi Error        cterm=NONE   ctermbg=196             ctermfg=White
-"hi Tcterm=
 
 
-"hi link CursorLine CursorColumn
-"hi link FoldColumn Folded
+" this color groups already have settings so we need to use ! to override them
+" otherwise they will not have any effect
+"hi! link CursorLine CursorColumn
+"hi! link FoldColumn Folded
 
 endif
 
