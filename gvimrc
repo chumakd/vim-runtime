@@ -35,6 +35,8 @@ set guioptions -=m
 "
 " use console dialogs instead of popup dialogs for simple choices.
 set guioptions +=c
+" disable gui tab line, use text tabline instead
+set guioptions -=e
 
 " disable bell
 set vb t_vb=
