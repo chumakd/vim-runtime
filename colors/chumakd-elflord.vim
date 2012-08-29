@@ -133,6 +133,24 @@ hi Type        cterm=NONE                   ctermfg=48
 "hi PreCondit        cterm=NONE                   ctermfg=210
 hi PreCondit        cterm=NONE                   ctermfg=174
 
+" User ------------------------------------------------------------------ {{{2
+"
+"hi! link User1 TabLineSel
+"hi! link User2 TabLine
+"hi User1        ctermfg=213
+"hi User2        ctermfg=213
+
+"hi! link User3 TabLineSel
+"hi! link User4 TabLine
+"hi User3        ctermfg=160
+"hi User4        ctermfg=160
+
+hi User1	cterm=bold	ctermbg=232     ctermfg=213
+hi User2	cterm=NONE	ctermbg=235     ctermfg=213
+
+hi User3	cterm=bold	ctermbg=232     ctermfg=160
+hi User4	cterm=NONE	ctermbg=235     ctermfg=160
+
 " Other ----------------------------------------------------------------- {{{2
 "
 "hi Error        cterm=NONE   ctermbg=196             ctermfg=White
