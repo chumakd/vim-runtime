@@ -127,9 +127,11 @@ hi Comment        cterm=NONE                ctermfg=30
 
 hi Identifier     cterm=NONE
 hi Special        cterm=NONE                ctermfg=89
-hi PreProc        cterm=NONE                ctermfg=45
+"hi PreProc        cterm=NONE                ctermfg=45
+hi PreProc        cterm=NONE                ctermfg=32
 hi Type        cterm=NONE                   ctermfg=48
-hi PreCondit        cterm=NONE                   ctermfg=210
+"hi PreCondit        cterm=NONE                   ctermfg=210
+hi PreCondit        cterm=NONE                   ctermfg=174
 
 " Other ----------------------------------------------------------------- {{{2
 "
