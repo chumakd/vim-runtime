@@ -1256,8 +1256,12 @@ function MyTabLabel(n)
     let l:label .= ' '
 
     " append file name with shortened path
-    let l:file_name = pathshorten( simplify( bufname( l:buf_list[l:win_nr - 1] ) ) )
-    let l:label .= (l:file_name == '' ? '[No Name]' : l:file_name)
+    let l:cur_buf =  l:buf_list[l:win_nr - 1]
+    let l:file_name = pathshorten( simplify( bufname(l:cur_buf) ) )
+    let l:buf_type = getbufvar(l:cur_buf, '&buftype')
+    let l:label .= l:file_name != ''          ? l:file_name
+                 \ : l:buf_type == 'quickfix' ? '[Quickfix]'
+                 \ :                            '[No Name]'
 
     return l:label . ' '
 
