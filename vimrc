@@ -376,7 +376,7 @@ let delimitMate_offByDefault = 1
 " Tagbar ----------------------------------------------------------------- {{{2
 "
 let g:tagbar_left = 1
-let g:tagbar_width = 35
+let g:tagbar_width = 33
 
 " Powerline -------------------------------------------------------------- {{{2
 "
