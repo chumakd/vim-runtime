@@ -560,11 +560,21 @@ noremap <silent> <C-Left>   <C-W><
 noremap <silent> <C-Up>     <C-W>+
 noremap <silent> <C-Down>   <C-W>-
 noremap <silent> <C-Right>  <C-W>>
+
 " adjust window size by five
-noremap <silent> <M-Left>   :vertical resize -5<CR>
-noremap <silent> <M-Up>     :resize +5<CR>
-noremap <silent> <M-Down>   :resize -5<CR>
-noremap <silent> <M-Right>  :vertical resize +5<CR>
+"noremap <silent> <M-Left>   :vertical resize -5<CR>
+"noremap <silent> <M-Up>     :resize +5<CR>
+"noremap <silent> <M-Down>   :resize -5<CR>
+"noremap <silent> <M-Right>  :vertical resize +5<CR>
+
+" switch between tabs
+noremap <silent> <M-Up>     :tabprev<CR>
+noremap <silent> <M-Down>   :tabnext<CR>
+
+" move tabs
+noremap <silent> <M-Right>  :exec 'silent! tabmove ' . tabpagenr()<CR>
+noremap <silent> <M-Left>  :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
+
 " switch window with full expand
 nmap <C-J> <C-W>j<C-W>_
 nmap <C-K> <C-W>k<C-W>_
@@ -1217,6 +1227,70 @@ nmap ,pr :call MyPerlrun()<CR>
 
 " tabline  --------------------------------------------------------------- {{{2
 "
+function MyTabLabel(n)
+
+    let l:tab_num = tabpagenr()
+    let l:win_nr = tabpagewinnr(a:n)
+    let l:buf_list = tabpagebuflist(a:n)
+
+    " select the highlighting for tab number
+    let l:label = (a:n == l:tab_num ? '%1*' : '%2*') . ' '
+
+    " add tab's serial number followed by number of opened windows in tabpage
+    let l:label .= a:n . ':' . len( l:buf_list )
+
+    " add '+' if one of the buffers in the tab page is modified
+    for l:buf_num in l:buf_list
+        if getbufvar(l:buf_num, "&modified")
+            " select the highlighting for modified flag
+            let l:label .= (a:n == l:tab_num ? '%3*' : '%4*')
+            let l:label .= '+'
+            break
+        endif
+    endfor
+
+    " select the highlighting for main text
+    let l:label .= (a:n == l:tab_num ? '%#TabLineSel#' : '%#TabLine#')
+
+    " add delimiter
+    let l:label .= ' '
+
+    " append file name with shortened path
+    let l:file_name = pathshorten( simplify( bufname( l:buf_list[l:win_nr - 1] ) ) )
+    let l:label .= (l:file_name == '' ? '[No Name]' : l:file_name)
+
+    return l:label . ' '
+
+endfunction
+
+function MyTabLine()
+    let s = ''
+    for i in range(tabpagenr('$'))
+        " set the tab page number (for mouse clicks)
+        let s .= '%' . (i + 1) . 'T'
+
+        " the label is made by MyTabLabel()
+        "let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+        let s .= MyTabLabel(i + 1)
+
+    endfor
+
+    " after the last tab fill with TabLineFill and reset tab page nr
+    let s .= '%#TabLineFill#%T'
+
+    " right-align the label to close the current tab page
+    if tabpagenr('$') > 1
+        "let s .= '%=%#TabLine#%999Xclose'
+        let s .= '%=%#TabLine#%999XX'
+    endif
+
+    return s
+endfunction
+
+set tabline=%!MyTabLine()
+
+" various tabline funcs  ------------------------------------------------- {{{3
+"
 " function MyTabline()
 "   let label = v:lnum
 "   let label .= ') '
@@ -1346,7 +1420,7 @@ nmap ,pr :call MyPerlrun()<CR>
 "    set tabline=%!MyTabLine()
 "    set guitablabel=%!MyGuiTabLabel()
 
-"======================================================================
+" modeline =============================================================== {{{1
 " vim: set fdm=marker:
 "
 " 1}}}
