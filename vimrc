@@ -353,7 +353,7 @@ let g:gundo_width = 75
 
 " CSApprox --------------------------------------------------------------- {{{2
 "
-" disabled due to Konsole uses 8-colors terminal by default
+" disabled to not slowdown vim start-up time
 let g:CSApprox_loaded = 1
 " tune color palette for Konsole
 let g:CSApprox_konsole = 1
@@ -435,6 +435,9 @@ nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
 
 " toggle scrollbind
 nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
+
+" toggle read-only mode
+nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> ,cd :lcd %:h<CR>
