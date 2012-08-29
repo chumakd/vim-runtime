@@ -119,15 +119,19 @@ hi Visual                   ctermbg=247     ctermfg=black
 
 " default value for Comment is 6 (cyan)
 hi Comment        cterm=NONE                ctermfg=30
+"hi Comment        cterm=NONE                ctermfg=241
 
 hi Identifier     cterm=NONE
 hi Special        cterm=NONE                ctermfg=89
 hi PreProc        cterm=NONE                ctermfg=45
 hi Type        cterm=NONE                   ctermfg=48
+hi PreCondit        cterm=NONE                   ctermfg=210
 
 " Other ----------------------------------------------------------------- {{{2
 "
-hi Error        cterm=NONE   ctermbg=196             ctermfg=White
+"hi Error        cterm=NONE   ctermbg=196             ctermfg=White
+hi Error        cterm=NONE   ctermbg=124             ctermfg=White
+hi lCursor        cterm=NONE   ctermbg=51             ctermfg=black
 
 
 " this color groups already have settings so we need to use ! to override them
