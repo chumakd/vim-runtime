@@ -47,8 +47,12 @@ hi WildMenu	cterm=bold	ctermbg=232		ctermfg=41
 
 hi MatchParen			ctermbg=Blue		ctermfg=LightGray
 
-hi Folded	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
-hi FoldColumn	term=bold	ctermbg=black		ctermfg=Cyan	guifg=#80a0ff
+" Folds ----------------------------------------------------------------- {{{2
+"
+"hi Folded	term=bold	ctermbg=NONE		ctermfg=Cyan	guifg=#80a0ff
+"hi FoldColumn	term=bold	ctermbg=NONE		ctermfg=Cyan	guifg=#80a0ff
+hi Folded	term=bold	ctermbg=NONE		ctermfg=243	guifg=#80a0ff
+hi FoldColumn	term=bold	ctermbg=NONE		ctermfg=243	guifg=#80a0ff
 
 " VimDiff --------------------------------------------------------------- {{{2
 "
@@ -133,6 +137,15 @@ hi PreCondit        cterm=NONE                   ctermfg=210
 hi Error        cterm=NONE   ctermbg=124             ctermfg=White
 hi lCursor        cterm=NONE   ctermbg=51             ctermfg=black
 
+" Plugins --------------------------------------------------------------- {{{2
+"
+hi ShowMarksHLdefault	    cterm=NONE   ctermbg=26					ctermfg=White
+
+hi!  link ShowMarksHLl	 ShowMarksHLdefault
+hi!  link ShowMarksHLu	 ShowMarksHLdefault
+hi!  link ShowMarksHLo	 ShowMarksHLdefault
+hi!  link ShowMarksHLm	 ShowMarksHLdefault
+hi!  link ShowMarksHLlz    ShowMarksHLdefault
 
 " this color groups already have settings so we need to use ! to override them
 " otherwise they will not have any effect
