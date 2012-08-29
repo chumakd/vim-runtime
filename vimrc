@@ -102,7 +102,9 @@ set wildmenu
 set laststatus=2
 " let yourself know what mode you're in
 set showmode
-set fillchars=fold:-
+" disable any fillchars for folds and vertical splits
+set fillchars=fold:\ ,vert:\ 
+"set fillchars=fold:-
 "set textwidth=100
 " turn on cursor highliting for current window
 "set cursorline
