@@ -125,11 +125,16 @@ hi Visual                   ctermbg=247     ctermfg=black
 hi Comment        cterm=NONE                ctermfg=30
 "hi Comment        cterm=NONE                ctermfg=241
 
-hi Identifier     cterm=NONE
+" default value of Identifier is 14 (lightcyan), which is very close to 51
+hi Identifier     cterm=NONE            ctermfg=80
+" default value of Statement is 11 (yellow or lightbrown), which is very close to 227
+hi Statement        cterm=NONE               ctermfg=191
+hi Constant        cterm=NONE               ctermfg=212
 hi Special        cterm=NONE                ctermfg=89
 "hi PreProc        cterm=NONE                ctermfg=45
 hi PreProc        cterm=NONE                ctermfg=32
-hi Type        cterm=NONE                   ctermfg=48
+"hi Type        cterm=NONE                   ctermfg=48
+hi Type        cterm=NONE                   ctermfg=42
 "hi PreCondit        cterm=NONE                   ctermfg=210
 hi PreCondit        cterm=NONE                   ctermfg=174
 
@@ -156,6 +161,7 @@ hi User4	cterm=NONE	ctermbg=235     ctermfg=160
 "hi Error        cterm=NONE   ctermbg=196             ctermfg=White
 hi Error        cterm=NONE   ctermbg=124             ctermfg=White
 hi lCursor        cterm=NONE   ctermbg=51             ctermfg=black
+hi SignColumn   cterm=bold      ctermbg=NONE        ctermfg=202
 
 " Plugins --------------------------------------------------------------- {{{2
 "
