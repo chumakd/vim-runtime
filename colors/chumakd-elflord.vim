@@ -29,6 +29,11 @@ if &t_Co == 256
 
 hi Normal   ctermfg=LightGray    ctermbg=black		guifg=LightGray			guibg=black
 
+hi LineNr  cterm=NONE  ctermbg=NONE  ctermfg=191
+"hi link LineNr Statement
+
+" StatusLine ------------------------------------------------------------ {{{2
+"
 hi StatusLine	cterm=NONE		ctermbg=235		ctermfg=White
 "hi StatusLine	cterm=NONE		ctermbg=LightGray		ctermfg=black
 hi StatusLineNC	cterm=NONE		ctermbg=DarkGray		ctermfg=black
