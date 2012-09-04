@@ -246,3 +246,6 @@
 [submodule "p/github-theme"]
 	path = p/github-theme
 	url = git://github.com/vim-scripts/github-theme.git
+[submodule "p/syntastic"]
+	path = p/syntastic
+	url = git://github.com/scrooloose/syntastic.git
