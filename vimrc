@@ -94,7 +94,8 @@ set ruler
 "set ruf=%43([%3b/0x%-2B]\ Col:%-3v\ Line:%4l/%-4L\ [%P]%)
 "set ruf=%43([%3b/0x%-2B]\ %y\ Line:%4l:%-2v/\ %-4L\ [%P]%)
 "set statusline=%f\ %=\ <\ ch:%3b/0x%-02B\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
-set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
+"set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
+set statusline=%h%w%q\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 set nowrap
 set showcmd
 set wmh=0
