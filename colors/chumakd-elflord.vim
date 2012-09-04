@@ -96,7 +96,7 @@ hi Visual                   ctermfg=black  ctermbg=247
 hi Comment    cterm=NONE  ctermfg=30
 
 " default value of Identifier is 14 (lightcyan), which is very close to 51
-hi Identifier cterm=NONE ctermfg=80
+hi Identifier cterm=NONE  ctermfg=80
 
 " default value of Statement is 11 (yellow or lightbrown), which is very close to 227
 hi Statement  cterm=NONE  ctermfg=191
