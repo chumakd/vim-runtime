@@ -400,6 +400,16 @@ let g:Powerline_colorscheme = 'chumakd'
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
 hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
+" Syntastic -------------------------------------------------------------- {{{2
+"
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_loc_list=1
+
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
 " Mappings =============================================================== {{{1
 "
 " Shortened commands ----------------------------------------------------- {{{2
