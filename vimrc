@@ -383,17 +383,21 @@ let g:tagbar_sort = 0
 
 " Powerline -------------------------------------------------------------- {{{2
 "
-" disable powerline plugin
+" temporarily disable powerline plugin because it has several look&feel issues
 let g:Powerline_loaded = 1
+
+" options
 "let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
 let g:Powerline_stl_path_style = 'relative'
 
+" theme and colors
 "let g:Powerline_theme = 'skwp'
 let g:Powerline_colorscheme = 'chumakd'
 
 " add total line number segment after lineinfo
 "call Pl#Theme#InsertSegment('charcode', 'before', 'scrollpercent')
+"call Pl#Theme#ReplaceSegment('lineinfo', 'linesinfo:lineinfo')
 
 " EasyMotion ------------------------------------------------------------- {{{2
 "
