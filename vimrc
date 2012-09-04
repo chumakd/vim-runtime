@@ -1,5 +1,5 @@
 " Options ================================================================ {{{1
-"
+
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -1449,6 +1449,6 @@ set tabline=%!MyTabLine()
 "    set guitablabel=%!MyGuiTabLabel()
 
 " modeline =============================================================== {{{1
-" vim: set fdm=marker:
+" vim: foldmethod=marker
 "
 " 1}}}
