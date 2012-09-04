@@ -379,9 +379,12 @@ let delimitMate_offByDefault = 1
 "
 let g:tagbar_left = 1
 let g:tagbar_width = 33
+let g:tagbar_sort = 0
 
 " Powerline -------------------------------------------------------------- {{{2
 "
+" disable powerline plugin
+let g:Powerline_loaded = 1
 "let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
 let g:Powerline_stl_path_style = 'relative'
@@ -822,6 +825,11 @@ autocmd BufReadPost *.doc %!antiword "%"
 autocmd BufRead * match Todo /\s\+$/
 autocmd BufNew  * match Todo /\s\+$/
 "autocmd BufAdd  * match Todo /\s\+$/
+
+" enable relative line numbers in tagbar window
+if version >= 703
+  au Filetype tagbar nested :set relativenumber
+endif
 
 " Abbreviations ========================================================== {{{1
 "
