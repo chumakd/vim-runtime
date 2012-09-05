@@ -215,22 +215,16 @@ set sessionoptions=tabpages
 
 " Plugin options ========================================================= {{{1
 
-" bash syntax ------------------------------------------------------------ {{{2
+" Alternate -------------------------------------------------------------- {{{2
+"
+let g:alternateNoDefaultAlternate=0
+let g:alternateRelativeFiles=1
+"let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
+
+" Bash syntax ------------------------------------------------------------ {{{2
 "
 let is_bash = 1
 let g:sh_fold_enabled= 1
-
-" perl syntax ------------------------------------------------------------ {{{2
-"
-let perl_fold = 1
-let perl_fold_blocks = 1
-
-" enable syntax highlighting for perl POD documentation
-let perl_include_pod = 1
-
-" file explorer ---------------------------------------------------------- {{{2
-"
-let g:netrw_altv = 1
 
 " BufExplorer ------------------------------------------------------------ {{{2
 "
@@ -241,22 +235,50 @@ let g:bufExplorerShowRelativePath=1
 " do not go to active window.
 let g:bufExplorerFindActive=0
 
-" Taglist ---------------------------------------------------------------- {{{2
+" CCTree ----------------------------------------------------------------- {{{2
 "
-let Tlist_Show_One_File = 1
-let Tlist_WinWidth = 35
+let g:CCTreeOrientation = "rightbelow"
+let g:CCTreeRecursiveDepth = 3
+let g:CCTreeMinVisibleDepth = 1
+let g:CCTreeWindowMinWidth = -1
+"let g:CCTreeDisplayMode = 2
+let g:CCTreeWindowVertical = 1
 
-" Project ---------------------------------------------------------------- {{{2
+" Clang_complete --------------------------------------------------------- {{{2
 "
-let g:proj_window_width = 32
-let Tlist_Show_One_File = 1
-"let g:proj_flags .= "g"
+"let g:clang_complete_auto = 0
+let g:clang_omnicppcomplete_compliance = 1
 
-" Omnicppcomplete -------------------------------------------------------- {{{2
+" Conque shell ----------------------------------------------------------- {{{2
 "
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_NamespaceSearch = 2
-let OmniCpp_ShowPrototypeInAbbr = 1
+let g:ConqueTerm_Color = 0
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_CWInsert = 1
+
+" CSApprox --------------------------------------------------------------- {{{2
+"
+
+" disabled to not slowdown vim start-up time
+let g:CSApprox_loaded = 1
+
+" tune color palette for Konsole
+let g:CSApprox_konsole = 1
+
+" Cscope_quickfix -------------------------------------------------------- {{{2
+"
+let g:Cscope_OpenQuickfixWindow = 1
+let g:Cscope_JumpError = 0
+let g:Cscope_PopupMenu = 0
+let g:Cscope_ToolsMenu = 0
+
+" DelimitMate ------------------------------------------------------------ {{{2
+"
+let delimitMate_offByDefault = 1
+
+" EasyMotion ------------------------------------------------------------- {{{2
+"
+hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
+hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
 " EnhancedCommentify ----------------------------------------------------- {{{2
 "
@@ -266,16 +288,40 @@ let g:EnhCommentifyRespectIndent = 'y'
 "let g:EnhCommentifyPretty = 'y'
 let g:EnhCommentifyMultiPartBlocks = 'y'
 
-" Showmarks -------------------------------------------------------------- {{{2
+" File explorer ---------------------------------------------------------- {{{2
 "
-let g:showmarks_enable = 0
-let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let g:netrw_altv = 1
+
+" GetLatestVimScripts ---------------------------------------------------- {{{2
+"
+let g:GetLatestVimScripts_allowautoinstall= 0
+
+" Gundo ------------------------------------------------------------------ {{{2
+"
+let g:gundo_width = 75
+"let g:gundo_preview_bottom = 1
+
+" Latex suite ------------------------------------------------------------ {{{2
+"
+let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_MultipleCompileFormats = "pdf,dvi"
+let g:Tex_ViewRule_dvi = "okular"
+let g:Tex_ViewRule_ps  = "okular"
+"let g:Tex_ViewRule_pdf = "acroread"
+let g:Tex_ViewRule_pdf = "okular"
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " MRU -------------------------------------------------------------------- {{{2
 "
 let MRU_Max_Entries = 1000
 let MRU_Add_Menu = 0
 let MRU_Auto_Close = 1
+
+" MultipleSearch --------------------------------------------------------- {{{2
+"
+let g:MultipleSearchMaxColors=8
+let g:MultipleSearchColorSequence="red,blue,green,magenta,cyan,gray,brown,yellow"
+let g:MultipleSearchTextColorSequence="white,white,black,white,black,black,white,black"
 
 " NERDTree --------------------------------------------------------------- {{{2
 "
@@ -294,131 +340,23 @@ let NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
             " \ '\.embed\.manifest$', '\.embed\.manifest.res$',
             " \ '\.intermediate\.manifest$', '^mt.dep$' ]
 
-" Securemodeline --------------------------------------------------------- {{{2
+" Omnicppcomplete -------------------------------------------------------- {{{2
 "
-let g:secure_modelines_verbose=1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_NamespaceSearch = 2
+let OmniCpp_ShowPrototypeInAbbr = 1
 
-" Alternate -------------------------------------------------------------- {{{2
+" Perl syntax ------------------------------------------------------------ {{{2
 "
-let g:alternateNoDefaultAlternate=0
-let g:alternateRelativeFiles=1
-"let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
+let perl_fold = 1
+let perl_fold_blocks = 1
 
-" MultipleSearch --------------------------------------------------------- {{{2
-"
-let g:MultipleSearchMaxColors=8
-let g:MultipleSearchColorSequence="red,blue,green,magenta,cyan,gray,brown,yellow"
-let g:MultipleSearchTextColorSequence="white,white,black,white,black,black,white,black"
-
-" YankRing --------------------------------------------------------------- {{{2
-"
-
-" ommit single letter deletes
-let g:yankring_min_element_length = 2
-
-" don't store yankring contents between vim restarts
-"let g:yankring_persist = 0
-
-" don't share yankring contents between different instances of vim
-"let g:yankring_share_between_instances = 0
+" enable syntax highlighting for perl POD documentation
+let perl_include_pod = 1
 
 " Perl-support ----------------------------------------------------------- {{{2
 "
 let g:Perl_Ctrl_j   = 'off'
-
-" vim-r-plugin ----------------------------------------------------------- {{{2
-"
-let vimrplugin_r_args = "--no-save --quiet"
-let vimrplugin_term = "xterm"
-let vimrplugin_vimpager = "horizontal"
-let vimrplugin_screenplugin = 0
-let vimrplugin_conqueplugin = 1
-
-" disable the underscore replacement with <-
-let vimrplugin_underscore = 0
-
-" open .Rout files in a split window
-let vimrplugin_notab = 1
-
-" show list elements in object browser
-"let vimrplugin_open_list = 1
-
-" Conque shell ----------------------------------------------------------- {{{2
-"
-let g:ConqueTerm_Color = 0
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CWInsert = 1
-
-" Xml -------------------------------------------------------------------- {{{2
-"
-let g:xml_syntax_folding = 1
-
-" Latex suite ------------------------------------------------------------ {{{2
-"
-let g:Tex_DefaultTargetFormat = "pdf"
-let g:Tex_MultipleCompileFormats = "pdf,dvi"
-let g:Tex_ViewRule_dvi = "okular"
-let g:Tex_ViewRule_ps  = "okular"
-"let g:Tex_ViewRule_pdf = "acroread"
-let g:Tex_ViewRule_pdf = "okular"
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
-
-" GetLatestVimScripts ---------------------------------------------------- {{{2
-"
-let g:GetLatestVimScripts_allowautoinstall= 0
-
-" CCTree ----------------------------------------------------------------- {{{2
-"
-let g:CCTreeOrientation = "rightbelow"
-let g:CCTreeRecursiveDepth = 3
-let g:CCTreeMinVisibleDepth = 1
-let g:CCTreeWindowMinWidth = -1
-"let g:CCTreeDisplayMode = 2
-let g:CCTreeWindowVertical = 1
-
-" cscope_quickfix -------------------------------------------------------- {{{2
-"
-let g:Cscope_OpenQuickfixWindow = 1
-let g:Cscope_JumpError = 0
-let g:Cscope_PopupMenu = 0
-let g:Cscope_ToolsMenu = 0
-
-" SessionMan ------------------------------------------------------------- {{{2
-"
-let sessionman_save_on_exit = 0
-
-" Gundo ------------------------------------------------------------------ {{{2
-"
-let g:gundo_width = 75
-"let g:gundo_preview_bottom = 1
-
-" CSApprox --------------------------------------------------------------- {{{2
-"
-
-" disabled to not slowdown vim start-up time
-let g:CSApprox_loaded = 1
-
-" tune color palette for Konsole
-let g:CSApprox_konsole = 1
-
-" Zencoding -------------------------------------------------------------- {{{2
-"
-let g:user_zen_leader_key = '\z'
-
-" clang_complete --------------------------------------------------------- {{{2
-"
-"let g:clang_complete_auto = 0
-let g:clang_omnicppcomplete_compliance = 1
-
-" DelimitMate ------------------------------------------------------------ {{{2
-"
-let delimitMate_offByDefault = 1
-
-" Tagbar ----------------------------------------------------------------- {{{2
-"
-let g:tagbar_left = 1
-let g:tagbar_width = 33
-let g:tagbar_sort = 0
 
 " Powerline -------------------------------------------------------------- {{{2
 "
@@ -439,10 +377,41 @@ let g:Powerline_colorscheme = 'chumakd'
 "call Pl#Theme#InsertSegment('charcode', 'before', 'scrollpercent')
 "call Pl#Theme#ReplaceSegment('lineinfo', 'linesinfo:lineinfo')
 
-" EasyMotion ------------------------------------------------------------- {{{2
+" Project ---------------------------------------------------------------- {{{2
 "
-hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
-hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
+let g:proj_window_width = 32
+let Tlist_Show_One_File = 1
+"let g:proj_flags .= "g"
+
+" R ------------------------------------------------------------------ {{{2
+"
+let vimrplugin_r_args = "--no-save --quiet"
+let vimrplugin_term = "xterm"
+let vimrplugin_vimpager = "horizontal"
+let vimrplugin_screenplugin = 0
+let vimrplugin_conqueplugin = 1
+
+" disable the underscore replacement with <-
+let vimrplugin_underscore = 0
+
+" open .Rout files in a split window
+let vimrplugin_notab = 1
+
+" show list elements in object browser
+"let vimrplugin_open_list = 1
+
+" Securemodeline --------------------------------------------------------- {{{2
+"
+let g:secure_modelines_verbose=1
+
+" SessionMan ------------------------------------------------------------- {{{2
+"
+let sessionman_save_on_exit = 0
+
+" Showmarks -------------------------------------------------------------- {{{2
+"
+let g:showmarks_enable = 0
+let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 " Syntastic -------------------------------------------------------------- {{{2
 "
@@ -453,6 +422,37 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
+
+" Tagbar ----------------------------------------------------------------- {{{2
+"
+let g:tagbar_left = 1
+let g:tagbar_width = 33
+let g:tagbar_sort = 0
+
+" Taglist ---------------------------------------------------------------- {{{2
+"
+let Tlist_Show_One_File = 1
+let Tlist_WinWidth = 35
+
+" Xml -------------------------------------------------------------------- {{{2
+"
+let g:xml_syntax_folding = 1
+
+" YankRing --------------------------------------------------------------- {{{2
+"
+
+" ommit single letter deletes
+let g:yankring_min_element_length = 2
+
+" don't store yankring contents between vim restarts
+"let g:yankring_persist = 0
+
+" don't share yankring contents between different instances of vim
+"let g:yankring_share_between_instances = 0
+
+" Zencoding -------------------------------------------------------------- {{{2
+"
+let g:user_zen_leader_key = '\z'
 
 " Mappings =============================================================== {{{1
 
