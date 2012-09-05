@@ -546,11 +546,14 @@ nmap <silent> \sl :SessionList<CR>
 vmap ,b1 :call BlockDiff_GetBlock1()<CR>
 vmap ,b2 :call BlockDiff_GetBlock2()<CR>
 
-" c (cd/cctree) ~~~~~~~~~~~~~ {{{3
+" c (cd/cscope/cctree) ~~~~~~ {{{3
 "
 
 " cd to the directory containing the file in the buffer
 nmap <silent> ,cd :lcd %:h<CR>
+
+" reload cscope database
+nmap <silent> ,csr :call MyCscopeReload()<CR>
 
 " CCTree
 nmap <silent> ,ctl :CCTreeLoadDB<CR>
@@ -598,6 +601,20 @@ nmap ,m :make<CR>
 " p (perl) ~~~~~~~~~~~~~~~~~~ {{{3
 "
 
+" perlcritic
+nmap ,pc1 :call MyPerlcritic(1)<CR>
+nmap ,pc2 :call MyPerlcritic(2)<CR>
+nmap ,pc3 :call MyPerlcritic(3)<CR>
+nmap ,pc4 :call MyPerlcritic(4)<CR>
+nmap ,pc5 :call MyPerlcritic(5)<CR>
+
+" perl make (compile only)
+nmap ,pm :call MyPerlcompile()<CR>
+
+" perl run (execute script in current buffer)
+nmap ,pr :call MyPerlrun()<CR>
+
+" perltidy
 nmap ,pt :.!perltidy<CR>
 vmap ,pt :!perltidy<CR>
 
@@ -627,6 +644,14 @@ nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 " t (toggles) ~~~~~~~~~~~~~~~ {{{3
 "
 
+" toggle textwidth column highlighting
+if version >= 703
+    nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
+endif
+
+" toggle doxygen comments highlighting
+nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
+
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
 
@@ -645,6 +670,9 @@ nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 
+" toggle fold marker between syntax and git merge markers
+nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
+
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
 
@@ -653,6 +681,12 @@ nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 
 " toggle read-only mode
 nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
+
+nmap <silent> ,tt :call MyToggleTabstop()<CR>
+
+nmap <silent> ,tq :call MyToggleQuickFix()<CR>
+
+nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 
 " u (update) ~~~~~~~~~~~~~~~~ {{{3
 "
@@ -835,21 +869,15 @@ nmap <F6>   :GundoToggle<CR>
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
 
+" Show syntax highlighting groups for word under cursor
+nmap <S-F9> :call <SID>SynStack()<CR>
+
 " find highlight group of symbol under cursor
 nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
       \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
       \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
       \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
       \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
-
-" Show syntax highlighting groups for word under cursor
-nmap <S-F9> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " Commands =============================================================== {{{1
 "
@@ -1192,7 +1220,6 @@ function! MyToggleTabstop()
     endif
     echo 'tabstop(' &ts ')' 'shiftwidth(' &sw ')' 'expandtab(' &et ')'
 endfunction
-nmap <silent> ,tt :call MyToggleTabstop()<CR>
 
 " Toggle quickfix window ------------------------------------------------- {{{2
 function! MyToggleQuickFix()
@@ -1206,7 +1233,6 @@ function! MyToggleQuickFix()
 
     copen
 endfunction
-nmap <silent> ,tq :call MyToggleQuickFix()<CR>
 
 " Toggle column highlighting --------------------------------------------- {{{2
 if version >= 703
@@ -1219,8 +1245,6 @@ if version >= 703
       endif
       set colorcolumn?
     endfunction
-
-    nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
 
 " Toggle virtual edit ---------------------------------------------------- {{{2
@@ -1232,8 +1256,6 @@ function! MyToggleVirtualEdit()
     endif
     set ve?
 endfunction
-
-nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 
 " Toggle fold marker ----------------------------------------------------- {{{2
 let s:old_fdm = ''
@@ -1248,8 +1270,6 @@ function! MyToggleFoldMarker()
     set foldmethod? foldmarker?
 endfunction
 
-nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
-
 " Toggle doxygen syntax -------------------------------------------------- {{{2
 let s:old_syntax = ''
 function! MyToggleDoxygenSyntax()
@@ -1262,15 +1282,11 @@ function! MyToggleDoxygenSyntax()
     set syntax?
 endfunction
 
-nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
-
 " Reload cscope db ------------------------------------------------------- {{{2
 function! MyCscopeReload()
     cs kill 0
     cs add cscope.out
 endfunction
-
-nmap <silent> ,csr :call MyCscopeReload()<CR>
 
 " Run perlcritic on current file ----------------------------------------- {{{2
 function! MyPerlcritic(level)
@@ -1281,12 +1297,6 @@ function! MyPerlcritic(level)
     let &makeprg = l:old_makeprg
 endfunction
 
-nmap ,pc1 :call MyPerlcritic(1)<CR>
-nmap ,pc2 :call MyPerlcritic(2)<CR>
-nmap ,pc3 :call MyPerlcritic(3)<CR>
-nmap ,pc4 :call MyPerlcritic(4)<CR>
-nmap ,pc5 :call MyPerlcritic(5)<CR>
-
 " Run perl -c on current file ------------------------------------------- {{{2
 function! MyPerlcompile()
     let l:old_makeprg = &makeprg
@@ -1295,8 +1305,6 @@ function! MyPerlcompile()
     :make
     let &makeprg = l:old_makeprg
 endfunction
-
-nmap ,pm :call MyPerlcompile()<CR>
 
 " Run perl on current file ---------------------------------------------- {{{2
 function! MyPerlrun()
@@ -1307,7 +1315,15 @@ function! MyPerlrun()
     let &makeprg = l:old_makeprg
 endfunction
 
-nmap ,pr :call MyPerlrun()<CR>
+" Syntax highlighting --------------------------------------------------- {{{2
+
+" show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " tabline  --------------------------------------------------------------- {{{2
 "
@@ -1378,6 +1394,8 @@ endfunction
 set tabline=%!MyTabLine()
 
 " various tabline funcs  ------------------------------------------------- {{{3
+"
+" TODO: remove this old stuff
 "
 " function MyTabline()
 "   let label = v:lnum
