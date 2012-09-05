@@ -688,61 +688,6 @@ nmap <silent> ,ns :new <CR>
 " open empty buffer in new tab
 nmap <silent> ,nt :tabnew <CR>
 
-" Tabs handling ---------------------------------------------------------- {{{2
-"
-"fu! TabMoveLeft()
-    "let current_tab = tabpagenr()
-    "if current_tab > 1
-       "let current_tab = current_tab - 2
-       "execute 'tabmove' current_tab
-    "endif
-"endf
-
-"fu! TabMoveRight()
-    "let current_tab = tabpagenr()
-    "execute 'tabmove' current_tab
-"endf
-
-"" prev tab
-"nnoremap <silent><M-j> :tabprevious<CR>
-"inoremap <silent><M-j> <C-O>:tabprevious<CR>
-"vnoremap <silent><M-j> <ESC>:tabprevious<CR>
-
-"" next tab
-"nnoremap <silent><M-k> :tabnext<CR>
-"inoremap <silent><M-k> <C-O>:tabnext<CR>
-"vnoremap <silent><M-k> <ESC>:tabnext<CR>
-
-"" first tab
-"nnoremap <silent><M-h> :tabfirst<CR>
-"inoremap <silent><M-h> <C-O>:tabfirst<CR>
-"vnoremap <silent><M-h> <ESC>:tabfirst<CR>
-
-"" last tab
-"nnoremap <silent><M-l> :tablast<CR>
-"inoremap <silent><M-l> <C-O>:tablast<CR>
-"vnoremap <silent><M-l> <ESC>:tablast<CR>
-
-"" move tab to the begining
-"nnoremap <silent><M-S-h> :tabmove 0<CR>
-"inoremap <silent><M-S-h> <C-O>:tabmove 0<CR>
-"vnoremap <silent><M-S-h> <ESC>:tabmove 0<CR>
-
-"" move tab to the end
-"nnoremap <silent><M-S-l> :tabmove<CR>
-"inoremap <silent><M-S-l> <C-O>:tabmove<CR>
-"vnoremap <silent><M-S-l> <ESC>:tabmove<CR>
-
-"" move tab backwards
-"nnoremap <silent><M-S-j> :call TabMoveLeft()<CR>
-"inoremap <silent><M-S-j> <C-O>:call TabMoveLeft()<CR>
-"vnoremap <silent><M-S-j> <ESC>:call TabMoveLeft()<CR>
-
-"" move tab forward
-"nnoremap <silent><M-S-k> :call TabMoveRight()<CR>
-"inoremap <silent><M-S-k> <C-O>:call TabMoveRight()<CR>
-"vnoremap <silent><M-S-k> <ESC>:call TabMoveRight()<CR>
-
 " Perl mappings ---------------------------------------------------------- {{{2
 "
 nmap ,pt :.!perltidy<CR>
