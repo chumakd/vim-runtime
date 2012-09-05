@@ -108,6 +108,8 @@ set laststatus=2
 set statusline=%h%w%q\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 "set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 
+set tabline=%!MyTabLine()
+
 " let yourself know what mode you're in
 set showmode
 
@@ -1390,141 +1392,6 @@ function MyTabLine()
 
     return s
 endfunction
-
-set tabline=%!MyTabLine()
-
-" various tabline funcs  ------------------------------------------------- {{{3
-"
-" TODO: remove this old stuff
-"
-" function MyTabline()
-"   let label = v:lnum
-"   let label .= ') '
-"   let bufnrlist = tabpagebuflist(v:lnum)
-"
-"   " Add '+' if one of the buffers in the tab page is modified
-"   for bufnr in bufnrlist
-"     if getbufvar(bufnr, "&modified")
-"       let label = '+'.label
-"       break
-"     endif
-"   endfor
-"
-"   " Append the number of windows in the tab page if more than one
-"   let wincount = tabpagewinnr(v:lnum, '$')
-"   if wincount > 1
-"     let label .= wincount
-"   endif
-"   if label != ''
-"     let label .= ' '
-"   endif
-"
-"   " Append the buffer name
-"   return label . pathshorten(bufname(bufnrlist[tabpagewinnr(v:lnum) - 1]))
-" endfunction
-"
-" function MyTabLabel(n)
-"   let buflist = tabpagebuflist(a:n)
-"   let winnr = tabpagewinnr(a:n)
-"   return bufname(buflist[winnr - 1])
-" endfunction
-"
-" function MyTabLine()
-"   let s = ''
-"   for i in range(tabpagenr('$'))
-"     " select the highlighting
-"     if i + 1 == tabpagenr()
-"       let s .= '%#TabLineSel#'
-"     else
-"       let s .= '%#TabLine#'
-"     endif
-"
-"     " set the tab page number (for mouse clicks)
-"     let s .= '%' . (i + 1) . 'T'
-"
-"     " the label is made by MyTabLabel()
-"     let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-"   endfor
-"
-"   " after the last tab fill with TabLineFill and reset tab page nr
-"   let s .= '%#TabLineFill#%T'
-"
-"   " right-align the label to close the current tab page
-"   if tabpagenr('$') > 1
-"     let s .= '%=%#TabLine#%999Xclose'
-"   endif
-"
-"   return s
-" endfunction
-
-" set tabline=%{MyTabline()}
-" set tabline=%!MyTabLine()
-
-"    function MyTabLine()
-"        let tabline = ''
-"
-"        " Формируем tabline для каждой вкладки -->
-"            for i in range(tabpagenr('$'))
-"                " Подсвечиваем заголовок выбранной в данный момент вкладки.
-"                if i + 1 == tabpagenr()
-"                    let tabline .= '%#TabLineSel#'
-"                else
-"                    let tabline .= '%#TabLine#'
-"                endif
-"
-"                " Устанавливаем номер вкладки
-"                let tabline .= '%' . (i + 1) . 'T'
-"
-"                " Получаем имя вкладки
-"                let tabline .= ' %{MyTabLabel(' . (i + 1) . ')} |'
-"            endfor
-"        " Формируем tabline для каждой вкладки <--
-"
-"        " Заполняем лишнее пространство
-"        let tabline .= '%#TabLineFill#%T'
-"
-"        " Выровненная по правому краю кнопка закрытия вкладки
-"        if tabpagenr('$') > 1
-"            let tabline .= '%=%#TabLine#%999XX'
-"        endif
-"
-"        return tabline
-"    endfunction
-"
-"    function MyTabLabel(n)
-"        let label = ''
-"        let buflist = tabpagebuflist(a:n)
-"
-"        " Имя файла и номер вкладки -->
-"            let label = substitute(bufname(buflist[tabpagewinnr(a:n) - 1]), '.*/', '', '')
-"
-"            if label == ''
-"                let label = '[No Name]'
-"            endif
-"
-"            let label .= ' (' . a:n . ')'
-"        " Имя файла и номер вкладки <--
-"
-"        " Определяем, есть ли во вкладке хотя бы один
-"        " модифицированный буфер.
-"        " -->
-"            for i in range(len(buflist))
-"                if getbufvar(buflist[i], "&modified")
-"                    let label = '[+] ' . label
-"                    break
-"                endif
-"            endfor
-"        " <--
-"
-"        return label
-"    endfunction
-"
-"    function MyGuiTabLabel()
-"        return '%{MyTabLabel(' . tabpagenr() . ')}'
-"    endfunction
-"
-"    set tabline=%!MyTabLine()
-"    set guitablabel=%!MyGuiTabLabel()
 
 " modeline =============================================================== {{{1
 " vim: foldmethod=marker
