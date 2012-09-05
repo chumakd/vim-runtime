@@ -5,17 +5,20 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Forget being compatible with good ol' vi
+" forget being compatible with good old vi
 set nocompatible
 
 " Filetype --------------------------------------------------------------- {{{2
 "
 filetype plugin on
 filetype indent on
+
 runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
+
 syntax enable
+
 " set path for file search operations
 "set path=.,,/usr/local/include/**,/usr/include/**
 "set path+=include/
@@ -24,14 +27,15 @@ syntax enable
 
 " Colors  ---------------------------------------------------------------- {{{2
 "
+
 " enable 256 colors in terminal
 set t_Co=256
-"
+
 "colorscheme elflord
 colorscheme chumakd-elflord
 
 " disable Powerline plugin if we don't have full color terminal
-" because it makes status line tatally black in such mode
+" because it makes status line totally black in this mode
 if &t_Co == 8
     let g:Powerline_loaded = 1
 endif
@@ -48,9 +52,7 @@ set nowrapscan
 "
 set foldcolumn=4
 set foldmethod=syntax
-" Add these commands to open folds
 set foldopen+=insert,jump
-"set foldtext=getline(v:foldstart)
 
 " Indent ----------------------------------------------------------------- {{{2
 "
@@ -68,21 +70,29 @@ set expandtab
 "
 set spelllang=en_us
 set spelllang+=ru
+
 " support ё instead of е
 "set spelllang+=ru_yo
 
 " Language --------------------------------------------------------------- {{{2
+"
+
 " enable keymappings for russian win-like йцукен keyboards
 set keymap=russian-jcukenwin
+
 " force insert and search begin in english and non in keymap language
 set iminsert=0
 set imsearch=0
+
 " enable language map for ru_RU.UTF-8 locale
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,№#,х[,Х{,ъ],Ъ},Ж:,э',Б<,ю.,Ю>,Э\"
+
 " default from vim doc
 "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 " working extention
 "№#,х[,Х{,ъ],Ъ},Ж:,э',б\,,Б<,ю.,Ю>,Э\"
+
 " not working extention
 ""@,№#,\;$,:^,?&,х[,Х{,ъ],Ъ},/|,ж\;,Ж:,э',Э",б\,,Б<,ю.,Ю>,./,\,?
 "№#,х[,Х{,ъ],Ъ},ж\;,Ж:,э',Э",б\,,Б<,ю.,Ю>
@@ -90,35 +100,38 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 " Window ----------------------------------------------------------------- {{{2
 "
 set ruler
-" display in ruler: current: symbol decimal/hex, column, line/total, line in percepts
-"set ruf=%43([%3b/0x%-2B]\ Col:%-3v\ Line:%4l/%-4L\ [%P]%)
-"set ruf=%43([%3b/0x%-2B]\ %y\ Line:%4l:%-2v/\ %-4L\ [%P]%)
-"set statusline=%f\ %=\ <\ ch:%3b/0x%-02B\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
-"set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
-set statusline=%h%w%q\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
-set nowrap
-set showcmd
-set wmh=0
-set wildmenu
+"set rulerformat=%43([%3b/0x%-2B]\ %y\ Line:%4l:%-2v/\ %-4L\ [%P]%)
+
 " show statusline even if there is only one window
 set laststatus=2
+
+set statusline=%h%w%q\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
+"set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
+
 " let yourself know what mode you're in
 set showmode
+
+set nowrap
+set showcmd
+set winminheight=0
+set wildmenu
+"set textwidth=78
+
 " disable any fillchars for folds and vertical splits
+" NOTE: the space after vert: is essential
 set fillchars=fold:\ ,vert:\ 
-"set fillchars=fold:-
-"set textwidth=100
+
 " turn on cursor highliting for current window
 "set cursorline
 "set cursorcolumn
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
-"
 
 " Backup/Undo ------------------------------------------------------------ {{{2
 "
 set backup
 set backupdir=~/.vim/backup,.,~/temp/tmp,~/
+
 if version >= 703
   set undofile
   set undodir=~/.vim/undo,.,~/
@@ -128,7 +141,7 @@ endif
 "
 set listchars=eol:$,tab:>-,trail:.
 
-" Don't update the display while executing macros
+" don't update the display while executing macros
 set lazyredraw
 
 set novisualbell
@@ -136,46 +149,56 @@ set novisualbell
 " hide the mouse pointer while typing
 set mousehide
 
-" When the page starts to scroll, keep the cursor 8 lines from the top and 8
+" when the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
 "set scrolloff=8
-"
+
 if version >= 703
-  " Show line numbers relative to cursor position
+  " show line numbers relative to cursor position
   set relativenumber
+else
+  set number
 endif
 
 set numberwidth=3
 
 " highlight textwidth column
-"set colorcolumn=78
+"set colorcolumn=+1
 
 " Tags ------------------------------------------------------------------- {{{2
 "
+
 " disable preview window
 set completeopt-=preview
+
 " when completing by tag, show the whole tag, not just the function name
 set showfulltag
+
 set tags=./tags,tags,~/.vim/tags/stl
 ",~/prg/tags/tags.libc
 ",~/prg/tags/tags.stl
 ",~/prg/tags/tags.boost
+
 " search tags database before cscope database
 set csto=1
 
 " Edit ------------------------------------------------------------------- {{{2
 "
-" Ask to save/not/cancel if buffer is modified and going to be closed/unvisible
+
+" ask to save/not/cancel if buffer is modified and going to be closed/unvisible
 set confirm
 set nohidden
+
 " disable virtualedit by default
 set virtualedit=
 
 " Cmdline ---------------------------------------------------------------- {{{2
 "
 set history=5000
+
 " set key to invoke completion mode from inside mappings
 set wildcharm=<C-X>
+
 " for windoze set the forward slash to be used as path separator
 if exists('+shellslash')
     set shellslash
@@ -183,11 +206,13 @@ endif
 
 " Other ------------------------------------------------------------------ {{{2
 "
+
 " save only opened windows and tabs with :mksession without any
 " mapping/options/buffers/etc...
 set sessionoptions=tabpages
 
 " Plugin options ========================================================= {{{1
+
 " bash syntax ------------------------------------------------------------ {{{2
 "
 let is_bash = 1
@@ -195,10 +220,11 @@ let g:sh_fold_enabled= 1
 
 " perl syntax ------------------------------------------------------------ {{{2
 "
-" enable syntax highlighting for perl POD documentation
-let perl_include_pod = 1
 let perl_fold = 1
 let perl_fold_blocks = 1
+
+" enable syntax highlighting for perl POD documentation
+let perl_include_pod = 1
 
 " file explorer ---------------------------------------------------------- {{{2
 "
@@ -206,11 +232,12 @@ let g:netrw_altv = 1
 
 " BufExplorer ------------------------------------------------------------ {{{2
 "
-" Do not go to active window.
-let g:bufExplorerFindActive=0
 let g:bufExplorerSplitRight=0
 let g:bufExplorerSplitBelow=1
 let g:bufExplorerShowRelativePath=1
+
+" do not go to active window.
+let g:bufExplorerFindActive=0
 
 " Taglist ---------------------------------------------------------------- {{{2
 "
@@ -225,7 +252,6 @@ let Tlist_Show_One_File = 1
 
 " Omnicppcomplete -------------------------------------------------------- {{{2
 "
-" let OmniCpp_GlobalScopeSearch = 0
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_ShowPrototypeInAbbr = 1
@@ -252,10 +278,13 @@ let MRU_Auto_Close = 1
 " NERDTree --------------------------------------------------------------- {{{2
 "
 let NERDTreeWinPos="right"
+
 " store the bookmarks file in ~/.vim
 "let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
+
 " show the bookmarks table on startup
 "let NERDTreeShowBookmarks=1
+
 " don't display these kinds of files
 let NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
 "let NERDTreeIgnore=[ '\.ncb$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
@@ -281,10 +310,13 @@ let g:MultipleSearchTextColorSequence="white,white,black,white,black,black,white
 
 " YankRing --------------------------------------------------------------- {{{2
 "
+
 " ommit single letter deletes
 let g:yankring_min_element_length = 2
+
 " don't store yankring contents between vim restarts
 "let g:yankring_persist = 0
+
 " don't share yankring contents between different instances of vim
 "let g:yankring_share_between_instances = 0
 
@@ -296,15 +328,18 @@ let g:Perl_Ctrl_j   = 'off'
 "
 let vimrplugin_r_args = "--no-save --quiet"
 let vimrplugin_term = "xterm"
-" disable the underscore replacement with <-
-let vimrplugin_underscore = 0
-" open .Rout files in a split window
-let vimrplugin_notab = 1
-" show list elements in object browser
-"let vimrplugin_open_list = 1
 let vimrplugin_vimpager = "horizontal"
 let vimrplugin_screenplugin = 0
 let vimrplugin_conqueplugin = 1
+
+" disable the underscore replacement with <-
+let vimrplugin_underscore = 0
+
+" open .Rout files in a split window
+let vimrplugin_notab = 1
+
+" show list elements in object browser
+"let vimrplugin_open_list = 1
 
 " Conque shell ----------------------------------------------------------- {{{2
 "
@@ -357,8 +392,10 @@ let g:gundo_width = 75
 
 " CSApprox --------------------------------------------------------------- {{{2
 "
+
 " disabled to not slowdown vim start-up time
 let g:CSApprox_loaded = 1
+
 " tune color palette for Konsole
 let g:CSApprox_konsole = 1
 
@@ -383,6 +420,7 @@ let g:tagbar_sort = 0
 
 " Powerline -------------------------------------------------------------- {{{2
 "
+
 " temporarily disable powerline plugin because it has several look&feel issues
 let g:Powerline_loaded = 1
 
@@ -415,11 +453,13 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'passive_filetypes': [] }
 
 " Mappings =============================================================== {{{1
-"
+
 " Shortened commands ----------------------------------------------------- {{{2
 "
+
 " let yankstack plugin to know that we remap default Y behavior
 call yankstack#setup()
+
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
 
@@ -538,6 +578,7 @@ endfunc
 
 " Cmdline editing -------------------------------------------------------- {{{2
 "
+
 " allow command line editing like emacs
 cnoremap <C-A>  <Home>
 cnoremap <C-B>  <Left>
@@ -546,8 +587,10 @@ cnoremap <M-b>  <S-Left>
 cnoremap <M-f>  <S-Right>
 cnoremap <ESC>b <S-Left>
 cnoremap <ESC>f <S-Right>
+
 " remap <C-f> (which is used to open command-line window) to <C-y>
 set cedit=<C-Y>
+
 " allow command line completion with Alt key
 cnoremap <M-p>  <Up>
 cnoremap <M-n>  <Down>
@@ -556,24 +599,31 @@ cnoremap <ESC>n <Down>
 
 " Maps to make handling windows a bit easier ----------------------------- {{{2
 "
+
 " switch between windows
 noremap <silent> ,h :wincmd h<CR>
 noremap <silent> ,j :wincmd j<CR>
 noremap <silent> ,k :wincmd k<CR>
 noremap <silent> ,l :wincmd l<CR>
+
 " go to previous (last accessed) window.
 noremap <silent> ,p :wincmd p<CR>
+
 " close neighbour windows
 noremap <silent> ,cj :wincmd j<CR>:close<CR>
 noremap <silent> ,ck :wincmd k<CR>:close<CR>
 noremap <silent> ,ch :wincmd h<CR>:close<CR>
 noremap <silent> ,cl :wincmd l<CR>:close<CR>
+
 " close current window
 noremap <silent> ,cc :close<CR>
+
 " close current window
 noremap <silent> ,ct :tabclose<CR>
+
 " close quickfix window (not used now becaue QF is toggled by ,tq)
 "noremap <silent> ,cw :cclose<CR>
+
 " adjust window size by one
 noremap <silent> <C-Left>   <C-W><
 noremap <silent> <C-Up>     <C-W>+
@@ -599,18 +649,25 @@ nmap <C-J> <C-W>j<C-W>_
 nmap <C-K> <C-W>k<C-W>_
 nmap <C-H> <C-W>h<C-W>\|
 nmap <C-L> <C-W>l<C-W>\|
+
 " full expand current window
 noremap <silent> ,wf :wincmd _<CR>
+
 " make windows sizes equal
 noremap <silent> ,w= :wincmd =<CR>
+
 " exchange current and pervious windows
 noremap <silent> ,wx :wincmd x<CR>
+
 " split window
 noremap <silent> ,ws :wincmd s<CR>
+
 " split window vertically
 noremap <silent> ,wv :wincmd v<CR>
+
 " edit new empty buffer in current window
 noremap <silent> ,we :enew<CR>
+
 " split new empty buffer
 noremap <silent> ,wn :new<CR>
 
@@ -631,65 +688,60 @@ nmap <silent> ,ns :new <CR>
 " open empty buffer in new tab
 nmap <silent> ,nt :tabnew <CR>
 
-" TODO: check this
-" use Alt-Left and Alt-Right to move current tab to left or right
-"nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-"nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-
 " Tabs handling ---------------------------------------------------------- {{{2
 "
-fu! TabMoveLeft()
-    let current_tab = tabpagenr()
-    if current_tab > 1
-       let current_tab = current_tab - 2
-       execute 'tabmove' current_tab
-    endif
-endf
+"fu! TabMoveLeft()
+    "let current_tab = tabpagenr()
+    "if current_tab > 1
+       "let current_tab = current_tab - 2
+       "execute 'tabmove' current_tab
+    "endif
+"endf
 
-fu! TabMoveRight()
-    let current_tab = tabpagenr()
-    execute 'tabmove' current_tab
-endf
+"fu! TabMoveRight()
+    "let current_tab = tabpagenr()
+    "execute 'tabmove' current_tab
+"endf
 
-" prev tab
-nnoremap <silent><M-j> :tabprevious<CR>
-inoremap <silent><M-j> <C-O>:tabprevious<CR>
-vnoremap <silent><M-j> <ESC>:tabprevious<CR>
+"" prev tab
+"nnoremap <silent><M-j> :tabprevious<CR>
+"inoremap <silent><M-j> <C-O>:tabprevious<CR>
+"vnoremap <silent><M-j> <ESC>:tabprevious<CR>
 
-" next tab
-nnoremap <silent><M-k> :tabnext<CR>
-inoremap <silent><M-k> <C-O>:tabnext<CR>
-vnoremap <silent><M-k> <ESC>:tabnext<CR>
+"" next tab
+"nnoremap <silent><M-k> :tabnext<CR>
+"inoremap <silent><M-k> <C-O>:tabnext<CR>
+"vnoremap <silent><M-k> <ESC>:tabnext<CR>
 
-" first tab
-nnoremap <silent><M-h> :tabfirst<CR>
-inoremap <silent><M-h> <C-O>:tabfirst<CR>
-vnoremap <silent><M-h> <ESC>:tabfirst<CR>
+"" first tab
+"nnoremap <silent><M-h> :tabfirst<CR>
+"inoremap <silent><M-h> <C-O>:tabfirst<CR>
+"vnoremap <silent><M-h> <ESC>:tabfirst<CR>
 
-" last tab
-nnoremap <silent><M-l> :tablast<CR>
-inoremap <silent><M-l> <C-O>:tablast<CR>
-vnoremap <silent><M-l> <ESC>:tablast<CR>
+"" last tab
+"nnoremap <silent><M-l> :tablast<CR>
+"inoremap <silent><M-l> <C-O>:tablast<CR>
+"vnoremap <silent><M-l> <ESC>:tablast<CR>
 
-" move tab to the begining
-nnoremap <silent><M-S-h> :tabmove 0<CR>
-inoremap <silent><M-S-h> <C-O>:tabmove 0<CR>
-vnoremap <silent><M-S-h> <ESC>:tabmove 0<CR>
+"" move tab to the begining
+"nnoremap <silent><M-S-h> :tabmove 0<CR>
+"inoremap <silent><M-S-h> <C-O>:tabmove 0<CR>
+"vnoremap <silent><M-S-h> <ESC>:tabmove 0<CR>
 
-" move tab to the end
-nnoremap <silent><M-S-l> :tabmove<CR>
-inoremap <silent><M-S-l> <C-O>:tabmove<CR>
-vnoremap <silent><M-S-l> <ESC>:tabmove<CR>
+"" move tab to the end
+"nnoremap <silent><M-S-l> :tabmove<CR>
+"inoremap <silent><M-S-l> <C-O>:tabmove<CR>
+"vnoremap <silent><M-S-l> <ESC>:tabmove<CR>
 
-" move tab backwards
-nnoremap <silent><M-S-j> :call TabMoveLeft()<CR>
-inoremap <silent><M-S-j> <C-O>:call TabMoveLeft()<CR>
-vnoremap <silent><M-S-j> <ESC>:call TabMoveLeft()<CR>
+"" move tab backwards
+"nnoremap <silent><M-S-j> :call TabMoveLeft()<CR>
+"inoremap <silent><M-S-j> <C-O>:call TabMoveLeft()<CR>
+"vnoremap <silent><M-S-j> <ESC>:call TabMoveLeft()<CR>
 
-" move tab forward
-nnoremap <silent><M-S-k> :call TabMoveRight()<CR>
-inoremap <silent><M-S-k> <C-O>:call TabMoveRight()<CR>
-vnoremap <silent><M-S-k> <ESC>:call TabMoveRight()<CR>
+"" move tab forward
+"nnoremap <silent><M-S-k> :call TabMoveRight()<CR>
+"inoremap <silent><M-S-k> <C-O>:call TabMoveRight()<CR>
+"vnoremap <silent><M-S-k> <ESC>:call TabMoveRight()<CR>
 
 " Perl mappings ---------------------------------------------------------- {{{2
 "
@@ -698,8 +750,10 @@ vmap ,pt :!perltidy<CR>
 
 " Plugin mappings -------------------------------------------------------- {{{2
 "
+
 " build ctags/cscope for Asm/C/C++/Perl/Make project in current dir
 nmap <F2> :!mktags -acxpms<CR>
+
 " same as above but without Make
 nmap <S-F2> :!mktags -acxps<CR>
 
@@ -710,11 +764,8 @@ nmap <S-F2> :!mktags -acxps<CR>
 " MRU
 nmap <F3>   :MRU<CR>
 
-" TagList
+" TagList/Tagbar
 nmap <F4>   :TlistToggle<CR>
-
-" Tagbar
-"
 nmap <S-F4> :TagbarToggle<CR>
 
 " MarksBrowser
@@ -754,6 +805,7 @@ nmap ,fl :FufLine<CR>
 " nmap <Leader>\[  :call PreviousColorScheme()<CR>
 
 " Latex Suite
+" TODO: use au for latex file types
 nmap <A-j> <Plug>IMAP_JumpForward
 vmap <A-j> <Plug>IMAP_JumpForward
 
@@ -793,17 +845,18 @@ nmap <silent> ,tdm :DelimitMateSwitch<CR>
 
 " Yankstack
 "
-nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-P> <Plug>yankstack_substitute_older_paste
 
 " Commands =============================================================== {{{1
 "
+
 " show current highlight groups in new buffer
 command Hitest    runtime syntax/hitest.vim
 command Colortest runtime syntax/colortest.vim
 
 " Auto commands  ========================================================= {{{1
 "
+
 " simplify editing of binary files
 "augroup Binary
     " au!
@@ -847,6 +900,7 @@ endif
 
 " Abbreviations ========================================================== {{{1
 "
+
 " fix constant spelling mistakes
 iab teh       the
 iab Teh       The
@@ -879,6 +933,7 @@ iab Fone      Phone
 
 " Colors ================================================================= {{{1
 "
+
 " Generated from c:/pdsrc/xterm-222/256colres.h by allcolors.pl
 hi x016_Grey0 ctermfg=16 guifg=#000000
 hi x017_NavyBlue ctermfg=17 guifg=#00005f
@@ -1123,6 +1178,7 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 
 " Functions ============================================================== {{{1
 "
+
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
     if &ts == 4
