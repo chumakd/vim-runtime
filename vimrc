@@ -495,6 +495,22 @@ vnoremap <C-s> ,
 " open current file in new tab and do :Tselect on a word  under cursor
 nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
+" Maps to make handling windows a bit easier ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" switch window with full expand
+" TODO: change to lowercase
+nmap <C-J> <C-W>j<C-W>_
+nmap <C-K> <C-W>k<C-W>_
+nmap <C-H> <C-W>h<C-W>\|
+nmap <C-L> <C-W>l<C-W>\|
+
+" adjust window size by one
+noremap <silent> <C-Left>   <C-W><
+noremap <silent> <C-Up>     <C-W>+
+noremap <silent> <C-Down>   <C-W>-
+noremap <silent> <C-Right>  <C-W>>
+
 " Alt mappings ----------------------------------------------------------- {{{2
 "
 
@@ -506,6 +522,20 @@ vmap <A-j> <Plug>IMAP_JumpForward
 " Perl support
 " TODO: use au for perl file types
 "nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
+
+" adjust window size by five
+"noremap <silent> <M-Left>   :vertical resize -5<CR>
+"noremap <silent> <M-Up>     :resize +5<CR>
+"noremap <silent> <M-Down>   :resize -5<CR>
+"noremap <silent> <M-Right>  :vertical resize +5<CR>
+
+" switch between tabs
+noremap <silent> <M-Up>     :tabprev<CR>
+noremap <silent> <M-Down>   :tabnext<CR>
+
+" move tabs
+noremap <silent> <M-Right>  :exec 'silent! tabmove ' . tabpagenr()<CR>
+noremap <silent> <M-Left>  :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
 
 " \ mappings ------------------------------------------------------------- {{{2
 "
@@ -557,7 +587,7 @@ nmap <silent> \sl :SessionList<CR>
 vmap ,b1 :call BlockDiff_GetBlock1()<CR>
 vmap ,b2 :call BlockDiff_GetBlock2()<CR>
 
-" c (cd/cscope/cctree) ~~~~~~ {{{3
+" c (cd/cscope) ~~~~~~~~~~~~~ {{{3
 "
 
 " cd to the directory containing the file in the buffer
@@ -565,6 +595,27 @@ nmap <silent> ,cd :lcd %:h<CR>
 
 " reload cscope database
 nmap <silent> ,csr :call MyCscopeReload()<CR>
+
+" c (close) ~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" close current window
+noremap <silent> ,cc :close<CR>
+
+" close neighbour windows
+noremap <silent> ,cj :wincmd j<CR>:close<CR>
+noremap <silent> ,ck :wincmd k<CR>:close<CR>
+noremap <silent> ,ch :wincmd h<CR>:close<CR>
+noremap <silent> ,cl :wincmd l<CR>:close<CR>
+
+" close current tab
+noremap <silent> ,ct :tabclose<CR>
+
+" close quickfix window (not used now becaue QF is toggled by ,tq)
+"noremap <silent> ,cw :cclose<CR>
+
+" c (cctree) ~~~~~~~~~~~~~~~~ {{{3
+"
 
 " CCTree
 nmap <silent> ,ctl :CCTreeLoadDB<CR>
@@ -576,6 +627,13 @@ nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
 
 " Delete all buffers
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
+
+" e (edit) ~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" edit buffer with file from the same directory as current one
+" allowing to autocomplete the name with <Tab>
+nmap <silent> ,ee :e %:p:h/<C-X>
 
 " f (fuzzyfinder) ~~~~~~~~~~~ {{{3
 "
@@ -612,6 +670,15 @@ nmap <silent> ,gs :Git status<CR>
 nmap <silent> ,gd :Git diff<CR>
 nmap <silent> ,gt :!tig<CR>
 
+" hjkl ~~~~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" switch between windows
+noremap <silent> ,h :wincmd h<CR>
+noremap <silent> ,j :wincmd j<CR>
+noremap <silent> ,k :wincmd k<CR>
+noremap <silent> ,l :wincmd l<CR>
+
 " m (make) ~~~~~~~~~~~~~~~~~~ {{{3
 "
 
@@ -643,13 +710,20 @@ nmap ,pr :call MyPerlrun()<CR>
 nmap ,pt :.!perltidy<CR>
 vmap ,pt :!perltidy<CR>
 
+" p (prev) ~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" go to previous (last accessed) window.
+" this is the same as ,wp mapping, just shorter
+noremap <silent> ,p :wincmd p<CR>
+
 " r ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
 
 " Run the command that was just yanked
 "nmap <silent> ,rc :@"<cr>
 
-" s (scroll/swap) ~~~~~~~~~~~ {{{3
+" s (scroll/swap/split) ~~~~~ {{{3
 "
 
 " Show all available VIM servers
@@ -665,6 +739,10 @@ nmap <silent> ,sh 10zh
 
 " Swap two words
 nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
+" split buffer with file from the same directory as current one
+" allowing to autocomplete the name with <Tab>
+nmap <silent> ,sp :sp %:p:h/<C-X>
 
 " t (toggles) ~~~~~~~~~~~~~~~ {{{3
 "
@@ -729,6 +807,38 @@ nmap ,u :update<CR>
 nmap <silent> ,ve :e $MYVIMRC<CR>
 nmap <silent> ,vs :so $MYVIMRC<CR>
 
+" w (window) ~~~~~~~~~~~~~~~~ {{{3
+"
+
+" TODO: use noremap only when it's really needed
+
+" make windows sizes equal
+noremap <silent> ,w= :wincmd =<CR>
+
+" edit new empty buffer in current window
+noremap <silent> ,we :enew<CR>
+
+" full expand current window
+noremap <silent> ,wf :wincmd _<CR>
+
+" split new empty buffer
+noremap <silent> ,wn :new<CR>
+
+" go to previous (last accessed) window.
+noremap <silent> ,wp :wincmd p<CR>
+
+" split window
+noremap <silent> ,ws :wincmd s<CR>
+
+" open empty buffer in new tab
+nmap <silent> ,wt :tabnew <CR>
+
+" split window vertically
+noremap <silent> ,wv :wincmd v<CR>
+
+" exchange current and pervious windows
+noremap <silent> ,wx :wincmd x<CR>
+
 " Cmdline editing -------------------------------------------------------- {{{2
 "
 
@@ -749,97 +859,6 @@ cnoremap <M-p>  <Up>
 cnoremap <M-n>  <Down>
 cnoremap <ESC>p <Up>
 cnoremap <ESC>n <Down>
-
-" Maps to make handling windows a bit easier ----------------------------- {{{2
-"
-
-" switch between windows
-noremap <silent> ,h :wincmd h<CR>
-noremap <silent> ,j :wincmd j<CR>
-noremap <silent> ,k :wincmd k<CR>
-noremap <silent> ,l :wincmd l<CR>
-
-" go to previous (last accessed) window.
-noremap <silent> ,p :wincmd p<CR>
-
-" close neighbour windows
-noremap <silent> ,cj :wincmd j<CR>:close<CR>
-noremap <silent> ,ck :wincmd k<CR>:close<CR>
-noremap <silent> ,ch :wincmd h<CR>:close<CR>
-noremap <silent> ,cl :wincmd l<CR>:close<CR>
-
-" close current window
-noremap <silent> ,cc :close<CR>
-
-" close current window
-noremap <silent> ,ct :tabclose<CR>
-
-" close quickfix window (not used now becaue QF is toggled by ,tq)
-"noremap <silent> ,cw :cclose<CR>
-
-" adjust window size by one
-noremap <silent> <C-Left>   <C-W><
-noremap <silent> <C-Up>     <C-W>+
-noremap <silent> <C-Down>   <C-W>-
-noremap <silent> <C-Right>  <C-W>>
-
-" adjust window size by five
-"noremap <silent> <M-Left>   :vertical resize -5<CR>
-"noremap <silent> <M-Up>     :resize +5<CR>
-"noremap <silent> <M-Down>   :resize -5<CR>
-"noremap <silent> <M-Right>  :vertical resize +5<CR>
-
-" switch between tabs
-noremap <silent> <M-Up>     :tabprev<CR>
-noremap <silent> <M-Down>   :tabnext<CR>
-
-" move tabs
-noremap <silent> <M-Right>  :exec 'silent! tabmove ' . tabpagenr()<CR>
-noremap <silent> <M-Left>  :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
-
-" switch window with full expand
-nmap <C-J> <C-W>j<C-W>_
-nmap <C-K> <C-W>k<C-W>_
-nmap <C-H> <C-W>h<C-W>\|
-nmap <C-L> <C-W>l<C-W>\|
-
-" full expand current window
-noremap <silent> ,wf :wincmd _<CR>
-
-" make windows sizes equal
-noremap <silent> ,w= :wincmd =<CR>
-
-" exchange current and pervious windows
-noremap <silent> ,wx :wincmd x<CR>
-
-" split window
-noremap <silent> ,ws :wincmd s<CR>
-
-" split window vertically
-noremap <silent> ,wv :wincmd v<CR>
-
-" edit new empty buffer in current window
-noremap <silent> ,we :enew<CR>
-
-" split new empty buffer
-noremap <silent> ,wn :new<CR>
-
-" edit buffer with file from the same directory as current one
-" allowing to autocomplete the name with <Tab>
-nmap <silent> ,ee :e %:p:h/<C-X>
-
-" split buffer with file from the same directory as current one
-" allowing to autocomplete the name with <Tab>
-nmap <silent> ,sp :sp %:p:h/<C-X>
-
-" open empty buffer in current window
-nmap <silent> ,ne :enew <CR>
-
-" open empty buffer in split window
-nmap <silent> ,ns :new <CR>
-
-" open empty buffer in new tab
-nmap <silent> ,nt :tabnew <CR>
 
 " Fn keys appings -------------------------------------------------------- {{{2
 "
