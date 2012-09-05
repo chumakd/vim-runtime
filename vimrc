@@ -463,18 +463,172 @@ call yankstack#setup()
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
 
+" search of selected text in visual mode
+vmap X y/<C-R>"<CR>
+
+" quit all windows (by analogy with ZZ and ZQ)
+nmap ZA :qa<CR>
+
 " don't jump to the next occurrence of the word, but just highlight it
 nnoremap *   *N
 nnoremap g*  g*N
 nnoremap #   #N
 nnoremap g#  g#N
 
+" Highlight all instances of the current word under the cursor
+"nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
+
 " map CTRL-s to do what ',' used to do
 nnoremap <c-s> ,
 vnoremap <c-s> ,
 
-" save current buffer
-nmap ,u :update<CR>
+" \ mappings ------------------------------------------------------------- {{{2
+"
+
+" Color shceme
+" nmap <Leader>\]  :call NextColorScheme()<CR>
+" nmap <Leader>\[  :call PreviousColorScheme()<CR>
+
+" a (alternate) ~~~~~~~~~~~~~ {{{3
+"
+
+" Alternate
+nmap <silent> <Leader>aa :A<CR>
+nmap <silent> <Leader>as :AS<CR>
+nmap <silent> <Leader>av :AV<CR>
+nmap <silent> <Leader>at :AT<CR>
+
+" b ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" BuffExplorer uses the following mappings:
+" \be - to start exploring in the current window
+" \bs - to start exploring in a newly split horizontal window
+" \bv - to start exploring in a newly split vertical window
+
+" d (diffchanges) ~~~~~~~~~~~ {{{3
+"
+
+" DiffChanges
+nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
+nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
+
+" f (fuzzyfinder) ~~~~~~~~~~~ {{{3
+"
+
+" FuzzyFinder Settings
+nmap ,fb :FufBuffer<CR>
+nmap ,fm :FufBookmarkFile<CR>
+nmap ,fma :FufBookmarkFileAdd<CR>
+nmap ,ff :FufFile<CR>
+nmap ,fo :FufCoverageFile<CR>
+nmap ,ft :FufBufferTag<CR>
+nmap ,fj :FufJumpList<CR>
+nmap ,fc :FufChangeList<CR>
+nmap ,fl :FufLine<CR>
+
+" s (sessionman) ~~~~~~~~~~~~ {{{3
+"
+
+" SessionMan
+nmap <silent> \so :SessionOpen <C-X>
+nmap <silent> \sc :SessionClose<CR>
+nmap <silent> \ss :SessionSave<CR>
+nmap <silent> \sl :SessionList<CR>
+
+" , mappings ------------------------------------------------------------- {{{2
+"
+
+" b (blockdiff) ~~~~~~~~~~~~~ {{{3
+"
+
+" BlockDiff
+vmap ,b1 :call BlockDiff_GetBlock1()<CR>
+vmap ,b2 :call BlockDiff_GetBlock2()<CR>
+
+" c (cd/cctree) ~~~~~~~~~~~~~ {{{3
+"
+
+" cd to the directory containing the file in the buffer
+nmap <silent> ,cd :lcd %:h<CR>
+
+" CCTree
+nmap <silent> ,ctl :CCTreeLoadDB<CR>
+nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
+nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
+
+" d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" Delete all buffers
+"nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
+
+" g (grep/git) ~~~~~~~~~~~~~~ {{{3
+"
+
+" Search the current file for what's currently in the search
+" register and display matches
+nmap <silent> ,g/
+      \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
+
+" Search the current file for the word under the cursor and display matches
+nmap <silent> ,gw
+      \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
+
+" Search the current file for the WORD under the cursor and display matches
+nmap <silent> ,gW
+      \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
+
+" Fugitive/Git
+nmap <silent> ,gs :Git status<CR>
+nmap <silent> ,gd :Git diff<CR>
+nmap <silent> ,gt :!tig<CR>
+
+" m (make) ~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" Make the directory that contains the file in the current buffer.
+" This is useful when you edit a file in a directory that doesn't
+" (yet) exist
+"nmap <silent> ,md :!mkdir -p %:p:h<CR>
+
+" run make in current directory
+nmap ,m :make<CR>
+
+" p (perl) ~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+nmap ,pt :.!perltidy<CR>
+vmap ,pt :!perltidy<CR>
+
+" r ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" Run the command that was just yanked
+"nmap <silent> ,rc :@"<cr>
+
+" s (scroll/swap) ~~~~~~~~~~~ {{{3
+"
+
+" Show all available VIM servers
+"nmap <silent> ,ss :echo serverlist()<CR>
+
+" make vertical scrolling easier
+nmap <silent> ,se 10<C-e>
+nmap <silent> ,sy 10<C-y>
+
+" make horizontal scrolling easier
+nmap <silent> ,sl 10zl
+nmap <silent> ,sh 10zh
+
+" Swap two words
+nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
+" t (toggles) ~~~~~~~~~~~~~~~ {{{3
+"
+
+" DelimitMate
+nmap <silent> ,tdm :DelimitMateSwitch<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
@@ -500,81 +654,44 @@ nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 " toggle read-only mode
 nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
 
-" cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
+" u (update) ~~~~~~~~~~~~~~~~ {{{3
+"
 
-" Make the directory that contains the file in the current buffer.
-" This is useful when you edit a file in a directory that doesn't
-" (yet) exist
-"nmap <silent> ,md :!mkdir -p %:p:h<CR>
+" save current buffer
+nmap ,u :update<CR>
 
-" Show all available VIM servers
-"nmap <silent> ,ss :echo serverlist()<CR>
+" Underline the current line with '='
+"nmap <silent> ,ul :t.\|s/./=/g\|set nohls<cr>
 
-" Run the command that was just yanked
-"nmap <silent> ,rc :@"<cr>
+" v (vimrc) ~~~~~~~~~~~~~~~~~ {{{3
+"
 
 " edit the vimrc file
 nmap <silent> ,ve :e $MYVIMRC<CR>
 nmap <silent> ,vs :so $MYVIMRC<CR>
 
-" make vertical scrolling easier
-nmap <silent> ,se 10<C-e>
-nmap <silent> ,sy 10<C-y>
+" Ctrl mappings ---------------------------------------------------------- {{{2
+"
 
-" make horizontal scrolling easier
-nmap <silent> ,sl 10zl
-nmap <silent> ,sh 10zh
+" Yankstack
+" TODO: change P to p
+nmap <C-P> <Plug>yankstack_substitute_older_paste
 
-" search of selected text in visual mode
-vmap X y/<C-R>"<CR>
+" Tagselect
+" open current file in new tab and do :Tselect on a word  under cursor
+nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
-" run make in current directory
-nmap ,m :make<CR>
+" Alt mappings ----------------------------------------------------------- {{{2
+"
 
-" quit all windows (by analogy with ZZ and ZQ)
-nmap ZA :qa<CR>
+" Latex Suite
+" TODO: use au for latex file types
+nmap <A-j> <Plug>IMAP_JumpForward
+vmap <A-j> <Plug>IMAP_JumpForward
 
-" Highlight all instances of the current word under the cursor
-"nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
-
-" Search the current file for what's currently in the search
-" register and display matches
-nmap <silent> ,g/
-      \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-
-" Search the current file for the word under the cursor and display matches
-nmap <silent> ,gw
-      \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-
-" Search the current file for the WORD under the cursor and display matches
-nmap <silent> ,gW
-      \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-
-" Swap two words
-nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-
-" Underline the current line with '='
-"nmap <silent> ,ul :t.\|s/./=/g\|set nohls<cr>
-
-" Delete all buffers
-"nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
-
-" find highlight group of symbol under cursor
-nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-      \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
-      \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
-      \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
-      \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
-
-" Show syntax highlighting groups for word under cursor
-nmap <S-F9> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+" Perl support
+" TODO: use au for perl file types
+"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
 
 " Cmdline editing -------------------------------------------------------- {{{2
 "
@@ -688,12 +805,7 @@ nmap <silent> ,ns :new <CR>
 " open empty buffer in new tab
 nmap <silent> ,nt :tabnew <CR>
 
-" Perl mappings ---------------------------------------------------------- {{{2
-"
-nmap ,pt :.!perltidy<CR>
-vmap ,pt :!perltidy<CR>
-
-" Plugin mappings -------------------------------------------------------- {{{2
+" Fn keys appings -------------------------------------------------------- {{{2
 "
 
 " build ctags/cscope for Asm/C/C++/Perl/Make project in current dir
@@ -723,74 +835,21 @@ nmap <F6>   :GundoToggle<CR>
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
 
-" BuffExplorer uses the following mappings:
-" \be - to start exploring in the current window
-" \bs - to start exploring in a newly split horizontal window
-" \bv - to start exploring in a newly split vertical window
+" find highlight group of symbol under cursor
+nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+      \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
+      \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
+      \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
+      \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
 
-" Alternate
-nmap <silent> <Leader>aa :A<CR>
-nmap <silent> <Leader>as :AS<CR>
-nmap <silent> <Leader>av :AV<CR>
-nmap <silent> <Leader>at :AT<CR>
-
-" FuzzyFinder Settings
-nmap ,fb :FufBuffer<CR>
-nmap ,fm :FufBookmarkFile<CR>
-nmap ,fma :FufBookmarkFileAdd<CR>
-nmap ,ff :FufFile<CR>
-nmap ,fo :FufCoverageFile<CR>
-nmap ,ft :FufBufferTag<CR>
-nmap ,fj :FufJumpList<CR>
-nmap ,fc :FufChangeList<CR>
-nmap ,fl :FufLine<CR>
-
-" Color shceme
-" nmap <Leader>\]  :call NextColorScheme()<CR>
-" nmap <Leader>\[  :call PreviousColorScheme()<CR>
-
-" Latex Suite
-" TODO: use au for latex file types
-nmap <A-j> <Plug>IMAP_JumpForward
-vmap <A-j> <Plug>IMAP_JumpForward
-
-" Perl support
-"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
-
-" DiffChanges
-nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
-nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
-
-" BlockDiff
-vmap ,b1 :call BlockDiff_GetBlock1()<CR>
-vmap ,b2 :call BlockDiff_GetBlock2()<CR>
-
-" CCTree
-nmap <silent> ,ctl :CCTreeLoadDB<CR>
-nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
-nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
-
-" SessionMan
-nmap <silent> \so :SessionOpen <C-X>
-nmap <silent> \sc :SessionClose<CR>
-nmap <silent> \ss :SessionSave<CR>
-nmap <silent> \sl :SessionList<CR>
-
-" Fugitive/Git
-nmap <silent> ,gs :Git status<CR>
-nmap <silent> ,gd :Git diff<CR>
-nmap <silent> ,gt :!tig<CR>
-
-" Tagselect
-" open current file in new tab and do :Tselect on a word  under cursor
-nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
-
-" DelimitMate
-nmap <silent> ,tdm :DelimitMateSwitch<CR>
-
-" Yankstack
-"
-nmap <C-P> <Plug>yankstack_substitute_older_paste
+" Show syntax highlighting groups for word under cursor
+nmap <S-F9> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " Commands =============================================================== {{{1
 "
