@@ -478,9 +478,32 @@ nnoremap g#  g#N
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 
+" Ctrl mappings ---------------------------------------------------------- {{{2
+"
+
+" Yankstack
+" TODO: change P to p
+nmap <C-P> <Plug>yankstack_substitute_older_paste
+
 " map CTRL-s to do what ',' used to do
-nnoremap <c-s> ,
-vnoremap <c-s> ,
+nnoremap <C-s> ,
+vnoremap <C-s> ,
+
+" Tagselect
+" open current file in new tab and do :Tselect on a word  under cursor
+nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
+
+" Alt mappings ----------------------------------------------------------- {{{2
+"
+
+" Latex Suite
+" TODO: use au for latex file types
+nmap <A-j> <Plug>IMAP_JumpForward
+vmap <A-j> <Plug>IMAP_JumpForward
+
+" Perl support
+" TODO: use au for perl file types
+"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
 
 " \ mappings ------------------------------------------------------------- {{{2
 "
@@ -512,20 +535,6 @@ nmap <silent> <Leader>at :AT<CR>
 " DiffChanges
 nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
 nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
-
-" f (fuzzyfinder) ~~~~~~~~~~~ {{{3
-"
-
-" FuzzyFinder Settings
-nmap ,fb :FufBuffer<CR>
-nmap ,fm :FufBookmarkFile<CR>
-nmap ,fma :FufBookmarkFileAdd<CR>
-nmap ,ff :FufFile<CR>
-nmap ,fo :FufCoverageFile<CR>
-nmap ,ft :FufBufferTag<CR>
-nmap ,fj :FufJumpList<CR>
-nmap ,fc :FufChangeList<CR>
-nmap ,fl :FufLine<CR>
 
 " s (sessionman) ~~~~~~~~~~~~ {{{3
 "
@@ -565,6 +574,20 @@ nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
 
 " Delete all buffers
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
+
+" f (fuzzyfinder) ~~~~~~~~~~~ {{{3
+"
+
+" FuzzyFinder Settings
+nmap ,fb :FufBuffer<CR>
+nmap ,fm :FufBookmarkFile<CR>
+nmap ,fma :FufBookmarkFileAdd<CR>
+nmap ,ff :FufFile<CR>
+nmap ,fo :FufCoverageFile<CR>
+nmap ,ft :FufBufferTag<CR>
+nmap ,fj :FufJumpList<CR>
+nmap ,fc :FufChangeList<CR>
+nmap ,fl :FufLine<CR>
 
 " g (grep/git) ~~~~~~~~~~~~~~ {{{3
 "
@@ -649,23 +672,14 @@ if version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
 
+" toggle scrollbind
+nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
+
 " toggle doxygen comments highlighting
 nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
-
-" toggle paste mode
-nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
-
-" toggle highlight search
-"nmap <silent> ,tn :set invhls<CR>:set hls?<CR>
-
-" disable current highlight search
-nmap <silent> ,tn :nohlsearch<CR>
-
-" toggle text wrapping
-nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
@@ -673,11 +687,17 @@ nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
+" toggle highlight search
+"nmap <silent> ,tn :set invhls<CR>:set hls?<CR>
+
+" disable current highlight search
+nmap <silent> ,tn :nohlsearch<CR>
+
+" toggle paste mode
+nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
+
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
-
-" toggle scrollbind
-nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 
 " toggle read-only mode
 nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
@@ -687,6 +707,9 @@ nmap <silent> ,tt :call MyToggleTabstop()<CR>
 nmap <silent> ,tq :call MyToggleQuickFix()<CR>
 
 nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
+
+" toggle text wrapping
+nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 
 " u (update) ~~~~~~~~~~~~~~~~ {{{3
 "
@@ -703,29 +726,6 @@ nmap ,u :update<CR>
 " edit the vimrc file
 nmap <silent> ,ve :e $MYVIMRC<CR>
 nmap <silent> ,vs :so $MYVIMRC<CR>
-
-" Ctrl mappings ---------------------------------------------------------- {{{2
-"
-
-" Yankstack
-" TODO: change P to p
-nmap <C-P> <Plug>yankstack_substitute_older_paste
-
-" Tagselect
-" open current file in new tab and do :Tselect on a word  under cursor
-nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
-
-" Alt mappings ----------------------------------------------------------- {{{2
-"
-
-" Latex Suite
-" TODO: use au for latex file types
-nmap <A-j> <Plug>IMAP_JumpForward
-vmap <A-j> <Plug>IMAP_JumpForward
-
-" Perl support
-" TODO: use au for perl file types
-"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
 
 " Cmdline editing -------------------------------------------------------- {{{2
 "
@@ -1211,6 +1211,49 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 " Functions ============================================================== {{{1
 "
 
+" Reload cscope db ------------------------------------------------------- {{{2
+function! MyCscopeReload()
+    cs kill 0
+    cs add cscope.out
+endfunction
+
+" Run perlcritic on current file ----------------------------------------- {{{2
+function! MyPerlcritic(level)
+    let l:old_makeprg = &makeprg
+    let l:cmd = 'perlcritic --severity ' . a:level . ' --quiet --verbose "\%f:\%l:\%m\n" %'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+" Run perl -c on current file ------------------------------------------- {{{2
+function! MyPerlcompile()
+    let l:old_makeprg = &makeprg
+    let l:cmd = '/usr/share/vim/vim73/tools/efm_perl.pl -c % $*'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+" Run perl on current file ---------------------------------------------- {{{2
+function! MyPerlrun()
+    let l:old_makeprg = &makeprg
+    let l:cmd = 'perl % $*'
+    let &makeprg = l:cmd
+    :make
+    let &makeprg = l:old_makeprg
+endfunction
+
+" Syntax highlighting --------------------------------------------------- {{{2
+
+" show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
     if &ts == 4
@@ -1281,49 +1324,6 @@ function! MyToggleDoxygenSyntax()
     endif
     set syntax?
 endfunction
-
-" Reload cscope db ------------------------------------------------------- {{{2
-function! MyCscopeReload()
-    cs kill 0
-    cs add cscope.out
-endfunction
-
-" Run perlcritic on current file ----------------------------------------- {{{2
-function! MyPerlcritic(level)
-    let l:old_makeprg = &makeprg
-    let l:cmd = 'perlcritic --severity ' . a:level . ' --quiet --verbose "\%f:\%l:\%m\n" %'
-    let &makeprg = l:cmd
-    :make
-    let &makeprg = l:old_makeprg
-endfunction
-
-" Run perl -c on current file ------------------------------------------- {{{2
-function! MyPerlcompile()
-    let l:old_makeprg = &makeprg
-    let l:cmd = '/usr/share/vim/vim73/tools/efm_perl.pl -c % $*'
-    let &makeprg = l:cmd
-    :make
-    let &makeprg = l:old_makeprg
-endfunction
-
-" Run perl on current file ---------------------------------------------- {{{2
-function! MyPerlrun()
-    let l:old_makeprg = &makeprg
-    let l:cmd = 'perl % $*'
-    let &makeprg = l:cmd
-    :make
-    let &makeprg = l:old_makeprg
-endfunction
-
-" Syntax highlighting --------------------------------------------------- {{{2
-
-" show syntax highlighting groups for word under cursor
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " tabline  --------------------------------------------------------------- {{{2
 "
