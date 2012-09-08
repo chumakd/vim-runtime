@@ -1235,6 +1235,21 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 " Functions ============================================================== {{{1
 "
 
+" Fix Meta-Esc ----------------------------------------------------------- {{{2
+"
+" fix meta-keys which generate <Esc>a .. <Esc>z
+function! MyFixMetaEsc()
+    let c='a'
+    while c <= 'z'
+        "exec "set <M-".toupper(c).">=\e".c
+        exec "set <M-".c.">=\e".c
+        exec "imap \e".c." <M-".c.">"
+        let c = nr2char(1+char2nr(c))
+    endw
+endfunction
+
+call MyFixMetaEsc()
+
 " Reload cscope db ------------------------------------------------------- {{{2
 function! MyCscopeReload()
     cs kill 0
