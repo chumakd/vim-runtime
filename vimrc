@@ -194,6 +194,11 @@ set nohidden
 " disable virtualedit by default
 set virtualedit=
 
+" set timeouts for keycodes and mappings
+set timeout
+set timeoutlen=700
+set ttimeoutlen=100
+
 " Cmdline ---------------------------------------------------------------- {{{2
 "
 set history=5000
