@@ -886,6 +886,9 @@ nmap <F5>   :MarksBrowser<CR>
 " Gundo
 nmap <F6>   :GundoToggle<CR>
 
+" Syntastic
+nmap <F7>   :SyntasticCheck<CR>
+
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
