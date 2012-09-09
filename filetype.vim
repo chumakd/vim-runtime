@@ -3,6 +3,7 @@ if exists("did_load_filetypes")
   finish
 endif
 augroup filetypedetect
+  " ipmasq rules
   au! BufRead,BufNewFile *.rul          setfiletype sh
   au! BufRead,BufNewFile *.def          setfiletype sh
   " force *.h files to be detected as C and not C++

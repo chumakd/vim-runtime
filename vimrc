@@ -573,6 +573,21 @@ nmap <silent> <Leader>at :AT<CR>
 nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
 nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
 
+" l (Latex-Suite) ~~~~~~~~~~~ {{{3
+"
+
+" Latex-Suite
+
+" default latex-suite mappings:
+" \ll - Compile
+" \lv - View
+" \ls - ForwardSearch
+
+"augroup CustomLatexSuite
+    "au!
+    "au! BufRead,BufNewFile *.tex  nmap <F9>
+"augroup end
+
 " s (sessionman) ~~~~~~~~~~~~ {{{3
 "
 
@@ -902,7 +917,7 @@ nmap <S-F8> :NERDTree %:p:h<CR>
 nmap <S-F9> :call <SID>SynStack()<CR>
 
 " find highlight group of symbol under cursor
-nmap <silent> <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+nmap <silent> <M-F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
       \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
       \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
       \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
@@ -946,7 +961,7 @@ command Colortest runtime syntax/colortest.vim
 "command! -range Entities :'<,'>!$HOME/bin/html-entities
 
 " reading Ms-Word documents, requires antiword
-autocmd BufReadPre *.doc set ro
+autocmd BufReadPre  *.doc set ro
 autocmd BufReadPost *.doc %!antiword "%"
 
 " highlight trailing whitespaces with color of TODO hl group
