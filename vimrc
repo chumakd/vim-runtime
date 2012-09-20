@@ -197,7 +197,8 @@ set virtualedit=
 " set timeouts for keycodes and mappings
 set timeout
 set timeoutlen=700
-set ttimeoutlen=100
+"set ttimeoutlen=100
+set ttimeoutlen=2
 
 " Cmdline ---------------------------------------------------------------- {{{2
 "
@@ -1268,7 +1269,8 @@ function! MyFixMetaEsc()
     endw
 endfunction
 
-call MyFixMetaEsc()
+" temporarily disable, because breaks ESC and immediate command
+"call MyFixMetaEsc()
 
 " Reload cscope db ------------------------------------------------------- {{{2
 function! MyCscopeReload()
