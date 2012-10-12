@@ -608,6 +608,14 @@ nmap <silent> \sl :SessionList<CR>
 vmap ,b1 :call BlockDiff_GetBlock1()<CR>
 vmap ,b2 :call BlockDiff_GetBlock2()<CR>
 
+" c (camelcasemotion) ~~~~~~~ {{{3
+"
+
+" CamelCaseMotion
+map <silent> ,,w <Plug>CamelCaseMotion_w
+map <silent> ,,b <Plug>CamelCaseMotion_b
+map <silent> ,,e <Plug>CamelCaseMotion_e
+
 " c (cd/cscope) ~~~~~~~~~~~~~ {{{3
 "
 
