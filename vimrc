@@ -550,6 +550,12 @@ noremap <silent> <M-Left>  :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
 " nmap <Leader>\]  :call NextColorScheme()<CR>
 " nmap <Leader>\[  :call PreviousColorScheme()<CR>
 
+" = (indent) ~~~~~~~~~~~~~~~~ {{{3
+"
+
+" indent selected C code using `indent` command with linux kernel coding style
+vmap \= :!indent -linux<CR>
+
 " a (alternate) ~~~~~~~~~~~~~ {{{3
 "
 
@@ -820,6 +826,11 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 " toggle text wrapping
 nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 
+" toggle text width
+nmap <silent> ,t0 :set textwidth=0<CR>:set tw?<CR>
+nmap <silent> ,t8 :set textwidth=80<CR>:set tw?<CR>
+nmap <silent> ,t78 :set textwidth=78<CR>:set tw?<CR>
+
 " u (update) ~~~~~~~~~~~~~~~~ {{{3
 "
 
@@ -936,8 +947,8 @@ nmap <silent> <M-F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
 "
 
 " show current highlight groups in new buffer
-command Hitest    runtime syntax/hitest.vim
-command Colortest runtime syntax/colortest.vim
+command! Hitest    runtime syntax/hitest.vim
+command! Colortest runtime syntax/colortest.vim
 
 " Auto commands  ========================================================= {{{1
 "
@@ -1396,7 +1407,7 @@ endfunction
 
 " tabline  --------------------------------------------------------------- {{{2
 "
-function MyTabLabel(n)
+function! MyTabLabel(n)
 
     let l:tab_num = tabpagenr()
     let l:win_nr = tabpagewinnr(a:n)
@@ -1436,7 +1447,7 @@ function MyTabLabel(n)
 
 endfunction
 
-function MyTabLine()
+function! MyTabLine()
     let s = ''
     for i in range(tabpagenr('$'))
         " set the tab page number (for mouse clicks)
