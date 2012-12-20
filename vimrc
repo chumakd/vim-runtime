@@ -769,8 +769,8 @@ nmap <silent> ,se 10<C-e>
 nmap <silent> ,sy 10<C-y>
 
 " make horizontal scrolling easier
-nmap <silent> ,sl 10zl
-nmap <silent> ,sh 10zh
+nmap <silent> ,sl 5zl
+nmap <silent> ,sh 5zh
 
 " Swap two words
 nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
