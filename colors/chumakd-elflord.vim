@@ -130,6 +130,8 @@ hi! link ShowMarksHLo   ShowMarksHLdefault
 hi! link ShowMarksHLm   ShowMarksHLdefault
 hi! link ShowMarksHLlz  ShowMarksHLdefault
 
+hi! TagListFileName    cterm=NONE  ctermfg=White  ctermbg=NONE
+
 endif
 
 " original 16-color elflord highlights ================================== {{{1
