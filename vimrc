@@ -1,5 +1,11 @@
 " Options ================================================================ {{{1
 
+if has('win32') || has ('win64')
+    let $VIMHOME = $VIM."/vimfiles"
+else
+    let $VIMHOME = $HOME."/.vim"
+endif
+
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -1309,7 +1315,7 @@ endfunction
 " Run perl -c on current file ------------------------------------------- {{{2
 function! MyPerlcompile()
     let l:old_makeprg = &makeprg
-    let l:cmd = '/usr/share/vim/vim73/tools/efm_perl.pl -c % $*'
+    let l:cmd = "$VIMHOME/tools/efm_perl.pl -c % $*"
     let &makeprg = l:cmd
     :make
     let &makeprg = l:old_makeprg
