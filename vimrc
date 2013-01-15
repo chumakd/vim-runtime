@@ -35,7 +35,9 @@ syntax enable
 "
 
 " enable 256 colors in terminal
-set t_Co=256
+if match($TERM, '256color') != -1
+    set t_Co=256
+endif
 
 "colorscheme elflord
 colorscheme chumakd-elflord
