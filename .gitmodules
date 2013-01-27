@@ -246,3 +246,6 @@
 [submodule "p/syntastic"]
 	path = p/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "p/Colour-Sampler-Pack"]
+	path = p/Colour-Sampler-Pack
+	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
