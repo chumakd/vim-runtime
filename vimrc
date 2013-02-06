@@ -1417,6 +1417,21 @@ function! MyToggleDoxygenSyntax()
     set syntax?
 endfunction
 
+" Toggle cursor/column highlight ----------------------------------------- {{{2
+function! MyToggleCursorColumnHl()
+    if &cursorline && &cursorcolumn
+        au! WinLeave *
+        au! WinEnter *
+        set nocursorline nocursorcolumn
+        echo "disabled"
+    else
+        au WinLeave * set nocursorline nocursorcolumn
+        au WinEnter * set cursorline cursorcolumn
+        set cursorline cursorcolumn
+        echo "enabled"
+    endif
+endfunction
+
 " tabline  --------------------------------------------------------------- {{{2
 "
 function! MyTabLabel(n)
