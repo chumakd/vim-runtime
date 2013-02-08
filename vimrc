@@ -85,6 +85,8 @@ set spelllang+=ru
 " Language --------------------------------------------------------------- {{{2
 "
 
+set dictionary=/usr/share/dict/words
+
 " enable keymappings for russian win-like йцукен keyboards
 set keymap=russian-jcukenwin
 
