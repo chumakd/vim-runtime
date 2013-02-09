@@ -6,6 +6,7 @@ set lines=40
 "
 " Set GUI font
 "
+
 "set guifont=Luxi\ Mono\ 11
 "set guifont=Courier\ 10\ pitch\ 11
 "set guifont=Courier\ New\ 10
@@ -17,6 +18,7 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 "
 " GUI options stuff:
 "
+
 " disable scrollbars
 set guioptions -=l
 set guioptions -=r
@@ -50,8 +52,9 @@ highlight lCursor guifg=NONE guibg=Cyan
 
 
 "
-" Use custom tab label
+" Use custom tabs label
 "
+
 function GuiTabLabel()
   let label = v:lnum
   let label .= ') '

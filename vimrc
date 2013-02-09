@@ -382,7 +382,10 @@ let g:Perl_Ctrl_j   = 'off'
 "
 
 " temporarily disable powerline plugin because it has several look&feel issues
-let g:Powerline_loaded = 1
+" but keep it enabled for Gvim (because I rarely use it anyway ;)
+if !has("gui_running")
+    let g:Powerline_loaded = 1
+endif
 
 " options
 "let g:Powerline_symbols = 'fancy'
@@ -391,7 +394,8 @@ let g:Powerline_stl_path_style = 'relative'
 
 " theme and colors
 "let g:Powerline_theme = 'skwp'
-let g:Powerline_colorscheme = 'chumakd'
+"let g:Powerline_colorscheme = 'chumakd'
+let g:Powerline_colorscheme = 'solarized256'
 
 " add total line number segment after lineinfo
 "call Pl#Theme#InsertSegment('charcode', 'before', 'scrollpercent')
@@ -555,7 +559,7 @@ noremap <silent> <M-Down>   :tabnext<CR>
 
 " move tabs
 noremap <silent> <M-Right>  :exec 'silent! tabmove ' . tabpagenr()<CR>
-noremap <silent> <M-Left>  :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
+noremap <silent> <M-Left>   :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
 
 " \ mappings ------------------------------------------------------------- {{{2
 "
