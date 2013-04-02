@@ -40,6 +40,9 @@ set guioptions +=c
 " disable gui tab line, use text tabline instead
 set guioptions -=e
 
+" disable cursor blinking
+set guicursor+=a:blinkon0
+
 " disable bell
 set vb t_vb=
 
