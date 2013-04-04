@@ -249,3 +249,6 @@
 [submodule "p/Colour-Sampler-Pack"]
 	path = p/Colour-Sampler-Pack
 	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
+[submodule "p/asciidoc-vim"]
+	path = p/asciidoc-vim
+	url = git://github.com/dagwieers/asciidoc-vim.git
