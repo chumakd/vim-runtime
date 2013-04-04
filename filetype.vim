@@ -18,4 +18,6 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.ff           setfiletype c
   " tmux config files
   au! BufRead,BufNewFile .tmux.conf*,tmux.conf*     setfiletype tmux
+  " markdown
+  au! BufRead,BufNewFile *.md           setfiletype markdown
 augroup END
