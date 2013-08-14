@@ -252,3 +252,6 @@
 [submodule "p/asciidoc-vim"]
 	path = p/asciidoc-vim
 	url = git://github.com/dagwieers/asciidoc-vim.git
+[submodule "p/foldsearch"]
+	path = p/foldsearch
+	url = git://github.com/vim-scripts/foldsearch.git
