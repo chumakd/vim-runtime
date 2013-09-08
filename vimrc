@@ -517,7 +517,7 @@ vnoremap <C-s> ,
 
 " Tagselect
 " open current file in new tab and do :Tselect on a word  under cursor
-nmap <C-w>t :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
+nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
 " Maps to make handling windows a bit easier ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
