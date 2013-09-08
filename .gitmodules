@@ -255,3 +255,6 @@
 [submodule "p/foldsearch"]
 	path = p/foldsearch
 	url = git://github.com/vim-scripts/foldsearch.git
+[submodule "p/vim-perl"]
+	path = p/vim-perl
+	url = git://github.com/vim-perl/vim-perl.git
