@@ -1327,7 +1327,8 @@ endfunction
 " Run perl -c on current file ------------------------------------------- {{{2
 function! MyPerlcompile()
     let l:old_makeprg = &makeprg
-    let l:cmd = "$VIMHOME/tools/efm_perl.pl -c % $*"
+    "let l:cmd = "$VIMHOME/tools/efm_perl_old.pl % $*"
+    let l:cmd = pathogen#runtime_findfile('tools/efm_perl.pl', 0) . " % $*"
     let &makeprg = l:cmd
     :make
     let &makeprg = l:old_makeprg
@@ -1336,7 +1337,7 @@ endfunction
 " Run perl on current file ---------------------------------------------- {{{2
 function! MyPerlrun()
     let l:old_makeprg = &makeprg
-    let l:cmd = 'perl % $*'
+    let l:cmd = "perl % $*"
     let &makeprg = l:cmd
     :make
     let &makeprg = l:old_makeprg
