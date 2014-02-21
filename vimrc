@@ -266,6 +266,7 @@ let g:CCTreeWindowVertical = 1
 
 " Clang_complete --------------------------------------------------------- {{{2
 "
+" default clang completion mapping is i_<C-x><C-u>
 "let g:clang_complete_auto = 0
 let g:clang_omnicppcomplete_compliance = 1
 
@@ -921,11 +922,11 @@ cnoremap <ESC>n <Down>
 " Fn keys appings -------------------------------------------------------- {{{2
 "
 
-" build ctags/cscope for Asm/C/C++/Perl/Make project in current dir
-nmap <F2> :!mktags -acxpms<CR>
+" build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
+nmap <F2> :!mktags -acxpyems<CR>
 
 " same as above but without Make
-nmap <S-F2> :!mktags -acxps<CR>
+"nmap <S-F2> :!mktags -acxps<CR>
 
 " Project
 "nmap <S-F3> :Project vimproject<CR>
