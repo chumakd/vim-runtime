@@ -20,4 +20,5 @@ augroup filetypedetect
   au! BufRead,BufNewFile .tmux.conf*,tmux.conf*     setfiletype tmux
   " markdown
   au! BufRead,BufNewFile *.md           setfiletype markdown
+  au! BufRead,BufNewFile *.psgi         setfiletype perl
 augroup END
