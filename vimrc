@@ -369,6 +369,14 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 
 " Perl syntax ------------------------------------------------------------ {{{2
 "
+augroup perl_contrib
+    autocmd!
+    autocmd FileType perl runtime contrib/carp.vim
+    autocmd FileType perl runtime contrib/moose.vim
+    autocmd FileType perl runtime contrib/test-more.vim
+    autocmd FileType perl runtime contrib/try-tiny.vim
+augroup end
+
 let perl_fold = 1
 let perl_fold_blocks = 1
 
