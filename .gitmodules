@@ -267,3 +267,6 @@
 [submodule "p/vim-eunuch"]
 	path = p/vim-eunuch
 	url = git://github.com/tpope/vim-eunuch.git
+[submodule "p/vim-dispatch"]
+	path = p/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git
