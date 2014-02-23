@@ -264,3 +264,6 @@
 [submodule "p/ack"]
 	path = p/ack
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "p/vim-eunuch"]
+	path = p/vim-eunuch
+	url = git://github.com/tpope/vim-eunuch.git
