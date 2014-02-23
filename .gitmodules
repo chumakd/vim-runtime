@@ -261,3 +261,6 @@
 [submodule "p/vim-indent-object"]
 	path = p/vim-indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "p/ack"]
+	path = p/ack
+	url = git://github.com/mileszs/ack.vim.git
