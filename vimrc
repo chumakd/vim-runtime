@@ -750,7 +750,8 @@ noremap <silent> ,l :wincmd l<CR>
 "nmap <silent> ,md :!mkdir -p %:p:h<CR>
 
 " run make in current directory
-nmap ,m :make<CR>
+nmap ,m :Make<CR>
+nmap ,M :Make!<CR>
 
 " p (perl) ~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -944,8 +945,8 @@ nmap <F2> :!mktags -acxpyems<CR>
 nmap <F3>   :MRU<CR>
 
 " TagList/Tagbar
-nmap <F4>   :TlistToggle<CR>
-nmap <S-F4> :TagbarToggle<CR>
+nmap <F4>   :TagbarToggle<CR>
+nmap <S-F4> :TlistToggle<CR>
 
 " MarksBrowser
 nmap <F5>   :MarksBrowser<CR>
