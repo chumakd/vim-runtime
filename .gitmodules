@@ -267,3 +267,6 @@
 [submodule "p/vim-dispatch"]
 	path = p/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
+[submodule "p/emmet-vim"]
+	path = p/emmet-vim
+	url = git://github.com/mattn/emmet-vim.git
