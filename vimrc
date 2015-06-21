@@ -296,6 +296,10 @@ let g:Cscope_ToolsMenu = 0
 "
 let delimitMate_offByDefault = 1
 
+" DirDiff ---------------------------------------------------------------- {{{2
+"
+let g:DirDiffEnableMappings = 1
+
 " EasyMotion ------------------------------------------------------------- {{{2
 "
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
