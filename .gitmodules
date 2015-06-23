@@ -271,3 +271,6 @@
 [submodule "p/emmet-vim"]
 	path = p/emmet-vim
 	url = git://github.com/mattn/emmet-vim.git
+[submodule "p/ScrollColors"]
+	path = p/ScrollColors
+	url = git@github.com:chumakd/ScrollColors.git
