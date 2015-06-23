@@ -149,7 +149,7 @@
 	url = git://github.com/vim-scripts/EasyGrep.git
 [submodule "p/file-line"]
 	path = p/file-line
-	url = git://github.com/vim-scripts/file-line.git
+	url = git://github.com/bogado/file-line.git
 [submodule "p/QFixToggle"]
 	path = p/QFixToggle
 	url = git://github.com/vim-scripts/QFixToggle.git
