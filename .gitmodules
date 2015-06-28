@@ -118,7 +118,7 @@
 	url = git://github.com/vim-scripts/Vim-R-plugin.git
 [submodule "p/tagselect"]
 	path = p/tagselect
-	url = git://github.com/vim-scripts/tagselect.git
+	url = git@github.com:chumakd/tagselect.git
 [submodule "p/Gundo"]
 	path = p/Gundo
 	url = git://github.com/vim-scripts/Gundo.git
