@@ -1,1 +1,0 @@
-../../bundle/CCTree/ftplugin/cctree.vim
