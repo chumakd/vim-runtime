@@ -271,3 +271,6 @@
 [submodule "p/ScrollColors"]
 	path = p/ScrollColors
 	url = git@github.com:chumakd/ScrollColors.git
+[submodule "p/vim-taglist-plus"]
+	path = p/vim-taglist-plus
+	url = git@github.com:chumakd/vim-taglist-plus.git
