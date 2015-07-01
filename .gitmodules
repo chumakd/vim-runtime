@@ -82,8 +82,7 @@
 	url = git://github.com/vim-scripts/The-NERD-tree.git
 [submodule "p/OmniCppComplete"]
 	path = p/OmniCppComplete
-	url = git://github.com/dradtke/OmniCppComplete.git
-	;url = git://github.com/vim-scripts/OmniCppComplete.git
+	url = git@github.com:chumakd/OmniCppComplete.git
 [submodule "p/project"]
 	path = p/project
 	url = git://github.com/vim-scripts/project.tar.gz.git
