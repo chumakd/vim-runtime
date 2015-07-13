@@ -267,3 +267,6 @@
 [submodule "p/vim-taglist-plus"]
 	path = p/vim-taglist-plus
 	url = git@github.com:chumakd/vim-taglist-plus.git
+[submodule "p/vim-gnupg"]
+	path = p/vim-gnupg
+	url = git://github.com/jamessan/vim-gnupg.git
