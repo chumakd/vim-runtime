@@ -267,3 +267,6 @@
 [submodule "p/vim-gnupg"]
 	path = p/vim-gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
+[submodule "p/vim-latex"]
+	path = p/vim-latex
+	url = git://github.com/vim-latex/vim-latex.git
