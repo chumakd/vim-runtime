@@ -71,9 +71,6 @@
 [submodule "p/MultipleSearch"]
 	path = p/MultipleSearch
 	url = git://github.com/vim-scripts/MultipleSearch.git
-[submodule "p/LaTeX-Suite-aka-Vim-LaTeX"]
-	path = p/LaTeX-Suite-aka-Vim-LaTeX
-	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
 [submodule "p/The-NERD-tree"]
 	path = p/The-NERD-tree
 	url = git://github.com/vim-scripts/The-NERD-tree.git
