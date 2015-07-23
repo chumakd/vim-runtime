@@ -270,3 +270,6 @@
 [submodule "p/vim-latex"]
 	path = p/vim-latex
 	url = git://github.com/vim-latex/vim-latex.git
+[submodule "p/vim-markdown"]
+	path = p/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
