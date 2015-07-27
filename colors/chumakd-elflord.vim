@@ -44,7 +44,7 @@ hi MatchParen               ctermfg=LightGray  ctermbg=Blue
 " StatusLine ------------------------------------------------------------ {{{2
 "
 hi StatusLine   cterm=NONE  ctermfg=White  ctermbg=235
-hi StatusLineNC cterm=NONE  ctermfg=black  ctermbg=DarkGray
+hi StatusLineNC cterm=NONE  ctermfg=black  ctermbg=244
 
 " Folds ----------------------------------------------------------------- {{{2
 "
