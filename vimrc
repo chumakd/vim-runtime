@@ -16,8 +16,8 @@ set nocompatible
 
 " Filetype --------------------------------------------------------------- {{{2
 "
-filetype plugin on
 filetype indent on
+filetype plugin on
 
 runtime! ftplugin/man.vim
 runtime macros/matchit.vim
