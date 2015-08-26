@@ -397,6 +397,15 @@ let perl_fold_blocks = 1
 " enable syntax highlighting for perl POD documentation
 let perl_include_pod = 1
 
+" Perl-local-lib-path ---------------------------------------------------- {{{2
+"
+let g:perl_local_lib_path = "lib"
+let perl_inc_path = system("perl -e 'print join qq(,), @INC'")
+if !empty(perl_inc_path)
+    let g:perl_local_lib_path = g:perl_local_lib_path ."," . perl_inc_path
+endif
+autocmd FileType perl PerlLocalLibPath
+
 " Perl-support ----------------------------------------------------------- {{{2
 "
 let g:Perl_Ctrl_j   = 'off'
