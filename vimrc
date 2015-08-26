@@ -62,6 +62,12 @@ set foldcolumn=4
 set foldmethod=syntax
 set foldopen+=insert,jump
 
+" set 'foldmethod' to 'manual' when entering insert mode
+" this improves completion speed in order of magnitude
+" from http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 " Indent ----------------------------------------------------------------- {{{2
 "
 set autoindent
@@ -213,6 +219,10 @@ set timeout
 set timeoutlen=700
 "set ttimeoutlen=100
 set ttimeoutlen=2
+
+" don't allow ^N completion to scan included files by default
+" that can be requested directly with i_^x^i
+set complete-=i
 
 " Cmdline ---------------------------------------------------------------- {{{2
 "
@@ -449,6 +459,11 @@ let sessionman_save_on_exit = 0
 "
 let g:showmarks_enable = 0
 let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+" Solarized -------------------------------------------------------------- {{{2
+"
+" set this for terminals which haven't got custom solarized color palette installed
+"let g:solarized_termcolors=256
 
 " Syntastic -------------------------------------------------------------- {{{2
 "
