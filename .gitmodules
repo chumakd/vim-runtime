@@ -276,3 +276,6 @@
 [submodule "p/perl-local-lib-path"]
 	path = p/perl-local-lib-path
 	url = git://github.com/yuuki1/perl-local-lib-path.vim.git
+[submodule "p/perlomni"]
+	path = p/perlomni
+	url = git@github.com:chumakd/perlomni.vim.git
