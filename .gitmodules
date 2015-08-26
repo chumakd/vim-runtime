@@ -273,3 +273,6 @@
 [submodule "p/vim-markdown"]
 	path = p/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "p/perl-local-lib-path"]
+	path = p/perl-local-lib-path
+	url = git://github.com/yuuki1/perl-local-lib-path.vim.git
