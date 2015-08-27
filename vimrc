@@ -385,8 +385,10 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 "
 augroup perl_contrib
     autocmd!
+    autocmd FileType perl runtime contrib/highlight-all-pragmas.vim
     autocmd FileType perl runtime contrib/carp.vim
     autocmd FileType perl runtime contrib/moose.vim
+    autocmd FileType perl runtime contrib/method-signatures.vim
     autocmd FileType perl runtime contrib/test-more.vim
     autocmd FileType perl runtime contrib/try-tiny.vim
 augroup end
