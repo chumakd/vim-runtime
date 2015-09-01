@@ -220,9 +220,15 @@ set timeoutlen=700
 "set ttimeoutlen=100
 set ttimeoutlen=2
 
+" speed up completion significantly
+
 " don't allow ^N completion to scan included files by default
 " that can be requested directly with i_^x^i
 set complete-=i
+
+" don't allow ^N completion to scan tags by default
+" that can be requested directly with i_^x^]
+set complete-=t
 
 " Cmdline ---------------------------------------------------------------- {{{2
 "
