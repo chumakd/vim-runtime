@@ -6,6 +6,9 @@ else
     let $VIMHOME = $HOME."/.vim"
 endif
 
+" detect operating system
+let s:os = substitute(system('uname'), "\n", "", "")
+
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -285,6 +288,9 @@ let g:CCTreeWindowVertical = 1
 " default clang completion mapping is i_<C-x><C-u>
 "let g:clang_complete_auto = 0
 let g:clang_omnicppcomplete_compliance = 1
+if s:os == "Darwin"
+  let g:clang_library_path = "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+endif
 
 " Conque shell ----------------------------------------------------------- {{{2
 "
