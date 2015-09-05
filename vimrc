@@ -290,6 +290,8 @@ let g:CCTreeWindowVertical = 1
 let g:clang_omnicppcomplete_compliance = 1
 if s:os == "Darwin"
   let g:clang_library_path = "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
+elseif s:os == "Linux"
+  let g:clang_library_path = "/usr/lib/llvm-3.6/lib/libclang.so.1"
 endif
 
 " Conque shell ----------------------------------------------------------- {{{2
