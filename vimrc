@@ -577,24 +577,42 @@ nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
 " switch window with full expand
 " TODO: change to lowercase
-nmap <C-J> <C-W>j<C-W>_
-nmap <C-K> <C-W>k<C-W>_
-nmap <C-H> <C-W>h<C-W>\|
-nmap <C-L> <C-W>l<C-W>\|
+nnoremap <C-J> <C-W>j<C-W>_
+nnoremap <C-K> <C-W>k<C-W>_
+nnoremap <C-H> <C-W>h<C-W>\|
+nnoremap <C-L> <C-W>l<C-W>\|
 
 " adjust window size by one
-noremap <silent> <C-Left>   <C-W><
-noremap <silent> <C-Up>     <C-W>+
-noremap <silent> <C-Down>   <C-W>-
-noremap <silent> <C-Right>  <C-W>>
+nnoremap <silent> <C-Left>   <C-W><
+nnoremap <silent> <C-Up>     <C-W>+
+nnoremap <silent> <C-Down>   <C-W>-
+nnoremap <silent> <C-Right>  <C-W>>
 
 " Alt mappings ----------------------------------------------------------- {{{2
 "
 
+" into to Alt keys mapping in vim :h :map-alt-keys
+
+" map Alt-key combinations to escape codes (this is required because all major
+" terminals use escape codes for Alt- combinations instead of setting 8th bit
+" as vim expects by default)
+
+" we need :exectue here to substitue \e with the actual escape code
+execute "set <M-h>=\eh"
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+
+" adjust window size (MacOS)
+nnoremap <silent> <M-h>  <C-W><
+nnoremap <silent> <M-j>  <C-W>+
+nnoremap <silent> <M-k>  <C-W>-
+nnoremap <silent> <M-l>  <C-W>>
+
 " Latex Suite
-" TODO: use au for latex file types
-nmap <A-j> <Plug>IMAP_JumpForward
-vmap <A-j> <Plug>IMAP_JumpForward
+" this mapping is required to be done in vimrc, see latex suite docs
+nmap <A-]> <Plug>IMAP_JumpForward
+vmap <A-]> <Plug>IMAP_JumpForward
 
 " Perl support
 " TODO: use au for perl file types
