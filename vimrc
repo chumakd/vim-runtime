@@ -9,6 +9,9 @@ endif
 " detect operating system
 let s:os = substitute(system('uname'), "\n", "", "")
 
+" detect terminal emulator
+let s:term_prog = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
+
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -42,8 +45,11 @@ if match($TERM, '256color') != -1
     set t_Co=256
 endif
 
-"colorscheme elflord
-colorscheme chumakd-elflord
+if s:os == "Darwin" && s:term_prog == "iTerm.app"
+    colorscheme solarized
+else
+    colorscheme chumakd-elflord
+endif
 
 " disable Powerline plugin if we don't have full color terminal
 " because it makes status line totally black in this mode
