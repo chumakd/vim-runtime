@@ -279,3 +279,6 @@
 [submodule "p/perlomni"]
 	path = p/perlomni
 	url = git@github.com:chumakd/perlomni.vim.git
+[submodule "p/vim-scriptease"]
+	path = p/vim-scriptease
+	url = git://github.com/tpope/vim-scriptease.git
