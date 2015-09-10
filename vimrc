@@ -52,6 +52,9 @@ else
     colorscheme chumakd-elflord
 endif
 
+" enable ToggleBG command from solarized plugin for light/dark bg switching
+runtime autoload/togglebg.vim
+
 " disable Powerline plugin if we don't have full color terminal
 " because it makes status line totally black in this mode
 if &t_Co == 8
@@ -892,6 +895,9 @@ nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
+
+" colorscheme solarized
+nmap <silent> ,tg :ToggleBG<CR>
 
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
