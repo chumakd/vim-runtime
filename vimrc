@@ -10,7 +10,8 @@ endif
 let s:os = substitute(system('uname'), "\n", "", "")
 
 " detect terminal emulator
-let s:term_prog = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
+let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
+let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
 
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
@@ -45,7 +46,7 @@ if match($TERM, '256color') != -1
     set t_Co=256
 endif
 
-if s:os == "Darwin" && s:term_prog == "iTerm.app"
+if s:os == "Darwin" && s:term_prog == "iTerm.app" && s:iterm_profile =~? ".*solarized.*"
     colorscheme solarized
 else
     colorscheme chumakd-elflord
