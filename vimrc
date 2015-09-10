@@ -6,20 +6,20 @@ else
     let $VIMHOME = $HOME."/.vim"
 endif
 
-" detect operating system
-let s:os = substitute(system('uname'), "\n", "", "")
-
-" detect terminal emulator
-let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
-let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
+" forget being compatible with good old vi
+set nocompatible
 
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" forget being compatible with good old vi
-set nocompatible
+" detect operating system
+let s:os = substitute(system('uname'), "\n", "", "")
+
+" detect terminal emulator
+let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
+let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
 
 " Filetype --------------------------------------------------------------- {{{2
 "
