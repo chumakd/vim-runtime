@@ -601,23 +601,26 @@ nnoremap <silent> <C-Right>  <C-W>>
 " Alt mappings ----------------------------------------------------------- {{{2
 "
 
-" into to Alt keys mapping in vim :h :map-alt-keys
+" intro to Alt keys mapping in vim :h :map-alt-keys
 
 " map Alt-key combinations to escape codes (this is required because all major
 " terminals use escape codes for Alt- combinations instead of setting 8th bit
 " as vim expects by default)
 
+" these M-hjkl mappings are disabled cause they cause problems with macros
+" for some key combinations, like ESC-j, which turns into ê
+
 " we need :exectue here to substitue \e with the actual escape code
-execute "set <M-h>=\eh"
-execute "set <M-j>=\ej"
-execute "set <M-k>=\ek"
-execute "set <M-l>=\el"
+"execute "set <M-h>=\eh"
+"execute "set <M-j>=\ej"
+"execute "set <M-k>=\ek"
+"execute "set <M-l>=\el"
 
 " adjust window size (MacOS)
-nnoremap <silent> <M-h>  <C-W><
-nnoremap <silent> <M-j>  <C-W>+
-nnoremap <silent> <M-k>  <C-W>-
-nnoremap <silent> <M-l>  <C-W>>
+"nnoremap <silent> <M-h>  <C-W><
+"nnoremap <silent> <M-j>  <C-W>+
+"nnoremap <silent> <M-k>  <C-W>-
+"nnoremap <silent> <M-l>  <C-W>>
 
 " Latex Suite
 " this mapping is required to be done in vimrc, see latex suite docs
