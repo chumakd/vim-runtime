@@ -282,3 +282,6 @@
 [submodule "p/vim-scriptease"]
 	path = p/vim-scriptease
 	url = git://github.com/tpope/vim-scriptease.git
+[submodule "p/vim-haml"]
+	path = p/vim-haml
+	url = https://github.com/tpope/vim-haml
