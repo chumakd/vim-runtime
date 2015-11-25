@@ -407,18 +407,22 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 
 " Perl syntax ------------------------------------------------------------ {{{2
 "
-augroup perl_contrib
-    autocmd!
-    autocmd FileType perl runtime contrib/highlight-all-pragmas.vim
-    autocmd FileType perl runtime contrib/carp.vim
-    autocmd FileType perl runtime contrib/moose.vim
-    autocmd FileType perl runtime contrib/method-signatures.vim
-    autocmd FileType perl runtime contrib/test-more.vim
-    autocmd FileType perl runtime contrib/try-tiny.vim
-augroup end
+
+" this is managed via symlinks in after/syntax/perl/
+"augroup perl_contrib
+"    autocmd!
+"    autocmd FileType perl runtime contrib/highlight-all-pragmas.vim
+"    autocmd FileType perl runtime contrib/carp.vim
+"    autocmd FileType perl runtime contrib/moose.vim
+"    autocmd FileType perl runtime contrib/function-parameters.vim
+"    autocmd FileType perl runtime contrib/method-signatures.vim
+"    autocmd FileType perl runtime contrib/test-more.vim
+"    autocmd FileType perl runtime contrib/try-tiny.vim
+"augroup end
 
 let perl_fold = 1
-let perl_fold_blocks = 1
+" disabled, until it becomes more sofisticated
+"let perl_fold_blocks = 1
 
 " enable syntax highlighting for perl POD documentation
 let perl_include_pod = 1
