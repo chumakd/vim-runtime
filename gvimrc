@@ -1,42 +1,47 @@
-" Set window size
-set columns=133
-set lines=40
+" detect operating system
+let s:os = substitute(system('uname'), "\n", "", "")
 
+" window size
+set columns=128
+set lines=35
 
 "
-" Set GUI font
-"
+" GUI font
 
 "set guifont=Luxi\ Mono\ 11
 "set guifont=Courier\ 10\ pitch\ 11
 "set guifont=Courier\ New\ 10
 "set guifont=Fixedus\ 10
 "set guifont=Terminus\ 10
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 
+if s:os == "Darwin"
+    set guifont=Input:h18
+elseif s:os == "Linux"
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+endif
 
 "
-" GUI options stuff:
-"
+" GUI options
 
 " disable scrollbars
 set guioptions -=l
 set guioptions -=r
-"
+
 " disable left-hand scrollbar for vertically split window
 set guioptions -=L
-"
+
 " disable right-hand scrollbar for vertically split window
 set guioptions -=R
-"
+
 " disable toolbar
 set guioptions -=T
-"
+
 " disable menu
 set guioptions -=m
-"
+
 " use console dialogs instead of popup dialogs for simple choices.
 set guioptions +=c
+
 " disable gui tab line, use text tabline instead
 set guioptions -=e
 
@@ -46,17 +51,17 @@ set guicursor+=a:blinkon0
 " disable bell
 set vb t_vb=
 
-" set color shceme
+"
+" color shceme
+
 "colorscheme chumakd-desertEx
 colorscheme solarized
 
 " set different cursor color when local keymap is used
 highlight lCursor guifg=NONE guibg=Cyan
 
-
 "
-" Use custom tabs label
-"
+" custom tabs label
 
 function GuiTabLabel()
   let label = v:lnum
