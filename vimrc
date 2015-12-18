@@ -1104,6 +1104,16 @@ if version >= 703
   au Filetype tagbar nested :set relativenumber
 endif
 
+" highlight comments in different color from main text, for 'conf' and 'cfg'
+" filetypes, if we are usingsolarized colorscheme
+if g:colors_name == 'solarized'
+    augroup solarized_comments
+        au!
+        au! BufNewFile,BufRead,BufEnter  * if &ft == 'conf' || &ft == 'cfg' | hi Comment ctermfg=30 | endif
+        au! BufLeave                     * hi Comment ctermfg=10
+    augroup END
+endif
+
 " Abbreviations ========================================================== {{{1
 "
 
