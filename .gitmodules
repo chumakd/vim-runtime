@@ -285,3 +285,6 @@
 [submodule "p/vim-haml"]
 	path = p/vim-haml
 	url = https://github.com/tpope/vim-haml
+[submodule "p/dash"]
+	path = p/dash
+	url = git://github.com/rizzatti/dash.vim.git
