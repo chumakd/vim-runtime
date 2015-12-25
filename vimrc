@@ -1107,10 +1107,14 @@ endif
 " highlight comments in different color from main text, for 'conf' and 'cfg'
 " filetypes, if we are usingsolarized colorscheme
 if g:colors_name == 'solarized'
+    let s:default_comments_color=10
+    let s:comments_color=24
     augroup solarized_comments
         au!
-        au! BufNewFile,BufRead,BufEnter  * if &ft == 'conf' || &ft == 'cfg' | hi Comment ctermfg=30 | endif
-        au! BufLeave                     * hi Comment ctermfg=10
+        au! BufEnter  * if &ft == 'conf' || &ft == 'cfg' | exe 'hi Comment ctermfg='.s:comments_color | endif
+        au! FileType  * exe 'hi Comment ctermfg='.s:default_comments_color
+        au! FileType  conf\|cfg exe 'hi Comment ctermfg='.s:comments_color
+        au! BufLeave  * exec 'hi Comment ctermfg='.s:default_comments_color
     augroup END
 endif
 
