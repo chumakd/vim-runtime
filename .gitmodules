@@ -288,3 +288,6 @@
 [submodule "p/dash"]
 	path = p/dash
 	url = git://github.com/rizzatti/dash.vim.git
+[submodule "p/AfterColors"]
+	path = p/AfterColors
+	url = git://github.com/vim-scripts/AfterColors.vim.git
