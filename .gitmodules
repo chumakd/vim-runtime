@@ -291,3 +291,6 @@
 [submodule "p/AfterColors"]
 	path = p/AfterColors
 	url = https://github.com/vim-scripts/AfterColors.vim.git
+[submodule "p/vim-commentary"]
+	path = p/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
