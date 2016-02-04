@@ -294,3 +294,6 @@
 [submodule "p/vim-commentary"]
 	path = p/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "p/vim-exchange"]
+	path = p/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
