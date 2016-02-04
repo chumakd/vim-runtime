@@ -2,8 +2,8 @@
 let s:os = substitute(system('uname'), "\n", "", "")
 
 " window size
-set columns=128
-set lines=35
+set columns=80
+set lines=38
 
 "
 " GUI font
@@ -15,7 +15,7 @@ set lines=35
 "set guifont=Terminus\ 10
 
 if s:os == "Darwin"
-    set guifont=Input:h18
+    set guifont=Input:h17
 elseif s:os == "Linux"
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 endif
