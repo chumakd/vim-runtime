@@ -675,9 +675,13 @@ nmap <silent> <Leader>at :AT<CR>
 "
 
 " BuffExplorer uses the following mappings:
-" \be - to start exploring in the current window
-" \bs - to start exploring in a newly split horizontal window
-" \bv - to start exploring in a newly split vertical window
+"   \be - to start exploring in the current window
+"   \bs - to start exploring in a newly split horizontal window
+"   \bv - to start exploring in a newly split vertical window
+" open new tab and start exploring
+nmap \bt :tabnew<Bar>BufExplorer<CR>
+" \bt breaks default \be mapping, so we need to restore it
+nmap \be :BufExplorer<CR>
 
 " d (diffchanges) ~~~~~~~~~~~ {{{3
 "
