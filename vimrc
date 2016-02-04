@@ -557,7 +557,8 @@ call yankstack#setup()
 nmap Y y$
 
 " search of selected text in visual mode
-vmap X y/<C-R>"<CR>
+vmap * y/<C-R>"<CR>
+vmap # y?<C-R>"<CR>
 
 " quit all windows (by analogy with ZZ and ZQ)
 nmap ZA :qa<CR>
