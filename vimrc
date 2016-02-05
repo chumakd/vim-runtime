@@ -1096,13 +1096,25 @@ command! Colortest runtime syntax/colortest.vim
 "command! -range Entities :'<,'>!$HOME/bin/html-entities
 
 " reading Ms-Word documents, requires antiword
-autocmd BufReadPre  *.doc set ro
-autocmd BufReadPost *.doc %!antiword "%"
+"autocmd BufReadPre  *.doc set ro
+"autocmd BufReadPost *.doc %!antiword "%"
 
-" highlight trailing whitespaces with color of TODO hl group
-autocmd BufRead * match Todo /\s\+$/
-autocmd BufNew  * match Todo /\s\+$/
-"autocmd BufAdd  * match Todo /\s\+$/
+" highlight trailing whitespaces with color of TODO/IncSearch hl group
+if g:colors_name == 'solarized'
+    augroup trailing_spaces
+        autocmd!
+        autocmd! BufNew   * match IncSearch /\s\+$/
+        autocmd! BufRead  * match IncSearch /\s\+$/
+        autocmd! BufEnter * match IncSearch /\s\+$/
+    augroup END
+else
+    augroup trailing_spaces
+        autocmd!
+        autocmd! BufNew   * match Todo /\s\+$/
+        autocmd! BufRead  * match Todo /\s\+$/
+        autocmd! BufEnter * match Todo /\s\+$/
+    augroup END
+endif
 
 " enable relative line numbers in tagbar window
 if version >= 703
