@@ -672,7 +672,7 @@ nmap <silent> <Leader>as :AS<CR>
 nmap <silent> <Leader>av :AV<CR>
 nmap <silent> <Leader>at :AT<CR>
 
-" b ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+" b (buffexplorer) ~~~~~~~~~~ {{{3
 "
 
 " BuffExplorer uses the following mappings:
@@ -742,7 +742,7 @@ nmap <silent> ,cd :lcd %:h<CR>
 " reload cscope database
 nmap <silent> ,csr :call MyCscopeReload()<CR>
 
-" c (close) ~~~~~~~~~~~~~~~~~ {{{3
+" cc (close) ~~~~~~~~~~~~~~~~ {{{3
 "
 
 " close current window
@@ -760,7 +760,7 @@ noremap <silent> ,ct :tabclose<CR>
 " close quickfix window (not used now becaue QF is toggled by ,tq)
 "noremap <silent> ,cw :cclose<CR>
 
-" c (cctree) ~~~~~~~~~~~~~~~~ {{{3
+" ct (cctree) ~~~~~~~~~~~~~~~ {{{3
 "
 
 " CCTree
@@ -864,11 +864,14 @@ vmap ,pt :!perltidy<CR>
 " this is the same as ,wp mapping, just shorter
 noremap <silent> ,p :wincmd p<CR>
 
-" r ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
+" r (run/remove) ~~~~~~~~~~~~ {{{3
 "
 
 " Run the command that was just yanked
 "nmap <silent> ,rc :@"<cr>
+
+" remove trailing spaces
+nmap <silent> ,rs :%s/\s\+$//<CR>
 
 " s (scroll/swap/split) ~~~~~ {{{3
 "
