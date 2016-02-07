@@ -300,3 +300,6 @@
 [submodule "p/vim-rsi"]
 	path = p/vim-rsi
 	url = https://github.com/tpope/vim-rsi.git
+[submodule "p/quick-scope"]
+	path = p/quick-scope
+	url = https://github.com/unblevable/quick-scope.git
