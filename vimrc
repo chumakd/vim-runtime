@@ -1008,23 +1008,25 @@ noremap <silent> ,wx :wincmd x<CR>
 " Cmdline editing -------------------------------------------------------- {{{2
 "
 
-" allow command line editing like emacs
-cnoremap <C-A>  <Home>
-cnoremap <C-B>  <Left>
-cnoremap <C-F>  <Right>
-cnoremap <M-b>  <S-Left>
-cnoremap <M-f>  <S-Right>
-cnoremap <ESC>b <S-Left>
-cnoremap <ESC>f <S-Right>
-
 " remap <C-f> (which is used to open command-line window) to <C-y>
 set cedit=<C-Y>
 
+" following mappings are now provided by vim-rsi plugin:
+
+" allow command line editing like emacs
+"cnoremap <C-A>  <Home>
+"cnoremap <C-B>  <Left>
+"cnoremap <C-F>  <Right>
+"cnoremap <M-b>  <S-Left>
+"cnoremap <M-f>  <S-Right>
+"cnoremap <ESC>b <S-Left>
+"cnoremap <ESC>f <S-Right>
+
 " allow command line completion with Alt key
-cnoremap <M-p>  <Up>
-cnoremap <M-n>  <Down>
-cnoremap <ESC>p <Up>
-cnoremap <ESC>n <Down>
+"cnoremap <M-p>  <Up>
+"cnoremap <M-n>  <Down>
+"cnoremap <ESC>p <Up>
+"cnoremap <ESC>n <Down>
 
 " Fn keys appings -------------------------------------------------------- {{{2
 "
