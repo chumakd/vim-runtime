@@ -297,3 +297,6 @@
 [submodule "p/vim-exchange"]
 	path = p/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange.git
+[submodule "p/vim-rsi"]
+	path = p/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
