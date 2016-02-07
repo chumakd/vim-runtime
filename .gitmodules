@@ -303,3 +303,6 @@
 [submodule "p/quick-scope"]
 	path = p/quick-scope
 	url = https://github.com/unblevable/quick-scope.git
+[submodule "p/textobj-word-column"]
+	path = p/textobj-word-column
+	url = https://github.com/coderifous/textobj-word-column.vim.git
