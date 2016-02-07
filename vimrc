@@ -469,6 +469,11 @@ let g:proj_window_width = 32
 let Tlist_Show_One_File = 1
 "let g:proj_flags .= "g"
 
+" quick-scope ------------------------------------------------------------ {{{2
+"
+" disabled by default, see plugin mappings
+let g:qs_enable = 0
+
 " R ------------------------------------------------------------------ {{{2
 "
 let vimrplugin_r_args = "--no-save --quiet"
@@ -705,6 +710,12 @@ nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
     "au!
     "au! BufRead,BufNewFile *.tex  nmap <F9>
 "augroup end
+
+" q (quick-scope) ~~~~~~~~~~~ {{{3
+"
+
+" quick-scope
+nmap <leader>q <plug>(QuickScopeToggle)
 
 " s (sessionman) ~~~~~~~~~~~~ {{{3
 "
