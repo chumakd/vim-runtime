@@ -718,6 +718,11 @@ nmap <silent> \sl :SessionList<CR>
 " , mappings ------------------------------------------------------------- {{{2
 "
 
+" /? (search) ~~~~~~~~~~~~~~~ {{{3
+"
+"nmap <silent> ,/
+"nmap <silent> ,?
+
 " b (blockdiff) ~~~~~~~~~~~~~ {{{3
 "
 
@@ -910,6 +915,9 @@ nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
+
+" toggle search inside folds
+nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
 
 " colorscheme solarized
 nmap <silent> ,tg :ToggleBG<CR>
@@ -1562,6 +1570,17 @@ function! MyToggleCursorColumnHl()
         au WinEnter * set cursorline cursorcolumn
         set cursorline cursorcolumn
         echo "enabled"
+    endif
+endfunction
+
+" Toggle cursor/column highlight ----------------------------------------- {{{2
+function! MyToggleFoldSearch()
+    if &foldopen =~ 'search'
+        setl foldopen-=search
+        echo 'foldopen-=search'
+    else
+        setl foldopen+=search
+        echo 'foldopen+=search'
     endif
 endfunction
 
