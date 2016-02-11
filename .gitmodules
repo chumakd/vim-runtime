@@ -306,3 +306,6 @@
 [submodule "p/textobj-word-column"]
 	path = p/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
+[submodule "p/vim-indent-guides"]
+	path = p/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
