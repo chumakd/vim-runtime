@@ -360,6 +360,19 @@ let g:GetLatestVimScripts_allowautoinstall= 0
 let g:gundo_width = 75
 "let g:gundo_preview_bottom = 1
 
+" Indent guides ---------------------------------------------------------- {{{2
+"
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+"if g:colors_name == 'solarized' && !has("gui_running")
+"    let g:indent_guides_auto_colors = 0
+"    augroup indent_guides
+"        au!
+"        au VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=white
+"        au VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=gray
+"    augroup end
+"endif
+
 " Latex suite ------------------------------------------------------------ {{{2
 "
 let g:Tex_DefaultTargetFormat = "pdf"
