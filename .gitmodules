@@ -324,3 +324,6 @@
 [submodule "p/neomru"]
 	path = p/neomru
 	url = https://github.com/Shougo/neomru.vim.git
+[submodule "p/vinarise"]
+	path = p/vinarise
+	url = https://github.com/Shougo/vinarise.vim.git
