@@ -315,3 +315,6 @@
 [submodule "p/vimproc"]
 	path = p/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "p/unite"]
+	path = p/unite
+	url = https://github.com/Shougo/unite.vim.git
