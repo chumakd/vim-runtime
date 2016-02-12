@@ -309,3 +309,6 @@
 [submodule "p/vim-indent-guides"]
 	path = p/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "p/vimshell"]
+	path = p/vimshell
+	url = https://github.com/Shougo/vimshell.vim.git
