@@ -318,3 +318,6 @@
 [submodule "p/unite"]
 	path = p/unite
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "p/vimfiler"]
+	path = p/vimfiler
+	url = https://github.com/Shougo/vimfiler.vim.git
