@@ -321,3 +321,6 @@
 [submodule "p/vimfiler"]
 	path = p/vimfiler
 	url = https://github.com/Shougo/vimfiler.vim.git
+[submodule "p/neomru"]
+	path = p/neomru
+	url = https://github.com/Shougo/neomru.vim.git
