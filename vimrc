@@ -351,6 +351,10 @@ let g:EnhCommentifyMultiPartBlocks = 'y'
 "
 let g:netrw_altv = 1
 
+" Filer ------------------------------------------------------------------ {{{2
+"
+let g:vimfiler_as_default_explorer = 1
+
 " GetLatestVimScripts ---------------------------------------------------- {{{2
 "
 let g:GetLatestVimScripts_allowautoinstall= 0
