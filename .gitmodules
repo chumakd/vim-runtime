@@ -312,3 +312,6 @@
 [submodule "p/vimshell"]
 	path = p/vimshell
 	url = https://github.com/Shougo/vimshell.vim.git
+[submodule "p/vimproc"]
+	path = p/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
