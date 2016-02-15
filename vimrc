@@ -849,6 +849,9 @@ nmap <silent> ,gs :Git status<CR>
 nmap <silent> ,gd :Git diff<CR>
 nmap <silent> ,gt :!tig<CR>
 
+" Git-gutter
+nmap <silent> ,gg :GitGutterToggle<CR>
+
 " hjkl ~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
 
