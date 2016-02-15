@@ -327,3 +327,6 @@
 [submodule "p/vinarise"]
 	path = p/vinarise
 	url = https://github.com/Shougo/vinarise.vim.git
+[submodule "p/vim-gitgutter"]
+	path = p/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
