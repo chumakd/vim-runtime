@@ -9,7 +9,7 @@
 	url = https://github.com/vim-scripts/a.vim.git
 [submodule "p/BlockDiff"]
 	path = p/BlockDiff
-	url = git@github.com:chumakd/BlockDiff.git
+	url = https://github.com/chumakd/BlockDiff.git
 [submodule "p/bufexplorer"]
 	path = p/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
@@ -76,7 +76,7 @@
 	url = https://github.com/vim-scripts/The-NERD-tree.git
 [submodule "p/OmniCppComplete"]
 	path = p/OmniCppComplete
-	url = git@github.com:chumakd/OmniCppComplete.git
+	url = https://github.com/chumakd/OmniCppComplete.git
 [submodule "p/project"]
 	path = p/project
 	url = https://github.com/vim-scripts/project.tar.gz.git
@@ -108,7 +108,7 @@
 	url = https://github.com/vim-scripts/Vim-R-plugin.git
 [submodule "p/tagselect"]
 	path = p/tagselect
-	url = git@github.com:chumakd/tagselect.git
+	url = https://github.com/chumakd/tagselect.git
 [submodule "p/Gundo"]
 	path = p/Gundo
 	url = https://github.com/vim-scripts/Gundo.git
@@ -127,7 +127,7 @@
 	url = https://github.com/vim-scripts/Mark--Karkat.git
 [submodule "p/cscope-quickfix"]
 	path = p/cscope-quickfix
-	url = git@github.com:chumakd/cscope-quickfix.git
+	url = https://github.com/chumakd/cscope-quickfix.git
 [submodule "p/ColorSchemeEditor"]
 	path = p/ColorSchemeEditor
 	url = https://github.com/vim-scripts/ColorSchemeEditor.git
@@ -151,7 +151,7 @@
 	url = https://github.com/vim-scripts/SudoEdit.vim.git
 [submodule "p/sessionman"]
 	path = p/sessionman
-	url = git@github.com:chumakd/sessionman.vim.git
+	url = https://github.com/chumakd/sessionman.vim.git
 [submodule "p/git_patch_tags"]
 	path = p/git_patch_tags
 	url = https://github.com/vim-scripts/git_patch_tags.vim.git
@@ -260,10 +260,10 @@
 	url = https://github.com/mattn/emmet-vim.git
 [submodule "p/ScrollColors"]
 	path = p/ScrollColors
-	url = git@github.com:chumakd/ScrollColors.git
+	url = https://github.com/chumakd/ScrollColors.git
 [submodule "p/vim-taglist-plus"]
 	path = p/vim-taglist-plus
-	url = git@github.com:chumakd/vim-taglist-plus.git
+	url = https://github.com/chumakd/vim-taglist-plus.git
 [submodule "p/vim-gnupg"]
 	path = p/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
@@ -278,7 +278,7 @@
 	url = https://github.com/yuuki1/perl-local-lib-path.vim.git
 [submodule "p/perlomni"]
 	path = p/perlomni
-	url = git@github.com:chumakd/perlomni.vim.git
+	url = https://github.com/chumakd/perlomni.vim.git
 [submodule "p/vim-scriptease"]
 	path = p/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
