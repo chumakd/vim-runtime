@@ -189,8 +189,7 @@
 	url = https://github.com/tomtom/ttoc_vim.git
 [submodule "p/clang_complete"]
 	path = p/clang_complete
-	url = https://github.com/chumakd/clang_complete.git
-	; url = https://github.com/Rip-Rip/clang_complete.git
+	url = https://github.com/Rip-Rip/clang_complete.git
 [submodule "p/vim-colors-solarized"]
 	path = p/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
