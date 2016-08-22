@@ -1,6 +1,15 @@
 " detect operating system
 let s:os = substitute(system('uname'), "\n", "", "")
 
+" system PATH
+if s:os == "Darwin"
+    let $PATH = $HOME . '/bin:'
+                \. '/opt/local/libexec/gnubin:'
+                \. '/opt/local/sbin:'
+                \. '/opt/local/bin:'
+                \. $PATH
+endif
+
 " window size
 set columns=80
 set lines=38
