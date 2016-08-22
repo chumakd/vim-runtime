@@ -329,3 +329,6 @@
 [submodule "p/vim-gitgutter"]
 	path = p/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "p/unite-tag"]
+	path = p/unite-tag
+	url = https://github.com/tsukkee/unite-tag.git
