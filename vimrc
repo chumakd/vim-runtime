@@ -290,8 +290,12 @@ let g:CCTreeOrientation = "rightbelow"
 let g:CCTreeRecursiveDepth = 3
 let g:CCTreeMinVisibleDepth = 1
 let g:CCTreeWindowMinWidth = -1
-"let g:CCTreeDisplayMode = 2
+let g:CCTreeDisplayMode = 2
 let g:CCTreeWindowVertical = 1
+let g:CCTreeUsePerl = 1
+let g:CCTreeUseUTF8Symbols = 1
+let g:CCTreeWindowMinWidth = 32
+let g:CCTreeWindowWidth = 55
 
 " Clang_complete --------------------------------------------------------- {{{2
 "
@@ -797,9 +801,11 @@ noremap <silent> ,ct :tabclose<CR>
 "
 
 " CCTree
+nmap <silent> ,cto :CCTreeOptsEnable EnhancedSymbolProcessing<CR>
 nmap <silent> ,ctl :CCTreeLoadDB<CR>
 nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
 nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
+nmap <silent> ,ctt :CCTreeWindowToggle<CR>
 
 " d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
