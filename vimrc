@@ -1612,7 +1612,7 @@ function! MyToggleCursorColumnHl()
     endif
 endfunction
 
-" Toggle cursor/column highlight ----------------------------------------- {{{2
+" Toggle fold search ----------------------------------------------------- {{{2
 function! MyToggleFoldSearch()
     if &foldopen =~ 'search'
         setl foldopen-=search
@@ -1622,6 +1622,16 @@ function! MyToggleFoldSearch()
         echo 'foldopen+=search'
     endif
 endfunction
+
+" Set work project styling ----------------------------------------------- {{{2
+function! MySetWorkStyling()
+    set textwidth=80
+    set colorcolumn=+1
+    set makeprg=ssh\ devvm@centos7-devvm\ 'make\ -C\ /data/prj/mero'
+    aug c_tab | au! FileType c  :setl tabstop=8 shiftwidth=8 noexpandtab
+endfunction
+
+command! MySetWorkStyling call MySetWorkStyling()
 
 " tabline  --------------------------------------------------------------- {{{2
 "
