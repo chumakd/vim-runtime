@@ -218,6 +218,9 @@ set tags=./tags,tags,~/.vim/tags/stl
 " search tags database before cscope database
 set csto=1
 
+" show cscope search results in quickfix window
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+
 " Edit ------------------------------------------------------------------- {{{2
 "
 
