@@ -12,7 +12,8 @@ set nocompatible
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+execute pathogen#infect()
+call pathogen#helptags()
 
 " detect operating system
 let s:os = substitute(system('uname'), "\n", "", "")
