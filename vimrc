@@ -545,8 +545,22 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_auto_loc_list=1
 
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': [],
+                           \ 'active_filetypes': ['haml'],
                            \ 'passive_filetypes': [] }
+
+" C/C++ options
+let g:syntastic_clang_check_config_file = '.clang_complete'
+let g:syntastic_c_checkers = ['clang_check', 'clang_tidy', 'gcc']
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'gcc']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
+
+" Perl options
+let g:syntastic_perl_checkers = ['perlcritic', 'podchecker']
+
+" Haml options
+let g:syntastic_haml_checkers = ['haml_lint']
 
 " Tagbar ----------------------------------------------------------------- {{{2
 "
@@ -574,6 +588,12 @@ let g:yankring_min_element_length = 2
 
 " don't share yankring contents between different instances of vim
 "let g:yankring_share_between_instances = 0
+
+" YouCompleteMe ---------------------------------------------------------- {{{2
+"
+
+" needed for Syntastic
+"let g:ycm_show_diagnostics_ui = 0
 
 " Zencoding -------------------------------------------------------------- {{{2
 "
@@ -802,6 +822,9 @@ noremap <silent> ,cl :wincmd l<CR>:close<CR>
 " close current tab
 noremap <silent> ,ct :tabclose<CR>
 
+" close lOcation window
+noremap <silent> ,co :lclose<CR>
+
 " close quickfix window (not used now becaue QF is toggled by ,tq)
 "noremap <silent> ,cw :cclose<CR>
 
@@ -886,6 +909,12 @@ noremap <silent> ,l :wincmd l<CR>
 " run make in current directory
 nmap ,m :Make<CR>
 nmap ,M :Make!<CR>
+
+" o (lOcation window) ~~~~~~~ {{{3
+"
+
+" open location window
+noremap <silent> ,oo :lopen<CR>
 
 " p (perl) ~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -1637,6 +1666,7 @@ function! MySetWorkStyling()
     set colorcolumn=+1
     set makeprg=ssh\ devvm@centos7-devvm\ 'make\ -C\ /data/prj/mero'
     aug c_tab | au! FileType c  :setl tabstop=8 shiftwidth=8 noexpandtab
+    cd ~/prj/mero
 endfunction
 
 command! MySetWorkStyling call MySetWorkStyling()
