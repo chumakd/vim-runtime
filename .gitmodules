@@ -1,91 +1,120 @@
 [submodule "p/vim-pathogen"]
 	path = p/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+	ignore = untracked
 [submodule "p/Align"]
 	path = p/Align
 	url = https://github.com/vim-scripts/Align.git
+	ignore = untracked
 [submodule "p/a"]
 	path = p/a
 	url = https://github.com/vim-scripts/a.vim.git
+	ignore = untracked
 [submodule "p/BlockDiff"]
 	path = p/BlockDiff
 	url = https://github.com/chumakd/BlockDiff.git
+	ignore = untracked
 [submodule "p/bufexplorer"]
 	path = p/bufexplorer
 	url = https://github.com/vim-scripts/bufexplorer.zip.git
+	ignore = untracked
 [submodule "p/cecutil"]
 	path = p/cecutil
 	url = https://github.com/vim-scripts/cecutil.git
+	ignore = untracked
 [submodule "p/deb"]
 	path = p/deb
 	url = https://github.com/vim-scripts/deb.vim.git
+	ignore = untracked
 [submodule "p/diffchanges"]
 	path = p/diffchanges
 	url = https://github.com/vim-scripts/diffchanges.vim.git
+	ignore = untracked
 [submodule "p/DirDiff"]
 	path = p/DirDiff
 	url = https://github.com/vim-scripts/DirDiff.vim.git
+	ignore = untracked
 [submodule "p/DoxygenToolkit"]
 	path = p/DoxygenToolkit
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+	ignore = untracked
 [submodule "p/EnhCommentify"]
 	path = p/EnhCommentify
 	url = https://github.com/vim-scripts/EnhCommentify.vim.git
+	ignore = untracked
 [submodule "p/genutils"]
 	path = p/genutils
 	url = https://github.com/vim-scripts/genutils.git
+	ignore = untracked
 [submodule "p/multvals"]
 	path = p/multvals
 	url = https://github.com/vim-scripts/multvals.vim.git
+	ignore = untracked
 [submodule "p/L9"]
 	path = p/L9
 	url = https://github.com/vim-scripts/L9.git
+	ignore = untracked
 [submodule "p/tlib"]
 	path = p/tlib
 	url = https://github.com/vim-scripts/tlib.git
+	ignore = untracked
 [submodule "p/DrawIt"]
 	path = p/DrawIt
 	url = https://github.com/vim-scripts/DrawIt.git
+	ignore = untracked
 [submodule "p/Conque-Shell"]
 	path = p/Conque-Shell
 	url = https://github.com/chumakd/conque-shell-mirror.git
 	;url = https://github.com/vim-scripts/Conque-Shell.git
+	ignore = untracked
 [submodule "p/fugitive"]
 	path = p/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	ignore = untracked
 [submodule "p/FuzzyFinder"]
 	path = p/FuzzyFinder
 	url = https://github.com/vim-scripts/FuzzyFinder.git
+	ignore = untracked
 [submodule "p/grep"]
 	path = p/grep
 	url = https://github.com/vim-scripts/grep.vim.git
+	ignore = untracked
 [submodule "p/greplace"]
 	path = p/greplace
 	url = https://github.com/vim-scripts/greplace.vim.git
+	ignore = untracked
 [submodule "p/Marks-Browser"]
 	path = p/Marks-Browser
 	url = https://github.com/vim-scripts/Marks-Browser.git
+	ignore = untracked
 [submodule "p/mru"]
 	path = p/mru
 	url = https://github.com/vim-scripts/mru.vim.git
+	ignore = untracked
 [submodule "p/MultipleSearch"]
 	path = p/MultipleSearch
 	url = https://github.com/vim-scripts/MultipleSearch.git
+	ignore = untracked
 [submodule "p/The-NERD-tree"]
 	path = p/The-NERD-tree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
+	ignore = untracked
 [submodule "p/OmniCppComplete"]
 	path = p/OmniCppComplete
 	url = https://github.com/chumakd/OmniCppComplete.git
+	ignore = untracked
 [submodule "p/project"]
 	path = p/project
 	url = https://github.com/vim-scripts/project.tar.gz.git
+	ignore = untracked
 [submodule "p/repeat"]
 	path = p/repeat
 	url = https://github.com/vim-scripts/repeat.vim.git
+	ignore = untracked
 [submodule "p/surround"]
 	path = p/surround
 	url = https://github.com/vim-scripts/surround.vim.git
+	ignore = untracked
 [submodule "p/ShowMarks"]
 	path = p/ShowMarks
 	url = https://github.com/vim-scripts/ShowMarks.git
@@ -93,12 +122,15 @@
 [submodule "p/snipMate"]
 	path = p/snipMate
 	url = https://github.com/msanders/snipmate.vim.git
+	ignore = untracked
 [submodule "p/TVO--The-Vim-Outliner"]
 	path = p/TVO--The-Vim-Outliner
 	url = https://github.com/vim-scripts/TVO--The-Vim-Outliner.git
+	ignore = untracked
 [submodule "p/VisIncr"]
 	path = p/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
+	ignore = untracked
 [submodule "p/xml"]
 	path = p/xml
 	url = https://github.com/vim-scripts/xml.vim.git
@@ -106,55 +138,72 @@
 [submodule "p/Vim-R-plugin"]
 	path = p/Vim-R-plugin
 	url = https://github.com/vim-scripts/Vim-R-plugin.git
+	ignore = untracked
 [submodule "p/tagselect"]
 	path = p/tagselect
 	url = https://github.com/chumakd/tagselect.git
+	ignore = untracked
 [submodule "p/Gundo"]
 	path = p/Gundo
 	url = https://github.com/vim-scripts/Gundo.git
 	;url = https://github.com/sjl/gundo.vim.git
+	ignore = untracked
 [submodule "p/patchreview"]
 	path = p/patchreview
 	url = https://github.com/vim-scripts/patchreview.vim.git
+	ignore = untracked
 [submodule "p/cscope_macros"]
 	path = p/cscope_macros
 	url = https://github.com/vim-scripts/cscope_macros.vim.git
+	ignore = untracked
 [submodule "p/CCTree"]
 	path = p/CCTree
 	url = https://github.com/albfan/CCTree.git
+	ignore = untracked
 [submodule "p/Mark--Karkat"]
 	path = p/Mark--Karkat
 	url = https://github.com/vim-scripts/Mark--Karkat.git
+	ignore = untracked
 [submodule "p/cscope-quickfix"]
 	path = p/cscope-quickfix
 	url = https://github.com/chumakd/cscope-quickfix.git
+	ignore = untracked
 [submodule "p/ColorSchemeEditor"]
 	path = p/ColorSchemeEditor
 	url = https://github.com/vim-scripts/ColorSchemeEditor.git
+	ignore = untracked
 [submodule "p/EasyGrep"]
 	path = p/EasyGrep
 	url = https://github.com/vim-scripts/EasyGrep.git
+	ignore = untracked
 [submodule "p/file-line"]
 	path = p/file-line
 	url = https://github.com/bogado/file-line.git
+	ignore = untracked
 [submodule "p/QFixToggle"]
 	path = p/QFixToggle
 	url = https://github.com/vim-scripts/QFixToggle.git
+	ignore = untracked
 [submodule "p/info"]
 	path = p/info
 	url = https://github.com/vim-scripts/info.vim.git
+	ignore = untracked
 [submodule "p/nerdcommenter"]
 	path = p/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	ignore = untracked
 [submodule "p/SudoEdit"]
 	path = p/SudoEdit
 	url = https://github.com/vim-scripts/SudoEdit.vim.git
+	ignore = untracked
 [submodule "p/sessionman"]
 	path = p/sessionman
 	url = https://github.com/chumakd/sessionman.vim.git
+	ignore = untracked
 [submodule "p/git_patch_tags"]
 	path = p/git_patch_tags
 	url = https://github.com/vim-scripts/git_patch_tags.vim.git
+	ignore = untracked
 [submodule "p/errormarker"]
 	path = p/errormarker
 	url = https://github.com/vim-scripts/errormarker.vim.git
@@ -163,172 +212,228 @@
 	path = p/camelcasemotion
 	url = https://github.com/vim-scripts/camelcasemotion.git
 	;url = https://github.com/bkad/CamelCaseMotion.git
+	ignore = untracked
 [submodule "p/argtextobj"]
 	path = p/argtextobj
 	url = https://github.com/vim-scripts/argtextobj.vim.git
+	ignore = untracked
 [submodule "p/CSApprox"]
 	path = p/CSApprox
 	url = https://github.com/vim-scripts/CSApprox.git
+	ignore = untracked
 [submodule "p/molokai"]
 	path = p/molokai
 	url = https://github.com/tomasr/molokai.git
+	ignore = untracked
 [submodule "p/vim-yankstack"]
 	path = p/vim-yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
+	ignore = untracked
 [submodule "p/dbext"]
 	path = p/dbext
 	url = https://github.com/vim-scripts/dbext.vim.git
+	ignore = untracked
 [submodule "p/perlhelp"]
 	path = p/perlhelp
 	url = https://github.com/vim-scripts/perlhelp.vim.git
+	ignore = untracked
 [submodule "p/tregisters_vim"]
 	path = p/tregisters_vim
 	url = https://github.com/tomtom/tregisters_vim.git
+	ignore = untracked
 [submodule "p/ttoc_vim"]
 	path = p/ttoc_vim
 	url = https://github.com/tomtom/ttoc_vim.git
+	ignore = untracked
 [submodule "p/clang_complete"]
 	path = p/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
+	ignore = untracked
 [submodule "p/vim-colors-solarized"]
 	path = p/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+	ignore = untracked
 [submodule "p/delimitMate"]
 	path = p/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+	ignore = untracked
 [submodule "p/vim-css-color"]
 	path = p/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
+	ignore = untracked
 [submodule "p/SearchComplete"]
 	path = p/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
+	ignore = untracked
 [submodule "p/SQLUtilities"]
 	path = p/SQLUtilities
 	url = https://github.com/vim-scripts/SQLUtilities.git
+	ignore = untracked
 [submodule "p/tagbar"]
 	path = p/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+	ignore = untracked
 [submodule "p/taskpaper"]
 	path = p/taskpaper
 	url = https://github.com/davidoc/taskpaper.vim.git
+	ignore = untracked
 [submodule "p/vim-powerline"]
 	path = p/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-    ignore = untracked
+	ignore = untracked
 [submodule "p/xterm-color-table"]
 	path = p/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
+	ignore = untracked
 [submodule "p/inkpot"]
 	path = p/inkpot
 	url = https://github.com/ciaranm/inkpot.git
+	ignore = untracked
 [submodule "p/vim-easymotion"]
 	path = p/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+	ignore = untracked
 [submodule "p/github-theme"]
 	path = p/github-theme
 	url = https://github.com/vim-scripts/github-theme.git
+	ignore = untracked
 [submodule "p/syntastic"]
 	path = p/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+	ignore = untracked
 [submodule "p/Colour-Sampler-Pack"]
 	path = p/Colour-Sampler-Pack
 	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
+	ignore = untracked
 [submodule "p/asciidoc-vim"]
 	path = p/asciidoc-vim
 	url = https://github.com/dagwieers/asciidoc-vim.git
+	ignore = untracked
 [submodule "p/foldsearch"]
 	path = p/foldsearch
 	url = https://github.com/vim-scripts/foldsearch.git
+	ignore = untracked
 [submodule "p/vim-perl"]
 	path = p/vim-perl
 	url = https://github.com/vim-perl/vim-perl.git
+	ignore = untracked
 [submodule "p/vim-indent-object"]
 	path = p/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
+	ignore = untracked
 [submodule "p/ack"]
 	path = p/ack
 	url = https://github.com/mileszs/ack.vim.git
+	ignore = untracked
 [submodule "p/vim-eunuch"]
 	path = p/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+	ignore = untracked
 [submodule "p/vim-dispatch"]
 	path = p/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+	ignore = untracked
 [submodule "p/emmet-vim"]
 	path = p/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+	ignore = untracked
 [submodule "p/ScrollColors"]
 	path = p/ScrollColors
 	url = https://github.com/chumakd/ScrollColors.git
+	ignore = untracked
 [submodule "p/vim-taglist-plus"]
 	path = p/vim-taglist-plus
 	url = https://github.com/chumakd/vim-taglist-plus.git
+	ignore = untracked
 [submodule "p/vim-gnupg"]
 	path = p/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
+	ignore = untracked
 [submodule "p/vim-latex"]
 	path = p/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+	ignore = untracked
 [submodule "p/vim-markdown"]
 	path = p/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+	ignore = untracked
 [submodule "p/perl-local-lib-path"]
 	path = p/perl-local-lib-path
 	url = https://github.com/yuuki1/perl-local-lib-path.vim.git
+	ignore = untracked
 [submodule "p/perlomni"]
 	path = p/perlomni
 	url = https://github.com/chumakd/perlomni.vim.git
+	ignore = untracked
 [submodule "p/vim-scriptease"]
 	path = p/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
+	ignore = untracked
 [submodule "p/vim-haml"]
 	path = p/vim-haml
 	url = https://github.com/tpope/vim-haml
+	ignore = untracked
 [submodule "p/dash"]
 	path = p/dash
 	url = https://github.com/rizzatti/dash.vim.git
+	ignore = untracked
 [submodule "p/AfterColors"]
 	path = p/AfterColors
 	url = https://github.com/vim-scripts/AfterColors.vim.git
+	ignore = untracked
 [submodule "p/vim-commentary"]
 	path = p/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+	ignore = untracked
 [submodule "p/vim-exchange"]
 	path = p/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange.git
+	ignore = untracked
 [submodule "p/vim-rsi"]
 	path = p/vim-rsi
 	url = https://github.com/tpope/vim-rsi.git
+	ignore = untracked
 [submodule "p/quick-scope"]
 	path = p/quick-scope
 	url = https://github.com/unblevable/quick-scope.git
+	ignore = untracked
 [submodule "p/textobj-word-column"]
 	path = p/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
+	ignore = untracked
 [submodule "p/vim-indent-guides"]
 	path = p/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	ignore = untracked
 [submodule "p/vimshell"]
 	path = p/vimshell
 	url = https://github.com/Shougo/vimshell.vim.git
+	ignore = untracked
 [submodule "p/vimproc"]
 	path = p/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
+	ignore = untracked
 [submodule "p/unite"]
 	path = p/unite
 	url = https://github.com/Shougo/unite.vim.git
+	ignore = untracked
 [submodule "p/vimfiler"]
 	path = p/vimfiler
 	url = https://github.com/Shougo/vimfiler.vim.git
+	ignore = untracked
 [submodule "p/neomru"]
 	path = p/neomru
 	url = https://github.com/Shougo/neomru.vim.git
+	ignore = untracked
 [submodule "p/vinarise"]
 	path = p/vinarise
 	url = https://github.com/Shougo/vinarise.vim.git
+	ignore = untracked
 [submodule "p/vim-gitgutter"]
 	path = p/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+	ignore = untracked
 [submodule "p/unite-tag"]
 	path = p/unite-tag
 	url = https://github.com/tsukkee/unite-tag.git
+	ignore = untracked
