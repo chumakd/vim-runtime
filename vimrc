@@ -20,6 +20,7 @@ let s:os = substitute(system('uname'), "\n", "", "")
 
 " detect terminal emulator
 let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
+let s:term_session  = substitute(system('printenv SESSIONTYPE'), "\n", "", "")
 let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
 
 " Filetype --------------------------------------------------------------- {{{2
@@ -47,7 +48,10 @@ if match($TERM, '256color') != -1
     set t_Co=256
 endif
 
-if s:os == "Darwin" && s:term_prog == "iTerm.app" && s:iterm_profile =~? ".*solarized.*"
+if s:term_prog == "iTerm.app" && s:iterm_profile =~? ".*solarized.*" || s:term_session == "gnome-session"
+    if s:os == "Linux" && !empty($TMUX)
+        set background=dark
+    endif
     colorscheme solarized
 else
     colorscheme chumakd-elflord
