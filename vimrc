@@ -219,7 +219,7 @@ set tags=./tags,tags,~/.vim/tags/stl
 set csto=1
 
 " show cscope search results in quickfix window
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 " Edit ------------------------------------------------------------------- {{{2
 "
