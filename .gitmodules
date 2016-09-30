@@ -437,3 +437,6 @@
 	path = p/unite-tag
 	url = https://github.com/tsukkee/unite-tag.git
 	ignore = untracked
+[submodule "p/vim-cpanfile"]
+	path = p/vim-cpanfile
+	url = https://github.com/moznion/vim-cpanfile.git
