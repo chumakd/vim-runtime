@@ -543,9 +543,27 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height = 3
 
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['haml'],
+                           \ 'active_filetypes': [
+                           \    'asciidoc',
+                           \    'dockerfile',
+                           \    'eruby',
+                           \    'haml',
+                           \    'javascript',
+                           \    'json',
+                           \    'lua',
+                           \    'markdown',
+                           \    'perl',
+                           \    'pod',
+                           \    'ruby',
+                           \    'sass',
+                           \    'scss',
+                           \    'sh',
+                           \    'spec',
+                           \    'yaml'
+                           \  ],
                            \ 'passive_filetypes': [] }
 
 " C/C++ options
@@ -558,9 +576,27 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " Perl options
 let g:syntastic_perl_checkers = ['perlcritic', 'podchecker']
+let g:syntastic_perl_perlcritic_post_args = '--verbose "%s:%f:%l:%c: %s/%p %m (%e)\n"'
+
+" Ruby options
+let g:syntastic_ruby_checkers = ['rubylint', 'robocop']
+
+" Bash/Shell options
+let g:syntastic_sh_checkers = ['bashate']
+" E003: Indent not multiple of 4
+" E006: Line too long
+" E042: local declaration hides errors
+let g:syntastic_sh_bashate_args = '--ignore "E006,E042,E003"'
 
 " Haml options
 let g:syntastic_haml_checkers = ['haml_lint']
+
+" JavaScript options
+let g:syntastic_javascript_eslint_exec = 'eslint'
+let g:syntastic_javascript_checkers = ['eslint']
+
+" YAML options
+let g:syntastic_yaml_checkers = ['yamllint', 'yamlxs']
 
 " Tagbar ----------------------------------------------------------------- {{{2
 "
