@@ -6,6 +6,10 @@ else
     let $VIMHOME = $HOME."/.vim"
 endif
 
+" enconding
+set encoding=utf-8
+scriptencoding utf-8
+
 " forget being compatible with good old vi
 set nocompatible
 
