@@ -440,3 +440,6 @@
 [submodule "p/vim-cpanfile"]
 	path = p/vim-cpanfile
 	url = https://github.com/moznion/vim-cpanfile.git
+[submodule "p/neocomplete"]
+	path = p/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
