@@ -415,6 +415,46 @@ let g:MultipleSearchMaxColors=8
 let g:MultipleSearchColorSequence="red,blue,green,magenta,cyan,gray,brown,yellow"
 let g:MultipleSearchTextColorSequence="white,white,black,white,black,black,white,black"
 
+" Neocomplete ------------------------------------------------------------ {{{2
+"
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" disable caching of encrypted files
+let g:neocomplete#sources#buffer#disabled_pattern = '\M.gpg$'
+
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default'  : '',
+	\ 'cpanfile' : $HOME . '/.vim/bundle/vim-cpanfile/dict/cpanfile.dict'
+    \ }
+
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Enable omni completion.
+augroup neocomplete_omni
+    autocmd!
+    autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
 " NERDTree --------------------------------------------------------------- {{{2
 "
 let NERDTreeWinPos="right"
