@@ -618,6 +618,12 @@ let g:tagbar_sort = 0
 let Tlist_Show_One_File = 1
 let Tlist_WinWidth = 35
 
+" Unite ------------------------------------------------------------------ {{{2
+"
+
+" enable fuzzy matching by default
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
 " Xml -------------------------------------------------------------------- {{{2
 "
 let g:xml_syntax_folding = 1
@@ -819,6 +825,25 @@ nmap <silent> \so :SessionOpen <C-X>
 nmap <silent> \sc :SessionClose<CR>
 nmap <silent> \ss :SessionSave<CR>
 nmap <silent> \sl :SessionList<CR>
+
+" u (unite) ~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" Unite
+
+" the prefix key.
+nnoremap  [unite]   <Nop>
+nmap  <leader>u [unite]
+
+nnoremap <silent> [unite]a :Unite -start-insert mapping<CR>
+nnoremap <silent> [unite]b :Unite -start-insert buffer<CR>
+nnoremap <silent> [unite]c :Unite -start-insert command<CR>
+nnoremap <silent> [unite]d :UniteWithBufferDir -start-insert file_rec/async:!<CR>
+nnoremap <silent> [unite]f :Unite -start-insert file_rec/async:!<CR>
+nnoremap <silent> [unite]j :Unite jump<CR>
+nnoremap <silent> [unite]m :Unite -start-insert file_mru<CR>
+nnoremap <silent> [unite]r :Unite register<CR>
+nnoremap <silent> [unite]t :Unite -start-insert tab<CR>
 
 " , mappings ------------------------------------------------------------- {{{2
 "
