@@ -566,6 +566,7 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \    'scss',
                            \    'sh',
                            \    'spec',
+                           \    'vim',
                            \    'yaml'
                            \  ],
                            \ 'passive_filetypes': [] }
@@ -599,8 +600,12 @@ let g:syntastic_haml_checkers = ['haml_lint']
 let g:syntastic_javascript_eslint_exec = 'eslint'
 let g:syntastic_javascript_checkers = ['eslint']
 
+" VimL options
+let g:syntastic_vim_checkers = ['vint']
+
 " YAML options
 let g:syntastic_yaml_checkers = ['yamllint', 'yamlxs']
+let g:syntastic_yaml_yamllint_args = '-c ~/.yamllintrc.yml'
 
 " Tagbar ----------------------------------------------------------------- {{{2
 "
