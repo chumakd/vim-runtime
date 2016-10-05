@@ -449,3 +449,6 @@
 [submodule "p/ansible-vim"]
 	path = p/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim.git
+[submodule "p/vim-cpp"]
+	path = p/vim-cpp
+	url = https://github.com/vim-jp/vim-cpp.git
