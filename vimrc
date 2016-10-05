@@ -78,6 +78,7 @@ set hlsearch
 set incsearch
 set nowrapscan
 
+
 " Folding ---------------------------------------------------------------- {{{2
 "
 set foldcolumn=4
@@ -273,6 +274,9 @@ endif
 " save only opened windows and tabs with :mksession without any
 " mapping/options/buffers/etc...
 set sessionoptions=tabpages
+
+" search path for gf and ^wf file jump commands
+set path+=/usr/local/include,/opt/local/include
 
 " Plugin options ========================================================= {{{1
 
