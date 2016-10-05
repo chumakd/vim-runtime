@@ -472,3 +472,7 @@
 [submodule "p/tmux"]
 	path = p/tmux
 	url = https://github.com/keith/tmux.vim.git
+[submodule "p/xml"]
+	path = p/xml
+	url = https://github.com/othree/xml.vim.git
+	ignore = untracked
