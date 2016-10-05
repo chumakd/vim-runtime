@@ -458,3 +458,6 @@
 [submodule "p/css"]
 	path = p/css
 	url = https://github.com/JulesWang/css.vim.git
+[submodule "p/vim-git"]
+	path = p/vim-git
+	url = https://github.com/tpope/vim-git.git
