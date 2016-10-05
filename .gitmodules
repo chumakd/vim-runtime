@@ -473,3 +473,6 @@
 [submodule "p/nginx-contrib-vim"]
 	path = p/nginx-contrib-vim
 	url = https://github.com/othree/nginx-contrib-vim.git
+[submodule "p/tmux"]
+	path = p/tmux
+	url = https://github.com/keith/tmux.vim.git
