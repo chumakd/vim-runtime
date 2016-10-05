@@ -1,8 +1,11 @@
 " my filetype file
+
 if exists("did_load_filetypes")
   finish
 endif
+
 augroup filetypedetect
+  au!
   " ipmasq rules
   au! BufRead,BufNewFile *.rul          setfiletype sh
   au! BufRead,BufNewFile *.def          setfiletype sh
@@ -22,3 +25,9 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.md           setfiletype markdown
   au! BufRead,BufNewFile *.psgi         setfiletype perl
 augroup END
+
+" treat dash symbol '-' a part of a keyword for auto-completion
+augroup dash_keywords
+    autocmd!
+    autocmd! FileType  css,haml,html,json,sass,scss,yaml  setlocal iskeyword+=-
+augroup end
