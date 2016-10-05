@@ -359,6 +359,20 @@ let g:DirDiffEnableMappings = 1
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
 hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
+" Emmet ------------------------------------------------------------------ {{{2
+"
+"let g:user_emmet_leader_key = '<C-y>'
+
+" enable emmet only for input and visual modes
+"let g:user_emmet_mode='iv'
+
+" enable only for some file types
+let g:user_emmet_install_global = 0
+augroup emmet_file_types
+    autocmd!
+    autocmd! FileType  haml,html,css,xml  EmmetInstall
+augroup end
+
 " EnhancedCommentify ----------------------------------------------------- {{{2
 "
 let g:EnhCommentifyUseAltKeys = 'n'
@@ -694,10 +708,6 @@ let g:yankring_min_element_length = 2
 
 " needed for Syntastic
 "let g:ycm_show_diagnostics_ui = 0
-
-" Zencoding -------------------------------------------------------------- {{{2
-"
-let g:user_zen_leader_key = '\z'
 
 " Mappings =============================================================== {{{1
 
