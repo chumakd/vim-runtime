@@ -452,3 +452,6 @@
 [submodule "p/vim-cpp"]
 	path = p/vim-cpp
 	url = https://github.com/vim-jp/vim-cpp.git
+[submodule "p/vim-cpp-enhanced-highlight"]
+	path = p/vim-cpp-enhanced-highlight
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
