@@ -443,3 +443,6 @@
 [submodule "p/neocomplete"]
 	path = p/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "p/html5"]
+	path = p/html5
+	url = https://github.com/othree/html5.vim.git
