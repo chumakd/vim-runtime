@@ -461,3 +461,6 @@
 [submodule "p/vim-git"]
 	path = p/vim-git
 	url = https://github.com/tpope/vim-git.git
+[submodule "p/vim-javascript"]
+	path = p/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
