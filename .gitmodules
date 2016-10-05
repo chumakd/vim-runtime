@@ -467,3 +467,6 @@
 [submodule "p/vim-json"]
 	path = p/vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule "p/LaTeX-Box"]
+	path = p/LaTeX-Box
+	url = https://github.com/LaTeX-Box-Team/LaTeX-Box.git
