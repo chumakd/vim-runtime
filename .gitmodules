@@ -131,10 +131,6 @@
 	path = p/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
 	ignore = untracked
-[submodule "p/xml"]
-	path = p/xml
-	url = https://github.com/vim-scripts/xml.vim.git
-	ignore = untracked
 [submodule "p/Vim-R-plugin"]
 	path = p/Vim-R-plugin
 	url = https://github.com/vim-scripts/Vim-R-plugin.git
