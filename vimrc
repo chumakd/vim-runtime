@@ -627,12 +627,13 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \    'ruby',
                            \    'sass',
                            \    'scss',
-                           \    'sh',
                            \    'spec',
                            \    'vim',
                            \    'yaml'
                            \  ],
-                           \ 'passive_filetypes': [] }
+                           \ 'passive_filetypes': [
+                           \    'sh'
+                           \  ] }
 
 " C/C++ options
 let g:syntastic_clang_check_config_file = '.clang_complete'
@@ -650,7 +651,7 @@ let g:syntastic_perl_perlcritic_post_args = '--verbose "%s:%f:%l:%c: %s/%p %m (%
 let g:syntastic_ruby_checkers = ['rubylint', 'robocop']
 
 " Bash/Shell options
-let g:syntastic_sh_checkers = ['bashate']
+let g:syntastic_sh_checkers = ['bashate', 'shellcheck']
 " E003: Indent not multiple of 4
 " E006: Line too long
 " E042: local declaration hides errors
