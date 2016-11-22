@@ -100,7 +100,9 @@ set nosmartindent
 " Tabstop ---------------------------------------------------------------- {{{2
 "
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set smarttab
 set expandtab
 
 " Spell ------------------------------------------------------------------ {{{2
@@ -1696,9 +1698,9 @@ endfunc
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
     if &ts == 4
-        setl ts=8 sw=8 noet
+        setl ts=8 sts=8 sw=8 noet
     elseif &ts == 8
-        setl ts=4 sw=4 et
+        setl ts=4 sts=4 sw=4 et
     endif
     echo 'tabstop(' &ts ')' 'shiftwidth(' &sw ')' 'expandtab(' &et ')'
 endfunction
