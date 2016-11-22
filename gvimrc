@@ -4,6 +4,10 @@ let s:os = substitute(system('uname'), "\n", "", "")
 " system PATH
 if s:os == "Darwin"
     let $PATH = $HOME . '/bin:'
+                \. $HOME . '/local_install/usr/lib/haskell/cabal/bin:'
+                \. $HOME . '/local_install/usr/lib/python/bin:'
+                \. $HOME . '/local_install/usr/lib/npm/bin:'
+                \. $HOME . '/.gems/bin:'
                 \. '/opt/local/libexec/gnubin:'
                 \. '/opt/local/sbin:'
                 \. '/opt/local/bin:'
