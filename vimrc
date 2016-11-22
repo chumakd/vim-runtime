@@ -186,7 +186,7 @@ endif
 
 " Display ---------------------------------------------------------------- {{{2
 "
-set listchars=eol:$,tab:>-,trail:.
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:+
 
 " don't update the display while executing macros
 set lazyredraw
@@ -211,6 +211,12 @@ set numberwidth=3
 
 " highlight textwidth column
 "set colorcolumn=+1
+
+" show as much as possible when last line doesn't fit on screen
+set display+=lastline
+
+" max tabs
+set tabpagemax=50
 
 " Tags ------------------------------------------------------------------- {{{2
 "
@@ -242,6 +248,9 @@ set nohidden
 " disable virtualedit by default
 set virtualedit=
 
+" allow backspace to delete everything
+set backspace=indent,eol,start
+
 " set timeouts for keycodes and mappings
 set timeout
 set timeoutlen=700
@@ -257,6 +266,14 @@ set complete-=i
 " don't allow ^N completion to scan tags by default
 " that can be requested directly with i_^x^]
 set complete-=t
+
+" treat octal numbers as decimal for increment/decrement commands: CTRL-A CTRL-X
+set nrformats-=octal
+
+" delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+    set formatoptions+=j
+endif
 
 " Cmdline ---------------------------------------------------------------- {{{2
 "
@@ -279,6 +296,10 @@ set sessionoptions=tabpages
 
 " search path for gf and ^wf file jump commands
 set path+=/usr/local/include,/opt/local/include
+
+" automatically reload file if it has been changed outside of Vim and it
+" wasn't modified in Vim
+set autoread
 
 " Plugin options ========================================================= {{{1
 
