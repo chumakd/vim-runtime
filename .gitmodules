@@ -476,3 +476,6 @@
 	path = p/xml
 	url = https://github.com/othree/xml.vim.git
 	ignore = untracked
+[submodule "p/vim-schlepp"]
+	path = p/vim-schlepp
+	url = https://github.com/zirrostig/vim-schlepp.git
