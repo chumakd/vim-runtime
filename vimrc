@@ -768,6 +768,20 @@ nnoremap g#  g#N
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 
+" Shift mappings --------------------------------------------------------- {{{2
+"
+
+" Schlepp
+vmap <unique> <up>    <Plug>SchleppUp
+vmap <unique> <down>  <Plug>SchleppDown
+vmap <unique> <left>  <Plug>SchleppLeft
+vmap <unique> <right> <Plug>SchleppRight
+
+vmap <unique> <S-up>    <Plug>SchleppIndentUp
+vmap <unique> <S-down>  <Plug>SchleppIndentDown
+vmap <unique> <S-left>  <Plug>SchleppIndentLeft
+vmap <unique> <S-right> <Plug>SchleppIndentRight
+
 " Ctrl mappings ---------------------------------------------------------- {{{2
 "
 
