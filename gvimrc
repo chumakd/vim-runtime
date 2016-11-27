@@ -1,8 +1,8 @@
 " detect operating system
-let s:os = substitute(system('uname'), "\n", "", "")
+let s:os = substitute(system('uname'), "\n", '', '')
 
 " system PATH
-if s:os == "Darwin"
+if s:os ==? 'Darwin'
     let $PATH = $HOME . '/bin:'
                 \. $HOME . '/local_install/usr/lib/haskell/cabal/bin:'
                 \. $HOME . '/local_install/usr/lib/python/bin:'
@@ -27,9 +27,9 @@ set lines=38
 "set guifont=Fixedus\ 10
 "set guifont=Terminus\ 10
 
-if s:os == "Darwin"
+if s:os ==? 'Darwin'
     set guifont=Input:h17
-elseif s:os == "Linux"
+elseif s:os ==? 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 endif
 
@@ -62,7 +62,7 @@ set guioptions -=e
 set guicursor+=a:blinkon0
 
 " disable bell
-set vb t_vb=
+set visualbell t_vb=
 
 "
 " color shceme
@@ -77,29 +77,29 @@ highlight lCursor guifg=NONE guibg=Cyan
 " custom tabs label
 
 function GuiTabLabel()
-  let label = v:lnum
-  let label .= ') '
-  let bufnrlist = tabpagebuflist(v:lnum)
+  let l:label = v:lnum
+  let l:label .= ') '
+  let l:bufnrlist = tabpagebuflist(v:lnum)
 
   " Add '+' if one of the buffers in the tab page is modified
-  for bufnr in bufnrlist
-    if getbufvar(bufnr, "&modified")
-      let label = '+'.label
+  for l:bufnr in l:bufnrlist
+    if getbufvar(l:bufnr, '&modified')
+      let l:label = '+'.l:label
       break
     endif
   endfor
 
   " Append the number of windows in the tab page if more than one
-  let wincount = tabpagewinnr(v:lnum, '$')
-  if wincount > 1
-    let label .= wincount
+  let l:wincount = tabpagewinnr(v:lnum, '$')
+  if l:wincount > 1
+    let l:label .= l:wincount
   endif
-  if label != ''
-    let label .= ' '
+  if l:label !=# ''
+    let l:label .= ' '
   endif
 
   " Append the buffer name
-  return label . pathshorten(bufname(bufnrlist[tabpagewinnr(v:lnum) - 1]))
+  return l:label . pathshorten(bufname(l:bufnrlist[tabpagewinnr(v:lnum) - 1]))
 endfunction
 
 set guitablabel=%{GuiTabLabel()}
