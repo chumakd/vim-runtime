@@ -376,7 +376,7 @@ let g:Cscope_ToolsMenu = 0
 
 " DelimitMate ------------------------------------------------------------ {{{2
 "
-let g:delimitMate_offByDefault = 1
+let g:delimitMate_offByDefault = 0
 
 " DirDiff ---------------------------------------------------------------- {{{2
 "
