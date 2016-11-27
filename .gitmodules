@@ -479,3 +479,6 @@
 [submodule "p/vim-schlepp"]
 	path = p/vim-schlepp
 	url = https://github.com/zirrostig/vim-schlepp.git
+[submodule "p/rainbow_parentheses"]
+	path = p/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
