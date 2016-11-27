@@ -1,0 +1,22 @@
+cmdargs:
+  # Checking more strictly
+  #severity: style_problem
+
+  # Enable coloring
+  color: true
+
+  # Enable Neovim syntax
+  #env:
+  #  neovim: true
+
+policies:
+  ProhibitSetNoCompatible:
+    enabled: false
+
+  # Disable a violation
+  #ProhibitSomethingEvil:
+  #  enabled: false
+
+  # Enable a violation
+  #ProhibitSomethingBad:
+  #  enabled: true

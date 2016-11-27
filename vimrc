@@ -1,11 +1,5 @@
 " Options ================================================================ {{{1
 
-if has('win32') || has ('win64')
-    let $VIMHOME = $VIM."/vimfiles"
-else
-    let $VIMHOME = $HOME."/.vim"
-endif
-
 " enconding
 set encoding=utf-8
 scriptencoding utf-8
@@ -20,12 +14,12 @@ execute pathogen#infect()
 call pathogen#helptags()
 
 " detect operating system
-let s:os = substitute(system('uname'), "\n", "", "")
+let s:os = substitute(system('uname'), "\n", '', '')
 
 " detect terminal emulator
-let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", "", "")
-let s:term_session  = substitute(system('printenv SESSIONTYPE'), "\n", "", "")
-let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
+let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", '', '')
+let s:term_session  = substitute(system('printenv SESSIONTYPE'), "\n", '', '')
+let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", '', '')
 
 " Filetype --------------------------------------------------------------- {{{2
 "
@@ -55,8 +49,8 @@ if match($TERM, '256color') != -1
     set t_Co=256
 endif
 
-if s:term_prog == "iTerm.app" && s:iterm_profile =~? ".*solarized.*" || s:term_session == "gnome-session"
-    if s:os == "Linux" && !empty($TMUX)
+if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_session ==# 'gnome-session'
+    if s:os ==? 'Linux' && !empty($TMUX)
         set background=dark
     endif
     colorscheme solarized
@@ -96,8 +90,11 @@ set foldopen+=insert,jump
 " set 'foldmethod' to 'manual' when entering insert mode
 " this improves completion speed in order of magnitude
 " from http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
-autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+augroup fold_completion_fix
+    autocmd!
+    autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+    autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+augroup END
 
 " Indent ----------------------------------------------------------------- {{{2
 "
@@ -155,7 +152,7 @@ set ruler
 set laststatus=2
 
 "set statusline=%f\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ff}\ <\ %{&enc}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
-if version >= 703
+if v:version >= 703
     set statusline=%h%w%q\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 else
     set statusline=%h%w\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
@@ -187,7 +184,7 @@ set fillchars=fold:\ ,vert:\
 set backup
 set backupdir=~/.vim/backup,.,~/temp/tmp,~/
 
-if version >= 703
+if v:version >= 703
   set undofile
   set undodir=~/.vim/undo,.,~/
 endif
@@ -208,7 +205,7 @@ set mousehide
 " lines from the bottom
 "set scrolloff=8
 
-if version >= 703
+if v:version >= 703
   " show line numbers relative to cursor position
   set relativenumber
 else
@@ -279,7 +276,7 @@ set complete-=t
 set nrformats-=octal
 
 " delete comment character when joining commented lines
-if v:version > 703 || v:version == 703 && has("patch541")
+if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j
 endif
 
@@ -333,7 +330,7 @@ let g:bufExplorerFindActive=0
 
 " CCTree ----------------------------------------------------------------- {{{2
 "
-let g:CCTreeOrientation = "rightbelow"
+let g:CCTreeOrientation = 'rightbelow'
 let g:CCTreeRecursiveDepth = 3
 let g:CCTreeMinVisibleDepth = 1
 let g:CCTreeWindowMinWidth = -1
@@ -349,10 +346,10 @@ let g:CCTreeWindowWidth = 55
 " default clang completion mapping is i_<C-x><C-u>
 "let g:clang_complete_auto = 0
 let g:clang_omnicppcomplete_compliance = 1
-if s:os == "Darwin"
-  let g:clang_library_path = "/Library/Developer/CommandLineTools/usr/lib/libclang.dylib"
-elseif s:os == "Linux"
-  let g:clang_library_path = "/usr/lib/llvm-3.8/lib/libclang.so.1"
+if s:os ==? 'Darwin'
+  let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+elseif s:os ==? 'Linux'
+  let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
 endif
 
 " Conque shell ----------------------------------------------------------- {{{2
@@ -444,12 +441,12 @@ let g:indent_guides_guide_size = 1
 
 " Latex suite ------------------------------------------------------------ {{{2
 "
-let g:Tex_DefaultTargetFormat = "pdf"
-let g:Tex_MultipleCompileFormats = "pdf,dvi"
-let g:Tex_ViewRule_dvi = "okular"
-let g:Tex_ViewRule_ps  = "okular"
-"let g:Tex_ViewRule_pdf = "acroread"
-let g:Tex_ViewRule_pdf = "okular"
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf,dvi'
+let g:Tex_ViewRule_dvi = 'okular'
+let g:Tex_ViewRule_ps  = 'okular'
+"let g:Tex_ViewRule_pdf = 'acroread'
+let g:Tex_ViewRule_pdf = 'okular'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " MRU -------------------------------------------------------------------- {{{2
@@ -460,9 +457,9 @@ let MRU_Auto_Close = 1
 
 " MultipleSearch --------------------------------------------------------- {{{2
 "
-let g:MultipleSearchMaxColors=8
-let g:MultipleSearchColorSequence="red,blue,green,magenta,cyan,gray,brown,yellow"
-let g:MultipleSearchTextColorSequence="white,white,black,white,black,black,white,black"
+let g:MultipleSearchMaxColors = 8
+let g:MultipleSearchColorSequence = 'red,blue,green,magenta,cyan,gray,brown,yellow'
+let g:MultipleSearchTextColorSequence = 'white,white,black,white,black,black,white,black'
 
 " Neocomplete ------------------------------------------------------------ {{{2
 "
@@ -506,10 +503,10 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " NERDTree --------------------------------------------------------------- {{{2
 "
-let NERDTreeWinPos="right"
+let NERDTreeWinPos = 'right'
 
 " store the bookmarks file in ~/.vim
-"let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
+"let NERDTreeBookmarksFile='~/.vim/NERDTreeBookmarks'
 
 " show the bookmarks table on startup
 "let NERDTreeShowBookmarks=1
@@ -551,11 +548,11 @@ let perl_include_pod = 1
 
 " Perl-local-lib-path ---------------------------------------------------- {{{2
 "
-let g:perl_local_lib_path = "lib"
-let perl_inc_path = system("perl -e 'print join qq(,), @INC'")
+let g:perl_local_lib_path = 'lib'
+let perl_inc_path = system('perl -e "print join qq(,), @INC"')
 
 if !empty(perl_inc_path)
-    let g:perl_local_lib_path = g:perl_local_lib_path ."," . perl_inc_path
+    let g:perl_local_lib_path = g:perl_local_lib_path .',' . perl_inc_path
 endif
 
 augroup perl_local_lib
@@ -572,7 +569,7 @@ let g:Perl_Ctrl_j   = 'off'
 
 " temporarily disable powerline plugin because it has several look&feel issues
 " but keep it enabled for Gvim (because I rarely use it anyway ;)
-if !has("gui_running")
+if !has('gui_running')
     let g:Powerline_loaded = 1
 endif
 
@@ -603,9 +600,9 @@ let g:qs_enable = 0
 
 " R ------------------------------------------------------------------ {{{2
 "
-let vimrplugin_r_args = "--no-save --quiet"
-let vimrplugin_term = "xterm"
-let vimrplugin_vimpager = "horizontal"
+let vimrplugin_r_args = '--no-save --quiet'
+let vimrplugin_term = 'xterm'
+let vimrplugin_vimpager = 'horizontal'
 let vimrplugin_screenplugin = 0
 let vimrplugin_conqueplugin = 1
 
@@ -1152,7 +1149,7 @@ nmap <silent> ,sp :sp %:p:h/<C-X>
 "
 
 " toggle textwidth column highlighting
-if version >= 703
+if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
 
@@ -1362,7 +1359,7 @@ command! Colortest runtime syntax/colortest.vim
 "autocmd BufReadPost *.doc %!antiword "%"
 
 " highlight trailing whitespaces with color of TODO/IncSearch hl group
-if g:colors_name == 'solarized'
+if g:colors_name ==? 'solarized'
     augroup trailing_spaces
         autocmd!
         autocmd! BufNew   * match IncSearch /\s\+$/
@@ -1379,13 +1376,13 @@ else
 endif
 
 " enable relative line numbers in tagbar window
-if version >= 703
+if v:version >= 703
   au Filetype tagbar nested :set relativenumber
 endif
 
 " highlight comments in different color from main text, for 'conf' and 'cfg'
 " filetypes, if we are usingsolarized colorscheme
-if g:colors_name == 'solarized'
+if g:colors_name ==? 'solarized'
     let s:default_comments_color=10
     let s:comments_color=24
     augroup solarized_comments
@@ -1683,10 +1680,10 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 " fix meta-keys which generate <Esc>a .. <Esc>z
 function! MyFixMetaEsc()
     let c='a'
-    while c <= 'z'
-        "exec "set <M-".toupper(c).">=\e".c
-        exec "set <M-".c.">=\e".c
-        exec "imap \e".c." <M-".c.">"
+    while c <=# 'z'
+        "exec 'set <M-'.toupper(c).'>=\e'.c
+        exec 'set <M-'.c.'>=\e'.c
+        exec 'imap \e'.c.' <M-'.c.'>'
         let c = nr2char(1+char2nr(c))
     endw
 endfunction
@@ -1712,8 +1709,8 @@ endfunction
 " Run perl -c on current file ------------------------------------------- {{{2
 function! MyPerlcompile()
     let l:old_makeprg = &makeprg
-    "let l:cmd = "$VIMHOME/tools/efm_perl_old.pl % $*"
-    let l:cmd = pathogen#runtime_findfile('tools/efm_perl.pl', 0) . " % $*"
+    "let l:cmd = '$VIMHOME/tools/efm_perl_old.pl % $*'
+    let l:cmd = pathogen#runtime_findfile('tools/efm_perl.pl', 0) . ' % $*'
     let &makeprg = l:cmd
     :make
     let &makeprg = l:old_makeprg
@@ -1722,7 +1719,7 @@ endfunction
 " Run perl on current file ---------------------------------------------- {{{2
 function! MyPerlrun()
     let l:old_makeprg = &makeprg
-    let l:cmd = "perl % $*"
+    let l:cmd = 'perl % $*'
     let &makeprg = l:cmd
     :make
     let &makeprg = l:old_makeprg
@@ -1732,10 +1729,12 @@ endfunction
 
 " show syntax highlighting groups for word under cursor
 function! <SID>SynStack()
-  if !exists("*synstack")
+  if !exists('*synstack')
     return
   endif
+  " vint: -ProhibitUnnecessaryDoubleQuote
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  " vint: +ProhibitUnnecessaryDoubleQuote
 endfunc
 
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
@@ -1752,7 +1751,7 @@ endfunction
 function! MyToggleQuickFix()
     for i in range(1, winnr('$'))
         let bnum = winbufnr(i)
-        if getbufvar(bnum, '&buftype') == 'quickfix'
+        if getbufvar(bnum, '&buftype') ==# 'quickfix'
             cclose
             return
         endif
@@ -1762,7 +1761,7 @@ function! MyToggleQuickFix()
 endfunction
 
 " Toggle column highlighting --------------------------------------------- {{{2
-if version >= 703
+if v:version >= 703
     " Toggle textwidth end column highlighting
     function! MyToggleColorcolumn()
       if empty(&colorcolumn)
@@ -1776,8 +1775,8 @@ endif
 
 " Toggle virtual edit ---------------------------------------------------- {{{2
 function! MyToggleVirtualEdit()
-    if &ve == "all"
-        set ve=""
+    if &ve ==# 'all'
+        set ve=''
     elseif empty(&ve)
         set ve=\all
     endif
@@ -1787,7 +1786,7 @@ endfunction
 " Toggle fold marker ----------------------------------------------------- {{{2
 let s:old_fdm = ''
 function! MyToggleFoldMarker()
-    if &foldmarker == "{{{,}}}"
+    if &foldmarker ==# '{{{,}}}'
         let s:old_fdm = &foldmethod
         setl foldmethod=marker foldmarker=<<<<<<<,>>>>>>>
     else
@@ -1800,7 +1799,7 @@ endfunction
 " Toggle doxygen syntax -------------------------------------------------- {{{2
 let s:old_syntax = ''
 function! MyToggleDoxygenSyntax()
-    if &syntax != "cpp.doxygen"
+    if &syntax !=# 'cpp.doxygen'
         let s:old_syntax = &syntax
         setl syntax=cpp.doxygen
     else
@@ -1809,24 +1808,28 @@ function! MyToggleDoxygenSyntax()
     set syntax?
 endfunction
 
+augroup toggle_cursor_hl
+    autocmd!
+augroup END
+
 " Toggle cursor/column highlight ----------------------------------------- {{{2
 function! MyToggleCursorColumnHl()
     if &cursorline && &cursorcolumn
-        au! WinLeave *
-        au! WinEnter *
+        autocmd! toggle_cursor_hl WinLeave *
+        autocmd! toggle_cursor_hl WinEnter *
         set nocursorline nocursorcolumn
-        echo "disabled"
+        echo 'disabled'
     else
-        au WinLeave * set nocursorline nocursorcolumn
-        au WinEnter * set cursorline cursorcolumn
+        autocmd toggle_cursor_hl WinLeave * set nocursorline nocursorcolumn
+        autocmd toggle_cursor_hl WinEnter * set cursorline cursorcolumn
         set cursorline cursorcolumn
-        echo "enabled"
+        echo 'enabled'
     endif
 endfunction
 
 " Toggle fold search ----------------------------------------------------- {{{2
 function! MyToggleFoldSearch()
-    if &foldopen =~ 'search'
+    if &foldopen =~# 'search'
         setl foldopen-=search
         echo 'foldopen-=search'
     else
@@ -1862,7 +1865,7 @@ function! MyTabLabel(n)
 
     " add '+' if one of the buffers in the tab page is modified
     for l:buf_num in l:buf_list
-        if getbufvar(l:buf_num, "&modified")
+        if getbufvar(l:buf_num, '&modified')
             " select the highlighting for modified flag
             let l:label .= (a:n == l:tab_num ? '%3*' : '%4*')
             let l:label .= '+'
@@ -1880,9 +1883,9 @@ function! MyTabLabel(n)
     let l:cur_buf =  l:buf_list[l:win_nr - 1]
     let l:file_name = pathshorten( simplify( bufname(l:cur_buf) ) )
     let l:buf_type = getbufvar(l:cur_buf, '&buftype')
-    let l:label .= l:file_name != ''          ? l:file_name
-                 \ : l:buf_type == 'quickfix' ? '[Quickfix]'
-                 \ :                            '[No Name]'
+    let l:label .= l:file_name !=# ''          ? l:file_name
+                 \ : l:buf_type ==# 'quickfix' ? '[Quickfix]'
+                 \ :                             '[No Name]'
 
     return l:label . ' '
 
