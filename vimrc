@@ -29,14 +29,17 @@ let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", "", "")
 
 " Filetype --------------------------------------------------------------- {{{2
 "
-filetype indent on
-filetype plugin on
+if has('autocmd')
+    filetype plugin indent on
+endif
+
+if has('syntax') && !exists('g:syntax_on')
+    syntax enable
+endif
 
 runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
-
-syntax enable
 
 " set path for file search operations
 "set path=.,,/usr/local/include/**,/usr/include/**
@@ -63,6 +66,11 @@ endif
 
 " enable ToggleBG command from solarized plugin for light/dark bg switching
 runtime autoload/togglebg.vim
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
 
 " disable Powerline plugin if we don't have full color terminal
 " because it makes status line totally black in this mode
