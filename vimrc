@@ -1183,11 +1183,16 @@ nmap <silent> ,tn :nohlsearch<CR>
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
 
-" toggle spell check
-nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
-
 " toggle read-only mode
 nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
+
+" toggle rainbow parentheses
+nmap <silent> ,trp :RainbowParenthesesToggle<CR>
+nmap <silent> ,tr( :RainbowParenthesesLoadRound<CR>
+nmap <silent> ,tr[ :RainbowParenthesesLoadSquare<CR>
+
+" toggle spell check
+nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
 
 nmap <silent> ,tt :call MyToggleTabstop()<CR>
 
