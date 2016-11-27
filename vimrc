@@ -238,7 +238,7 @@ set tags=./tags,tags,~/.vim/tags/stl
 ",~/prg/tags/tags.boost
 
 " search tags database before cscope database
-set csto=1
+set cscopetagorder=1
 
 " show cscope search results in quickfix window
 set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -316,7 +316,7 @@ let g:alternateRelativeFiles=1
 
 " Bash syntax ------------------------------------------------------------ {{{2
 "
-let is_bash = 1
+let g:is_bash = 1
 let g:sh_fold_enabled= 1
 
 " BufExplorer ------------------------------------------------------------ {{{2
@@ -376,7 +376,7 @@ let g:Cscope_ToolsMenu = 0
 
 " DelimitMate ------------------------------------------------------------ {{{2
 "
-let delimitMate_offByDefault = 1
+let g:delimitMate_offByDefault = 1
 
 " DirDiff ---------------------------------------------------------------- {{{2
 "
@@ -451,9 +451,9 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " MRU -------------------------------------------------------------------- {{{2
 "
-let MRU_Max_Entries = 1000
-let MRU_Add_Menu = 0
-let MRU_Auto_Close = 1
+let g:MRU_Max_Entries = 1000
+let g:MRU_Add_Menu = 0
+let g:MRU_Auto_Close = 1
 
 " MultipleSearch --------------------------------------------------------- {{{2
 "
@@ -503,7 +503,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " NERDTree --------------------------------------------------------------- {{{2
 "
-let NERDTreeWinPos = 'right'
+let g:NERDTreeWinPos = 'right'
 
 " store the bookmarks file in ~/.vim
 "let NERDTreeBookmarksFile='~/.vim/NERDTreeBookmarks'
@@ -512,7 +512,7 @@ let NERDTreeWinPos = 'right'
 "let NERDTreeShowBookmarks=1
 
 " don't display these kinds of files
-let NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
+let g:NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
 "let NERDTreeIgnore=[ '\.ncb$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
             " \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$',
             " \ '\.embed\.manifest$', '\.embed\.manifest.res$',
@@ -520,9 +520,9 @@ let NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
 
 " Omnicppcomplete -------------------------------------------------------- {{{2
 "
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_NamespaceSearch = 2
-let OmniCpp_ShowPrototypeInAbbr = 1
+let g:OmniCpp_GlobalScopeSearch = 1
+let g:OmniCpp_NamespaceSearch = 2
+let g:OmniCpp_ShowPrototypeInAbbr = 1
 
 " Perl syntax ------------------------------------------------------------ {{{2
 "
@@ -539,20 +539,20 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 "    autocmd FileType perl runtime contrib/try-tiny.vim
 "augroup end
 
-let perl_fold = 1
+let g:perl_fold = 1
 " disabled, until it becomes more sofisticated
 "let perl_fold_blocks = 1
 
 " enable syntax highlighting for perl POD documentation
-let perl_include_pod = 1
+let g:perl_include_pod = 1
 
 " Perl-local-lib-path ---------------------------------------------------- {{{2
 "
 let g:perl_local_lib_path = 'lib'
-let perl_inc_path = system('perl -e "print join qq(,), @INC"')
+let g:perl_inc_path = system('perl -e "print join qq(,), @INC"')
 
-if !empty(perl_inc_path)
-    let g:perl_local_lib_path = g:perl_local_lib_path .',' . perl_inc_path
+if !empty(g:perl_inc_path)
+    let g:perl_local_lib_path = g:perl_local_lib_path .',' . g:perl_inc_path
 endif
 
 augroup perl_local_lib
@@ -590,7 +590,7 @@ let g:Powerline_colorscheme = 'solarized256'
 " Project ---------------------------------------------------------------- {{{2
 "
 let g:proj_window_width = 32
-let Tlist_Show_One_File = 1
+let g:Tlist_Show_One_File = 1
 "let g:proj_flags .= "g"
 
 " quick-scope ------------------------------------------------------------ {{{2
@@ -600,17 +600,17 @@ let g:qs_enable = 0
 
 " R ------------------------------------------------------------------ {{{2
 "
-let vimrplugin_r_args = '--no-save --quiet'
-let vimrplugin_term = 'xterm'
-let vimrplugin_vimpager = 'horizontal'
-let vimrplugin_screenplugin = 0
-let vimrplugin_conqueplugin = 1
+let g:vimrplugin_r_args = '--no-save --quiet'
+let g:vimrplugin_term = 'xterm'
+let g:vimrplugin_vimpager = 'horizontal'
+let g:vimrplugin_screenplugin = 0
+let g:vimrplugin_conqueplugin = 1
 
 " disable the underscore replacement with <-
-let vimrplugin_underscore = 0
+let g:vimrplugin_underscore = 0
 
 " open .Rout files in a split window
-let vimrplugin_notab = 1
+let g:vimrplugin_notab = 1
 
 " show list elements in object browser
 "let vimrplugin_open_list = 1
@@ -621,7 +621,7 @@ let g:secure_modelines_verbose=1
 
 " SessionMan ------------------------------------------------------------- {{{2
 "
-let sessionman_save_on_exit = 0
+let g:sessionman_save_on_exit = 0
 
 " Showmarks -------------------------------------------------------------- {{{2
 "
@@ -707,8 +707,8 @@ let g:tagbar_sort = 0
 
 " Taglist ---------------------------------------------------------------- {{{2
 "
-let Tlist_Show_One_File = 1
-let Tlist_WinWidth = 35
+let g:Tlist_Show_One_File = 1
+let g:Tlist_WinWidth = 35
 
 " Unite ------------------------------------------------------------------ {{{2
 "
@@ -1679,12 +1679,12 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 "
 " fix meta-keys which generate <Esc>a .. <Esc>z
 function! MyFixMetaEsc()
-    let c='a'
-    while c <=# 'z'
-        "exec 'set <M-'.toupper(c).'>=\e'.c
-        exec 'set <M-'.c.'>=\e'.c
-        exec 'imap \e'.c.' <M-'.c.'>'
-        let c = nr2char(1+char2nr(c))
+    let l:c = 'a'
+    while l:c <=# 'z'
+        "exec 'set <M-'.toupper(l:c).'>=\e'.l:c
+        exec 'set <M-'.l:c.'>=\e'.l:c
+        exec 'imap \e'.l:c.' <M-'.l:c.'>'
+        let l:c = nr2char(1+char2nr(l:c))
     endw
 endfunction
 
@@ -1739,19 +1739,19 @@ endfunc
 
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
-    if &ts == 4
-        setl ts=8 sts=8 sw=8 noet
-    elseif &ts == 8
-        setl ts=4 sts=4 sw=4 et
+    if &tabstop == 4
+        setl tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+    elseif &tabstop == 8
+        setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab
     endif
-    echo 'tabstop(' &ts ')' 'shiftwidth(' &sw ')' 'expandtab(' &et ')'
+    echo 'tabstop(' &tabstop ')' 'shiftwidth(' &shiftwidth ')' 'expandtab(' &expandtab ')'
 endfunction
 
 " Toggle quickfix window ------------------------------------------------- {{{2
 function! MyToggleQuickFix()
-    for i in range(1, winnr('$'))
-        let bnum = winbufnr(i)
-        if getbufvar(bnum, '&buftype') ==# 'quickfix'
+    for l:i in range(1, winnr('$'))
+        let l:bnum = winbufnr(l:i)
+        if getbufvar(l:bnum, '&buftype') ==# 'quickfix'
             cclose
             return
         endif
@@ -1775,12 +1775,12 @@ endif
 
 " Toggle virtual edit ---------------------------------------------------- {{{2
 function! MyToggleVirtualEdit()
-    if &ve ==# 'all'
-        set ve=''
-    elseif empty(&ve)
-        set ve=\all
+    if &virtualedit ==# 'all'
+        set virtualedit=
+    elseif empty(&virtualedit)
+        set virtualedit=\all
     endif
-    set ve?
+    set virtualedit?
 endfunction
 
 " Toggle fold marker ----------------------------------------------------- {{{2
@@ -1892,27 +1892,27 @@ function! MyTabLabel(n)
 endfunction
 
 function! MyTabLine()
-    let s = ''
-    for i in range(tabpagenr('$'))
+    let l:s = ''
+    for l:i in range(tabpagenr('$'))
         " set the tab page number (for mouse clicks)
-        let s .= '%' . (i + 1) . 'T'
+        let l:s .= '%' . (l:i + 1) . 'T'
 
         " the label is made by MyTabLabel()
-        "let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-        let s .= MyTabLabel(i + 1)
+        "let l:s .= ' %{MyTabLabel(' . (l:i + 1) . ')} '
+        let l:s .= MyTabLabel(l:i + 1)
 
     endfor
 
     " after the last tab fill with TabLineFill and reset tab page nr
-    let s .= '%#TabLineFill#%T'
+    let l:s .= '%#TabLineFill#%T'
 
     " right-align the label to close the current tab page
     if tabpagenr('$') > 1
-        "let s .= '%=%#TabLine#%999Xclose'
-        let s .= '%=%#TabLine#%999XX'
+        "let l:s .= '%=%#TabLine#%999Xclose'
+        let l:s .= '%=%#TabLine#%999XX'
     endif
 
-    return s
+    return l:s
 endfunction
 
 " modeline =============================================================== {{{1
