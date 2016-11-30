@@ -482,3 +482,6 @@
 [submodule "p/rainbow_parentheses"]
 	path = p/rainbow_parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "p/vim-multiple-cursors"]
+	path = p/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
