@@ -854,8 +854,8 @@ noremap <silent> <M-Up>     :tabprev<CR>
 noremap <silent> <M-Down>   :tabnext<CR>
 
 " move tabs
-noremap <silent> <M-Right>  :exec 'silent! tabmove ' . tabpagenr()<CR>
-noremap <silent> <M-Left>   :exec 'silent! tabmove ' . (tabpagenr() - 2)<CR>
+noremap <silent> <M-Right>  :tabmove +<CR>
+noremap <silent> <M-Left>   :tabmove -<CR>
 
 " \ mappings ------------------------------------------------------------- {{{2
 "
