@@ -834,15 +834,6 @@ nnoremap <silent> <C-Right>  <C-W>>
 "nnoremap <silent> <M-k>  <C-W>-
 "nnoremap <silent> <M-l>  <C-W>>
 
-" Latex Suite
-" this mapping is required to be done in vimrc, see latex suite docs
-nmap <A-]> <Plug>IMAP_JumpForward
-vmap <A-]> <Plug>IMAP_JumpForward
-
-" Perl support
-" TODO: use au for perl file types
-"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
-
 " adjust window size by five
 "noremap <silent> <M-Left>   :vertical resize -5<CR>
 "noremap <silent> <M-Up>     :resize +5<CR>
@@ -856,6 +847,22 @@ noremap <silent> <M-Down>   :tabnext<CR>
 " move tabs
 noremap <silent> <M-Right>  :tabmove +<CR>
 noremap <silent> <M-Left>   :tabmove -<CR>
+
+" Latex Suite
+" this mapping is required to be done in vimrc, see latex suite docs
+nmap <A-]> <Plug>IMAP_JumpForward
+vmap <A-]> <Plug>IMAP_JumpForward
+
+" Perl support
+" TODO: use au for perl file types
+"nmap <silent> <A-j>  i<C-R>=Perl_JumpCtrlJ()<CR>
+
+" MultipleCursors
+nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+" map it to a real character sent by OS to work in MacVim
+nnoremap <silent> ∆ :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> ∆ :MultipleCursorsFind <C-R>/<CR>
 
 " \ mappings ------------------------------------------------------------- {{{2
 "
@@ -1679,6 +1686,25 @@ hi x255_Grey93 ctermfg=255 guifg=#eeeeee
 
 " Functions ============================================================== {{{1
 "
+
+" Plung hooks ------------------------------------------------------------ {{{2
+"
+
+" MultipleCursors {{{3
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock') == 2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock') == 2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
 " Fix Meta-Esc ----------------------------------------------------------- {{{2
 "
