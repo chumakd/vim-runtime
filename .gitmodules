@@ -490,3 +490,6 @@
 [submodule "p/vim-snippets"]
 	path = p/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "p/ultisnips"]
+	path = p/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
