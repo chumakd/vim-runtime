@@ -628,6 +628,11 @@ let g:sessionman_save_on_exit = 0
 let g:showmarks_enable = 0
 let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+" SnipMate --------------------------------------------------------------- {{{2
+"
+":imap <C-s>   <Plug>snipMateNextOrTrigger
+":smap <C-S-s> <Plug>snipMateNextOrTrigger
+
 " Solarized -------------------------------------------------------------- {{{2
 "
 " set this for terminals which haven't got custom solarized color palette installed
@@ -715,6 +720,15 @@ let g:Tlist_WinWidth = 35
 
 " enable fuzzy matching by default
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" UltiSnips -------------------------------------------------------------- {{{2
+"
+
+let g:UltiSnipsExpandTrigger = '<c-x><tab>'
+let g:UltiSnipsListSnippets  = '<c-s>'
+
+" don't unmap plugins like exchange and surround in visual mode
+let g:UltiSnipsRemoveSelectModeMappings = 0
 
 " Xml -------------------------------------------------------------------- {{{2
 "
