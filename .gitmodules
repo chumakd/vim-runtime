@@ -487,3 +487,6 @@
 [submodule "p/vim-addon-mw-utils"]
 	path = p/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "p/vim-snippets"]
+	path = p/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
