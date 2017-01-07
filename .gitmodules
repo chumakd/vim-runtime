@@ -496,3 +496,6 @@
 [submodule "p/neosnippet"]
 	path = p/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
+[submodule "p/neosnippet-snippets"]
+	path = p/neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets.git
