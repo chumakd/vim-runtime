@@ -485,3 +485,6 @@
 [submodule "p/vim-multiple-cursors"]
 	path = p/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "p/vim-perl6"]
+	path = p/vim-perl6
+	url = https://github.com/vim-perl/vim-perl6
