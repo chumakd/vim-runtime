@@ -56,7 +56,7 @@
 	ignore = untracked
 [submodule "p/tlib"]
 	path = p/tlib
-	url = https://github.com/vim-scripts/tlib.git
+	url = https://github.com/tomtom/tlib_vim.git
 	ignore = untracked
 [submodule "p/DrawIt"]
 	path = p/DrawIt
