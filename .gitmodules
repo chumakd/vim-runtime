@@ -493,3 +493,6 @@
 [submodule "p/ultisnips"]
 	path = p/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "p/neosnippet"]
+	path = p/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim.git
