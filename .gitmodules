@@ -484,3 +484,6 @@
 [submodule "p/vim-perl6"]
 	path = p/vim-perl6
 	url = https://github.com/vim-perl/vim-perl6
+[submodule "p/vim-addon-mw-utils"]
+	path = p/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
