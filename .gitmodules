@@ -44,7 +44,7 @@
 	ignore = untracked
 [submodule "p/genutils"]
 	path = p/genutils
-	url = https://github.com/vim-scripts/genutils.git
+	url = https://github.com/chumakd/genutils.git
 	ignore = untracked
 [submodule "p/multvals"]
 	path = p/multvals
