@@ -499,3 +499,6 @@
 [submodule "p/neosnippet-snippets"]
 	path = p/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "p/tabline"]
+	path = p/tabline
+	url = https://github.com/mkitt/tabline.vim.git
