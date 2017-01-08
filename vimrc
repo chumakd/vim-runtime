@@ -481,7 +481,7 @@ let g:neocomplete#sources#buffer#disabled_pattern = '\M.gpg$'
 
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default'  : '',
-	\ 'cpanfile' : $HOME . '/.vim/bundle/vim-cpanfile/dict/cpanfile.dict'
+    \ 'cpanfile' : $HOME . '/.vim/bundle/vim-cpanfile/dict/cpanfile.dict'
     \ }
 
 if !exists('g:neocomplete#keyword_patterns')
