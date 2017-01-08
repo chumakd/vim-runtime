@@ -308,6 +308,15 @@ set autoread
 
 " Plugin options ========================================================= {{{1
 
+" Airline ---------------------------------------------------------------- {{{2
+"
+" use PowerLine-style unicode symbols for markers
+let g:airline_powerline_fonts=1
+" do not draw separators for empty sections
+let g:airline_skip_empty_sections = 1
+" enable airline for vim tabs
+"let g:airline#extensions#tabline#enabled = 1
+
 " Alternate -------------------------------------------------------------- {{{2
 "
 let g:alternateNoDefaultAlternate=0
