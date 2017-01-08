@@ -505,3 +505,6 @@
 [submodule "p/vim-airline-themes"]
 	path = p/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "p/vim-airline"]
+	path = p/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
