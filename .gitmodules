@@ -502,3 +502,6 @@
 [submodule "p/tabline"]
 	path = p/tabline
 	url = https://github.com/mkitt/tabline.vim.git
+[submodule "p/vim-airline-themes"]
+	path = p/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
