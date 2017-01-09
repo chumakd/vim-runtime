@@ -426,6 +426,12 @@ let g:netrw_altv = 1
 "
 let g:vimfiler_as_default_explorer = 1
 
+" Gitv ------------------------------------------------------------------- {{{2
+"
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_OpenPreviewOnLaunch = 0
+let g:Gitv_WipeAllOnClose = 0
+
 " GetLatestVimScripts ---------------------------------------------------- {{{2
 "
 let g:GetLatestVimScripts_allowautoinstall= 0
@@ -1092,7 +1098,7 @@ nmap <silent> ,gW
 " Fugitive/Git
 nmap <silent> ,gs :Git status<CR>
 nmap <silent> ,gd :Git diff<CR>
-nmap <silent> ,gt :!tig<CR>
+nmap <silent> ,gt :Gitv<CR>
 
 " Git-gutter
 nmap <silent> ,gg :GitGutterToggle<CR>
