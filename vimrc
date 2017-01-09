@@ -829,6 +829,10 @@ vnoremap <C-s> ,
 " open current file in new tab and do :Tselect on a word  under cursor
 nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
+" move current line up/down
+"nmap <C-Up>   :m-2
+"nmap <C-Down> :m+
+
 " Maps to make handling windows a bit easier ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
 
