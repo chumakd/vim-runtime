@@ -508,3 +508,6 @@
 [submodule "p/vim-airline"]
 	path = p/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "p/vim-bufkill"]
+	path = p/vim-bufkill
+	url = https://github.com/qpkorr/vim-bufkill.git
