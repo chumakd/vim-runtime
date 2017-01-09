@@ -511,3 +511,6 @@
 [submodule "p/vim-bufkill"]
 	path = p/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill.git
+[submodule "p/gitv"]
+	path = p/gitv
+	url = https://github.com/gregsexton/gitv.git
