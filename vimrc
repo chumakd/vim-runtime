@@ -393,6 +393,7 @@ let g:delimitMate_offByDefault = 0
 " DirDiff ---------------------------------------------------------------- {{{2
 "
 let g:DirDiffEnableMappings = 1
+"let g:DirDiffExcludes = '/.git/*,.*.swp'
 
 " EasyMotion ------------------------------------------------------------- {{{2
 "
