@@ -520,3 +520,6 @@
 [submodule "p/vim-speeddating"]
 	path = p/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "p/tabular"]
+	path = p/tabular
+	url = https://github.com/godlygeek/tabular.git
