@@ -523,3 +523,6 @@
 [submodule "p/tabular"]
 	path = p/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "p/NrrwRgn"]
+	path = p/NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn.git
