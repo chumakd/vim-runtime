@@ -526,3 +526,6 @@
 [submodule "p/NrrwRgn"]
 	path = p/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "p/tern_for_vim"]
+	path = p/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
