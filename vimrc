@@ -320,6 +320,16 @@ let g:airline_left_sep=''
 " enable airline for vim tabs
 "let g:airline#extensions#tabline#enabled = 1
 
+"let g:airline_theme='distinguished'
+let g:airline_theme_patch_func = 'MyAirlineThemePatch'
+
+function! MyAirlineThemePatch(palette)
+    if g:airline_theme ==# 'dark'
+        let a:palette.normal.airline_a = [ '#00005f' , '#8a8a8a' , 17  , 245 ]
+        let a:palette.normal.airline_z = [ '#00005f' , '#8a8a8a' , 17  , 245 ]
+    endif
+endfunction
+
 " Alternate -------------------------------------------------------------- {{{2
 "
 let g:alternateNoDefaultAlternate=0
