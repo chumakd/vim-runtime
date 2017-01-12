@@ -191,7 +191,7 @@ endif
 
 " Display ---------------------------------------------------------------- {{{2
 "
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:+
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
 
 " don't update the display while executing macros
 set lazyredraw
