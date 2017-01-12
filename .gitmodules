@@ -538,3 +538,6 @@
 [submodule "p/scss-syntax"]
 	path = p/scss-syntax
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "p/vim-endwise"]
+	path = p/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
