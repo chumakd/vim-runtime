@@ -541,3 +541,6 @@
 [submodule "p/vim-endwise"]
 	path = p/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "p/vim-better-whitespace"]
+	path = p/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
