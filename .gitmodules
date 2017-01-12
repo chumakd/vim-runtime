@@ -529,3 +529,6 @@
 [submodule "p/tern_for_vim"]
 	path = p/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "p/vim-elixir"]
+	path = p/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
