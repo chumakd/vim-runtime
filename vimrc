@@ -455,6 +455,13 @@ let g:GetLatestVimScripts_allowautoinstall= 0
 let g:gundo_width = 75
 "let g:gundo_preview_bottom = 1
 
+" Javascript ------------------------------------------------------------- {{{2
+"
+" enable JDoc syntax highlighting
+let g:javascript_plugin_jsdoc = 1
+" enable Flow syntax highliting
+let g:javascript_plugin_flow = 1
+
 " Indent guides ---------------------------------------------------------- {{{2
 "
 let g:indent_guides_start_level = 2
