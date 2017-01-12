@@ -797,6 +797,9 @@ let g:yankring_min_element_length = 2
 
 " Mappings =============================================================== {{{1
 
+" duplicate space as leader
+map <Space> <Leader>
+
 " Shortened commands ----------------------------------------------------- {{{2
 "
 
