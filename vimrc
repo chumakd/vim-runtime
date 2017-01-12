@@ -1441,21 +1441,21 @@ command! Colortest runtime syntax/colortest.vim
 "autocmd BufReadPost *.doc %!antiword "%"
 
 " highlight trailing whitespaces with color of TODO/IncSearch hl group
-if g:colors_name ==? 'solarized'
-    augroup trailing_spaces
-        autocmd!
-        autocmd! BufNew   * match IncSearch /\s\+$/
-        autocmd! BufRead  * match IncSearch /\s\+$/
-        autocmd! BufEnter * match IncSearch /\s\+$/
-    augroup END
-else
-    augroup trailing_spaces
-        autocmd!
-        autocmd! BufNew   * match Todo /\s\+$/
-        autocmd! BufRead  * match Todo /\s\+$/
-        autocmd! BufEnter * match Todo /\s\+$/
-    augroup END
-endif
+"if g:colors_name ==? 'solarized'
+"    augroup trailing_spaces
+"        autocmd!
+"        autocmd! BufNew   * match IncSearch /\s\+$/
+"        autocmd! BufRead  * match IncSearch /\s\+$/
+"        autocmd! BufEnter * match IncSearch /\s\+$/
+"    augroup END
+"else
+"    augroup trailing_spaces
+"        autocmd!
+"        autocmd! BufNew   * match Todo /\s\+$/
+"        autocmd! BufRead  * match Todo /\s\+$/
+"        autocmd! BufEnter * match Todo /\s\+$/
+"    augroup END
+"endif
 
 " enable relative line numbers in tagbar window
 if v:version >= 703
