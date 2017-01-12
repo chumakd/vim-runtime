@@ -532,3 +532,6 @@
 [submodule "p/vim-elixir"]
 	path = p/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "p/vim-css3-syntax"]
+	path = p/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
