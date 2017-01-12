@@ -421,7 +421,7 @@ hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 let g:user_emmet_install_global = 0
 augroup emmet_file_types
     autocmd!
-    autocmd! FileType  haml,html,css,xml  EmmetInstall
+    autocmd! FileType  haml,html,css,sass,scss,xml  EmmetInstall
 augroup end
 
 " EnhancedCommentify ----------------------------------------------------- {{{2
