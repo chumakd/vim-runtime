@@ -410,6 +410,10 @@ let g:DirDiffEnableMappings = 1
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
 hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
+" Editorconfig ----------------------------------------------------------- {{{2
+"
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " Emmet ------------------------------------------------------------------ {{{2
 "
 "let g:user_emmet_leader_key = '<C-y>'
