@@ -1024,6 +1024,7 @@ nnoremap <silent> [unite]c :Unite -start-insert command<CR>
 nnoremap <silent> [unite]d :UniteWithBufferDir -start-insert file_rec/async:!<CR>
 nnoremap <silent> [unite]f :Unite -start-insert file_rec/async:!<CR>
 nnoremap <silent> [unite]j :Unite jump<CR>
+nnoremap <silent> [unite]l :Unite -buffer-name=search line:forward -start-insert -no-quit<CR>
 nnoremap <silent> [unite]m :Unite -start-insert file_mru<CR>
 nnoremap <silent> [unite]r :Unite register<CR>
 nnoremap <silent> [unite]t :Unite -start-insert tab<CR>
