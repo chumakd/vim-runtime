@@ -550,3 +550,6 @@
 [submodule "p/splitjoin"]
 	path = p/splitjoin
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "p/vim-expand-region"]
+	path = p/vim-expand-region
+	url = https://github.com/terryma/vim-expand-region.git
