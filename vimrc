@@ -1136,12 +1136,11 @@ nmap <silent> ,gW
       \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Fugitive/Git
-nmap <silent> ,gs :Git status<CR>
-nmap <silent> ,gd :Git diff<CR>
+nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gd :Gvdiff<CR>
+nmap <silent> ,gl :Gitv!<CR>
 nmap <silent> ,gt :Gitv<CR>
-
-" Git-gutter
-nmap <silent> ,gg :GitGutterToggle<CR>
+nmap <silent> ,gg :Ggrep <C-r><C-w><CR>
 
 " hjkl ~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
