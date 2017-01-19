@@ -556,3 +556,6 @@
 [submodule "p/vim-vinegar"]
 	path = p/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "p/vim-orgmode"]
+	path = p/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode.git
