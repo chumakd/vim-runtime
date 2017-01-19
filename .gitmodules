@@ -553,3 +553,6 @@
 [submodule "p/vim-expand-region"]
 	path = p/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region.git
+[submodule "p/vim-vinegar"]
+	path = p/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
