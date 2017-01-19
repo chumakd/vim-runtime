@@ -171,7 +171,7 @@ set wildmenu
 
 " disable any fillchars for folds and vertical splits
 " NOTE: the space after vert: is essential
-set fillchars=fold:\ ,vert:\ 
+set fillchars=fold:\ ,vert:\  " empty space at the end intended
 
 " turn on cursor highliting for current window
 "set cursorline
