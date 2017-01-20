@@ -444,6 +444,11 @@ let g:netrw_altv = 1
 "
 let g:vimfiler_as_default_explorer = 1
 
+" git_patch_tags --------------------------------------------------------- {{{2
+"
+" disable because it creates global mappings instead of filetype specific
+let g:loaded_gitPatchTagsPlugin = 1
+
 " Gitv ------------------------------------------------------------------- {{{2
 "
 let g:Gitv_OpenHorizontal = 1
