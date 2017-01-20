@@ -559,3 +559,6 @@
 [submodule "p/vim-orgmode"]
 	path = p/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode.git
+[submodule "p/vim-ruby"]
+	path = p/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
