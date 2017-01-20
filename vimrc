@@ -663,6 +663,11 @@ let g:vimrplugin_notab = 1
 " show list elements in object browser
 "let vimrplugin_open_list = 1
 
+" rsi -------------------------------------------------------------------- {{{2
+"
+" alt/meta mappings messing up macros execution (<F33>, ESC-p, M-p)
+let g:rsi_no_meta = 1
+
 " Securemodeline --------------------------------------------------------- {{{2
 "
 let g:secure_modelines_verbose=1
@@ -1344,22 +1349,21 @@ noremap <silent> ,wx :wincmd x<CR>
 " remap <C-f> (which is used to open command-line window) to <C-y>
 set cedit=<C-Y>
 
-" following mappings are now provided by vim-rsi plugin:
-
 " allow command line editing like emacs
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <ESC>b <S-Left>
+cnoremap <ESC>f <S-Right>
+" following mappings are now provided by vim-rsi plugin:
 "cnoremap <C-A>  <Home>
 "cnoremap <C-B>  <Left>
 "cnoremap <C-F>  <Right>
-"cnoremap <M-b>  <S-Left>
-"cnoremap <M-f>  <S-Right>
-"cnoremap <ESC>b <S-Left>
-"cnoremap <ESC>f <S-Right>
 
 " allow command line completion with Alt key
-"cnoremap <M-p>  <Up>
-"cnoremap <M-n>  <Down>
-"cnoremap <ESC>p <Up>
-"cnoremap <ESC>n <Down>
+cnoremap <M-p>  <Up>
+cnoremap <M-n>  <Down>
+cnoremap <ESC>p <Up>
+cnoremap <ESC>n <Down>
 
 " Fn keys appings -------------------------------------------------------- {{{2
 "
