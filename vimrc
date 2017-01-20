@@ -1143,6 +1143,7 @@ nmap <silent> ,gW
 
 " Fugitive/Git
 nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gb :Gblame<CR>
 nmap <silent> ,gd :Gvdiff<CR>
 nmap <silent> ,gl :Gitv!<CR>
 nmap <silent> ,gt :Gitv<CR>
