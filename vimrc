@@ -551,6 +551,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 " NERDTree --------------------------------------------------------------- {{{2
 "
 let g:NERDTreeWinPos = 'right'
+let g:NERDTreeHijackNetrw = 0
 
 " store the bookmarks file in ~/.vim
 "let NERDTreeBookmarksFile='~/.vim/NERDTreeBookmarks'
