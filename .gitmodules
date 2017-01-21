@@ -562,3 +562,6 @@
 [submodule "p/vim-ruby"]
 	path = p/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "p/deoplete"]
+	path = p/deoplete
+	url = https://github.com/Shougo/deoplete.nvim.git
