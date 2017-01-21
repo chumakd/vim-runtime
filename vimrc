@@ -405,6 +405,13 @@ let g:delimitMate_offByDefault = 0
 let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
+" deoplete --------------------------------------------------------------- {{{2
+"
+" enable only for Neovim
+if has('nvim')
+    let g:deoplete#enable_at_startup = 1
+endif
+
 " DirDiff ---------------------------------------------------------------- {{{2
 "
 let g:DirDiffEnableMappings = 1
@@ -513,7 +520,7 @@ let g:MultipleSearchTextColorSequence = 'white,white,black,white,black,black,whi
 
 " Neocomplete ------------------------------------------------------------ {{{2
 "
-" disable for Neovim
+" enable only for Vim
 if !has('nvim')
     let g:neocomplete#enable_at_startup = 1
 endif
