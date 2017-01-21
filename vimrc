@@ -513,7 +513,11 @@ let g:MultipleSearchTextColorSequence = 'white,white,black,white,black,black,whi
 
 " Neocomplete ------------------------------------------------------------ {{{2
 "
-let g:neocomplete#enable_at_startup = 1
+" disable for Neovim
+if !has('nvim')
+    let g:neocomplete#enable_at_startup = 1
+endif
+
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#auto_completion_start_length = 3
 let g:neocomplete#sources#syntax#min_keyword_length = 3
