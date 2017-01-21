@@ -189,6 +189,9 @@ if v:version >= 703
   set undodir=~/.vim/undo,.,~/
 endif
 
+" where to place swap files
+set directory=.,~/.vim/swap,/var/tmp,/tmp
+
 " Display ---------------------------------------------------------------- {{{2
 "
 set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
