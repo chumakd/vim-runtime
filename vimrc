@@ -1281,17 +1281,20 @@ nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
 " colorscheme solarized
 nmap <silent> ,tg :ToggleBG<CR>
 
+" toggle highlight search
+"nmap <silent> ,th :set invhls<CR>:set hls?<CR>
+
+" disable current highlight search
+nmap <silent> ,th :nohlsearch<CR>
+
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
-" toggle highlight search
-"nmap <silent> ,tn :set invhls<CR>:set hls?<CR>
-
-" disable current highlight search
-nmap <silent> ,tn :nohlsearch<CR>
+" toggle neocomplete
+nmap <silent> ,tn :NeoCompleteToggle<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
