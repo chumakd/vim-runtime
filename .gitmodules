@@ -565,3 +565,6 @@
 [submodule "p/deoplete"]
 	path = p/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "p/NeoSolarized"]
+	path = p/NeoSolarized
+	url = https://github.com/chumakd/NeoSolarized.git
