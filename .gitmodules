@@ -571,3 +571,6 @@
 [submodule "p/vim-tmux"]
 	path = p/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule "p/Dockerfile"]
+	path = p/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
