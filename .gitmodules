@@ -568,3 +568,6 @@
 [submodule "p/NeoSolarized"]
 	path = p/NeoSolarized
 	url = https://github.com/chumakd/NeoSolarized.git
+[submodule "p/vim-tmux"]
+	path = p/vim-tmux
+	url = https://github.com/tmux-plugins/vim-tmux.git
