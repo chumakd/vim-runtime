@@ -580,3 +580,6 @@
 [submodule "p/echodoc"]
 	path = p/echodoc
 	url = https://github.com/Shougo/echodoc.vim.git
+[submodule "p/context_filetype"]
+	path = p/context_filetype
+	url = https://github.com/Shougo/context_filetype.vim.git
