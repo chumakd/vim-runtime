@@ -1023,6 +1023,11 @@ nmap \bt :tabnew<Bar>BufExplorer<CR>
 " \bt breaks default \be mapping, so we need to restore it
 nmap \be :BufExplorer<CR>
 
+" d (dash) ~~~~~~~~~~~~~~~~~~ {{{3
+"
+nmap <Leader>k <Plug>DashSearch
+nmap <Leader>K <Plug>DashGlobalSearch
+
 " d (diffchanges) ~~~~~~~~~~~ {{{3
 "
 
