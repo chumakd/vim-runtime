@@ -429,6 +429,10 @@ let g:DirDiffEnableMappings = 1
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
 hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
+" echodoc ---------------------------------------------------------------- {{{2
+"
+let g:echodoc_enable_at_startup = 1
+
 " Editorconfig ----------------------------------------------------------- {{{2
 "
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
