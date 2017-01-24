@@ -873,6 +873,10 @@ nnoremap g*  g*N
 nnoremap #   #N
 nnoremap g#  g#N
 
+" a better incremental search
+map g/  <Plug>(incsearch-forward)
+map g?  <Plug>(incsearch-backward)
+
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 
