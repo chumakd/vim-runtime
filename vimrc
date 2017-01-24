@@ -169,11 +169,9 @@ endif
 
 set tabline=%!MyTabLine()
 
-" let yourself know what mode you're in
-set showmode
-
 set nowrap
 set showcmd
+set noshowmode
 set winminheight=0
 set wildmenu
 "set textwidth=78
