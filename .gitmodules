@@ -577,3 +577,6 @@
 [submodule "p/incsearch"]
 	path = p/incsearch
 	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule "p/echodoc"]
+	path = p/echodoc
+	url = https://github.com/Shougo/echodoc.vim.git
