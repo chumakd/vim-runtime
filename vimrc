@@ -169,6 +169,9 @@ endif
 
 set tabline=%!MyTabLine()
 
+set linebreak
+let &showbreak='↪ '
+
 set nowrap
 set showcmd
 set noshowmode
