@@ -583,3 +583,6 @@
 [submodule "p/context_filetype"]
 	path = p/context_filetype
 	url = https://github.com/Shougo/context_filetype.vim.git
+[submodule "p/denite"]
+	path = p/denite
+	url = https://github.com/Shougo/denite.nvim.git
