@@ -1561,7 +1561,7 @@ endif
 
 " highlight comments in different color from main text, for 'conf' and 'cfg'
 " filetypes, if we are usingsolarized colorscheme
-if g:colors_name ==? 'solarized'
+if g:colors_name =~? 'solarized'
     let s:default_comments_color=10
     let s:comments_color=24
     augroup solarized_comments
