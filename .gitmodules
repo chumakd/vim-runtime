@@ -141,8 +141,7 @@
 	ignore = untracked
 [submodule "p/Gundo"]
 	path = p/Gundo
-	url = https://github.com/vim-scripts/Gundo.git
-	;url = https://github.com/sjl/gundo.vim.git
+	url = https://github.com/sjl/gundo.vim.git
 	ignore = untracked
 [submodule "p/patchreview"]
 	path = p/patchreview
