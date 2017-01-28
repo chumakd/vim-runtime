@@ -431,6 +431,12 @@ let g:delimitMate_offByDefault = 0
 let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
+" denite ----------------------------------------------------------------- {{{2
+"
+
+" change default prompt
+call denite#custom#option('default', 'prompt', '>')
+
 " deoplete --------------------------------------------------------------- {{{2
 "
 " enable only for Neovim
@@ -1049,10 +1055,18 @@ nmap \be :BufExplorer<CR>
 nmap <Leader>k <Plug>DashSearch
 nmap <Leader>K <Plug>DashGlobalSearch
 
-" d (diffchanges) ~~~~~~~~~~~ {{{3
+" d (denite) ~~~~~~~~~~~~~~~~ {{{3
 "
 
-" DiffChanges
+" the prefix key.
+nnoremap  [denite]   <Nop>
+nmap  <leader>e [denite]
+
+nnoremap <silent> [denite]b :Denite buffer<CR>
+nnoremap <silent> [denite]f :Denite file_rec<CR>
+
+" d (diffchanges) ~~~~~~~~~~~ {{{3
+"
 nmap <silent> <Leader>ddt :DiffChangesDiffToggle<CR>
 nmap <silent> <Leader>dpt :DiffChangesPatchToggle<CR>
 
@@ -1088,8 +1102,6 @@ nmap <silent> \sl :SessionList<CR>
 
 " u (unite) ~~~~~~~~~~~~~~~~~ {{{3
 "
-
-" Unite
 
 " the prefix key.
 nnoremap  [unite]   <Nop>
