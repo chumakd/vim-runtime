@@ -1416,6 +1416,9 @@ noremap <silent> ,wf :wincmd _<CR>
 " split new empty buffer
 noremap <silent> ,wn :new<CR>
 
+" close other windows
+noremap <silent> ,wo :wincmd o<CR>
+
 " go to previous (last accessed) window.
 noremap <silent> ,wp :wincmd p<CR>
 
