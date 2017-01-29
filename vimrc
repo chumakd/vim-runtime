@@ -511,6 +511,7 @@ let g:GetLatestVimScripts_allowautoinstall= 0
 "
 let g:gundo_width = 75
 "let g:gundo_preview_bottom = 1
+"let g:gundo_prefer_python3 = 1
 
 " Javascript ------------------------------------------------------------- {{{2
 "
