@@ -610,8 +610,8 @@ let g:neocomplete#sources#omni#input_patterns.perl =
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 " restore original behavior for i_C-y/e
-inoremap <expr><C-y>  "\<C-y>"
-inoremap <expr><C-e>  "\<C-e>"
+"inoremap <expr><C-y>  "\<C-y>"
+"inoremap <expr><C-e>  "\<C-e>"
 
 " Neosnippet ------------------------------------------------------------- {{{2
 "
@@ -944,6 +944,10 @@ nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 " move current line up/down
 "nmap <C-Up>   :m-2
 "nmap <C-Down> :m+
+
+" switch <C-e> between original vim behavior and emacs-like EOL
+" see after/plugin/rsi.vim for <C-e> mapping
+inoremap <C-z>  <C-o>:call MyToggle_i_Ctrl_e()<CR>
 
 " Maps to make handling windows a bit easier ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -2055,6 +2059,18 @@ function! MySetWorkStyling()
 endfunction
 
 command! MySetWorkStyling call MySetWorkStyling()
+
+" Toggle i_Ctrl-e -------------------------------------------------------- {{{2
+let g:ictrle_orig = 0
+function! MyToggle_i_Ctrl_e()
+    if g:ictrle_orig
+        let g:ictrle_orig = 0
+        echo 'i_C-e: end-of-line'
+    else
+        let g:ictrle_orig = 1
+        echo 'i_C-e: copy from below'
+    endif
+endfunction
 
 " tabline  --------------------------------------------------------------- {{{2
 "
