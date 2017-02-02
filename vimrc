@@ -56,13 +56,14 @@ if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_
 
     " enable 24-bit color support in Vim8/Neovim
     if has('termguicolors')
-        "let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-        "let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
+        let g:neosolarized_vertSplitBgTrans = 0
+        colorscheme NeoSolarized
+    else
+        colorscheme solarized
     endif
-
-    let g:neosolarized_vertSplitBgTrans = 0
-    colorscheme NeoSolarized
 else
     colorscheme chumakd-elflord
 endif
