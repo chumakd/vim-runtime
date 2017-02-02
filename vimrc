@@ -766,7 +766,9 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 "
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_highlighting = 1
-let g:syntastic_auto_loc_list=1
+let g:syntastic_always_populate_loc_list = 1
+" don't open location list automatically, but close it if there are no more erros
+let g:syntastic_auto_loc_list=2
 let g:syntastic_loc_list_height = 3
 
 let g:syntastic_mode_map = { 'mode': 'passive',
@@ -805,7 +807,7 @@ let g:syntastic_perl_checkers = ['perlcritic', 'podchecker']
 let g:syntastic_perl_perlcritic_post_args = '--verbose "%s:%f:%l:%c: %s/%p %m (%e)\n"'
 
 " Ruby options
-let g:syntastic_ruby_checkers = ['rubylint', 'robocop']
+let g:syntastic_ruby_checkers = ['rubylint', 'rubocop']
 
 " Bash/Shell options
 let g:syntastic_sh_checkers = ['bashate', 'shellcheck']
@@ -1487,6 +1489,7 @@ nmap <F6>   :GundoToggle<CR>
 
 " Syntastic
 nmap <F7>   :SyntasticCheck<CR>
+nmap <S-F7> :Errors<CR>
 
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
