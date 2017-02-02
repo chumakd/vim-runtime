@@ -14,6 +14,14 @@ if s:os ==? 'Darwin'
                 \. $PATH
 endif
 
+" environment path for external tools
+" ruby
+let $GEM_HOME = $HOME . '/.gems'
+" python
+let $PIP_HOME = $HOME . '/local_install/usr/lib/python'
+" npm
+let $NPM_CONFIG_PREFIX = $HOME . '/local_install/usr/lib/npm'
+
 " window size
 set columns=80
 set lines=38
