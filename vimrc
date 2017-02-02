@@ -1218,15 +1218,15 @@ nmap ,fl :FufLine<CR>
 
 " Search the current file for what's currently in the search
 " register and display matches
-nmap <silent> ,g/
+nmap <silent> ,/
       \ :vimgrep /<C-r>// %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Search the current file for the word under the cursor and display matches
-nmap <silent> ,gw
+nmap <silent> ,/w
       \ :vimgrep /<C-r><C-w>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Search the current file for the WORD under the cursor and display matches
-nmap <silent> ,gW
+nmap <silent> ,/W
       \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Fugitive/Git
