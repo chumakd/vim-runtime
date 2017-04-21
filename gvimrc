@@ -14,6 +14,10 @@ if s:os ==? 'Darwin'
                 \. $PATH
 endif
 
+" locale
+let $LANG   = 'en_US.UTF-8'
+let $LC_ALL = 'en_US.UTF-8'
+
 " environment path for external tools
 " ruby
 let $GEM_HOME = $HOME . '/.gems'
