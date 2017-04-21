@@ -77,6 +77,14 @@ set guicursor+=a:blinkon0
 set visualbell t_vb=
 
 "
+" plugins
+
+" reload Ack because it checks PATH and exits if there is no g:ackprg available,
+" which can be so on Darwin system because PATH is set in gvimrc, which is
+" sourced after all plugins have been loaded
+runtime plugin/ack.vim
+
+"
 " color shceme
 
 "colorscheme chumakd-desertEx
