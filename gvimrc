@@ -27,7 +27,7 @@ let $PIP_HOME = $HOME . '/local_install/usr/lib/python'
 let $NPM_CONFIG_PREFIX = $HOME . '/local_install/usr/lib/npm'
 
 " window size
-set columns=80
+set columns=90
 set lines=38
 
 "
