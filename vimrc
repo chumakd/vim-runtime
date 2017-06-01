@@ -1329,13 +1329,16 @@ nmap <silent> ,sp :sp %:p:h/<C-X>
 " t (toggles) ~~~~~~~~~~~~~~~ {{{3
 "
 
+" toggle ack/ag
+nmap <silent> ,ta :call MyToggleAckAg()<CR>
+
+" toggle scrollbind
+nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
+
 " toggle textwidth column highlighting
 if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
-
-" toggle scrollbind
-nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 
 " toggle doxygen comments highlighting
 nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
@@ -2047,6 +2050,20 @@ function! MyToggleFoldSearch()
         setl foldopen+=search
         echo 'foldopen+=search'
     endif
+endfunction
+
+" Toggle ack/ag search --------------------------------------------------- {{{2
+let s:old_ackprg = ''
+function! MyToggleAckAg()
+    if s:old_ackprg !=# ''
+        let s:tmp = g:ackprg
+        let g:ackprg = s:old_ackprg
+        let s:old_ackprg = s:tmp
+    else
+        let s:old_ackprg = g:ackprg
+        let g:ackprg = 'ag --vimgrep'
+    endif
+    echo split(g:ackprg)[0]
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
