@@ -436,8 +436,10 @@ let g:delimitMate_expand_cr = 1
 " denite ----------------------------------------------------------------- {{{2
 "
 
-" change default prompt
-call denite#custom#option('default', 'prompt', '>')
+if v:version >= 800
+    " change default prompt
+    call denite#custom#option('default', 'prompt', '>')
+endif
 
 " deoplete --------------------------------------------------------------- {{{2
 "
