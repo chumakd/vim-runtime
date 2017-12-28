@@ -585,3 +585,6 @@
 [submodule "p/denite"]
 	path = p/denite
 	url = https://github.com/Shougo/denite.nvim.git
+[submodule "p/vim-tmux-focus-events"]
+	path = p/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events
