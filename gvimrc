@@ -40,7 +40,7 @@ set lines=38
 "set guifont=Terminus\ 10
 
 if s:os ==? 'Darwin'
-    set guifont=Input:h17
+    set guifont=Input:h16
 elseif s:os ==? 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 endif
