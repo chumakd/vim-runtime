@@ -2072,7 +2072,7 @@ endfunction
 function! MySetWorkStyling()
     set textwidth=80
     set colorcolumn=+1
-    set makeprg=ssh\ devvm@centos7-devvm\ 'make\ -C\ /data/prj/mero'
+    set makeprg=m0vg\ run\ 'make\ -C\ /data/mero'
     aug c_tab | au! FileType c  :setl tabstop=8 shiftwidth=8 noexpandtab
     cd ~/prj/mero
 endfunction
