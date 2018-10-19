@@ -451,6 +451,8 @@ endif
 " DirDiff ---------------------------------------------------------------- {{{2
 "
 let g:DirDiffEnableMappings = 1
+" ignore whitespaces
+let g:DirDiffAddArgs = '--ignore-all-space'
 "let g:DirDiffExcludes = '/.git/*,.*.swp'
 
 " EasyMotion ------------------------------------------------------------- {{{2
