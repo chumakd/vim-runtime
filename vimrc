@@ -350,6 +350,7 @@ let g:airline_right_sep=''
 let g:airline_left_sep=''
 " enable airline for vim tabs
 "let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#keymap#enabled = 0
 
 "let g:airline_theme='distinguished'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
