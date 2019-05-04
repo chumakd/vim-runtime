@@ -35,6 +35,10 @@ runtime! ftplugin/man.vim
 runtime macros/matchit.vim
 runtime macros/justify.vim
 
+" reduce timeout for matchit/matchpair
+let g:matchparen_timeout = 5
+let g:matchparen_insert_timeout = 5
+
 " set path for file search operations
 "set path=.,,/usr/local/include/**,/usr/include/**
 "set path+=include/
