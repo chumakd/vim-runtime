@@ -588,3 +588,6 @@
 [submodule "p/vim-tmux-focus-events"]
 	path = p/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule "p/vim-polyglot"]
+	path = p/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
