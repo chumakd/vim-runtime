@@ -440,11 +440,7 @@ let g:delimitMate_expand_cr = 1
 
 " denite ----------------------------------------------------------------- {{{2
 "
-
-if v:version >= 800
-    " change default prompt
-    call denite#custom#option('default', 'prompt', '>')
-endif
+" see after/plugin/unite.vim
 
 " deoplete --------------------------------------------------------------- {{{2
 "
@@ -480,12 +476,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " enable emmet only for input and visual modes
 "let g:user_emmet_mode='iv'
 
-" enable only for some file types
+" enable only for some file types (see after/plugin/emmet.vim)
 let g:user_emmet_install_global = 0
-augroup emmet_file_types
-    autocmd!
-    autocmd! FileType  haml,html,css,sass,scss,xml  EmmetInstall
-augroup end
 
 " EnhancedCommentify ----------------------------------------------------- {{{2
 "
@@ -590,16 +582,7 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" Enable omni completion.
-augroup neocomplete_omni
-    autocmd!
-    autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    " TernJS from tern_for_vim plugin provides a better completion, use it if available
-    autocmd! FileType javascript if &omnifunc !~ '^tern' | setlocal omnifunc=javascriptcomplete#CompleteJS | endif
-    autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
+" see after/plugin/neocomplete.vim for file-type omni funcs
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -615,9 +598,6 @@ let g:neocomplete#sources#omni#input_patterns.cpp =
 let g:neocomplete#sources#omni#input_patterns.perl =
     \ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
-" close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 " restore original behavior for i_C-y/e
 "inoremap <expr><C-y>  "\<C-y>"
 "inoremap <expr><C-e>  "\<C-e>"
@@ -852,9 +832,7 @@ let g:Tlist_WinWidth = 35
 
 " Unite ------------------------------------------------------------------ {{{2
 "
-
-" enable fuzzy matching by default
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" see after/plugin/unite.vim
 
 " UltiSnips -------------------------------------------------------------- {{{2
 "
@@ -896,6 +874,7 @@ map <Space> <Leader>
 "
 
 " let yankstack plugin to know that we remap default Y behavior
+" (it has to be done *before* re-defining Y mapping)
 call yankstack#setup()
 
 " make 'Y' to be more consistent with 'D','C','S'
