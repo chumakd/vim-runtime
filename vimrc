@@ -1560,7 +1560,10 @@ command! Colortest runtime syntax/colortest.vim
 
 " enable relative line numbers in tagbar window
 if v:version >= 703
-  au Filetype tagbar nested :set relativenumber
+    augroup tagbar_lineno
+        au!
+        au! Filetype tagbar nested :set relativenumber
+    augroup END
 endif
 
 " highlight comments in different color from main text, for 'conf' and 'cfg'
