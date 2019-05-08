@@ -58,6 +58,11 @@ if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_
         set background=dark
     endif
 
+    " enable undercurl in terminal
+    "   https://github.com/vim/vim/issues/1306#issuecomment-350887565
+    let &t_Cs = "\e[4:3m"
+    let &t_Ce = "\e[4:0m"
+
     " enable 24-bit color support in Vim8/Neovim
     if has('termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
