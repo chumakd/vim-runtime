@@ -69,6 +69,7 @@ if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
         let g:neosolarized_vertSplitBgTrans = 0
+        let g:neosolarized_italic = 1
         colorscheme NeoSolarized
     else
         colorscheme solarized
