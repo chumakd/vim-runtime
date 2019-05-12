@@ -1359,7 +1359,9 @@ nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
 " toggle neocomplete
-nmap <silent> ,tn :NeoCompleteToggle<CR>
+nmap <silent> ,tn  :NeoCompleteToggle<CR>
+nmap <silent> ,tnn :NeoCompleteToggle<CR>
+nmap <silent> ,tnu :set invnumber<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
