@@ -22,7 +22,6 @@ augroup filetypedetect
   " tmux config files
   au! BufRead,BufNewFile .tmux.conf*,tmux.conf*     setfiletype tmux
   " markdown
-  au! BufRead,BufNewFile *.md           setfiletype markdown
   au! BufRead,BufNewFile *.psgi         setfiletype perl
 augroup END
 
@@ -30,4 +29,11 @@ augroup END
 augroup dash_keywords
     autocmd!
     autocmd! FileType  css,haml,html,json,sass,scss,yaml  setlocal iskeyword+=-
+augroup end
+
+" set comment format without space after comment symbol
+augroup comment_string
+    autocmd!
+    autocmd! FileType  erb,haml,ruby,perl,python,sh,yaml  setlocal commentstring=#%s
+    autocmd! FileType  javascript,sass,scss  setlocal commentstring=//%s
 augroup end
