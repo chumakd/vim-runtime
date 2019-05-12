@@ -34,6 +34,6 @@ augroup end
 " set comment format without space after comment symbol
 augroup comment_string
     autocmd!
-    autocmd! FileType  erb,haml,ruby,perl,python,sh,yaml  setlocal commentstring=#%s
+    autocmd! FileType  erb,haml,ruby,perl,python,sh,toml,yaml  setlocal commentstring=#%s
     autocmd! FileType  javascript,sass,scss  setlocal commentstring=//%s
 augroup end
