@@ -1066,7 +1066,15 @@ nnoremap  [denite]   <Nop>
 nmap  <leader>e [denite]
 
 nnoremap <silent> [denite]b :Denite buffer<CR>
-nnoremap <silent> [denite]f :Denite file_rec<CR>
+nnoremap <silent> [denite]c :Denite command<CR>
+nnoremap <silent> [denite]f :Denite file/rec<CR>
+nnoremap <silent> [denite]p :Denite -auto-preview file/rec<CR>
+nnoremap <silent> [denite]j :Denite jump<CR>
+nnoremap <silent> [denite]l :Denite line:all<CR>
+nnoremap <silent> [denite]o :Denite line:forward<CR>
+nnoremap <silent> [denite]m :Denite file_mru<CR>
+nnoremap <silent> [denite]r :Denite register<CR>
+nnoremap <silent> [denite]t :Denite tab<CR>
 
 " d (diffchanges) ~~~~~~~~~~~ {{{3
 "
