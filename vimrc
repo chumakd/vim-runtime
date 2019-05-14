@@ -453,7 +453,10 @@ let g:delimitMate_expand_cr = 1
 " enable only for Neovim
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
+    let g:neocomplete#enable_at_startup = 0
 endif
+
+let g:deoplete#auto_complete_start_length = 3
 
 " DirDiff ---------------------------------------------------------------- {{{2
 "
@@ -568,6 +571,7 @@ let g:MultipleSearchTextColorSequence = 'white,white,black,white,black,black,whi
 "
 " enable only for Vim
 if !has('nvim')
+    let g:deoplete#enable_at_startup = 0
     let g:neocomplete#enable_at_startup = 1
 endif
 
