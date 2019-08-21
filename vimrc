@@ -770,34 +770,41 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_loc_list_height = 3
 
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': [
-                           \    'asciidoc',
-                           \    'dockerfile',
-                           \    'eruby',
-                           \    'haml',
-                           \    'javascript',
-                           \    'json',
-                           \    'lua',
-                           \    'markdown',
-                           \    'perl',
-                           \    'pod',
-                           \    'ruby',
-                           \    'sass',
-                           \    'scss',
-                           \    'spec',
-                           \    'vim',
-                           \    'yaml'
-                           \  ],
-                           \ 'passive_filetypes': [
-                           \    'sh'
-                           \  ] }
+let g:syntastic_mode_map = { 'mode': 'passive' }
+"let g:syntastic_mode_map = { 'mode': 'passive',
+"                           \ 'active_filetypes': [
+"                           \    'asciidoc',
+"                           \    'dockerfile',
+"                           \    'elixir',
+"                           \    'erlang',
+"                           \    'eruby',
+"                           \    'go',
+"                           \    'haml',
+"                           \    'javascript',
+"                           \    'json',
+"                           \    'lua',
+"                           \    'markdown',
+"                           \    'perl',
+"                           \    'pod',
+"                           \    'ruby',
+"                           \    'rust',
+"                           \    'sass',
+"                           \    'scss',
+"                           \    'spec',
+"                           \    'vim',
+"                           \    'yaml'
+"                           \  ],
+"                           \ 'passive_filetypes': [
+"                           \    'c',
+"                           \    'cpp',
+"                           \    'sh'
+"                           \  ] }
 
 " C/C++ options
 let g:syntastic_clang_check_config_file = '.clang_complete'
-let g:syntastic_c_checkers = ['clang_check', 'clang_tidy', 'gcc']
+let g:syntastic_c_checkers = ['clang_check', 'clang_tidy', 'clang', 'gcc']
 let g:syntastic_c_compiler = 'clang'
-let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'gcc']
+let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'clang++', 'gcc++']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
