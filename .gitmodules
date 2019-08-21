@@ -591,3 +591,6 @@
 [submodule "p/vim-polyglot"]
 	path = p/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "p/ale"]
+	path = p/ale
+	url = https://github.com/dense-analysis/ale.git
