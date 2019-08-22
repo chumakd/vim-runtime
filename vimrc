@@ -53,7 +53,7 @@ if match($TERM, '256color') != -1
     set t_Co=256
 endif
 
-if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_color ==# 'truecolor'
+if s:term_color ==# 'truecolor'
     if s:os ==? 'Linux' && !empty($TMUX)
         set background=dark
     endif
@@ -68,11 +68,20 @@ if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*' || s:term_
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
-        let g:neosolarized_vertSplitBgTrans = 0
-        let g:neosolarized_italic = 1
-        colorscheme NeoSolarized
+
+        if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
+            colorscheme chumakd-elflord
+        else
+            let g:neosolarized_vertSplitBgTrans = 0
+            let g:neosolarized_italic = 1
+            colorscheme NeoSolarized
+        endif
     else
-        colorscheme solarized
+        if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
+            colorscheme chumakd-elflord
+        else
+            colorscheme solarized
+        endif
     endif
 else
     colorscheme chumakd-elflord

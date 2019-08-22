@@ -48,8 +48,8 @@ hi StatusLineNC cterm=NONE  ctermfg=black  ctermbg=244
 
 " Folds ----------------------------------------------------------------- {{{2
 "
-hi Folded                   ctermbg=NONE  ctermfg=243
-hi FoldColumn               ctermbg=NONE  ctermfg=243
+hi Folded       cterm=NONE  ctermbg=NONE  ctermfg=243  guibg=NONE  guifg=LightGray
+hi FoldColumn   cterm=NONE  ctermbg=NONE  ctermfg=243  guibg=NONE  guifg=LightGray
 
 " VimDiff --------------------------------------------------------------- {{{2
 "
