@@ -2,6 +2,7 @@ if exists('g:loaded_neocomplete')
     " Enable omni completion.
     augroup neocomplete_omni
         autocmd!
+        autocmd! FileType c,cpp setlocal omnifunc=ale#completion#OmniFunc
         autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         " TernJS from tern_for_vim plugin provides a better completion, use it if available

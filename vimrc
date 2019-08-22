@@ -333,6 +333,11 @@ endif
 "    let g:pymode_python = 'python3'
 "endif
 
+let g:pymode_python = 'python3'
+if has('nvim') && s:os ==? 'Darwin'  " only for Neovim on MacOS
+    let g:python3_host_prog = '/opt/local/bin/python3.6'
+endif
+
 " Other ------------------------------------------------------------------ {{{2
 "
 
@@ -371,6 +376,16 @@ function! MyAirlineThemePatch(palette)
         let a:palette.normal.airline_z = [ '#00005f' , '#8a8a8a' , 17  , 245 ]
     endif
 endfunction
+
+" Ale -------------------------------------------------------------------- {{{2
+"
+let g:airline#extensions#ale#enabled = 1
+
+"let g:ale_completion_enabled = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+                    \ 'cpp': ['clang', 'clangd']
+                    \}
 
 " Alternate -------------------------------------------------------------- {{{2
 "
@@ -456,8 +471,6 @@ if has('nvim')
     let g:neocomplete#enable_at_startup = 0
 endif
 
-let g:deoplete#auto_complete_start_length = 3
-
 " DirDiff ---------------------------------------------------------------- {{{2
 "
 let g:DirDiffEnableMappings = 1
@@ -523,7 +536,7 @@ let g:GetLatestVimScripts_allowautoinstall= 0
 "
 let g:gundo_width = 75
 "let g:gundo_preview_bottom = 1
-"let g:gundo_prefer_python3 = 1
+let g:gundo_prefer_python3 = 1
 
 " Javascript ------------------------------------------------------------- {{{2
 "
@@ -593,6 +606,7 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " see after/plugin/neocomplete.vim for file-type omni funcs
+let g:neocomplete#sources#omni#functions = { '_': 'ale#completion#OmniFunc' }
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
