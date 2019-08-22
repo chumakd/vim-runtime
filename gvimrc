@@ -28,8 +28,8 @@ let $PIP_HOME = $HOME . '/local_install/usr/lib/python'
 let $NPM_CONFIG_PREFIX = $HOME . '/local_install/usr/lib/npm'
 
 " window size
-set columns=90
-set lines=38
+set columns=88
+set lines=44
 
 "
 " GUI font
@@ -41,7 +41,7 @@ set lines=38
 "set guifont=Terminus\ 10
 
 if s:os ==? 'Darwin'
-    set guifont=Input:h16
+    set guifont=Input:h15
 elseif s:os ==? 'Linux'
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 endif
