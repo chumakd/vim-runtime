@@ -8,6 +8,7 @@ if exists('g:loaded_neocomplete')
         " TernJS from tern_for_vim plugin provides a better completion, use it if available
         autocmd! FileType javascript if &omnifunc !~ '^tern' | setlocal omnifunc=javascriptcomplete#CompleteJS | endif
         autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd! FileType rust setlocal omnifunc=ale#completion#OmniFunc
         autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     augroup end
 
