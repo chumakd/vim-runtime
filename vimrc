@@ -399,6 +399,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
                     \ 'c':    ['clang', 'clangd'],
                     \ 'cpp':  ['clang', 'clangd'],
+                    \ 'go':   ['gofmt', 'golint', 'gopls'],
                     \ 'rust': ['rustc', 'rls']
                     \}
 
