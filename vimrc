@@ -561,6 +561,10 @@ let g:javascript_plugin_jsdoc = 1
 " enable Flow syntax highliting
 let g:javascript_plugin_flow = 1
 
+" Json ------------------------------------------------------------------- {{{2
+"
+let g:vim_json_syntax_conceal = 1
+
 " Indent guides ---------------------------------------------------------- {{{2
 "
 let g:indent_guides_start_level = 2
