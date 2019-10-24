@@ -1388,7 +1388,8 @@ if v:version >= 703
 endif
 
 " toggle doxygen comments highlighting
-nmap <silent> ,td :call MyToggleDoxygenSyntax()<CR>
+nmap <silent> ,td  :call MyToggleDoxygenSyntax()<CR>
+nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
@@ -1405,6 +1406,9 @@ nmap <silent> ,tg :ToggleBG<CR>
 " disable current highlight search
 nmap <silent> ,th :nohlsearch<CR>
 
+" disable current highlight search
+nmap <silent> ,ti :call MyToggleGutterArea()<CR>
+
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 
@@ -1420,7 +1424,8 @@ nmap <silent> ,tnu :set invnumber<CR>
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
 
 " toggle read-only mode
-nmap <silent> ,tr :set invreadonly<CR>:set readonly?<CR>
+nmap <silent> ,tr  :set invreadonly<CR>:set readonly?<CR>
+nmap <silent> ,tro :set invreadonly<CR>:set readonly?<CR>
 
 " toggle rainbow parentheses
 nmap <silent> ,trp :RainbowParenthesesToggle<CR>
@@ -2116,6 +2121,15 @@ function! MyToggleAckAg()
         let g:ackprg = 'ag --vimgrep'
     endif
     echo split(g:ackprg)[0]
+endfunction
+
+" Toggle gutter (line num, fold marks, git gutter) ----------------------- {{{2
+function! MyToggleGutterArea()
+    if &relativenumber
+        let s:old_foldcolumn = &foldcolumn
+    endif
+    set invrelativenumber
+    let &foldcolumn = &relativenumber * s:old_foldcolumn
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
