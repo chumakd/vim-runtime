@@ -2127,6 +2127,10 @@ endfunction
 function! MyToggleGutterArea()
     if &relativenumber
         let s:old_foldcolumn = &foldcolumn
+        let s:old_signcolumn = &signcolumn
+        set signcolumn=no
+    else
+        let &signcolumn = s:old_signcolumn
     endif
     set invrelativenumber
     let &foldcolumn = &relativenumber * s:old_foldcolumn
