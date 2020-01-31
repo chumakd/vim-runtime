@@ -1394,6 +1394,9 @@ nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
 " DelimitMate
 nmap <silent> ,tdm :DelimitMateSwitch<CR>
 
+" ALE
+nmap <silent> ,te :ALEToggle<CR>
+
 " toggle search inside folds
 nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
 
