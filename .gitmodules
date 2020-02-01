@@ -594,3 +594,6 @@
 [submodule "p/ale"]
 	path = p/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "p/vim-characterize"]
+	path = p/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git
