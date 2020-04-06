@@ -403,6 +403,8 @@ let g:ale_linters = {
                     \ 'rust': ['rustc', 'rls']
                     \}
 
+let g:ale_cpp_clang_options = '-std=gnu++17 -Wall'
+
 " Alternate -------------------------------------------------------------- {{{2
 "
 let g:alternateNoDefaultAlternate=0
