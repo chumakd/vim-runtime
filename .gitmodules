@@ -81,7 +81,7 @@
 	ignore = untracked
 [submodule "p/greplace"]
 	path = p/greplace
-	url = https://github.com/vim-scripts/greplace.vim.git
+	url = https://github.com/skwp/greplace.vim.git
 	ignore = untracked
 [submodule "p/Marks-Browser"]
 	path = p/Marks-Browser
