@@ -597,3 +597,6 @@
 [submodule "p/vim-characterize"]
 	path = p/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
+[submodule "p/salt-vim"]
+	path = p/salt-vim
+	url = https://github.com/saltstack/salt-vim.git
