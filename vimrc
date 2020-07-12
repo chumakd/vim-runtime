@@ -584,10 +584,10 @@ let g:indent_guides_guide_size = 1
 "
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf,dvi'
-let g:Tex_ViewRule_dvi = 'okular'
-let g:Tex_ViewRule_ps  = 'okular'
+"let g:Tex_ViewRule_dvi = 'okular'
+"let g:Tex_ViewRule_ps  = 'okular'
 "let g:Tex_ViewRule_pdf = 'acroread'
-let g:Tex_ViewRule_pdf = 'okular'
+"let g:Tex_ViewRule_pdf = 'okular'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " MRU -------------------------------------------------------------------- {{{2
