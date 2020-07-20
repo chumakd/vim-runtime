@@ -344,7 +344,7 @@ endif
 
 let g:pymode_python = 'python3'
 if has('nvim') && s:os ==? 'Darwin'  " only for Neovim on MacOS
-    let g:python3_host_prog = '/opt/local/bin/python3.6'
+    let g:python3_host_prog = '/opt/local/bin/python3.8'
 endif
 
 " Other ------------------------------------------------------------------ {{{2
