@@ -482,7 +482,7 @@
 	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "p/vim-perl6"]
 	path = p/vim-perl6
-	url = https://github.com/vim-perl/vim-perl6
+	url = https://github.com/Raku/vim-raku.git
 [submodule "p/vim-addon-mw-utils"]
 	path = p/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
