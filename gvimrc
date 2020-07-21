@@ -23,9 +23,9 @@ let $LC_ALL = 'en_US.UTF-8'
 " ruby
 let $GEM_HOME = $HOME . '/.gems'
 " python
-let $PIP_HOME = $HOME . '/local_install/usr/lib/python'
+"let $PIP_HOME = $HOME . '/local_install/python'
 " npm
-let $NPM_CONFIG_PREFIX = $HOME . '/local_install/usr/lib/npm'
+let $NPM_CONFIG_PREFIX = $HOME . '/local_install/npm'
 
 " window size
 set columns=88
