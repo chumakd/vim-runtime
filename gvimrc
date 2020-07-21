@@ -40,11 +40,12 @@ set lines=44
 "set guifont=Fixedus\ 10
 "set guifont=Terminus\ 10
 
-"if s:os ==? 'Darwin'
+if s:os ==? 'Darwin'
     set guifont=Input:h17
-"elseif s:os ==? 'Linux'
-"    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-"endif
+elseif s:os ==? 'Linux'
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+    set guifont=JetBrains\ Mono\ 13
+endif
 
 "
 " GUI options
