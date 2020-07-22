@@ -89,8 +89,7 @@ runtime plugin/ack.vim
 "
 " color shceme
 
-"colorscheme chumakd-desertEx
-colorscheme solarized
+colorscheme NeoSolarized
 
 " set different cursor color when local keymap is used
 highlight lCursor guifg=NONE guibg=Cyan
