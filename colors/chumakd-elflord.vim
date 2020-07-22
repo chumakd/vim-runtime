@@ -118,7 +118,7 @@ hi User4      cterm=NONE  ctermfg=160  ctermbg=235
 "
 hi Error      cterm=NONE  ctermfg=White  ctermbg=124
 hi lCursor    cterm=NONE  ctermfg=black  ctermbg=51
-hi SignColumn cterm=bold  ctermfg=202    ctermbg=NONE
+hi SignColumn cterm=bold  ctermfg=202    ctermbg=NONE  guibg=NONE
 
 " Plugins --------------------------------------------------------------- {{{2
 "

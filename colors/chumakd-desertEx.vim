@@ -47,7 +47,7 @@ highlight NonText guifg=cyan gui=NONE
 highlight Normal guifg=gray guibg=grey10 gui=NONE
 highlight Question guifg=springgreen gui=NONE
 highlight Search guifg=gray10 guibg=#B68A0D gui=NONE
-highlight SignColumn guifg=Cyan guibg=Grey gui=NONE
+highlight SignColumn guifg=Cyan guibg=#292929 gui=NONE
 highlight SpecialKey guifg=#3B99E0 gui=NONE
 highlight StatusLine guifg=black guibg=#c2bfa5 gui=bold
 highlight StatusLineNC guifg=grey guibg=gray40 gui=NONE
