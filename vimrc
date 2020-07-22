@@ -328,23 +328,16 @@ endif
 
 " Extensions ------------------------------------------------------------- {{{2
 "
-" force loading python3 library if vim is built with both python2 and python3
-" whichever gets loaded first wins, side-effect of has() is that it loads
-" requested library
-"
-" disabled because some useful plugins still don't support python3
-"   e.g. clang_complete
-"if exists('py2') && has('python')
-"    " load python3 first to prevent conflict with python2:
-"    "   E837: This Vim cannot execute :py3 after using :python
-"    " to start vim with python2 run `vim --cmd 'let py2 = 1'`
-"elseif has('python3')
-"    let g:pymode_python = 'python3'
-"endif
 
 let g:pymode_python = 'python3'
+
 if has('nvim') && s:os ==? 'Darwin'  " only for Neovim on MacOS
     let g:python3_host_prog = '/opt/local/bin/python3.8'
+endif
+
+if !has('nvim') && s:os ==? 'Linux'  " only for Vim on Linux
+    let g:python3_host_prog = $HOME . '/local_install/linuxbrew/bin/python3'
+    python3 import sys; sys.path.append('/home/dc/local_install/linuxbrew/lib/python3.8/lib-dynload')
 endif
 
 " Other ------------------------------------------------------------------ {{{2
