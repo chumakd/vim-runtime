@@ -540,6 +540,10 @@ let g:vimfiler_as_default_explorer = 1
 " disable because it creates global mappings instead of filetype specific
 let g:loaded_gitPatchTagsPlugin = 1
 
+" GitGutter -------------------------------------------------------------- {{{2
+"
+let g:gitgutter_set_sign_backgrounds = 1
+
 " Gitv ------------------------------------------------------------------- {{{2
 "
 let g:Gitv_OpenHorizontal = 1
