@@ -3,6 +3,8 @@
     colorscheme_bg = "dark"
     enable_guicolors = true
     statusline_separator = "nil"
+    #statusline_separator = "arrow"
+    #statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     # Display file type icon on the tabline, If you do not have nerd fonts
     # installed, please change the value to false
@@ -12,13 +14,13 @@
     enable_statusline_mode = false
 
 [[layers]]
-name = "autocomplete"
-auto-completion-return-key-behavior = "complete"
-auto-completion-tab-key-behavior = "cycle"
+name = 'autocomplete'
+auto_completion_return_key_behavior = 'complete'
+auto_completion_tab_key_behavior = 'smart'  # 'cycle'
 
 [[layers]]
-name = "shell"
-default_position = "top"
+name = 'shell'
+default_position = 'top'
 default_height = 30
 
 [[layers]]
