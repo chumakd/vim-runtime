@@ -48,6 +48,19 @@ let g:matchparen_insert_timeout = 5
 " Colors  ---------------------------------------------------------------- {{{2
 "
 
+" change light/dark theme depending on the time of day
+function! MySetBG()
+    let hr = (strftime('%H'))
+
+    if hr >= 18
+        set background=dark
+    elseif hr >= 6
+        set background=light
+    elseif hr >= 0
+        set background=dark
+    endif
+endfunction
+
 " enable 256 colors in terminal
 if match($TERM, '256color') != -1
     set t_Co=256
@@ -75,6 +88,7 @@ if s:term_color ==# 'truecolor'
             let g:neosolarized_vertSplitBgTrans = 0
             let g:neosolarized_italic = 1
             colorscheme NeoSolarized
+            call MySetBG()
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
