@@ -243,7 +243,10 @@ set directory=.,~/.vim/swap,/var/tmp,/tmp
 
 " Display ---------------------------------------------------------------- {{{2
 "
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
+" classic
+"set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
+" modern (spacevim)
+set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
 
 " don't update the display while executing macros
 set lazyredraw
