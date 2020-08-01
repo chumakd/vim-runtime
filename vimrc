@@ -89,6 +89,9 @@ if s:term_color ==# 'truecolor'
             let g:neosolarized_italic = 1
             colorscheme NeoSolarized
             call MySetBG()
+            " FIXME: find a better place to do it in a generic way
+            " use thiner vertical window frames
+            highlight VertSplit guibg=NONE
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
@@ -216,7 +219,8 @@ set wildmenu
 
 " disable any fillchars for folds and vertical splits
 " NOTE: the space after vert: is essential
-set fillchars=fold:\ ,vert:\  " empty space at the end intended
+"set fillchars=fold:\ ,vert:\  " empty space at the end intended
+set fillchars=fold:\ ,vert:┃
 
 " turn on cursor highliting for current window
 "set cursorline
@@ -1414,7 +1418,8 @@ nmap <silent> ,te :ALEToggle<CR>
 nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
 
 " colorscheme solarized
-nmap <silent> ,tg :ToggleBG<CR>
+"nmap <silent> ,tg :ToggleBG<CR>
+nmap <silent> ,tg :call MyToggleBG()<CR>
 
 " toggle highlight search
 "nmap <silent> ,th :set invhls<CR>:set hls?<CR>
@@ -2024,6 +2029,9 @@ function! <SID>SynStack()
   " vint: +ProhibitUnnecessaryDoubleQuote
 endfunc
 
+" example how to toggle a var w/o using temp value
+"let &background = ( &background == "dark"? "light" : "dark" )
+
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
     if &tabstop == 4
@@ -2150,6 +2158,14 @@ function! MyToggleGutterArea()
     endif
     set invrelativenumber
     let &foldcolumn = &relativenumber * s:old_foldcolumn
+endfunction
+
+" Toggle BG -------------------------------------------------------------- {{{2
+function! MyToggleBG()
+    ToggleBG
+    " FIXME: find a better place to do it in a generic way
+    " use thiner vertical window frames
+    highlight VertSplit guibg=NONE
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
