@@ -1470,8 +1470,10 @@ nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 
 " toggle text width
 nmap <silent> ,t0 :set textwidth=0<CR>:set tw?<CR>
-nmap <silent> ,t8 :set textwidth=80<CR>:set tw?<CR>
+nmap <silent> ,t5 :set textwidth=50<CR>:set tw?<CR>
+nmap <silent> ,t72 :set textwidth=72<CR>:set tw?<CR>
 nmap <silent> ,t78 :set textwidth=78<CR>:set tw?<CR>
+nmap <silent> ,t8 :set textwidth=80<CR>:set tw?<CR>
 
 " u (update) ~~~~~~~~~~~~~~~~ {{{3
 "
