@@ -247,6 +247,8 @@ set directory=.,~/.vim/swap,/var/tmp,/tmp
 "set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
 " modern (spacevim)
 set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
+" modern (spacevim + ruby tabs)
+set listchars=tab:»·,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
 
 " don't update the display while executing macros
 set lazyredraw
