@@ -2039,6 +2039,15 @@ endfunc
 " example how to toggle a var w/o using temp value
 "let &background = ( &background == "dark"? "light" : "dark" )
 
+" List files of particular type ------------------------------------------ {{{2
+function! MyAgFindFilesOfType(ftype)
+    let l:old_ackprg = g:ackprg
+    let g:ackprg = 'ag --vimgrep --silent --max-count 1 --' . a:ftype
+    call ack#Ack('grep', '^')
+    let g:ackprg = l:old_ackprg
+endfunction
+command! -nargs=1 AckFtype call MyAgFindFilesOfType(<q-args>)
+
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
     if &tabstop == 4
