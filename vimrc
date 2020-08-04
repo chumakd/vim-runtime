@@ -273,6 +273,7 @@ set numberwidth=3
 
 " highlight textwidth column
 "set colorcolumn=+1
+set colorcolumn=81,101,121
 
 " show as much as possible when last line doesn't fit on screen
 set display+=lastline
