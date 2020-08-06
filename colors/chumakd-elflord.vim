@@ -9,7 +9,7 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "elflord"
+let g:colors_name = "local-elflord-dchumak-edition"
 " original 16-color elflord highlights ================================== {{{1
 hi Normal                                  ctermfg=LightGray    ctermbg=black  guifg=LightGray  guibg=black
 hi Comment     term=bold                   ctermfg=DarkCyan
@@ -34,7 +34,7 @@ if &t_Co == 256
 
 hi Normal                   ctermfg=LightGray  ctermbg=black
 hi LineNr       cterm=NONE  ctermfg=191        ctermbg=NONE
-hi VertSplit    cterm=NONE  ctermfg=black      ctermbg=DarkGray
+hi VertSplit    cterm=NONE  ctermfg=245        ctermbg=NONE  guibg=NONE
 hi Directory                ctermfg=45
 hi Title                    ctermfg=213
 hi WarningMsg               ctermfg=211
