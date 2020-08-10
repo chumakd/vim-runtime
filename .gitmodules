@@ -603,6 +603,6 @@
 [submodule "p/salt-vim"]
 	path = p/salt-vim
 	url = https://github.com/saltstack/salt-vim.git
-[submodule "p/fzf"]
-	path = p/fzf
+[submodule "p/fzf-vim"]
+	path = p/fzf-vim
 	url = https://github.com/junegunn/fzf.vim.git
