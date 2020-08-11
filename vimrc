@@ -357,6 +357,8 @@ let g:pymode_python = 'python3'
 
 if has('nvim') && s:os ==? 'Darwin'  " only for Neovim on MacOS
     let g:python3_host_prog = '/opt/local/bin/python3.8'
+    " disable python2
+    let g:loaded_python_provider = 0
 endif
 
 if !has('nvim') && s:os ==? 'Linux'  " only for Vim on Linux
