@@ -1273,7 +1273,36 @@ nmap <silent> ,ctt :CCTreeWindowToggle<CR>
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,ee :e %:p:h/<C-X>
 
-" f (fuzzyfinder) ~~~~~~~~~~~ {{{3
+" f (FZF) ~~~~~~~~~~~~~~~~~~~ {{{3
+"
+
+" rename some commands which conflicts with other plugins
+command!  -bang -nargs=*  FZFtags  call fzf#vim#tags(<q-args>, <bang>0)
+command!  -bar -bang      FZFhelptags  call fzf#vim#helptags(<bang>0),
+
+nmap ,fb :Buffers<CR>
+nmap ,fc :BCommits<CR>
+nmap ,fC :Commands<CR>
+nmap ,ff :Files<CR>
+nmap ,fg :GFiles<CR>
+" git status files (changed)
+nmap ,fG :GFiles?<CR>
+" history commands
+nmap ,fh :History:<CR>
+nmap ,fH :FZFhelptags<CR>
+nmap ,fl :BLines<CR>
+nmap ,fL :Lines<CR>
+" MRU files history
+nmap ,fm :History<CR>
+nmap ,fM :Marks<CR>
+" search history
+nmap ,fs :History/<CR>
+nmap ,fS :Snippets<CR>
+nmap ,ft :FZFtags<CR>
+nmap ,fT :BTags<CR>
+nmap ,fw :Windows<CR>
+
+" F (fuzzyfinder) ~~~~~~~~~~~ {{{3
 "
 
 " FuzzyFinder Settings
