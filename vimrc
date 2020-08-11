@@ -1277,15 +1277,16 @@ nmap <silent> ,ee :e %:p:h/<C-X>
 "
 
 " FuzzyFinder Settings
-nmap ,fb :FufBuffer<CR>
-nmap ,fm :FufBookmarkFile<CR>
-nmap ,fma :FufBookmarkFileAdd<CR>
-nmap ,ff :FufFile<CR>
-nmap ,fo :FufCoverageFile<CR>
-nmap ,ft :FufBufferTag<CR>
-nmap ,fj :FufJumpList<CR>
-nmap ,fc :FufChangeList<CR>
-nmap ,fl :FufLine<CR>
+nmap ,Fb :FufBuffer<CR>
+nmap ,Fm :FufBookmarkFile<CR>
+nmap ,Fma :FufBookmarkFileAdd<CR>
+nmap ,Ff :FufFile<CR>
+nmap ,FF :FufFile<CR>
+nmap ,Fo :FufCoverageFile<CR>
+nmap ,Ft :FufBufferTag<CR>
+nmap ,Fj :FufJumpList<CR>
+nmap ,Fc :FufChangeList<CR>
+nmap ,Fl :FufLine<CR>
 
 " g (grep/git) ~~~~~~~~~~~~~~ {{{3
 "
