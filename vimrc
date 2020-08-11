@@ -383,7 +383,7 @@ set autoread
 " Airline ---------------------------------------------------------------- {{{2
 "
 " use PowerLine-style unicode symbols for markers
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 " do not draw separators for empty sections
 let g:airline_skip_empty_sections = 1
 " disable separators, leads to straight section borders
@@ -447,7 +447,7 @@ let g:bufExplorerFindActive=0
 let g:CCTreeOrientation = 'rightbelow'
 let g:CCTreeRecursiveDepth = 3
 let g:CCTreeMinVisibleDepth = 1
-let g:CCTreeWindowMinWidth = -1
+"let g:CCTreeWindowMinWidth = -1
 let g:CCTreeDisplayMode = 2
 let g:CCTreeWindowVertical = 1
 let g:CCTreeUsePerl = 1
