@@ -1289,9 +1289,9 @@ nmap ,ff :Files<CR>
 nmap ,fg :GFiles<CR>
 " git status files (changed)
 nmap ,fG :GFiles?<CR>
+nmap ,fh :FZFhelptags<CR>
 " history commands
-nmap ,fh :History:<CR>
-nmap ,fH :FZFhelptags<CR>
+nmap ,fH :History:<CR>
 nmap ,fl :BLines<CR>
 nmap ,fL :Lines<CR>
 " MRU files history
