@@ -1282,10 +1282,13 @@ nmap <silent> ,ee :e %:p:h/<C-X>
 command!  -bang -nargs=*  FZFtags  call fzf#vim#tags(<q-args>, <bang>0)
 command!  -bar -bang      FZFhelptags  call fzf#vim#helptags(<bang>0),
 
+" FZF files w/o preview window
+command!  -bang -nargs=? -complete=dir  FZFfiles  call fzf#vim#files(<q-args>, {}, <bang>0),
+
 nmap ,fb :Buffers<CR>
 nmap ,fc :BCommits<CR>
 nmap ,fC :Commands<CR>
-nmap ,ff :Files<CR>
+nmap ,ff :FZFfiles<CR>
 nmap ,fg :GFiles<CR>
 " git status files (changed)
 nmap ,fG :GFiles?<CR>
