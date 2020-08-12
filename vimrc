@@ -1477,9 +1477,16 @@ nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
-" toggle neocomplete
-nmap <silent> ,tn  :NeoCompleteToggle<CR>
-nmap <silent> ,tnn :NeoCompleteToggle<CR>
+" toggle neocomplete / deoplete
+if has('nvim')
+    nmap <silent> ,tn  :call deoplete#toggle()<CR>
+    nmap <silent> ,tnn :call deoplete#toggle()<CR>
+else
+    nmap <silent> ,tn  :NeoCompleteToggle<CR>
+    nmap <silent> ,tnn :NeoCompleteToggle<CR>
+endif
+
+" toggle current line number or 0
 nmap <silent> ,tnu :set invnumber<CR>
 
 " toggle paste mode
