@@ -1306,6 +1306,7 @@ nmap ,fS :Snippets<CR>
 nmap ,ft :FZFtags<CR>
 nmap ,fT :BTags<CR>
 nmap ,fw :Windows<CR>
+nmap ,fy :Filetypes<CR>
 
 " F (fuzzyfinder) ~~~~~~~~~~~ {{{3
 "
