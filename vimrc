@@ -422,6 +422,9 @@ let g:ale_linters = {
                     \ 'rust': ['rustc', 'rls']
                     \}
 
+" disable linting for certain file types
+let g:ale_pattern_options = {'\.min\.js$': {'ale_enabled': 0}}
+
 let g:ale_cpp_clang_options = '-std=gnu++17 -Wall'
 
 " Alternate -------------------------------------------------------------- {{{2
