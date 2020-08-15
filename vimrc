@@ -380,6 +380,11 @@ set path+=/usr/local/include,/opt/local/include
 " wasn't modified in Vim
 set autoread
 
+" project specific vim config file .exrc
+if getcwd().'/' =~ '^'.$HOME.'/\(prj\|prg/proj\)/'
+  set secure exrc
+endif
+
 " Plugin options ========================================================= {{{1
 
 " Airline ---------------------------------------------------------------- {{{2
