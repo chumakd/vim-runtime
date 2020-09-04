@@ -1560,7 +1560,7 @@ noremap <silent> ,we :enew<CR>
 noremap <silent> ,wf :wincmd _<CR>
 
 " split new empty buffer
-noremap <silent> ,wn :new<CR>
+noremap <silent> ,wn :below new<CR>
 
 " close other windows
 noremap <silent> ,wo :wincmd o<CR>
