@@ -333,6 +333,9 @@ set complete-=t
 " treat octal numbers as decimal for increment/decrement commands: CTRL-A CTRL-X
 set nrformats-=octal
 
+" text and comments formatting, see :help fo-table
+set formatoptions=crqol
+
 " delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j
