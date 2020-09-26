@@ -826,6 +826,9 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 ":imap <C-s>   <Plug>snipMateNextOrTrigger
 ":smap <C-S-s> <Plug>snipMateNextOrTrigger
 
+"let g:snipMate = {}
+"let g:snipMate.override = 1
+
 " Solarized -------------------------------------------------------------- {{{2
 "
 " set this for terminals which haven't got custom solarized color palette installed
