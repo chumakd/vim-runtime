@@ -1612,7 +1612,7 @@ cnoremap <ESC>n <Down>
 "
 
 " build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
-nmap <F2> :!mktags -acxpyems<CR>
+nmap <F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
 
 " same as above but without Make
 "nmap <S-F2> :!mktags -acxps<CR>
