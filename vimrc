@@ -365,8 +365,8 @@ if has('nvim') && s:os ==? 'Darwin'  " only for Neovim on MacOS
 endif
 
 if !has('nvim') && s:os ==? 'Linux'  " only for Vim on Linux
-    let g:python3_host_prog = $HOME . '/local_install/linuxbrew/bin/python3'
-    python3 import sys; sys.path.append('/home/dc/local_install/linuxbrew/lib/python3.8/lib-dynload')
+    let g:python3_host_prog = $HOME . '/local_install/homebrew/bin/python3'
+    python3 import sys; sys.path.append('/home/dc/local_install/homebrew/lib/python3.9/lib-dynload')
 endif
 
 " Other ------------------------------------------------------------------ {{{2
