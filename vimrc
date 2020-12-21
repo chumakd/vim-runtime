@@ -808,6 +808,13 @@ let g:vimrplugin_notab = 1
 " alt/meta mappings messing up macros execution (<F33>, ESC-p, M-p)
 let g:rsi_no_meta = 1
 
+" scratch ---------------------------------------------------------------- {{{2
+"
+let g:scratch_persistence_file = $HOME . '/.vim/scratch.txt'
+"let g:scratch_no_mappings = 1
+let g:scratch_autohide = 1
+let g:scratch_insert_autohide = 0
+
 " Securemodeline --------------------------------------------------------- {{{2
 "
 let g:secure_modelines_verbose=1
