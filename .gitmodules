@@ -609,3 +609,6 @@
 [submodule "p/fzf"]
 	path = p/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "p/scratch"]
+	path = p/scratch
+	url = https://github.com/mtth/scratch.vim.git
