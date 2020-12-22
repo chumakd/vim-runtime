@@ -811,7 +811,7 @@ let g:rsi_no_meta = 1
 " scratch ---------------------------------------------------------------- {{{2
 "
 let g:scratch_persistence_file = $HOME . '/.vim/scratch.txt'
-"let g:scratch_no_mappings = 1
+let g:scratch_persistence_always = 1
 let g:scratch_autohide = 1
 let g:scratch_insert_autohide = 0
 
