@@ -810,6 +810,7 @@ let g:rsi_no_meta = 1
 
 " scratch ---------------------------------------------------------------- {{{2
 "
+let g:scratch_no_mappings = 1
 let g:scratch_persistence_file = $HOME . '/.vim/scratch.txt'
 let g:scratch_persistence_always = 1
 let g:scratch_autohide = 1
@@ -1525,6 +1526,9 @@ nmap <silent> ,tr[ :RainbowParenthesesLoadSquare<CR>
 
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
+
+" scratch buffer
+nmap <silent> ,tS <Plug>(scratch-insert-reuse)
 
 nmap <silent> ,tt :call MyToggleTabstop()<CR>
 
