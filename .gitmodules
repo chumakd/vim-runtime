@@ -612,3 +612,6 @@
 [submodule "p/scratch"]
 	path = p/scratch
 	url = https://github.com/chumakd/scratch.vim.git
+[submodule "p/vim-linux-coding-style"]
+	path = p/vim-linux-coding-style
+	url = https://github.com/chumakd/vim-linux-coding-style.git
