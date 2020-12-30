@@ -624,6 +624,11 @@ let g:Tex_MultipleCompileFormats = 'pdf,dvi'
 "let g:Tex_ViewRule_pdf = 'okular'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
+" Linux coding style ----------------------------------------------------- {{{2
+"
+" disable because we load it manually, via Bash alias
+let g:loaded_linuxsty = 1
+
 " MRU -------------------------------------------------------------------- {{{2
 "
 let g:MRU_Max_Entries = 1000
