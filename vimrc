@@ -1277,6 +1277,9 @@ noremap <silent> ,ct :tabclose<CR>
 " close lOcation window
 noremap <silent> ,co :lclose<CR>
 
+" close preview window
+noremap <silent> ,cp :pclose<CR>
+
 " close quickfix window (not used now becaue QF is toggled by ,tq)
 "noremap <silent> ,cw :cclose<CR>
 
