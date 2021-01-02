@@ -1413,6 +1413,7 @@ nmap ,M :Make!<CR>
 "
 
 " open location window
+noremap <silent> ,ol :lopen<CR>
 noremap <silent> ,oo :lopen<CR>
 
 " p (perl) ~~~~~~~~~~~~~~~~~~ {{{3
