@@ -480,6 +480,14 @@ elseif s:os ==? 'Linux'
   let g:clang_library_path = '/usr/lib/llvm-11/lib/libclang.so.1'
 endif
 
+" Clang-format ----------------------------------------------------------- {{{2
+let g:clang_format#detect_style_file = 1
+
+augroup clang_format
+  autocmd!
+  autocmd FileType c,cpp,objc map <buffer><Leader>= <Plug>(operator-clang-format)
+augroup END
+
 " Conque shell ----------------------------------------------------------- {{{2
 "
 let g:ConqueTerm_Color = 0
@@ -1128,7 +1136,8 @@ nnoremap <silent> <leader>DQ :exe ':profile pause'<cr>:noautocmd qall!<cr>
 "
 
 " indent selected C code using `indent` command with linux kernel coding style
-vmap \= :!indent -linux<CR>
+" (disabled in favour of clang-format mapping)
+"vmap \= :!indent -linux<CR>
 
 " a (alternate) ~~~~~~~~~~~~~ {{{3
 "
