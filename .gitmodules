@@ -615,3 +615,6 @@
 [submodule "p/vim-linux-coding-style"]
 	path = p/vim-linux-coding-style
 	url = https://github.com/chumakd/vim-linux-coding-style.git
+[submodule "p/vim-clang-format"]
+	path = p/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
