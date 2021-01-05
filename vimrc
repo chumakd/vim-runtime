@@ -1420,21 +1420,21 @@ noremap <silent> ,oo :lopen<CR>
 "
 
 " perlcritic
-nmap ,pC1 :call MyPerlcritic(1)<CR>
-nmap ,pC2 :call MyPerlcritic(2)<CR>
-nmap ,pC3 :call MyPerlcritic(3)<CR>
-nmap ,pC4 :call MyPerlcritic(4)<CR>
-nmap ,pC5 :call MyPerlcritic(5)<CR>
+"nmap ,pC1 :call MyPerlcritic(1)<CR>
+"nmap ,pC2 :call MyPerlcritic(2)<CR>
+"nmap ,pC3 :call MyPerlcritic(3)<CR>
+"nmap ,pC4 :call MyPerlcritic(4)<CR>
+"nmap ,pC5 :call MyPerlcritic(5)<CR>
 
 " perl make (compile only)
-nmap ,pc :call MyPerlcompile()<CR>
+"nmap ,pc :call MyPerlcompile()<CR>
 
 " perl run (execute script in current buffer)
-nmap ,pr :call MyPerlrun()<CR>
+"nmap ,pr :call MyPerlrun()<CR>
 
 " perltidy
-nmap ,pt :.!perltidy<CR>
-vmap ,pt :!perltidy<CR>
+"nmap ,pt :.!perltidy<CR>
+"vmap ,pt :!perltidy<CR>
 
 " p (prev) ~~~~~~~~~~~~~~~~~~ {{{3
 "
