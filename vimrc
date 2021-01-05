@@ -1029,6 +1029,9 @@ vmap <unique> <S-right> <Plug>SchleppIndentRight
 " Ctrl mappings ---------------------------------------------------------- {{{2
 "
 
+" ALE
+imap <C-Space> <Plug>(ale_complete)
+
 " Yankstack
 " TODO: change P to p
 nmap <C-P> <Plug>yankstack_substitute_older_paste
@@ -1304,6 +1307,19 @@ nmap <silent> ,ctt :CCTreeWindowToggle<CR>
 
 " d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
+
+nmap ,dd <Plug>(ale_go_to_definition)
+nmap ,DD :ALEGoToDefinition -split<cr>
+nmap ,dD :ALEGoToDefinition -tab<cr>
+nmap ,dh <Plug>(ale_hover)
+nmap ,dr <Plug>(ale_find_references)
+nmap ,DR :ALEFindReferences -split<cr>
+nmap ,dR :ALEFindReferences -tab<cr>
+nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
+xmap ,ds y:ALESymbolSearch <c-r>"<cr>
+nmap ,dt <Plug>(ale_go_to_type_definition)
+nmap ,DT :ALEGoToTypeDefinition -split<cr>
+nmap ,dT :ALEGoToTypeDefinition -tab<cr>
 
 " Delete all buffers
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
