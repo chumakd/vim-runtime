@@ -426,9 +426,9 @@ let g:ale_sign_warning = "!"
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
                     \ 'c':    ['clangd'],
-                    \ 'cpp':  ['clangd', 'clang'],
-                    \ 'go':   ['gopls', 'golint', 'gofmt'],
-                    \ 'rust': ['rls', 'rustc']
+                    \ 'cpp':  ['clangd'],
+                    \ 'go':   ['gopls'],
+                    \ 'rust': ['rls']
                     \}
 
 " disable linting for certain file types
