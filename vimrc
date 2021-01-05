@@ -1299,10 +1299,9 @@ noremap <silent> ,cp :pclose<CR>
 "
 
 " CCTree
-nmap <silent> ,cto :CCTreeOptsEnable EnhancedSymbolProcessing<CR>
 nmap <silent> ,ctl :CCTreeLoadDB<CR>
-nmap <silent> ,ctr :CCTreeLoadXRefDB<CR>
-nmap <silent> ,cts :CCTreeSaveXRefDB<CR>
+nmap <silent> ,ctf :CCTreeTraceForward<CR>
+nmap <silent> ,ctr :CCTreeTraceReverse<CR>
 nmap <silent> ,ctt :CCTreeWindowToggle<CR>
 
 " d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
