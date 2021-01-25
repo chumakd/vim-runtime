@@ -1338,6 +1338,10 @@ nmap ,dT :ALEGoToTypeDefinition -tab<cr>
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,ee :e %:p:h/<C-X>
 
+" edit scratch file
+nmap <silent> ,es :edit  <C-R>=g:scratch_persistence_file<CR><CR>
+nmap <silent> ,eS :split <C-R>=g:scratch_persistence_file<CR><CR>
+
 " f (FZF) ~~~~~~~~~~~~~~~~~~~ {{{3
 "
 
