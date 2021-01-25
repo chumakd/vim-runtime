@@ -477,7 +477,15 @@ let g:clang_omnicppcomplete_compliance = 1
 if s:os ==? 'Darwin'
   let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 elseif s:os ==? 'Linux'
-  let g:clang_library_path = '/usr/lib/llvm-11/lib/libclang.so.1'
+  let s:libclang_usr_lib = '/usr/lib/llvm-11/lib/libclang.so.1'
+  let s:libclang_homebrew = '/home/linuxbrew/.linuxbrew/opt/llvm/lib/libclang.so'
+  if filereadable(s:libclang_homebrew)
+    let g:clang_library_path = s:libclang_homebrew
+  elseif filereadable(s:libclang_usr_lib)
+    let g:clang_library_path = s:libclang_usr_lib
+  else
+    echoerr 'libclang.so cannot be found'
+  endif
 endif
 
 " Clang-format ----------------------------------------------------------- {{{2
