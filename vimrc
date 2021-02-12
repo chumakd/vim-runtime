@@ -2410,6 +2410,13 @@ function! MyTabLine()
     return l:s
 endfunction
 
+" vimrc.local ============================================================ {{{1
+"
+let s:vimrc_local = $MYVIMRC . '.local'
+if filereadable(s:vimrc_local)
+    execute 'source ' . s:vimrc_local
+endif
+
 " modeline =============================================================== {{{1
 " vim: foldmethod=marker
 "
