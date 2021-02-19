@@ -422,6 +422,16 @@ let g:airline_left_sep=''
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#keymap#enabled = 0
 
+" truncate long branch names to a fixed length >
+"let g:airline#extensions#branch#displayed_head_limit = 10
+
+" to truncate all path sections but the last one, e.g. a branch
+" 'foo/bar/baz' becomes 'f/b/baz', use
+let g:airline#extensions#branch#format = 2
+
+" truncate sha1 commits at this number of characters  >
+let g:airline#extensions#branch#sha1_len = 12
+
 "let g:airline_theme='distinguished'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
 
