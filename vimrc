@@ -1546,6 +1546,9 @@ if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
 
+" toggle cursor column highliting
+nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
+
 " toggle doxygen comments highlighting
 nmap <silent> ,td  :call MyToggleDoxygenSyntax()<CR>
 nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
