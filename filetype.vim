@@ -19,6 +19,8 @@ augroup filetypedetect
   " Colibri FOP declaration files
   au! BufRead,BufNewFile Makefile.ff    setfiletype make
   au! BufRead,BufNewFile *.ff           setfiletype c
+  " fio config files
+  au! BufRead,BufNewFile *.fio          setfiletype dosini
   " tmux config files
   au! BufRead,BufNewFile .tmux.conf*,tmux.conf*     setfiletype tmux
   " markdown
