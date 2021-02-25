@@ -1660,6 +1660,9 @@ noremap <silent> ,wf :wincmd _<CR>
 " split new empty buffer
 noremap <silent> ,wn :below new<CR>
 
+" split new empty buffer vertically
+noremap <silent> ,wN :vertical belowright new<CR>
+
 " close other windows
 noremap <silent> ,wo :wincmd o<CR>
 
