@@ -1620,6 +1620,9 @@ nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 " toggle text wrapping
 nmap <silent> ,tw :set invwrap<CR>:set wrap?<CR>
 
+" toggle airline whitespace warnings
+nmap <silent> ,tW :AirlineToggleWhitespace<CR>
+
 " toggle text width
 nmap <silent> ,t0 :set textwidth=0<CR>:set tw?<CR>
 nmap <silent> ,t5 :set textwidth=50<CR>:set tw?<CR>
