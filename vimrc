@@ -1546,6 +1546,9 @@ if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
 endif
 
+" toggle comments italic font face
+nmap <silent> ,tci :call MyToggleCommentsItalic()<CR>
+
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
 
@@ -2275,11 +2278,23 @@ function! MyToggleDoxygenSyntax()
     set syntax?
 endfunction
 
+" Toggle comment italic font --------------------------------------------- {{{2
+let s:old_comment_italic_hl = 'italic'
+function! MyToggleCommentsItalic()
+    if s:old_comment_italic_hl ==# 'italic'
+        let s:old_comment_italic_hl = 'none'
+    else
+        let s:old_comment_italic_hl = 'italic'
+    endif
+    execute 'highlight Comment cterm=' . s:old_comment_italic_hl . ' gui=' . s:old_comment_italic_hl
+    highlight Comment
+endfunction
+
+" Toggle cursor/column highlight ----------------------------------------- {{{2
 augroup toggle_cursor_hl
     autocmd!
 augroup END
 
-" Toggle cursor/column highlight ----------------------------------------- {{{2
 function! MyToggleCursorColumnHl()
     if &cursorline && &cursorcolumn
         autocmd! toggle_cursor_hl WinLeave *
