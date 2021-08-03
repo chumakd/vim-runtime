@@ -627,3 +627,6 @@
 [submodule "p/onedark"]
 	path = p/onedark
 	url = https://github.com/joshdick/onedark.vim.git
+[submodule "p/nord-vim"]
+	path = p/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
