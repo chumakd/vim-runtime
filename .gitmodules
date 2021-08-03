@@ -639,3 +639,6 @@
 [submodule "p/palenight"]
 	path = p/palenight
 	url = https://github.com/drewtempelmeyer/palenight.vim.git
+[submodule "p/vim-colors-xcode"]
+	path = p/vim-colors-xcode
+	url = https://github.com/arzg/vim-colors-xcode.git
