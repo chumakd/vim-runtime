@@ -636,3 +636,6 @@
 [submodule "p/onehalf"]
 	path = p/onehalf
 	url = https://github.com/sonph/onehalf.git
+[submodule "p/palenight"]
+	path = p/palenight
+	url = https://github.com/drewtempelmeyer/palenight.vim.git
