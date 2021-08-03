@@ -642,3 +642,6 @@
 [submodule "p/vim-colors-xcode"]
 	path = p/vim-colors-xcode
 	url = https://github.com/arzg/vim-colors-xcode.git
+[submodule "p/material"]
+	path = p/material
+	url = https://github.com/kaicataldo/material.vim.git
