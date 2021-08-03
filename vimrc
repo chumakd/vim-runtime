@@ -678,6 +678,10 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 " disable because we load it manually, via Bash alias
 let g:loaded_linuxsty = 1
 
+" Material colorscheme --------------------------------------------------- {{{2
+"
+let g:material_theme_style = 'palenight'
+
 " MRU -------------------------------------------------------------------- {{{2
 "
 let g:MRU_Max_Entries = 1000
