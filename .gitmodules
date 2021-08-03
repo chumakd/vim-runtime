@@ -630,3 +630,6 @@
 [submodule "p/nord-vim"]
 	path = p/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "p/ayu-vim"]
+	path = p/ayu-vim
+	url = https://github.com/ayu-theme/ayu-vim.git
