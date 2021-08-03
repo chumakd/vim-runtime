@@ -633,3 +633,6 @@
 [submodule "p/ayu-vim"]
 	path = p/ayu-vim
 	url = https://github.com/ayu-theme/ayu-vim.git
+[submodule "p/onehalf"]
+	path = p/onehalf
+	url = https://github.com/sonph/onehalf.git
