@@ -7,6 +7,15 @@ scriptencoding utf-8
 " forget being compatible with good old vi
 set nocompatible
 
+" disable some of the plugings, depending on OS and Vim features available
+let g:pathogen_blacklist = []
+if !has('lua')
+    call add(g:pathogen_blacklist, 'neocomplete')
+endif
+if !has('python3')
+    call add(g:pathogen_blacklist, 'ultisnips')
+endif
+
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
 runtime bundle/vim-pathogen/autoload/pathogen.vim
