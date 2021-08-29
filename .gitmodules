@@ -660,3 +660,6 @@
 [submodule "p/tender"]
 	path = p/tender
 	url = https://github.com/jacoborus/tender.vim.git
+[submodule "p/vim-two-firewatch"]
+	path = p/vim-two-firewatch
+	url = https://github.com/rakr/vim-two-firewatch.git
