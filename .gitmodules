@@ -651,3 +651,6 @@
 [submodule "p/typewriter-vim"]
 	path = p/typewriter-vim
 	url = https://github.com/logico/typewriter-vim.git
+[submodule "p/iceberg"]
+	path = p/iceberg
+	url = https://github.com/cocopon/iceberg.vim.git
