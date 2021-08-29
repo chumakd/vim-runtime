@@ -286,7 +286,7 @@
 	ignore = untracked
 [submodule "p/github-theme"]
 	path = p/github-theme
-	url = https://github.com/vim-scripts/github-theme.git
+	url = https://github.com/endel/vim-github-colorscheme.git
 	ignore = untracked
 [submodule "p/syntastic"]
 	path = p/syntastic
