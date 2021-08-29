@@ -657,3 +657,6 @@
 [submodule "p/oceanic-next"]
 	path = p/oceanic-next
 	url = https://github.com/mhartington/oceanic-next.git
+[submodule "p/tender"]
+	path = p/tender
+	url = https://github.com/jacoborus/tender.vim.git
