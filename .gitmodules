@@ -663,3 +663,6 @@
 [submodule "p/vim-two-firewatch"]
 	path = p/vim-two-firewatch
 	url = https://github.com/rakr/vim-two-firewatch.git
+[submodule "p/gruvbox"]
+	path = p/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
