@@ -369,7 +369,7 @@ let g:pymode_python = 'python3'
 
 if has('nvim')
     if s:os ==? 'Darwin'  " Neovim on MacOS
-        let g:python3_host_prog = '/opt/local/bin/python3.8'
+        let g:python3_host_prog = '/opt/homebrew/bin/python3'
         " disable python2
         let g:loaded_python_provider = 0
     elseif s:os ==? 'Linux' " Neovim on Linux
@@ -405,7 +405,7 @@ endif
 set sessionoptions=tabpages
 
 " search path for gf and ^wf file jump commands
-set path+=/usr/local/include,/opt/local/include
+set path+=/usr/local/include,/opt/homebrew/include
 
 " automatically reload file if it has been changed outside of Vim and it
 " wasn't modified in Vim
