@@ -91,16 +91,20 @@ if s:term_color ==# 'truecolor'
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
 
+        let g:neosolarized_bold = 1
+        let g:neosolarized_italic = 1
+        let g:neosolarized_underline = 1
+        let g:neosolarized_termBoldAsBright = 1
+        let g:neosolarized_vertSplitBgTrans = 1
+
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
             colorscheme chumakd-elflord
         else
-            let g:neosolarized_vertSplitBgTrans = 0
-            let g:neosolarized_italic = 1
             colorscheme NeoSolarized
             call MySetBG()
             " FIXME: find a better place to do it in a generic way
             " use thiner vertical window frames
-            highlight VertSplit guibg=NONE
+            "highlight VertSplit guibg=NONE
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
