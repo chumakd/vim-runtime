@@ -1662,6 +1662,10 @@ endif
 " toggle comments italic font face
 nmap <silent> ,tci :call MyToggleCommentsItalic()<CR>
 
+" toggle color theme solarized
+"nmap <silent> ,tcs :colorscheme NeoSolarized<CR>
+nmap <silent> ,tcs :call MyToggleColorScheme()<CR>
+
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
 
@@ -2401,6 +2405,22 @@ function! MyToggleCommentsItalic()
     endif
     execute 'highlight Comment cterm=' . s:old_comment_italic_hl . ' gui=' . s:old_comment_italic_hl
     highlight Comment
+endfunction
+
+" Toggle color scheme solarized ------------------------------------------ {{{2
+let s:old_color_scheme = 'NeoSolarized'
+function! MyToggleColorScheme()
+    let l:cur_color_scheme = trim(execute('colorscheme'))
+
+    if l:cur_color_scheme ==# 'NeoSolarized'
+        execute 'colorscheme ' . s:old_color_scheme
+        echo s:old_color_scheme
+        let s:old_color_scheme = l:cur_color_scheme
+    else
+        colorscheme NeoSolarized
+        echo 'NeoSolarized'
+        let s:old_color_scheme = l:cur_color_scheme
+    endif
 endfunction
 
 " Toggle cursor/column highlight ----------------------------------------- {{{2
