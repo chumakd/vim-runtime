@@ -9,7 +9,8 @@ if version > 580
 		syntax reset
 	endif
 endif
-let g:colors_name = "local-desertEx-dchumak-edition"
+"let g:colors_name = "local-desertEx-dchumak-edition"
+let g:colors_name = "chumakd-desertEx"
 
 if v:version >= 700
 	highlight CursorColumn guibg=Grey40 gui=NONE

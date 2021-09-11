@@ -9,7 +9,8 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "local-elflord-dchumak-edition"
+"let g:colors_name = "local-elflord-dchumak-edition"
+let g:colors_name = "chumakd-elflord"
 " original 16-color elflord highlights ================================== {{{1
 hi Normal                                  ctermfg=LightGray    ctermbg=black  guifg=LightGray  guibg=black
 hi Comment     term=bold                   ctermfg=DarkCyan
