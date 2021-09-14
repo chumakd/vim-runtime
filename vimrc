@@ -1369,10 +1369,17 @@ nmap <leader>q <plug>(QuickScopeToggle)
 "
 
 " SessionMan
-nmap <silent> \so :SessionOpen <C-X>
-nmap <silent> \sc :SessionClose<CR>
-nmap <silent> \ss :SessionSave<CR>
-nmap <silent> \sl :SessionList<CR>
+"nmap <silent> \so :SessionOpen <C-X>
+"nmap <silent> \sc :SessionClose<CR>
+"nmap <silent> \ss :SessionSave<CR>
+"nmap <silent> \sl :SessionList<CR>
+
+" s (startify) ~~~~~~~~~~~~ {{{3
+"
+nmap <silent> \so :SLoad <C-X>
+nmap <silent> \sc :SClose<CR>
+nmap <silent> \ss :SSave<CR>
+nmap <silent> \sl :Startify<CR>
 
 " u (unite) ~~~~~~~~~~~~~~~~~ {{{3
 "
