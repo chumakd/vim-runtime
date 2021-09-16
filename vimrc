@@ -376,7 +376,7 @@ let g:loaded_python_provider = 0
 
 if s:os ==? 'Darwin'
     let s:python3_homebrew_default = '/opt/homebrew/bin/python3'
-    if filereadable(s:python3_linuxbrew_default)
+    if filereadable(s:python3_homebrew_default)
         let g:python3_host_prog = s:python3_homebrew_default
     endif
 elseif s:os ==? 'Linux'
