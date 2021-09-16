@@ -369,35 +369,47 @@ endif
 " Extensions ------------------------------------------------------------- {{{2
 "
 
+" Python {{{3
 let g:pymode_python = 'python3'
+" disable python2
+let g:loaded_python_provider = 0
 
-if has('nvim')
-    if s:os ==? 'Darwin'  " Neovim on MacOS
-        let g:python3_host_prog = '/opt/homebrew/bin/python3'
-        " disable python2
-        let g:loaded_python_provider = 0
-    elseif s:os ==? 'Linux' " Neovim on Linux
-        let s:python3_linuxbrew_default = '/home/linuxbrew/.linuxbrew/bin/python3'
-        if filereadable(s:python3_linuxbrew_default)
-            let g:python3_host_prog = s:python3_linuxbrew_default
-            " disable python2
-            let g:loaded_python_provider = 0
-        endif
+if s:os ==? 'Darwin'
+    let s:python3_homebrew_default = '/opt/homebrew/bin/python3'
+    if filereadable(s:python3_linuxbrew_default)
+        let g:python3_host_prog = s:python3_homebrew_default
     endif
-else
-    if s:os ==? 'Linux'  " Vim on Linux
-        let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.9/lib-dynload'
-        let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.9/lib-dynload'
+elseif s:os ==? 'Linux'
+    let s:python3_linuxbrew_default = '/home/linuxbrew/.linuxbrew/bin/python3'
+    let s:python3_linuxbrew_local = $HOME . '/local_install/homebrew/bin/python3'
 
-        if !empty(glob(s:py3dynload_linuxbrew_default))
-            let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
-            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
-        elseif !empty(glob(s:py3dynload_linuxbrew_local))
-            let g:python3_host_prog = $HOME . '/local_install/homebrew/bin/python3'
-            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
-        else
-            echoerr "Homebrew's lib/python3.9/lib-dynload cannot be found"
-        endif
+    if filereadable(s:python3_linuxbrew_default)
+        let g:python3_host_prog = s:python3_linuxbrew_default
+    elseif filereadable(s:python3_linuxbrew_local)
+        let g:python3_host_prog = s:python3_linuxbrew_local
+    endif
+
+    let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.9/lib-dynload'
+    let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.9/lib-dynload'
+
+    if !empty(glob(s:py3dynload_linuxbrew_default))
+        python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
+    elseif !empty(glob(s:py3dynload_linuxbrew_local))
+        python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
+    else
+        echoerr "Homebrew's lib/python3.9/lib-dynload cannot be found"
+    endif
+endif
+
+" Ruby {{{3
+if s:os ==? 'Linux'
+    let s:ruby_linuxbrew_default = '/home/linuxbrew/.linuxbrew/bin/ruby'
+    let s:ruby_linuxbrew_local = $HOME . '/local_install/homebrew/bin/ruby'
+
+    if filereadable(s:ruby_linuxbrew_default)
+        let g:ruby_host_prog = s:ruby_linuxbrew_default
+    elseif filereadable(s:ruby_linuxbrew_local)
+        let g:ruby_host_prog = s:ruby_linuxbrew_local
     endif
 endif
 
