@@ -669,3 +669,6 @@
 [submodule "p/vim-startify"]
 	path = p/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
+[submodule "p/vim-monotone"]
+	path = p/vim-monotone
+	url = https://github.com/Lokaltog/vim-monotone.git
