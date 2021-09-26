@@ -672,3 +672,6 @@
 [submodule "p/vim-monotone"]
 	path = p/vim-monotone
 	url = https://github.com/Lokaltog/vim-monotone.git
+[submodule "p/tmuxline"]
+	path = p/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
