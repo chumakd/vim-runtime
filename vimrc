@@ -259,7 +259,7 @@ set directory=.,~/.vim/swap,/var/tmp,/tmp
 " classic
 "set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:●
 " modern (spacevim)
-set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
+"set listchars=tab:→\ ,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
 " modern (spacevim + ruby tabs)
 set listchars=tab:»·,eol:↵,trail:·,extends:↷,precedes:↶,nbsp:●
 
@@ -931,6 +931,7 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 " Startify --------------------------------------------------------------- {{{2
 "
+let g:startify_change_to_dir = 0
 let g:startify_fortune_use_unicode = 1
 "let g:startify_custom_header = ''
 
@@ -1012,13 +1013,13 @@ let g:startify_fortune_use_unicode = 1
 "          _______\///________        ____\///_____        _\///______________\///__
 
 let g:startify_custom_header = [
-\ ' 							 __   __      __        ___ __ __',
-\ ' 							/_/\ /_/\    /__/\     /__//_//_/\',
-\ ' 							\:\ \\ \ \   \.:\ \    \::\| \| \ \',
-\ ' 							 \:\ \\ \ \   \::\ \    \:.      \ \',
-\ ' 							  \:\_/.:\ \   \__\/_    \:.\-/\  \ \',
-\ ' 							   \ ..::/ /     /__/\    \. \  \  \ \',
-\ ' 							    \___/_(      \__\/     \__\/ \__\/',
+\ '                              __   __      __        ___ __ __',
+\ '                             /_/\ /_/\    /__/\     /__//_//_/\',
+\ '                             \:\ \\ \ \   \.:\ \    \::\| \| \ \',
+\ '                              \:\ \\ \ \   \::\ \    \:.      \ \',
+\ '                               \:\_/.:\ \   \__\/_    \:.\-/\  \ \',
+\ '                                \ ..::/ /     /__/\    \. \  \  \ \',
+\ '                                 \___/_(      \__\/     \__\/ \__\/',
 \ ]
 
 " Syntastic -------------------------------------------------------------- {{{2
