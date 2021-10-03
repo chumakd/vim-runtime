@@ -447,6 +447,9 @@ let g:airline_left_sep=''
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#keymap#enabled = 0
 
+" disable tmux status line theme sync
+let g:airline#extensions#tmuxline#enabled = 0
+
 " truncate long branch names to a fixed length >
 "let g:airline#extensions#branch#displayed_head_limit = 10
 
