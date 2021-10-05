@@ -1127,6 +1127,7 @@ let g:tmuxline_preset = {
     \'a'       : '#S',
     \'win'     : '#I #W',
     \'cwin'    : '#I #W',
+    \'x'       : '#{prefix_highlight}',
     \'y'       : '%R',
     \'z'       : '#H',
     \'options' : {'status-justify' : 'left'}}
