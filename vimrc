@@ -1537,10 +1537,10 @@ nmap <silent> ,eS :split <C-R>=g:scratch_persistence_file<CR><CR>
 
 " rename some commands which conflicts with other plugins
 command!  -bang -nargs=*  FZFtags  call fzf#vim#tags(<q-args>, <bang>0)
-command!  -bar -bang      FZFhelptags  call fzf#vim#helptags(<bang>0),
+command!  -bar -bang      FZFhelptags  call fzf#vim#helptags(<bang>0)
 
 " FZF files w/o preview window
-command!  -bang -nargs=? -complete=dir  FZFfiles  call fzf#vim#files(<q-args>, {}, <bang>0),
+command!  -bang -nargs=? -complete=dir  FZFfiles  call fzf#vim#files(<q-args>, {}, <bang>0)
 
 nmap ,fb :Buffers<CR>
 nmap ,fc :BCommits<CR>
