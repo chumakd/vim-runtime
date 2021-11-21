@@ -1597,11 +1597,11 @@ nmap <silent> ,/W
       \ :vimgrep /<C-r><C-a>/ %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
 
 " Fugitive/Git
-nmap <silent> ,gb :Gblame<CR>
-nmap <silent> ,gd :Gvdiff<CR>
+nmap <silent> ,gb :Git blame<CR>
+nmap <silent> ,gd :Gvdiffsplit<CR>
 nmap <silent> ,gg :Ggrep <C-r><C-w><CR>
 nmap <silent> ,gl :Gitv!<CR>
-nmap <silent> ,gs :Gstatus<CR>
+nmap <silent> ,gs :Git<CR>
 nmap <silent> ,gt :Gitv<CR>
 nmap <silent> ,gw :Gwrite<CR>
 
