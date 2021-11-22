@@ -675,3 +675,6 @@
 [submodule "p/tmuxline"]
 	path = p/tmuxline
 	url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "p/vim-visual-multi"]
+	path = p/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi.git
