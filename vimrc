@@ -926,6 +926,7 @@ let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 "let g:snipMate = {}
 "let g:snipMate.override = 1
+let g:snipMate = { 'snippet_version' : 1 }
 
 " Solarized -------------------------------------------------------------- {{{2
 "
