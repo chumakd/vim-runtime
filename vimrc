@@ -642,6 +642,10 @@ let g:netrw_altv = 1
 "
 let g:vimfiler_as_default_explorer = 1
 
+" FZF -------------------------------------------------------------------- {{{2
+"
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.6, 'yoffset': 1 } }
+
 " git_patch_tags --------------------------------------------------------- {{{2
 "
 " disable because it creates global mappings instead of filetype specific
