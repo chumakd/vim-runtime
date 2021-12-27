@@ -477,8 +477,14 @@ endfunction
 " Ale -------------------------------------------------------------------- {{{2
 "
 let g:airline#extensions#ale#enabled = 1
-
 "let g:ale_completion_enabled = 1
+let g:ale_lsp_suggestions = 1
+let g:ale_detail_to_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+
+if has('nvim')
+    let g:ale_hover_to_preview = 1
+endif
 
 " ✗  ⚠  ›  •  ‣  🐞  ❽  ➇  ➣  ➢  ‼︎
 let g:ale_sign_error = "‼︎"
@@ -1531,9 +1537,11 @@ nmap ,dd <Plug>(ale_go_to_definition)
 nmap ,DD :ALEGoToDefinition -split<cr>
 nmap ,dD :ALEGoToDefinition -tab<cr>
 nmap ,dh <Plug>(ale_hover)
-nmap ,dr <Plug>(ale_find_references)
-nmap ,DR :ALEFindReferences -split<cr>
-nmap ,dR :ALEFindReferences -tab<cr>
+nmap ,di <Plug>(ale_detail)
+"nmap ,dr <Plug>(ale_find_references)
+nmap ,dr :ALEFindReferences -relative<cr>
+nmap ,DR :ALEFindReferences -split -relative<cr>
+nmap ,dR :ALEFindReferences -tab -relative<cr>
 nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
 xmap ,ds y:ALESymbolSearch <c-r>"<cr>
 nmap ,dt <Plug>(ale_go_to_type_definition)
