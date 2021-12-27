@@ -248,7 +248,11 @@ set backupdir=~/.vim/backup,.,~/temp/tmp,~/
 
 if v:version >= 703
   set undofile
-  set undodir=~/.vim/undo,.,~/
+  if has('nvim')
+      set undodir=~/.vim/undo-neovim,.,~/
+  else
+      set undodir=~/.vim/undo,.,~/
+  endif
 endif
 
 " where to place swap files
