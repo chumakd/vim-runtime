@@ -594,6 +594,19 @@ let g:delimitMate_expand_cr = 1
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
     let g:neocomplete#enable_at_startup = 0
+
+    "call deoplete#custom#option('sources', {
+    "                           \ '_': ['ale', 'buffer', 'tag'],
+    "                           \})
+
+    " default patterns:
+    "    '_': r'\.\w*$',
+    "    'rust': r'(\.|::)\w*$',
+    "    'typescript': r'(\.|\'|")\w*$',
+    "    'cpp': r'(\.|::|->)\w*$',
+    call deoplete#custom#source('ale', 'input_patterns', {
+                               \ 'c': '(\.|->)\w*$',
+                               \})
 endif
 
 " DirDiff ---------------------------------------------------------------- {{{2
