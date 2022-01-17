@@ -1174,6 +1174,13 @@ let g:UltiSnipsListSnippets  = '<c-s>'
 " don't unmap plugins like exchange and surround in visual mode
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
+" Visual-Multi ----------------------------------------------------------- {{{2
+"
+"let g:VM_maps['Select Cursor Down'] = '<M-C-Down>'
+"let g:VM_maps['Select Cursor Up']   = '<M-C-Up>'
+"let g:VM_maps['Add Cursor Down'] = '<M-C-Down>'
+"let g:VM_maps['Add Cursor Up']   = '<M-C-Up>'
+
 " Xml -------------------------------------------------------------------- {{{2
 "
 let g:xml_syntax_folding = 1
