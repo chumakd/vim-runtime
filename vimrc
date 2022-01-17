@@ -546,7 +546,7 @@ if s:os ==? 'Darwin'
 elseif s:os ==? 'Linux'
   let s:libclang_local = $HOME . '/local_install/llvm/current/lib/libclang.so'
   let s:libclang_homebrew = '/home/linuxbrew/.linuxbrew/opt/llvm/lib/libclang.so'
-  let s:libclang_usr_lib = '/usr/lib/llvm-12/lib/libclang.so.1'
+  let s:libclang_usr_lib = '/usr/lib/llvm-13/lib/libclang.so.1'
   if filereadable(s:libclang_local)
     let g:clang_library_path = s:libclang_local
   elseif filereadable(s:libclang_homebrew)
