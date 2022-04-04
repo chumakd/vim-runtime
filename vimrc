@@ -1661,7 +1661,7 @@ noremap <silent> ,l :wincmd l<CR>
 
 " run make in current directory
 nmap ,m :Make<CR>
-nmap ,M :Make!<CR>
+nmap ,M :call MyMlxMake()<CR>
 
 " o (lOcation window) ~~~~~~~ {{{3
 "
@@ -2405,6 +2405,14 @@ function! MyAgFindFilesOfType(ftype)
     let g:ackprg = l:old_ackprg
 endfunction
 command! -nargs=1 AckFtype call MyAgFindFilesOfType(<q-args>)
+
+" MLX remote make -------------------------------------------------------- {{{2
+function! MyMlxMake()
+    let l:old_makeprg = &makeprg
+    set makeprg=mlx-build-linux
+    :Make
+    let &makeprg = l:old_makeprg
+endfunction
 
 " Toggle tabstop, shiftwidth, expandtab for current buffer between 4 and 8 {{{2
 function! MyToggleTabstop()
