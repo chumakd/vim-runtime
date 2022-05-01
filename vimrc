@@ -1814,6 +1814,7 @@ nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
 nmap <silent> ,tS <Plug>(scratch-insert-reuse)
 
 nmap <silent> ,tt :call MyToggleTabstop()<CR>
+nmap <silent> ,tT :call MyToggleTextwidthAutoWrap()<CR>
 
 nmap <silent> ,tq :call MyToggleQuickFix()<CR>
 
@@ -2422,6 +2423,17 @@ function! MyToggleTabstop()
         setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab
     endif
     echo 'tabstop(' &tabstop ')' 'shiftwidth(' &shiftwidth ')' 'expandtab(' &expandtab ')'
+endfunction
+
+" Toggle formatoptions t {{{2
+function! MyToggleTextwidthAutoWrap()
+    if &formatoptions =~# 't'
+        setl formatoptions-=t
+        echo 'formatoptions-=t'
+    else
+        setl formatoptions+=t
+        echo 'formatoptions+=t'
+    endif
 endfunction
 
 " Toggle quickfix window ------------------------------------------------- {{{2
