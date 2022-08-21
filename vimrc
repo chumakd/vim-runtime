@@ -393,15 +393,15 @@ elseif s:os ==? 'Linux'
         let g:python3_host_prog = s:python3_linuxbrew_local
     endif
 
-    let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.9/lib-dynload'
-    let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.9/lib-dynload'
+    let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.10/lib-dynload'
+    let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.10/lib-dynload'
 
     if !empty(glob(s:py3dynload_linuxbrew_default))
         python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
     elseif !empty(glob(s:py3dynload_linuxbrew_local))
         python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
     else
-        echoerr "Homebrew's lib/python3.9/lib-dynload cannot be found"
+        echoerr "Homebrew's lib/python3.10/lib-dynload cannot be found"
     endif
 endif
 
