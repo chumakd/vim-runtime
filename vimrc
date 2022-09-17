@@ -59,11 +59,11 @@ let g:matchparen_insert_timeout = 5
 
 " change light/dark theme depending on the time of day
 function! MySetBG()
-    let hr = (strftime('%H'))
+    let hr = (strftime('%H%M'))
 
-    if hr >= 16
+    if hr >= 1930
         set background=dark
-    elseif hr >= 7
+    elseif hr >= 700
         set background=light
     elseif hr >= 0
         set background=dark
