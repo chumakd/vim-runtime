@@ -1062,6 +1062,8 @@ let g:startify_custom_header = [
 \ '                                 \___/_(      \__\/     \__\/ \__\/',
 \ ]
 
+let g:startify_session_dir = '~/.vim/session'
+
 " Syntastic -------------------------------------------------------------- {{{2
 "
 let g:syntastic_check_on_open=0
