@@ -1763,11 +1763,12 @@ nmap <silent> ,tcs :call MyToggleColorScheme()<CR>
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
 
 " toggle doxygen comments highlighting
-nmap <silent> ,td  :call MyToggleDoxygenSyntax()<CR>
-nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
+"nmap <silent> ,td  :call MyToggleDoxygenSyntax()<CR>
+"nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
-nmap <silent> ,tdm :DelimitMateSwitch<CR>
+" original mapping ,tdm
+nmap <silent> ,td :DelimitMateSwitch<CR>
 
 " ALE
 nmap <silent> ,te :ALEToggle<CR>
