@@ -61,7 +61,7 @@ let g:matchparen_insert_timeout = 5
 function! MySetBG()
     let hr = (strftime('%H%M'))
 
-    if hr >= 1930
+    if hr >= 1830
         set background=dark
     elseif hr >= 700
         set background=light
