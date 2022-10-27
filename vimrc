@@ -274,6 +274,8 @@ set novisualbell
 
 " hide the mouse pointer while typing
 set mousehide
+" disable mouse integration
+set mouse=
 
 " when the page starts to scroll, keep the cursor 8 lines from the top and 8
 " lines from the bottom
