@@ -1551,19 +1551,22 @@ nmap <silent> ,ctt :CCTreeWindowToggle<CR>
 "
 
 nmap ,dd <Plug>(ale_go_to_definition)
-nmap ,DD :ALEGoToDefinition -split<cr>
-nmap ,dD :ALEGoToDefinition -tab<cr>
+nmap ,dD <Plug>(ale_go_to_definition_in_tab)
+nmap ,DD <Plug>(ale_go_to_definition_in_split)
+nmap ,Dd <Plug>(ale_go_to_definition_in_vsplit)
 nmap ,dh <Plug>(ale_hover)
 nmap ,di <Plug>(ale_detail)
 "nmap ,dr <Plug>(ale_find_references)
 nmap ,dr :ALEFindReferences -relative<cr>
-nmap ,DR :ALEFindReferences -split -relative<cr>
 nmap ,dR :ALEFindReferences -tab -relative<cr>
+nmap ,DR :ALEFindReferences -split -relative<cr>
+nmap ,Dr :ALEFindReferences -vsplit -relative<cr>
 nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
 xmap ,ds y:ALESymbolSearch <c-r>"<cr>
 nmap ,dt <Plug>(ale_go_to_type_definition)
-nmap ,DT :ALEGoToTypeDefinition -split<cr>
-nmap ,dT :ALEGoToTypeDefinition -tab<cr>
+nmap ,dT <Plug>(ale_go_to_type_definition_in_tab)
+nmap ,DT <Plug>(ale_go_to_type_definition_in_split)
+nmap ,Dt <Plug>(ale_go_to_type_definition_in_vsplit)
 
 " Delete all buffers
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
