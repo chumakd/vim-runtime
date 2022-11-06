@@ -492,10 +492,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_lsp_suggestions = 1
 let g:ale_detail_to_floating_preview = 1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
-
-if has('nvim')
-    let g:ale_hover_to_preview = 1
-endif
+let g:ale_floating_preview = 1
 
 " ✗  ⚠  ›  •  ‣  🐞  ❽  ➇  ➣  ➢  ‼︎
 let g:ale_sign_error = "‼︎"
