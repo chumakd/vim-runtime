@@ -550,7 +550,15 @@ let g:CCTreeWindowWidth = 55
 "let g:clang_complete_auto = 0
 let g:clang_omnicppcomplete_compliance = 1
 if s:os ==? 'Darwin'
-  let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+  let s:libclang_homebrew = '/opt/homebrew/opt/llvm/lib/libclang.dylib'
+  let s:libclang_clitools = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+  if filereadable(s:libclang_homebrew)
+      let g:clang_library_path = s:libclang_homebrew
+  elseif filereadable(s:libclang_clitools)
+      let g:clang_library_path = s:libclang_clitools
+  else
+    echoerr 'libclang.so cannot be found'
+  endif
 elseif s:os ==? 'Linux'
   let s:libclang_local = $HOME . '/local_install/llvm/current/lib/libclang.so'
   let s:libclang_homebrew = '/home/linuxbrew/.linuxbrew/opt/llvm/lib/libclang.so'
