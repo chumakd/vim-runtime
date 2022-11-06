@@ -1563,9 +1563,14 @@ nmap ,dD <Plug>(ale_go_to_definition_in_tab)
 nmap ,DD <Plug>(ale_go_to_definition_in_split)
 nmap ,Dd <Plug>(ale_go_to_definition_in_vsplit)
 nmap ,dh <Plug>(ale_hover)
-nmap ,di <Plug>(ale_detail)
+nmap ,di <Plug>(ale_go_to_implementation)
+nmap ,dI <Plug>(ale_go_to_implementation_in_tab)
+nmap ,DI <Plug>(ale_go_to_implementation_in_split)
+nmap ,Di <Plug>(ale_go_to_implementation_in_vsplit)
+"nmap ,di <Plug>(ale_detail)
+nmap ,dl <Plug>(ale_detail)
 "nmap ,dr <Plug>(ale_find_references)
-nmap ,dr :ALEFindReferences -relative<cr>
+nmap ,dr :ALEFindReferences -quickfix -relative<cr>
 nmap ,dR :ALEFindReferences -tab -relative<cr>
 nmap ,DR :ALEFindReferences -split -relative<cr>
 nmap ,Dr :ALEFindReferences -vsplit -relative<cr>
