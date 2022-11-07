@@ -333,11 +333,12 @@ set virtualedit=
 " allow backspace to delete everything
 set backspace=indent,eol,start
 
-" set timeouts for keycodes and mappings
-set timeout
+" disable timeout for mappings
+set notimeout
+" set timeout for mappings (only used when ':set timeout')
 set timeoutlen=700
-"set ttimeoutlen=100
-set ttimeoutlen=2
+" set timeout for keycodes
+set ttimeoutlen=2  " ttimeoutlen=100
 
 " speed up completion significantly
 
