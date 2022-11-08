@@ -1287,7 +1287,8 @@ vnoremap <C-s> ,
 
 " Tagselect
 " open current file in new tab and do :Tselect on a word  under cursor
-nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
+"nmap <C-t>] :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
+nnoremap <silent> <C-W>g<C-]> :tab split<CR>:exec("Ts ".expand("<cword>"))<CR>
 
 " move current line up/down
 "nmap <C-Up>   :m-2
@@ -1551,10 +1552,10 @@ noremap <silent> ,cp :pclose<CR>
 "
 
 " CCTree
-nmap <silent> ,ctl :CCTreeLoadDB<CR>
-nmap <silent> ,ctf :CCTreeTraceForward<CR>
-nmap <silent> ,ctr :CCTreeTraceReverse<CR>
-nmap <silent> ,ctt :CCTreeWindowToggle<CR>
+nmap <silent> ,Ctl :CCTreeLoadDB<CR>
+nmap <silent> ,Ctf :CCTreeTraceForward<CR>
+nmap <silent> ,Ctr :CCTreeTraceReverse<CR>
+nmap <silent> ,Ctt :CCTreeWindowToggle<CR>
 
 " d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -1635,7 +1636,7 @@ nmap ,fy :Filetypes<CR>
 " FuzzyFinder Settings
 nmap ,Fb :FufBuffer<CR>
 nmap ,Fm :FufBookmarkFile<CR>
-nmap ,Fma :FufBookmarkFileAdd<CR>
+nmap ,FM :FufBookmarkFileAdd<CR>
 nmap ,Ff :FufFile<CR>
 nmap ,FF :FufFile<CR>
 nmap ,Fo :FufCoverageFile<CR>
@@ -1766,14 +1767,15 @@ nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 " toggle textwidth column highlighting
 if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
+    "nmap <silent> ,tcl :call MyToggleColorcolumn()<CR>
 endif
 
 " toggle comments italic font face
-nmap <silent> ,tci :call MyToggleCommentsItalic()<CR>
+"nmap <silent> ,tci :call MyToggleCommentsItalic()<CR>
 
 " toggle color theme solarized
 "nmap <silent> ,tcs :colorscheme NeoSolarized<CR>
-nmap <silent> ,tcs :call MyToggleColorScheme()<CR>
+"nmap <silent> ,tcs :call MyToggleColorScheme()<CR>
 
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
@@ -1814,24 +1816,24 @@ nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 " toggle neocomplete / deoplete
 if has('nvim')
     nmap <silent> ,tn  :call deoplete#toggle()<CR>
-    nmap <silent> ,tnn :call deoplete#toggle()<CR>
+    "nmap <silent> ,tnn :call deoplete#toggle()<CR>
 else
     nmap <silent> ,tn  :NeoCompleteToggle<CR>
-    nmap <silent> ,tnn :NeoCompleteToggle<CR>
+    "nmap <silent> ,tnn :NeoCompleteToggle<CR>
 endif
 
 " toggle current line number or 0
-nmap <silent> ,tnu :set invnumber<CR>
+nmap <silent> ,tN :set invnumber<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
 
 " toggle read-only mode
 nmap <silent> ,tr  :set invreadonly<CR>:set readonly?<CR>
-nmap <silent> ,tro :set invreadonly<CR>:set readonly?<CR>
+"nmap <silent> ,tro :set invreadonly<CR>:set readonly?<CR>
 
 " toggle rainbow parentheses
-nmap <silent> ,trp :RainbowParenthesesToggle<CR>
+nmap <silent> ,tPP :RainbowParenthesesToggle<CR>
 nmap <silent> ,tr( :RainbowParenthesesLoadRound<CR>
 nmap <silent> ,tr[ :RainbowParenthesesLoadSquare<CR>
 
