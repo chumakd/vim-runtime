@@ -678,3 +678,6 @@
 [submodule "p/vim-visual-multi"]
 	path = p/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
+[submodule "p/gv"]
+	path = p/gv
+	url = https://github.com/junegunn/gv.vim.git
