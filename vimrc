@@ -1666,8 +1666,13 @@ nmap <silent> ,gb :Git blame<CR>
 nmap <silent> ,gd :Gvdiffsplit<CR>
 nmap <silent> ,gg :Ggrep <C-r><C-w><CR>
 nmap <silent> ,gl :Gitv!<CR>
+nmap <silent> ,gL :GV!<CR>
+vmap <silent> ,gL :GV!<CR>
+nmap <silent> ,go :GV?<CR>
+vmap <silent> ,go :GV?<CR>
 nmap <silent> ,gs :Git<CR>
 nmap <silent> ,gt :Gitv<CR>
+nmap <silent> ,gT :GV<CR>
 nmap <silent> ,gw :Gwrite<CR>
 
 " hjkl ~~~~~~~~~~~~~~~~~~~~~~ {{{3
