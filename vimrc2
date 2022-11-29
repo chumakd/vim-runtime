@@ -1,7 +1,5 @@
 " Options ================================================================ {{{1
 
-echo '*** V2 ***'
-
 " enconding
 set encoding=utf-8
 scriptencoding utf-8
@@ -628,14 +626,16 @@ if has('nvim')
     "                           \ '_': ['ale', 'buffer', 'tag'],
     "                           \})
 
-    " default patterns:
-    "    '_': r'\.\w*$',
-    "    'rust': r'(\.|::)\w*$',
-    "    'typescript': r'(\.|\'|")\w*$',
-    "    'cpp': r'(\.|::|->)\w*$',
-    call deoplete#custom#source('ale', 'input_patterns', {
-                               \ 'c': '(\.|->)\w*$',
-                               \})
+    if exists('g:deoplete#_initialized')
+        " default patterns:
+        "    '_': r'\.\w*$',
+        "    'rust': r'(\.|::)\w*$',
+        "    'typescript': r'(\.|\'|")\w*$',
+        "    'cpp': r'(\.|::|->)\w*$',
+        call deoplete#custom#source('ale', 'input_patterns', {
+                                \ 'c': '(\.|->)\w*$',
+                                \})
+    endif
 endif
 
 " DirDiff ---------------------------------------------------------------- {{{2
@@ -1218,6 +1218,10 @@ let g:yankring_min_element_length = 2
 " don't share yankring contents between different instances of vim
 "let g:yankring_share_between_instances = 0
 
+" Yankstack -------------------------------------------------------------- {{{2
+"
+let g:yankstack_yank_keys = ['y', 'Y']
+
 " YouCompleteMe ---------------------------------------------------------- {{{2
 "
 
@@ -1234,7 +1238,9 @@ map <Space> <Leader>
 
 " let yankstack plugin to know that we remap default Y behavior
 " (it has to be done *before* re-defining Y mapping)
-call yankstack#setup()
+if exists('g:yankstack_size')
+    call yankstack#setup()
+endif
 
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
