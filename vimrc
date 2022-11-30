@@ -1818,6 +1818,9 @@ nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
+" toggle marks signs
+nmap <silent> ,tM :SignatureToggleSigns<CR>
+
 " toggle neocomplete / deoplete
 if has('nvim')
     nmap <silent> ,tn  :call deoplete#toggle()<CR>
@@ -1964,8 +1967,9 @@ nmap <F3>   :MRU<CR>
 nmap <F4>   :TagbarToggle<CR>
 nmap <S-F4> :TlistToggle<CR>
 
-" MarksBrowser
-nmap <F5>   :MarksBrowser<CR>
+" SignatureToggleSigns
+nmap <F5>   :SignatureListBufferMarks<CR>
+nmap <S-F5> :SignatureListGlobalMarks<CR>
 
 " Gundo
 nmap <F6>   :GundoToggle<CR>
