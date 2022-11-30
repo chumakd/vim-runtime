@@ -684,3 +684,6 @@
 [submodule "p/vim-go"]
 	path = p/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "p/vim-signature"]
+	path = p/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
