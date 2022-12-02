@@ -1226,8 +1226,16 @@ let g:yankring_min_element_length = 2
 
 " Mappings =============================================================== {{{1
 
+" override easymotion leader
+"map <Space><Space> <Plug>(easymotion-prefix)
+" disable default space behavior as right arrow
+"noremap <Space> <Nop>
 " duplicate space as leader
 map <Space> <Leader>
+" use space as leader
+"let g:mapleader = "\<Space>"
+" duplicate \ as leader
+"map \ <Leader>
 
 " Shortened commands ----------------------------------------------------- {{{2
 "
