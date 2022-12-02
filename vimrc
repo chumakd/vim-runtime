@@ -648,6 +648,8 @@ let g:DirDiffAddArgs = '--ignore-all-space'
 hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
 hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
+let g:EasyMotion_leader_key = '<Space><Space>'
+
 " echodoc ---------------------------------------------------------------- {{{2
 "
 let g:echodoc_enable_at_startup = 1
