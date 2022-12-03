@@ -647,8 +647,8 @@ let g:DirDiffAddArgs = '--ignore-all-space'
 
 " EasyMotion ------------------------------------------------------------- {{{2
 "
-hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
-hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
+"hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
+"hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
 
 let g:EasyMotion_leader_key = '<Space><Space>'
 
