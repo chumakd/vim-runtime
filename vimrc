@@ -1968,6 +1968,11 @@ cnoremap <ESC>n <Down>
 " Fn keys appings -------------------------------------------------------- {{{2
 "
 
+" Neovim:
+"   S-F* keys recognized as F12+n e.g. S-F1->F13 S-F12->F24
+"   C-F* keys recognized as F12+2*n e.g. C-F1->F25 C-F12->F36
+"   M-F* keys recognized as F12+3*n e.g. M-F1->F37 M-F12->F48
+
 " build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
 nmap <F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
 
@@ -1988,6 +1993,9 @@ nmap <S-F4> :TlistToggle<CR>
 " SignatureToggleSigns
 nmap <F5>   :SignatureListBufferMarks<CR>
 nmap <S-F5> :SignatureListGlobalMarks<CR>
+if has('nvim')
+    nmap <F17> <S-F5>
+endif
 
 " Gundo
 nmap <F6>   :GundoToggle<CR>
@@ -1995,20 +2003,29 @@ nmap <F6>   :GundoToggle<CR>
 " Syntastic
 nmap <F7>   :SyntasticCheck<CR>
 nmap <S-F7> :Errors<CR>
+if has('nvim')
+    nmap <F19> <S-F7>
+endif
 
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
+if has('nvim')
+    nmap <F20> <S-F8>
+endif
 
 " Show syntax highlighting groups for word under cursor
-nmap <S-F9> :call <SID>SynStack()<CR>
+nmap <F9> :call <SID>SynStack()<CR>
 
 " find highlight group of symbol under cursor
-nmap <silent> <M-F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+nmap <silent> <S-F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
       \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
       \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
       \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
       \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
+if has('nvim')
+    nmap <F21> <S-F9>
+endif
 
 " Commands =============================================================== {{{1
 "
