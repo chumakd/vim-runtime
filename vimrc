@@ -1220,6 +1220,10 @@ let g:yankring_min_element_length = 2
 " don't share yankring contents between different instances of vim
 "let g:yankring_share_between_instances = 0
 
+" Yankstack -------------------------------------------------------------- {{{2
+"
+let g:yankstack_yank_keys = ['y', 'Y']
+
 " YouCompleteMe ---------------------------------------------------------- {{{2
 "
 
