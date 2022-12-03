@@ -647,8 +647,10 @@ let g:DirDiffAddArgs = '--ignore-all-space'
 
 " EasyMotion ------------------------------------------------------------- {{{2
 "
-hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
-hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
+"hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
+"hi EasyMotionShade  cterm=NONE ctermbg=NONE ctermfg=darkgray
+
+let g:EasyMotion_leader_key = '<Space><Space>'
 
 " echodoc ---------------------------------------------------------------- {{{2
 "
@@ -1230,8 +1232,16 @@ let g:yankstack_yank_keys = ['y', 'Y']
 
 " Mappings =============================================================== {{{1
 
+" override easymotion leader
+"map <Space><Space> <Plug>(easymotion-prefix)
+" disable default space behavior as right arrow
+"noremap <Space> <Nop>
 " duplicate space as leader
 map <Space> <Leader>
+" use space as leader
+"let g:mapleader = "\<Space>"
+" duplicate \ as leader
+"map \ <Leader>
 
 " Shortened commands ----------------------------------------------------- {{{2
 "
@@ -1826,6 +1836,9 @@ nmap <silent> ,tl :set invlist<CR>:set list?<CR>
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
 
+" toggle marks signs
+nmap <silent> ,tM :SignatureToggleSigns<CR>
+
 " toggle neocomplete / deoplete
 if has('nvim')
     nmap <silent> ,tn  :call deoplete#toggle()<CR>
@@ -1972,8 +1985,9 @@ nmap <F3>   :MRU<CR>
 nmap <F4>   :TagbarToggle<CR>
 nmap <S-F4> :TlistToggle<CR>
 
-" MarksBrowser
-nmap <F5>   :MarksBrowser<CR>
+" SignatureToggleSigns
+nmap <F5>   :SignatureListBufferMarks<CR>
+nmap <S-F5> :SignatureListGlobalMarks<CR>
 
 " Gundo
 nmap <F6>   :GundoToggle<CR>
