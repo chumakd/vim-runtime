@@ -626,14 +626,16 @@ if has('nvim')
     "                           \ '_': ['ale', 'buffer', 'tag'],
     "                           \})
 
-    " default patterns:
-    "    '_': r'\.\w*$',
-    "    'rust': r'(\.|::)\w*$',
-    "    'typescript': r'(\.|\'|")\w*$',
-    "    'cpp': r'(\.|::|->)\w*$',
-    call deoplete#custom#source('ale', 'input_patterns', {
-                               \ 'c': '(\.|->)\w*$',
-                               \})
+    if exists('g:deoplete#_initialized')
+        " default patterns:
+        "    '_': r'\.\w*$',
+        "    'rust': r'(\.|::)\w*$',
+        "    'typescript': r'(\.|\'|")\w*$',
+        "    'cpp': r'(\.|::|->)\w*$',
+        call deoplete#custom#source('ale', 'input_patterns', {
+                                \ 'c': '(\.|->)\w*$',
+                                \})
+    endif
 endif
 
 " DirDiff ---------------------------------------------------------------- {{{2
@@ -1242,7 +1244,9 @@ map <Space> <Leader>
 
 " let yankstack plugin to know that we remap default Y behavior
 " (it has to be done *before* re-defining Y mapping)
-call yankstack#setup()
+if exists('g:yankstack_size')
+    call yankstack#setup()
+endif
 
 " make 'Y' to be more consistent with 'D','C','S'
 nmap Y y$
