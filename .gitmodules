@@ -687,3 +687,6 @@
 [submodule "p/vim-signature"]
 	path = p/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+[submodule "p/vim-sensible"]
+	path = p/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
