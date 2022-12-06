@@ -690,3 +690,6 @@
 [submodule "p/vim-sensible"]
 	path = p/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "p/vim-obsession"]
+	path = p/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
