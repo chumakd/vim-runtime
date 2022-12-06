@@ -693,3 +693,6 @@
 [submodule "p/vim-obsession"]
 	path = p/vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
+[submodule "p/vim-jdaddy"]
+	path = p/vim-jdaddy
+	url = https://github.com/tpope/vim-jdaddy.git
