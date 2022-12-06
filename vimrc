@@ -218,7 +218,7 @@ else
     set statusline=%h%w\ %f\ \%m%r\ %=\ <\ ts:%{&ts}\ et:%{&et}\ <\ %{&ft}\ \ \ LN:%3l:%-2v/\ %-4L\ [%P]
 endif
 
-set tabline=%!MyTabLine()
+set tabline=%!MyTabLine2()
 
 set linebreak
 let &showbreak='↪ '
@@ -2731,6 +2731,11 @@ endfunction
 
 function! MyTabLine()
     let l:s = ''
+
+    if exists('g:loaded_obsession')
+        let l:s .= '%{ObsessionStatus()}'
+    endif
+
     for l:i in range(tabpagenr('$'))
         " set the tab page number (for mouse clicks)
         let l:s .= '%' . (l:i + 1) . 'T'
@@ -2745,12 +2750,43 @@ function! MyTabLine()
     let l:s .= '%#TabLineFill#%T'
 
     " right-align the label to close the current tab page
-    if tabpagenr('$') > 1
-        "let l:s .= '%=%#TabLine#%999Xclose'
-        let l:s .= '%=%#TabLine#%999XX'
-    endif
+    "if tabpagenr('$') > 1
+    "    "let l:s .= '%=%#TabLine#%999Xclose'
+    "    let l:s .= '%=%#TabLine#%999XX'
+    "endif
 
     return l:s
+endfunction
+
+" origin: https://github.com/mkitt/tabline.vim.git
+function! MyTabLine2()
+  let s = ''
+
+  if exists('g:loaded_obsession')
+      let l:s .= '%{ObsessionStatus()}'
+  endif
+
+  for i in range(tabpagenr('$'))
+      let tab = i + 1
+      let winnr = tabpagewinnr(tab)
+      let buflist = tabpagebuflist(tab)
+      let bufnr = buflist[winnr - 1]
+      let bufname = bufname(bufnr)
+      let bufmodified = getbufvar(bufnr, "&mod")
+
+      let s .= '%' . tab . 'T'
+      let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+      let s .= ' ' . tab .':'
+      let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+
+      if bufmodified
+          let s .= '[+] '
+      endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+
+  return s
 endfunction
 
 " vimrc.local ============================================================ {{{1
