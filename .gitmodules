@@ -696,3 +696,6 @@
 [submodule "p/vim-jdaddy"]
 	path = p/vim-jdaddy
 	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "p/vim-auto-highlight"]
+	path = p/vim-auto-highlight
+	url = https://github.com/obxhdx/vim-auto-highlight.git
