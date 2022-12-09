@@ -518,6 +518,10 @@ let g:alternateNoDefaultAlternate=0
 let g:alternateRelativeFiles=1
 "let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
 
+" auto-highlight --------------------------------------------------------- {{{2
+"
+let g:auto_highlight#disabled_on_start = 1
+
 " Bash syntax ------------------------------------------------------------ {{{2
 "
 let g:is_bash = 1
@@ -1829,6 +1833,9 @@ nmap <silent> ,tg :call MyToggleBG()<CR>
 
 " toggle highlight search
 "nmap <silent> ,th :set invhls<CR>:set hls?<CR>
+
+" toggle auto-highlight cword
+nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " disable current highlight search
 nmap <silent> ,th :nohlsearch<CR>
