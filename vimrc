@@ -1156,6 +1156,8 @@ let g:syntastic_yaml_yamllint_args = '-c ~/.yamllintrc.yml'
 let g:tagbar_left = 1
 let g:tagbar_width = 33
 let g:tagbar_sort = 0
+let g:tagbar_show_data_type = 1
+let g:tagbar_no_autocmds = 1
 
 " Taglist ---------------------------------------------------------------- {{{2
 "
@@ -1992,7 +1994,11 @@ nmap <F3>   :MRU<CR>
 
 " TagList/Tagbar
 nmap <F4>   :TagbarToggle<CR>
-nmap <S-F4> :TlistToggle<CR>
+nmap <S-F4> :TagbarForceUpdate<CR>
+if has('nvim')
+    nmap <F16> <S-F4>
+endif
+"nmap <S-F4> :TlistToggle<CR>
 
 " SignatureToggleSigns
 nmap <F5>   :SignatureListBufferMarks<CR>
