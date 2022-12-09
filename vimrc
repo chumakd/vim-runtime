@@ -15,6 +15,9 @@ endif
 if !has('python3')
     call add(g:pathogen_blacklist, 'ultisnips')
 endif
+if !has('nvim')
+    call add(g:pathogen_blacklist, 'nvim-treesitter-context')
+endif
 
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
