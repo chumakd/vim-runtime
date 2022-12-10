@@ -479,6 +479,12 @@ let g:airline#extensions#branch#format = 2
 " truncate sha1 commits at this number of characters  >
 let g:airline#extensions#branch#sha1_len = 12
 
+" nvim uses treesitter context for this
+if has('nvim')
+    let g:airline#extensions#tagbar#enabled = 0
+endif
+let g:airline#extensions#obsession#enabled = 1
+
 "let g:airline_theme='distinguished'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
 
@@ -492,7 +498,7 @@ endfunction
 " Ale -------------------------------------------------------------------- {{{2
 "
 let g:airline#extensions#ale#enabled = 1
-"let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_lsp_suggestions = 1
 let g:ale_detail_to_floating_preview = 1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
