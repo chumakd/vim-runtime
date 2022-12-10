@@ -63,10 +63,21 @@ let g:matchparen_insert_timeout = 5
 " change light/dark theme depending on the time of day
 function! MySetBG()
     let hr = (strftime('%H%M'))
+    let time_dark = 1700
+    let time_light = 730
+    let bgtime_file = 'light-dark'
 
-    if hr >= 1830
+    if filereadable(bgtime_file)
+        let bgtimes = split(readfile(bgtime_file)[0])
+        if !empty(bgtimes)
+            let time_light = str2nr(bgtimes[0])
+            let time_dark = str2nr(bgtimes[1])
+        endif
+    endif
+
+    if hr >= time_dark
         set background=dark
-    elseif hr >= 700
+    elseif hr >= time_light
         set background=light
     elseif hr >= 0
         set background=dark
