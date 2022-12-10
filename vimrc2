@@ -1164,7 +1164,7 @@ let g:tagbar_left = 1
 let g:tagbar_width = 33
 let g:tagbar_sort = 0
 let g:tagbar_show_data_type = 1
-let g:tagbar_no_autocmds = 1
+"let g:tagbar_no_autocmds = 1
 
 " Taglist ---------------------------------------------------------------- {{{2
 "
