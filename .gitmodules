@@ -705,3 +705,6 @@
 [submodule "p/nvim-treesitter-context"]
 	path = p/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context.git
+[submodule "p/symbols-outline"]
+	path = p/symbols-outline
+	url = https://github.com/simrat39/symbols-outline.nvim.git
