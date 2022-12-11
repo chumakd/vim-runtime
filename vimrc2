@@ -511,6 +511,9 @@ endfunction
 
 " Ale -------------------------------------------------------------------- {{{2
 "
+if has('nvim')
+    let g:ale_enabled = 0
+endif
 let g:airline#extensions#ale#enabled = 1
 let g:ale_completion_enabled = 1
 let g:ale_lsp_suggestions = 1
