@@ -714,3 +714,6 @@
 [submodule "p/nvim-lspconfig"]
 	path = p/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "p/vim-devicons"]
+	path = p/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
