@@ -16,7 +16,7 @@ if !has('python3')
     let g:pathogen_blacklist += ['ultisnips']
 endif
 if !has('nvim')
-    let g:pathogen_blacklist +=
+    let g:pathogen_blacklist += [
                 \ 'nvim-treesitter-context',
                 \ 'nvim-ts-context-commentstring',
                 \ ]
