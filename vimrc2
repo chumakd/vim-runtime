@@ -2836,6 +2836,8 @@ if has('nvim')
 " TreeSitter ------------------------------------------------------------- {{{2
 "
 lua << EOF
+
+-- treesitter {{{3
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "cpp", "help", "lua", "vim" },
@@ -2855,8 +2857,8 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     -- `false` will disable the whole extension
-    --enable = true,
-    enable = { "c", "cpp" },
+    enable = true,
+    --enable = { "c", "cpp" },
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
@@ -2876,11 +2878,25 @@ require'nvim-treesitter.configs'.setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    --additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
+  incremental_selection = {
+    enable = true,
+    --keymaps = {
+    --  init_selection = "gnn",
+    --  node_incremental = "grn",
+    --  scope_incremental = "grc",
+    --  node_decremental = "grm",
+    --},
+  },
+  --indent = {
+  --  enable = true
+  --},
 }
 
-require'treesitter-context'.setup{
+-- treesitter-context {{{3
+require'treesitter-context'.setup {
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 2, -- How many lines the window should span. Values <= 0 mean no limit.
     trim_scope = 'inner', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
