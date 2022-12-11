@@ -10,13 +10,16 @@ set nocompatible
 " disable some of the plugings, depending on OS and Vim features available
 let g:pathogen_blacklist = []
 if !has('lua')
-    call add(g:pathogen_blacklist, 'neocomplete')
+    let g:pathogen_blacklist += ['neocomplete']
 endif
 if !has('python3')
-    call add(g:pathogen_blacklist, 'ultisnips')
+    let g:pathogen_blacklist += ['ultisnips']
 endif
 if !has('nvim')
-    call add(g:pathogen_blacklist, 'nvim-treesitter-context')
+    let g:pathogen_blacklist += [
+                \ 'nvim-treesitter-context',
+                \ 'nvim-ts-context-commentstring',
+                \ ]
 endif
 
 " this should be at the beginning to allow pathogen plugin to generate
@@ -489,6 +492,12 @@ let g:airline#extensions#branch#format = 2
 
 " truncate sha1 commits at this number of characters  >
 let g:airline#extensions#branch#sha1_len = 12
+
+" nvim uses treesitter context for this
+if has('nvim')
+    let g:airline#extensions#tagbar#enabled = 0
+endif
+let g:airline#extensions#obsession#enabled = 1
 
 "let g:airline_theme='distinguished'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
@@ -2693,6 +2702,8 @@ function! MyToggleBG()
     " FIXME: find a better place to do it in a generic way
     " use thiner vertical window frames
     highlight VertSplit guibg=NONE
+    " better stype for ts context
+    highlight! link TreesitterContext LineNr
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
