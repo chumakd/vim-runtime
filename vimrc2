@@ -2026,12 +2026,15 @@ nmap <F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
 nmap <F3>   :MRU<CR>
 
 " TagList/Tagbar
-nmap <F4>   :TagbarToggle<CR>
-nmap <S-F4> :TagbarForceUpdate<CR>
 if has('nvim')
+	nmap <F4>   :SymbolsOutline<CR>
+	nmap <S-F4> :TagbarToggle<CR>
     nmap <F16> <S-F4>
+else
+	nmap <F4>   :TagbarToggle<CR>
+	nmap <S-F4> :TagbarForceUpdate<CR>
+	"nmap <S-F4> :TlistToggle<CR>
 endif
-"nmap <S-F4> :TlistToggle<CR>
 
 " SignatureToggleSigns
 nmap <F5>   :SignatureListBufferMarks<CR>
@@ -2995,8 +2998,10 @@ require'treesitter-context'.setup {
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = nil,
 }
+
 EOF
 
+" options {{{3
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
@@ -3045,6 +3050,70 @@ end
 -- nvim-lspconfig-clangd {{{3
 require'lspconfig'.clangd.setup {
   on_attach = on_attach,
+}
+
+-- symbols-outline {{{3
+--require'symbols-outline'.setup{}
+require'symbols-outline'.setup {
+  highlight_hovered_item = true,
+  show_guides = true,
+  auto_preview = false,
+  position = 'left',
+  relative_width = true,
+  width = 18,
+  auto_close = false,
+  show_numbers = true,
+  show_relative_numbers = true,
+  show_symbol_details = true,
+  preview_bg_highlight = 'NonText',
+  autofold_depth = 1,
+  auto_unfold_hover = true,
+  fold_markers = { '▸', '▾' },
+  wrap = false,
+  keymaps = {
+    close = {},
+    goto_location = "<Cr>",
+    focus_location = "c",
+    hover_symbol = "o",
+    toggle_preview = "K",
+    rename_symbol = {},
+    code_actions = {},
+    fold = "h",
+    unfold = "l",
+    fold_all = "W",
+    unfold_all = "E",
+    fold_reset = "R",
+  },
+  lsp_blacklist = {},
+  symbol_blacklist = {},
+  symbols = {
+    File = {icon = "F", hl = "TSURI"},
+    Module = {icon = "M", hl = "TSNamespace"},
+    Namespace = {icon = "N", hl = "TSNamespace"},
+    Package = {icon = "", hl = "TSNamespace"},
+    Class = {icon = "𝓒", hl = "TSType"},
+    Method = {icon = "ƒ", hl = "TSMethod"},
+    Property = {icon = "p", hl = "TSMethod"},
+    Field = {icon = "f", hl = "TSField"},
+    Constructor = {icon = "c", hl = "TSConstructor"},
+    Enum = {icon = "ℰ", hl = "TSType"},
+    Interface = {icon = "I", hl = "TSType"},
+    Function = {icon = "ƒ", hl = "TSFunction"},
+    Variable = {icon = "v", hl = "TSConstant"},
+    Constant = {icon = "C", hl = "TSConstant"},
+    String = {icon = "𝓐", hl = "TSString"},
+    Number = {icon = "#", hl = "TSNumber"},
+    Boolean = {icon = "⊨", hl = "TSBoolean"},
+    Array = {icon = "A", hl = "TSConstant"},
+    Object = {icon = "⦿", hl = "TSType"},
+    Key = {icon = "🔐", hl = "TSType"},
+    Null = {icon = "NULL", hl = "TSType"},
+    EnumMember = {icon = "E", hl = "TSField"},
+    Struct = {icon = "𝓢", hl = "TSType"},
+    Event = {icon = "ev", hl = "TSType"},
+    Operator = {icon = "+", hl = "TSOperator"},
+    TypeParameter = {icon = "𝙏", hl = "TSParameter"}
+  }
 }
 
 EOF
