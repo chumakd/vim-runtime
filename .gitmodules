@@ -711,3 +711,6 @@
 [submodule "p/nvim-ts-context-commentstring"]
 	path = p/nvim-ts-context-commentstring
 	url = https://github.com/JoosepAlviste/nvim-ts-context-commentstring.git
+[submodule "p/nvim-lspconfig"]
+	path = p/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
