@@ -717,3 +717,6 @@
 [submodule "p/vim-devicons"]
 	path = p/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "p/nvim-cmp"]
+	path = p/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
