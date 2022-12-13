@@ -65,16 +65,16 @@ let g:matchparen_insert_timeout = 5
 
 " change light/dark theme depending on the time of day
 function! MySetBG()
-    let hr = (strftime('%H%M'))
-    let time_dark = 1700
-    let time_light = 730
-    let bgtime_file = 'light-dark'
+    let hr = strftime('%H%M')
+    let time_dark = '1700'
+    let time_light = '0730'
+    let bgtime_file = glob('~/.vim/light-dark')
 
     if filereadable(bgtime_file)
         let bgtimes = split(readfile(bgtime_file)[0])
         if !empty(bgtimes)
-            let time_light = str2nr(bgtimes[0])
-            let time_dark = str2nr(bgtimes[1])
+            let time_light = bgtimes[0]
+            let time_dark = bgtimes[1]
         endif
     endif
 
