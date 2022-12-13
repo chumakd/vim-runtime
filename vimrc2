@@ -2722,6 +2722,7 @@ function! MyToggleBG()
     highlight VertSplit guibg=NONE
     " better stype for ts context
     highlight! link TreesitterContext LineNr
+    highlight! link NormalFloat LineNr
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
