@@ -2715,13 +2715,23 @@ function! MyToggleGutterArea()
 endfunction
 
 " Toggle BG -------------------------------------------------------------- {{{2
+"   origin: https://github.com/altercation/vim-colors-solarized/blob/master/autoload/togglebg.vim
+function! MyTogBG()
+    let &background = ( &background == "dark"? "light" : "dark" )
+    if exists("g:colors_name")
+        exe "colorscheme " . g:colors_name
+    endif
+endfunction
+
 function! MyToggleBG()
-    ToggleBG
+    "ToggleBG
+    call MyTogBG()
     " FIXME: find a better place to do it in a generic way
     " use thiner vertical window frames
     highlight VertSplit guibg=NONE
-    " better stype for ts context
+    " better style for TS context
     highlight! link TreesitterContext LineNr
+    " better style for LSP hover
     highlight! link NormalFloat LineNr
 endfunction
 
