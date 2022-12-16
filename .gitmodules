@@ -698,7 +698,7 @@
 	url = https://github.com/tpope/vim-jdaddy.git
 [submodule "p/vim-auto-highlight"]
 	path = p/vim-auto-highlight
-	url = https://github.com/obxhdx/vim-auto-highlight.git
+	url = git@github.com:chumakd/vim-auto-highlight.git
 [submodule "p/nvim-treesitter"]
 	path = p/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
