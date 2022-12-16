@@ -705,9 +705,6 @@
 [submodule "p/nvim-treesitter-context"]
 	path = p/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context.git
-[submodule "p/symbols-outline"]
-	path = p/symbols-outline
-	url = https://github.com/simrat39/symbols-outline.nvim.git
 [submodule "p/nvim-ts-context-commentstring"]
 	path = p/nvim-ts-context-commentstring
 	url = https://github.com/JoosepAlviste/nvim-ts-context-commentstring.git
@@ -723,3 +720,6 @@
 [submodule "p/cmp-nvim-lsp"]
 	path = p/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "p/symbols-outline.nvim"]
+	path = p/symbols-outline.nvim
+	url = https://github.com/simrat39/symbols-outline.nvim.git
