@@ -723,3 +723,6 @@
 [submodule "p/symbols-outline.nvim"]
 	path = p/symbols-outline.nvim
 	url = https://github.com/simrat39/symbols-outline.nvim.git
+[submodule "p/playground"]
+	path = p/playground
+	url = https://github.com/nvim-treesitter/playground.git
