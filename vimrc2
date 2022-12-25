@@ -113,11 +113,12 @@ if s:term_color ==# 'truecolor'
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
             colorscheme chumakd-elflord
         else
-            colorscheme NeoSolarized
+            if has('nvim')
+                colorscheme solarized-normal
+            else
+                colorscheme NeoSolarized
+            endif
             call MySetBG()
-            " FIXME: find a better place to do it in a generic way
-            " use thiner vertical window frames
-            "highlight VertSplit guibg=NONE
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
@@ -2148,18 +2149,18 @@ if v:version >= 703
 endif
 
 " highlight comments in different color from main text, for 'conf' and 'cfg'
-" filetypes, if we are usingsolarized colorscheme
-if g:colors_name =~? 'solarized'
-    let s:default_comments_color=10
-    let s:comments_color=24
-    augroup solarized_comments
-        au!
-        au! BufEnter  * if &ft == 'conf' || &ft == 'cfg' | exe 'hi Comment ctermfg='.s:comments_color | endif
-        au! FileType  * exe 'hi Comment ctermfg='.s:default_comments_color
-        au! FileType  conf\|cfg exe 'hi Comment ctermfg='.s:comments_color
-        au! BufLeave  * exec 'hi Comment ctermfg='.s:default_comments_color
-    augroup END
-endif
+" filetypes, if we are using solarized colorscheme
+"if g:colors_name =~? 'solarized'
+"    let s:default_comments_color=10
+"    let s:comments_color=24
+"    augroup solarized_comments
+"        au!
+"        au! BufEnter  * if &ft == 'conf' || &ft == 'cfg' | exe 'hi Comment ctermfg='.s:comments_color | endif
+"        au! FileType  * exe 'hi Comment ctermfg='.s:default_comments_color
+"        au! FileType  conf\|cfg exe 'hi Comment ctermfg='.s:comments_color
+"        au! BufLeave  * exec 'hi Comment ctermfg='.s:default_comments_color
+"    augroup END
+"endif
 
 " Abbreviations ========================================================== {{{1
 "
@@ -2724,7 +2725,7 @@ function! MyToggleBG()
     call MyTogBG()
     " FIXME: find a better place to do it in a generic way
     " use thiner vertical window frames
-    highlight VertSplit guibg=NONE
+    highlight! VertSplit guibg=NONE
     " better style for TS context
     highlight! link TreesitterContext LineNr
     " better style for LSP hover
@@ -3148,6 +3149,16 @@ EOF
 " hover window style
 "highlight! link FloatBorder Normal
 highlight! link NormalFloat LineNr
+
+" Colors ----------------------------------------------------------------- {{{2
+"
+lua << EOF
+
+-- solarized.nvim {{{3
+--require'solarized.solarized-normal.highlights'
+--vim.cmd[[ colorscheme solarized-normal ]]
+
+EOF
 
 endif " has('nvim')
 
