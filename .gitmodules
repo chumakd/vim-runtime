@@ -726,3 +726,6 @@
 [submodule "p/playground"]
 	path = p/playground
 	url = https://github.com/nvim-treesitter/playground.git
+[submodule "p/hop.nvim"]
+	path = p/hop.nvim
+	url = https://github.com/phaazon/hop.nvim.git
