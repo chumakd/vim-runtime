@@ -3186,6 +3186,18 @@ lua << EOF
 
 EOF
 
+" Other plugins ---------------------------------------------------------- {{{2
+"
+
+" hop {{{3
+lua require'hop'.setup()
+nmap <Space><Space>W :HopWordMW<CR>
+nmap <Space><Space>w :HopWordAC<CR>
+nmap <Space><Space>b :HopWordBC<CR>
+nmap <Space><Space>f :HopChar1AC<CR>
+nmap <Space><Space>F :HopChar1BC<CR>
+nmap <Space><Space>t :HopChar1MW<CR>
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
