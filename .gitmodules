@@ -729,3 +729,6 @@
 [submodule "p/hop.nvim"]
 	path = p/hop.nvim
 	url = https://github.com/phaazon/hop.nvim.git
+[submodule "p/nvim-solarized-lua"]
+	path = p/nvim-solarized-lua
+	url = git@github.com:chumakd/nvim-solarized-lua.git
