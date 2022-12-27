@@ -3198,6 +3198,20 @@ nmap <Space><Space>f :HopChar1AC<CR>
 nmap <Space><Space>F :HopChar1BC<CR>
 nmap <Space><Space>t :HopChar1MW<CR>
 
+" illuminate {{{3
+"lua << EOF
+"--require'illuminate'.configure({
+"--    providers = {
+"--        'treesitter',
+"--        --'lsp',
+"--    },
+"--    under_cursor = true,
+"--    min_count_to_highlight = 2,
+"--})
+"--require'illuminate'.pause()
+"EOF
+"nmap <silent> ,tH :IlluminateToggle<CR>
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
