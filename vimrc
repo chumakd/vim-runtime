@@ -119,9 +119,6 @@ if s:term_color ==# 'truecolor'
         else
             colorscheme NeoSolarized
             call MySetBG()
-            " FIXME: find a better place to do it in a generic way
-            " use thiner vertical window frames
-            "highlight VertSplit guibg=NONE
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
