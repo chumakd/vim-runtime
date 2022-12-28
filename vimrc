@@ -1870,6 +1870,7 @@ nmap <silent> ,ti :call MyToggleGutterArea()<CR>
 
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
+nmap <silent> ,tL :call MyToggleLocationList()<CR>
 
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
@@ -2563,6 +2564,22 @@ function! MyToggleQuickFix()
     endfor
 
     copen
+endfunction
+
+" Toggle location window ------------------------------------------------- {{{2
+function! MyToggleLocationList()
+    if empty(filter(getwininfo(), 'v:val.loclist'))
+        try
+            lopen
+        catch /E776/
+            echohl WarningMsg
+            echo "LocationList is empty"
+            echohl None
+            return
+        endtry
+    else
+        lclose
+    endif
 endfunction
 
 " Toggle column highlighting --------------------------------------------- {{{2
