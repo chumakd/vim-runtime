@@ -2699,9 +2699,11 @@ function! MyToggleBG()
     ToggleBG
     " FIXME: find a better place to do it in a generic way
     " use thiner vertical window frames
-    highlight VertSplit guibg=NONE
-    " better stype for ts context
+    highlight! VertSplit guibg=NONE
+    " better style for TS context
     highlight! link TreesitterContext LineNr
+    " better style for LSP hover
+    highlight! link NormalFloat LineNr
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
@@ -2828,6 +2830,36 @@ function! MyTabLine2()
 
   return s
 endfunction
+
+" Nvim =================================================================== {{{1
+"
+
+if has('nvim')
+
+" TreeSitter ------------------------------------------------------------- {{{2
+"
+lua << EOF
+
+-- treesitter-context {{{3
+require'treesitter-context'.setup {
+    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+    max_lines = 1, -- How many lines the window should span. Values <= 0 mean no limit.
+    trim_scope = 'inner', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+    min_window_height = 4, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+    zindex = 20, -- The Z-index of the context window
+    mode = 'topline',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+    -- Separator between context and content. Should be a single character string, like '-'.
+    -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+    separator = nil,
+}
+
+EOF
+
+" options {{{3
+
+highlight! link TreesitterContext LineNr
+
+endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
 "
