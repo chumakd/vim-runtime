@@ -2857,33 +2857,36 @@ endfunction
 
 " origin: https://github.com/mkitt/tabline.vim.git
 function! MyTabLine2()
-  let s = ''
+  let l:s = ''
 
   if exists('g:loaded_obsession')
       let l:s .= '%{ObsessionStatus()}'
   endif
 
   for i in range(tabpagenr('$'))
-      let tab = i + 1
-      let winnr = tabpagewinnr(tab)
-      let buflist = tabpagebuflist(tab)
-      let bufnr = buflist[winnr - 1]
-      let bufname = bufname(bufnr)
-      let bufmodified = getbufvar(bufnr, "&mod")
+      let l:tab = i + 1
+      let l:winnr = tabpagewinnr(l:tab)
+      let l:buflist = tabpagebuflist(l:tab)
+      let l:bufnr = l:buflist[l:winnr - 1]
+      let l:bufname = bufname(l:bufnr)
+      let l:buftype = getbufvar(l:bufnr, '&buftype')
+      let l:bufmodified = getbufvar(l:bufnr, "&mod")
 
-      let s .= '%' . tab . 'T'
-      let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-      let s .= ' ' . tab .':'
-      let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+      let l:s .= '%' . l:tab . 'T'
+      let l:s .= (l:tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+      let l:s .= ' ' . l:tab .':'
+      let l:s .= l:bufname !=# '' ? '['. fnamemodify(l:bufname, ':t') .'] '
+             \ : l:buftype !=# '' ? '['. l:buftype .'] '
+             \ : '[No Name] '
 
-      if bufmodified
-          let s .= '[+] '
+      if l:bufmodified
+          let l:s .= '[+] '
       endif
   endfor
 
-  let s .= '%#TabLineFill#'
+  let l:s .= '%#TabLineFill#'
 
-  return s
+  return l:s
 endfunction
 
 " Nvim =================================================================== {{{1
