@@ -2707,12 +2707,20 @@ function! MyToggleGutterArea()
     if &relativenumber
         let s:old_foldcolumn = &foldcolumn
         let s:old_signcolumn = &signcolumn
+        let s:old_number = &number
         set signcolumn=no
     else
         let &signcolumn = s:old_signcolumn
     endif
+
     set invrelativenumber
     let &foldcolumn = &relativenumber * s:old_foldcolumn
+
+    if &foldcolumn
+        let &number = s:old_number
+    else
+        set nonumber
+    endif
 endfunction
 
 " Toggle BG -------------------------------------------------------------- {{{2
