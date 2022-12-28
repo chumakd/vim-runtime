@@ -19,6 +19,7 @@ if !has('nvim')
     let g:pathogen_blacklist += [
                 \ 'nvim-treesitter-context',
                 \ 'nvim-ts-context-commentstring',
+                \ 'nvim-treesitter-textobjects',
                 \ ]
 endif
 
