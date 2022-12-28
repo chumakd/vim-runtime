@@ -3189,6 +3189,32 @@ EOF
 " Other plugins ---------------------------------------------------------- {{{2
 "
 
+" devicons {{{3
+lua require'nvim-web-devicons'.setup()
+
+" lualine {{{3
+lua << END
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = 'solarized',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = { 'vim.bo.fileformat == "unix" and "" or vim.bo.fileformat',
+                  'vim.bo.fileencoding == "utf-8" and "" or vim.bo.fileencoding',
+                  'filetype' },
+    lualine_y = {'location'},
+    lualine_z = {'progress', 'vim.fn.line("$")'},
+  },
+  extensions = {'fugitive', 'fzf', 'man', 'nerdtree', 'quickfix', 'symbols-outline'}
+}
+END
+
 " hop {{{3
 lua require'hop'.setup()
 nmap <Space><Space>W :HopWordMW<CR>
