@@ -298,10 +298,8 @@ set mouse=
 if v:version >= 703
   " show line numbers relative to cursor position
   set relativenumber
-else
-  set number
 endif
-
+set number
 set numberwidth=3
 
 " highlight textwidth column
