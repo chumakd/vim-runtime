@@ -3212,7 +3212,10 @@ require('lualine').setup {
     lualine_y = {'location'},
     lualine_z = {'progress', 'vim.fn.line("$")'},
   },
-  extensions = {'fugitive', 'fzf', 'man', 'nerdtree', 'quickfix', 'symbols-outline'}
+  extensions = {'fugitive', 'fzf', 'man', 'nerdtree', 'quickfix', 'symbols-outline'},
+  --refresh = {
+  --  statusline = 100,
+  --}
 }
 END
 
