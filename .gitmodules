@@ -734,7 +734,7 @@
 	url = git@github.com:chumakd/nvim-solarized-lua.git
 [submodule "p/lualine.nvim"]
 	path = p/lualine.nvim
-	url = https://github.com/nvim-lualine/lualine.nvim.git
+	url = git@github.com:chumakd/lualine.nvim.git
 [submodule "p/nvim-web-devicons"]
 	path = p/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
