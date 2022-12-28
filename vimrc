@@ -352,6 +352,9 @@ set timeoutlen=700
 " set timeout for keycodes
 set ttimeoutlen=2  " ttimeoutlen=100
 
+" speed up CursorHold autocommand (used to highlight current word)
+set updatetime=500
+
 " speed up completion significantly
 
 " don't allow ^N completion to scan included files by default
