@@ -738,3 +738,6 @@
 [submodule "p/nvim-web-devicons"]
 	path = p/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
+[submodule "p/nvim-treesitter-textobjects"]
+	path = p/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
