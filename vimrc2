@@ -1247,6 +1247,9 @@ endif
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
 
+" Diagnostics
+nmap <silent> ,td :TroubleToggle<CR>
+
 " ALE
 nmap <silent> ,te :ALEToggle<CR>
 
@@ -1419,6 +1422,9 @@ endif
 " Gundo
 nmap <F6>   :GundoToggle<CR>
 
+" Trouble
+nmap <F7>   :TroubleToggle<CR>
+
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
 nmap <S-F8> :NERDTree %:p:h<CR>
@@ -1456,6 +1462,11 @@ if v:version >= 703
         au! Filetype tagbar nested :set relativenumber
     augroup END
 endif
+
+augroup color_column
+    au!
+    au! WinEnter Trouble :setlocal colorcolumn=
+augroup END
 
 " Abbreviations ========================================================== {{{1
 "
@@ -2313,9 +2324,31 @@ require'symbols-outline'.setup {
   }
 }
 
+-- trouble {{{3
+require'trouble'.setup {
+    --icons = false,
+    fold_open = '▾', -- icon used for open folds
+    fold_closed = '▸', -- icon used for closed folds
+    --indent_lines = false, -- add an indent guide below the fold icons
+    signs = {
+        error = '‼︎',
+        warning = '!',
+        hint = '',
+        information = '➮',
+        other = '¿',
+    },
+    --use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+}
+
 EOF
 
 " options {{{3
+
+" LSP signs
+sign define DiagnosticSignError texthl=DiagnosticSignError numhl=Error text=‼︎
+sign define DiagnosticSignWarn texthl=DiagnosticSignWarn numhl=DiffDelete text=!
+sign define DiagnosticSignInfo texthl=DiagnosticSignInfo numhl=DiffText text=➮
+sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
 
 " hover window style
 "highlight! link FloatBorder Normal
