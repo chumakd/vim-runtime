@@ -946,12 +946,43 @@ nmap <silent> <Leader>at :AT<CR>
 nmap <Leader>k <Plug>DashSearch
 nmap <Leader>K <Plug>DashGlobalSearch
 
+" l (lsp) ~~~~~~~~~~~~~~~~~ {{{3
+"
+
+nmap <silent> <Leader>le :Telescope diagnostics<CR>
+nmap <silent> <Leader>ld :Telescope lsp_definitions<CR>
+nmap <silent> <Leader>lD :Telescope lsp_type_definitions<CR>
+nmap <silent> <Leader>li :Telescope lsp_implementations<CR>
+nmap <silent> <Leader>lr :Telescope lsp_references<CR>
+" symbols
+nmap <silent> <Leader>ls :Telescope treesitter<CR>
+nmap <silent> <Leader>lS :Telescope lsp_dynamic_workspace_symbols<CR>
+
 " s (startify) ~~~~~~~~~~~~ {{{3
 "
-nmap <silent> \so :SLoad <C-X>
-nmap <silent> \sc :SClose<CR>
-nmap <silent> \ss :SSave<CR>
-nmap <silent> \sl :Startify<CR>
+nmap <silent> <Leader>so :SLoad <C-X>
+nmap <silent> <Leader>sc :SClose<CR>
+nmap <silent> <Leader>ss :SSave<CR>
+nmap <silent> <Leader>sl :Startify<CR>
+
+" t (telescope) ~~~~~~~~~~~ {{{3
+"
+nmap <silent> <Leader>tt :Telescope<CR>
+
+nmap <silent> <Leader>ta :Telescope keymaps<CR>
+nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
+nmap <silent> <Leader>th :Telescope highlights<CR>
+nmap <silent> <Leader>tj :Telescope jumplist<CR>
+nmap <silent> <Leader>tk :Telescope keymaps<CR>
+nmap <silent> <Leader>tl :Telescope loclist<CR>
+nmap <silent> <Leader>tm :Telescope marks<CR>
+nmap <silent> <Leader>tM :Telescope man_pages<CR>
+nmap <silent> <Leader>to :Telescope oldfiles<CR>
+nmap <silent> <Leader>tO :Telescope vim_options<CR>
+nmap <silent> <Leader>tr :Telescope registres<CR>
+nmap <silent> <Leader>tq :Telescope quickfix<CR>
+nmap <silent> <Leader>tQ :Telescope quickfixhistory<CR>
+nmap <silent> <Leader>ts :Telescope treesitter<CR>
 
 " , mappings ------------------------------------------------------------- {{{2
 "
@@ -1072,24 +1103,26 @@ command!  -bar -bang      FZFhelptags  call fzf#vim#helptags(<bang>0)
 " FZF files w/o preview window
 command!  -bang -nargs=? -complete=dir  FZFfiles  call fzf#vim#files(<q-args>, {}, <bang>0)
 
+nmap ,fa :Maps<CR>
 nmap ,fb :Buffers<CR>
 nmap ,fc :BCommits<CR>
 nmap ,fC :Commands<CR>
 nmap ,ff :FZFfiles<CR>
 nmap ,fg :GFiles<CR>
-
 " git status files (changed)
 nmap ,fG :GFiles?<CR>
-nmap ,fh :FZFhelptags<CR>
-
-" history commands
-nmap ,fH :History:<CR>
+" command history
+nmap ,fh :History:<CR>
+nmap ,fH :FZFhelptags<CR>
+" keymaps
+nmap ,fk :Maps<CR>
 nmap ,fl :BLines<CR>
 nmap ,fL :Lines<CR>
-
 " MRU files history
 nmap ,fm :History<CR>
 nmap ,fM :Marks<CR>
+
+nmap ,fr :Rg<CR>
 
 " search history
 nmap ,fs :History/<CR>
@@ -1362,6 +1395,9 @@ cnoremap <ESC>n <Down>
 
 " build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
 nmap <F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
+
+" Telescope
+nmap <F3> :Telescope<CR>
 
 " TagList/Tagbar
 if has('nvim')
@@ -2284,6 +2320,17 @@ EOF
 " hover window style
 "highlight! link FloatBorder Normal
 highlight! link NormalFloat LineNr
+
+" Telescope -------------------------------------------------------------- {{{2
+"
+lua << EOF
+require'telescope'.setup {
+  defaults = {
+    layout_strategy = 'flex',
+    --layout_config = { height = 0.9, width = 0.9 },
+  },
+}
+EOF
 
 " Colors ----------------------------------------------------------------- {{{2
 "
