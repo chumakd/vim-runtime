@@ -1198,7 +1198,7 @@ nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,sp :sp %:p:h/<C-X>
 
-" t (toggles) ~~~~~~~~~~~~~~~ {{{3
+" t (toggles) ~~~~~~~~~~~~~~ {{{3
 "
 
 " toggle ack/ag
@@ -1252,7 +1252,6 @@ nmap <silent> ,tr  :set invreadonly<CR>:set readonly?<CR>
 
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
-
 " scratch buffer
 nmap <silent> ,tS <Plug>(scratch-insert-reuse)
 
