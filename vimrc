@@ -513,6 +513,7 @@ endfunction
 
 " Ale -------------------------------------------------------------------- {{{2
 "
+let g:ale_enabled = has('nvim') ? 0 : 1
 let g:airline#extensions#ale#enabled = 1
 "let g:ale_completion_enabled = 1
 let g:ale_lsp_suggestions = 1
@@ -891,7 +892,6 @@ let g:OmniCpp_ShowPrototypeInAbbr = 1
 "augroup end
 
 let g:perl_fold = 1
-" disabled, until it becomes more sofisticated
 "let perl_fold_blocks = 1
 
 " enable syntax highlighting for perl POD documentation
@@ -899,17 +899,17 @@ let g:perl_include_pod = 1
 
 " Perl-local-lib-path ---------------------------------------------------- {{{2
 "
-let g:perl_local_lib_path = 'lib'
-let g:perl_inc_path = system('perl -e "print join qq(,), @INC"')
+"let g:perl_local_lib_path = 'lib'
+"let g:perl_inc_path = system('perl -e "print join qq(,), @INC"')
 
-if !empty(g:perl_inc_path)
-    let g:perl_local_lib_path = g:perl_local_lib_path .',' . g:perl_inc_path
-endif
+"if !empty(g:perl_inc_path)
+"    let g:perl_local_lib_path = g:perl_local_lib_path .',' . g:perl_inc_path
+"endif
 
-augroup perl_local_lib
-    autocmd!
-    autocmd! FileType perl PerlLocalLibPath
-augroup end
+"augroup perl_local_lib
+"    autocmd!
+"    autocmd! FileType perl PerlLocalLibPath
+"augroup end
 
 " Perl-support ----------------------------------------------------------- {{{2
 "
@@ -1263,12 +1263,12 @@ let g:yankstack_yank_keys = ['y', 'Y']
 
 " Mappings =============================================================== {{{1
 
-" override easymotion leader
-"map <Space><Space> <Plug>(easymotion-prefix)
 " disable default space behavior as right arrow
 "noremap <Space> <Nop>
+
 " duplicate space as leader
 map <Space> <Leader>
+
 " use space as leader
 "let g:mapleader = "\<Space>"
 " duplicate \ as leader
@@ -1300,8 +1300,8 @@ nnoremap #   #N
 nnoremap g#  g#N
 
 " a better incremental search
-map g/  <Plug>(incsearch-forward)
-map g?  <Plug>(incsearch-backward)
+"map g/  <Plug>(incsearch-forward)
+"map g?  <Plug>(incsearch-backward)
 
 " Highlight all instances of the current word under the cursor
 "nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
@@ -1324,11 +1324,15 @@ vmap <unique> <S-right> <Plug>SchleppIndentRight
 "
 
 " ALE
-imap <C-Space> <Plug>(ale_complete)
+if g:ale_enabled
+    imap <C-Space> <Plug>(ale_complete)
+endif
 
 " Yankstack
-" TODO: change P to p
-nmap <C-P> <Plug>yankstack_substitute_older_paste
+if exists('g:yankstack_size')
+    " TODO: change P to p
+    nmap <C-P> <Plug>yankstack_substitute_older_paste
+endif
 
 " map CTRL-s to do what ',' used to do
 nnoremap <C-s> ,
@@ -1568,7 +1572,7 @@ map <silent> ,,e <Plug>CamelCaseMotion_e
 "
 
 " cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
+nmap <silent> ,cd :lcd %:h<CR>:pwd<CR>
 
 " reload cscope database
 nmap <silent> ,csr :call MyCscopeReload()<CR>
@@ -1609,28 +1613,46 @@ nmap <silent> ,Ctt :CCTreeWindowToggle<CR>
 " d ~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
 
-nmap ,dd <Plug>(ale_go_to_definition)
-nmap ,dD <Plug>(ale_go_to_definition_in_tab)
-nmap ,DD <Plug>(ale_go_to_definition_in_split)
-nmap ,Dd <Plug>(ale_go_to_definition_in_vsplit)
-nmap ,dh <Plug>(ale_hover)
-nmap ,di <Plug>(ale_go_to_implementation)
-nmap ,dI <Plug>(ale_go_to_implementation_in_tab)
-nmap ,DI <Plug>(ale_go_to_implementation_in_split)
-nmap ,Di <Plug>(ale_go_to_implementation_in_vsplit)
-"nmap ,di <Plug>(ale_detail)
-nmap ,dl <Plug>(ale_detail)
-"nmap ,dr <Plug>(ale_find_references)
-nmap ,dr :ALEFindReferences -quickfix -relative<cr>
-nmap ,dR :ALEFindReferences -tab -relative<cr>
-nmap ,DR :ALEFindReferences -split -relative<cr>
-nmap ,Dr :ALEFindReferences -vsplit -relative<cr>
-nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
-xmap ,ds y:ALESymbolSearch <c-r>"<cr>
-nmap ,dt <Plug>(ale_go_to_type_definition)
-nmap ,dT <Plug>(ale_go_to_type_definition_in_tab)
-nmap ,DT <Plug>(ale_go_to_type_definition_in_split)
-nmap ,Dt <Plug>(ale_go_to_type_definition_in_vsplit)
+if has('nvim') && !g:ale_enabled
+    nmap ,dd gd
+    nmap ,dD gb
+    nmap ,DD gs
+    nmap ,Dd gV
+    nmap ,dh gh
+    nmap ,di gi
+    nmap ,dl <leader>K
+    nmap ,dr gr
+    nmap ,dR gR
+else
+    nmap ,dd <Plug>(ale_go_to_definition)
+    nmap ,dD <Plug>(ale_go_to_definition_in_tab)
+    nmap ,DD <Plug>(ale_go_to_definition_in_split)
+    nmap ,Dd <Plug>(ale_go_to_definition_in_vsplit)
+
+    nmap ,dh <Plug>(ale_hover)
+
+    nmap ,di <Plug>(ale_go_to_implementation)
+    nmap ,dI <Plug>(ale_go_to_implementation_in_tab)
+    nmap ,DI <Plug>(ale_go_to_implementation_in_split)
+    nmap ,Di <Plug>(ale_go_to_implementation_in_vsplit)
+
+    "nmap ,di <Plug>(ale_detail)
+    nmap ,dl <Plug>(ale_detail)
+
+    "nmap ,dr <Plug>(ale_find_references)
+    nmap ,dr :ALEFindReferences -quickfix -relative<cr>
+    nmap ,dR :ALEFindReferences -tab -relative<cr>
+    nmap ,DR :ALEFindReferences -split -relative<cr>
+    nmap ,Dr :ALEFindReferences -vsplit -relative<cr>
+
+    nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
+    xmap ,ds y:ALESymbolSearch <c-r>"<cr>
+
+    nmap ,dt <Plug>(ale_go_to_type_definition)
+    nmap ,dT <Plug>(ale_go_to_type_definition_in_tab)
+    nmap ,DT <Plug>(ale_go_to_type_definition_in_split)
+    nmap ,Dt <Plug>(ale_go_to_type_definition_in_vsplit)
+endif
 
 " Delete all buffers
 "nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
@@ -1825,22 +1847,9 @@ nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 " toggle textwidth column highlighting
 if v:version >= 703
     nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
-    "nmap <silent> ,tcl :call MyToggleColorcolumn()<CR>
 endif
-
-" toggle comments italic font face
-"nmap <silent> ,tci :call MyToggleCommentsItalic()<CR>
-
-" toggle color theme solarized
-"nmap <silent> ,tcs :colorscheme NeoSolarized<CR>
-"nmap <silent> ,tcs :call MyToggleColorScheme()<CR>
-
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
-
-" toggle doxygen comments highlighting
-"nmap <silent> ,td  :call MyToggleDoxygenSyntax()<CR>
-"nmap <silent> ,tdg :call MyToggleDoxygenSyntax()<CR>
 
 " DelimitMate
 " original mapping ,tdm
@@ -1851,56 +1860,47 @@ nmap <silent> ,te :ALEToggle<CR>
 
 " toggle search inside folds
 nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
+" toggle fold marker between syntax and git merge markers
+nmap <silent> ,tF :call MyToggleFoldMarker()<CR>
 
 " colorscheme solarized
-"nmap <silent> ,tg :ToggleBG<CR>
 nmap <silent> ,tg :call MyToggleBG()<CR>
-
-" toggle highlight search
-"nmap <silent> ,th :set invhls<CR>:set hls?<CR>
-
-" toggle auto-highlight cword
-nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " disable current highlight search
 nmap <silent> ,th :nohlsearch<CR>
+" toggle auto-highlight cword
+nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " disable current highlight search
 nmap <silent> ,ti :call MyToggleGutterArea()<CR>
 
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
+" toggle location list window
 nmap <silent> ,tL :call MyToggleLocationList()<CR>
 
-" toggle fold marker between syntax and git merge markers
-nmap <silent> ,tm :call MyToggleFoldMarker()<CR>
-
 " toggle marks signs
-nmap <silent> ,tM :SignatureToggleSigns<CR>
-
-" toggle neocomplete / deoplete
-if has('nvim')
-    nmap <silent> ,tn  :call deoplete#toggle()<CR>
-    "nmap <silent> ,tnn :call deoplete#toggle()<CR>
-else
-    nmap <silent> ,tn  :NeoCompleteToggle<CR>
-    "nmap <silent> ,tnn :NeoCompleteToggle<CR>
-endif
+nmap <silent> ,tm :SignatureToggleSigns<CR>
 
 " toggle current line number or 0
-nmap <silent> ,tN :set invnumber<CR>
+nmap <silent> ,tn :set invnumber<CR>:set number?<CR>
+" toggle neocomplete / deoplete
+if has('nvim')
+    nmap <silent> ,tN  :call deoplete#toggle()<CR>
+else
+    nmap <silent> ,tN  :NeoCompleteToggle<CR>
+endif
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
 
 " toggle read-only mode
 nmap <silent> ,tr  :set invreadonly<CR>:set readonly?<CR>
-"nmap <silent> ,tro :set invreadonly<CR>:set readonly?<CR>
 
 " toggle rainbow parentheses
-nmap <silent> ,tPP :RainbowParenthesesToggle<CR>
-nmap <silent> ,tr( :RainbowParenthesesLoadRound<CR>
-nmap <silent> ,tr[ :RainbowParenthesesLoadSquare<CR>
+nmap <silent> ,tRP :RainbowParenthesesToggle<CR>
+nmap <silent> ,tR( :RainbowParenthesesLoadRound<CR>
+nmap <silent> ,tR[ :RainbowParenthesesLoadSquare<CR>
 
 " toggle spell check
 nmap <silent> ,ts :set invspell<CR>:set spell?<CR>
@@ -1923,6 +1923,7 @@ nmap <silent> ,tW :AirlineToggleWhitespace<CR>
 
 " toggle text width
 nmap <silent> ,t0 :set textwidth=0<CR>:set tw?<CR>
+nmap <silent> ,t1 :set textwidth=100<CR>:set tw?<CR>
 nmap <silent> ,t5 :set textwidth=50<CR>:set tw?<CR>
 nmap <silent> ,t72 :set textwidth=72<CR>:set tw?<CR>
 nmap <silent> ,t78 :set textwidth=78<CR>:set tw?<CR>
@@ -1986,7 +1987,7 @@ noremap <silent> ,wx :wincmd x<CR>
 "
 
 " remap <C-f> (which is used to open command-line window) to <C-y>
-set cedit=<C-Y>
+set cedit=<C-z>
 
 " allow command line editing like emacs
 cnoremap <M-b>  <S-Left>
