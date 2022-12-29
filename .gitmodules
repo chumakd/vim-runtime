@@ -747,3 +747,6 @@
 [submodule "p/telescope.nvim"]
 	path = p/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "p/trouble.nvim"]
+	path = p/trouble.nvim
+	url = https://github.com/folke/trouble.nvim.git
