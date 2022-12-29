@@ -2430,6 +2430,25 @@ nmap <Space><Space>t :HopChar1MW<CR>
 "EOF
 "nmap <silent> ,tH :IlluminateToggle<CR>
 
+" comment {{{3
+lua << EOF
+require'Comment'.setup {
+    padding = false,
+    toggler = {
+        line = 'gxx',
+        block = 'gXX',
+    },
+    opleader = {
+        line = 'gx',
+        block = 'gX',
+    },
+    mappings = {
+        basic = true,
+        extra = false,
+    },
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
