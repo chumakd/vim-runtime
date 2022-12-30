@@ -2473,6 +2473,17 @@ require'Comment'.setup {
 }
 EOF
 
+" litee {{{3
+lua << EOF
+require'litee.lib'.setup {
+    panel = {
+        orientation = 'right',
+        panel_size  = 30
+    }
+}
+require'litee.calltree'.setup()
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
