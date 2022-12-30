@@ -1397,7 +1397,11 @@ cnoremap <ESC>n <Down>
 "   M-F* keys recognized as F12+3*n e.g. M-F1->F37 M-F12->F48
 
 " build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
-nmap <F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
+nmap <F2> :Startify<CR>
+nmap <S-F2> :!mktags -s -aAceEHjJlLmMpPrSTVx<CR>
+if has('nvim')
+    nmap <F14> <S-F2>
+endif
 
 " Telescope
 nmap <F3> :Telescope<CR>
@@ -1424,6 +1428,11 @@ nmap <F6>   :GundoToggle<CR>
 
 " Trouble
 nmap <F7>   :TroubleToggle<CR>
+" litee-callree
+nmap <S-F7> :LTPanel<CR>
+if has('nvim')
+    nmap <F19> <S-F7>
+endif
 
 " NERDTree
 nmap <F8>   :NERDTreeToggle<CR>
