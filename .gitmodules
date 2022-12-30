@@ -756,3 +756,6 @@
 [submodule "p/litee.nvim"]
 	path = p/litee.nvim
 	url = https://github.com/ldelossa/litee.nvim.git
+[submodule "p/litee-calltree.nvim"]
+	path = p/litee-calltree.nvim
+	url = https://github.com/ldelossa/litee-calltree.nvim.git
