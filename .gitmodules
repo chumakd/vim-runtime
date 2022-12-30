@@ -753,3 +753,6 @@
 [submodule "p/Comment.nvim"]
 	path = p/Comment.nvim
 	url = https://github.com/numToStr/Comment.nvim.git
+[submodule "p/litee.nvim"]
+	path = p/litee.nvim
+	url = https://github.com/ldelossa/litee.nvim.git
