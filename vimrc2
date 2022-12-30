@@ -2374,6 +2374,15 @@ require'trouble'.setup {
     --use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 
+-- litee {{{3
+require'litee.lib'.setup {
+    panel = {
+        orientation = 'right',
+        panel_size  = 60
+    }
+}
+require'litee.calltree'.setup()
+
 EOF
 
 " options {{{3
@@ -2481,17 +2490,6 @@ require'Comment'.setup {
         extra = false,
     },
 }
-EOF
-
-" litee {{{3
-lua << EOF
-require'litee.lib'.setup {
-    panel = {
-        orientation = 'right',
-        panel_size  = 30
-    }
-}
-require'litee.calltree'.setup()
 EOF
 
 endif " has('nvim')
