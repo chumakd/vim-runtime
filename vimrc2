@@ -979,10 +979,11 @@ nmap <silent> <Leader>tm :Telescope marks<CR>
 nmap <silent> <Leader>tM :Telescope man_pages<CR>
 nmap <silent> <Leader>to :Telescope oldfiles<CR>
 nmap <silent> <Leader>tO :Telescope vim_options<CR>
-nmap <silent> <Leader>tr :Telescope registres<CR>
+nmap <silent> <Leader>tr :Telescope registers<CR>
 nmap <silent> <Leader>tq :Telescope quickfix<CR>
 nmap <silent> <Leader>tQ :Telescope quickfixhistory<CR>
 nmap <silent> <Leader>ts :Telescope treesitter<CR>
+nmap <silent> <Leader>ty :Telescope yank_history<CR>
 
 " , mappings ------------------------------------------------------------- {{{2
 "
@@ -2491,6 +2492,41 @@ require'Comment'.setup {
     },
 }
 EOF
+
+" yanky {{{3
+lua << EOF
+require'yanky'.setup {
+  ring = {
+    history_length = 100,
+    storage = 'shada',
+    sync_with_numbered_registers = true,
+    cancel_event = 'update',
+  },
+  system_clipboard = {
+    sync_with_ring = false,
+  },
+  preserve_cursor_position = {
+    enabled = false,
+  },
+}
+--vim.keymap.set({'n','x'}, 'y', '<Plug>(YankyYank)')
+--vim.keymap.set({'n','x'}, 'p', '<Plug>(YankyPutAfter)')
+--vim.keymap.set({'n','x'}, 'P', '<Plug>(YankyPutBefore)')
+--vim.keymap.set('n', '<c-n>', '<Plug>(YankyCycleForward)')
+--vim.keymap.set('n', '<c-p>', '<Plug>(YankyCycleBackward)')
+require'telescope'.load_extension('yank_history')
+EOF
+
+nmap y <Plug>(YankyYank)
+xmap y <Plug>(YankyYank)
+
+nmap p <Plug>(YankyPutAfter)
+xmap p <Plug>(YankyPutAfter)
+nmap P <Plug>(YankyPutBefore)
+xmap P <Plug>(YankyPutBefore)
+
+nmap <c-n> <Plug>(YankyCycleForward)
+nmap <c-p> <Plug>(YankyCycleBackward)
 
 endif " has('nvim')
 
