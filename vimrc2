@@ -2384,6 +2384,19 @@ require'litee.lib'.setup {
 }
 require'litee.calltree'.setup()
 
+-- lspsaga {{{3
+--require'lspsaga'.init_lsp_saga {
+--  show_outline = {
+--    win_position = 'right',
+--    win_width = 60,
+--    auto_enter = false,
+--    auto_preview = false,
+--    virt_text = '┃',
+--    jump_key = 'o',
+--    auto_refresh = true,
+--  },
+--}
+
 EOF
 
 " options {{{3
