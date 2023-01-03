@@ -1476,6 +1476,7 @@ endif
 augroup color_column
     au!
     au! WinEnter Trouble :setlocal colorcolumn=
+    au! BufEnter * :if &buftype ==# 'nofile' && &colorcolumn | setlocal colorcolumn= | endif
 augroup END
 
 " Abbreviations ========================================================== {{{1
