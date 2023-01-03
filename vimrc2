@@ -1778,6 +1778,8 @@ function! <SID>SynStack()
   " vint: +ProhibitUnnecessaryDoubleQuote
 endfunc
 
+highlight link gitvSubject GitvSubj
+
 " example how to toggle a var w/o using temp value
 "let &background = ( &background == "dark"? "light" : "dark" )
 
