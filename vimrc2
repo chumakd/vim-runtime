@@ -2453,12 +2453,15 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = { {'filename', path = 1} },
     lualine_x = { 'vim.bo.fileformat == "unix" and "" or vim.bo.fileformat',
                   'vim.bo.fileencoding == "utf-8" and "" or vim.bo.fileencoding',
                   'filetype' },
     lualine_y = {'location'},
     lualine_z = {'progress', 'vim.fn.line("$")'},
+  },
+  inactive_sections = {
+    lualine_c = { {'filename', path = 1} },
   },
   extensions = {'fugitive', 'fzf', 'man', 'nerdtree', 'quickfix', 'symbols-outline'},
   --refresh = {
