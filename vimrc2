@@ -2478,6 +2478,9 @@ nmap <Space><Space>b :HopWordBC<CR>
 nmap <Space><Space>f :HopChar1AC<CR>
 nmap <Space><Space>F :HopChar1BC<CR>
 nmap <Space><Space>t :HopChar1MW<CR>
+nmap <Space><Space>e :HopAnywhereAC<CR>
+nmap <Space><Space>ge :HopAnywhereBC<CR>
+nmap <Space><Space>E :HopAnywhere<CR>
 
 " illuminate {{{3
 "lua << EOF
