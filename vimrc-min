@@ -1,0 +1,19 @@
+filetype plugin on
+filetype indent on
+syntax enable
+set nocompatible
+set ignorecase smartcase
+set hlsearch incsearch nowrapscan
+set foldmethod=syntax
+set autoindent nocindent nosmartindent
+set tabstop=4 shiftwidth=4 expandtab
+set laststatus=2
+set showmode showcmd wildmenu
+set listchars=eol:$,tab:>-,trail:.
+set nowrap winminheight=0 novisualbell
+set backup backupdir=~/.vim/backup
+set undofile undodir=~/.vim/undo
+set number relativenumber
+set confirm nohidden
+set history=5000
+colorscheme chumakd-desertEx
