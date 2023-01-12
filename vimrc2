@@ -2283,6 +2283,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gR', ':tab split | lua vim.lsp.buf.references()<CR>', bufopts)
   vim.keymap.set('n', '<leader>lk', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<leader>lt', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<leader>lT', ':aboveleft split | lua vim.lsp.buf.type_definition()<CR>', bufopts)
   vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
@@ -2478,6 +2479,7 @@ nmap <Space><Space>b :HopWordBC<CR>
 nmap <Space><Space>f :HopChar1AC<CR>
 nmap <Space><Space>F :HopChar1BC<CR>
 nmap <Space><Space>t :HopChar1MW<CR>
+nmap <Space><Space>l :HopLine<CR>
 nmap <Space><Space>e :HopAnywhereAC<CR>
 nmap <Space><Space>ge :HopAnywhereBC<CR>
 nmap <Space><Space>E :HopAnywhere<CR>
