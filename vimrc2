@@ -2467,8 +2467,10 @@ require('lualine').setup {
     lualine_x = { 'vim.bo.fileformat == "unix" and "" or vim.bo.fileformat',
                   'vim.bo.fileencoding == "utf-8" and "" or vim.bo.fileencoding',
                   'filetype' },
-    lualine_y = {'location'},
-    lualine_z = {'progress', 'vim.fn.line("$")'},
+    --lualine_y = {'location'},
+    --lualine_z = {'progress', 'vim.fn.line("$")'},
+    lualine_y = {'vim.fn.line("$")'},
+    lualine_z = {'location', 'progress'},
   },
   inactive_sections = {
     lualine_c = { {'filename', path = 1} },
