@@ -515,7 +515,7 @@
 	url = https://github.com/qpkorr/vim-bufkill.git
 [submodule "p/gitv"]
 	path = p/gitv
-	url = git@github.com:chumakd/gitv.git
+	url = https://github.com/chumakd/gitv.git
 [submodule "p/vim-unimpaired"]
 	path = p/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -698,7 +698,7 @@
 	url = https://github.com/tpope/vim-jdaddy.git
 [submodule "p/vim-auto-highlight"]
 	path = p/vim-auto-highlight
-	url = git@github.com:chumakd/vim-auto-highlight.git
+	url = https://github.com/chumakd/vim-auto-highlight.git
 [submodule "p/nvim-treesitter"]
 	path = p/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
@@ -731,10 +731,10 @@
 	url = https://github.com/phaazon/hop.nvim.git
 [submodule "p/nvim-solarized-lua"]
 	path = p/nvim-solarized-lua
-	url = git@github.com:chumakd/nvim-solarized-lua.git
+	url = https://github.com/chumakd/nvim-solarized-lua.git
 [submodule "p/lualine.nvim"]
 	path = p/lualine.nvim
-	url = git@github.com:chumakd/lualine.nvim.git
+	url = https://github.com/chumakd/lualine.nvim.git
 [submodule "p/nvim-web-devicons"]
 	path = p/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons.git
