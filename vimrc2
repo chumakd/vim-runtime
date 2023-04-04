@@ -1372,7 +1372,7 @@ noremap <silent> ,wx :wincmd x<CR>
 " Cmdline editing -------------------------------------------------------- {{{2
 "
 
-" remap <C-f> (which is used to open command-line window) to <C-y>
+" remap <C-f> (which is used to open command-line window) to <C-z>
 set cedit=<C-z>
 
 " allow command line editing like emacs
