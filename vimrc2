@@ -422,7 +422,9 @@ set path+=/usr/local/include,/opt/homebrew/include
 set autoread
 
 " project specific vim config file .exrc
-if getcwd().'/' =~ '^'.$HOME.'/\(prj\|prg/proj\)/' || getcwd().'/' =~ '^/Volumes/Projects/'
+if getcwd().'/' =~ '^'.$HOME.'/\(prj\|prg/proj\)/'
+  \ || getcwd().'/' =~ '^/Volumes/Projects/prg/proj'
+  \ || getcwd().'/' =~ '^/Volumes/Projects/prj'
   set secure exrc
 endif
 
