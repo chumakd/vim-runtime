@@ -1249,6 +1249,7 @@ nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 " split buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
 nmap <silent> ,sp :sp %:p:h/<C-X>
+nmap <silent> ,sv :vertical split %:p:h/<C-X>
 
 " t (toggles) ~~~~~~~~~~~~~~ {{{3
 "
