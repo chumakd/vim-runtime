@@ -62,11 +62,6 @@
 	path = p/DrawIt
 	url = https://github.com/vim-scripts/DrawIt.git
 	ignore = untracked
-[submodule "p/Conque-Shell"]
-	path = p/Conque-Shell
-	url = https://github.com/chumakd/conque-shell-mirror.git
-	;url = https://github.com/vim-scripts/Conque-Shell.git
-	ignore = untracked
 [submodule "p/fugitive"]
 	path = p/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
