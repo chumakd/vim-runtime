@@ -2329,6 +2329,18 @@ require'lspconfig'.clangd.setup {
   on_attach = on_attach,
 }
 
+-- nvim-lspconfig-lua {{{3
+require'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      telemetry = {
+        enable = false
+      }
+    }
+  },
+  on_attach = on_attach
+}
+
 -- nvim-lspconfig-yaml {{{3
 require'lspconfig'.yamlls.setup {
   settings = {
