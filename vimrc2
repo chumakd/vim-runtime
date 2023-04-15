@@ -1280,6 +1280,7 @@ nmap <silent> ,tF :call MyToggleFoldMarker()<CR>
 
 " colorscheme solarized
 nmap <silent> ,tg :call MyToggleBG()<CR>
+nmap <silent> ,tG :call MyToggleMono()<CR>
 
 " disable current highlight search
 nmap <silent> ,th :nohlsearch<CR>
@@ -1989,6 +1990,32 @@ function! MyToggleBG()
     highlight! link TreesitterContext LineNr
     " better style for LSP hover
     highlight! link NormalFloat LineNr
+endfunction
+
+function! MyToggleMono()
+    if exists("g:colors_name")
+        let l:cn = ''
+        if g:colors_name =~# '-normal$'
+            let l:cn = substitute(g:colors_name, '-normal$', '-mono', '')
+            exe "colorscheme " . l:cn
+        elseif g:colors_name =~# '-mono$'
+            let l:cn = substitute(g:colors_name, '-mono$', '-normal', '')
+            exe "colorscheme " . l:cn
+        else
+            echo 'Mono theme is missing'
+            return
+        endif
+        let g:colors_name = l:cn
+        " FIXME: find a better place to do it in a generic way
+        " use thiner vertical window frames
+        highlight! VertSplit guibg=NONE
+        " better style for TS context
+        highlight! link TreesitterContext LineNr
+        " better style for LSP hover
+        highlight! link NormalFloat LineNr
+    else
+        echowarn 'Current colorscheme is not supported'
+    endif
 endfunction
 
 " Set work project styling ----------------------------------------------- {{{2
