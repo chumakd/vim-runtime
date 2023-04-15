@@ -2329,6 +2329,19 @@ require'lspconfig'.clangd.setup {
   on_attach = on_attach,
 }
 
+-- nvim-lspconfig-yaml {{{3
+require'lspconfig'.yamlls.setup {
+  settings = {
+    yaml = {
+      schemaStore = {
+        url = "https://www.schemastore.org/api/json/catalog.json",
+        enable = true,
+      }
+    }
+  },
+  on_attach = on_attach
+}
+
 -- symbols-outline {{{3
 --require'symbols-outline'.setup{}
 require'symbols-outline'.setup {
