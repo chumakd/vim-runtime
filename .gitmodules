@@ -757,3 +757,6 @@
 [submodule "p/yanky.nvim"]
 	path = p/yanky.nvim
 	url = https://github.com/gbprod/yanky.nvim.git
+[submodule "p/doom-one.vim"]
+	path = p/doom-one.vim
+	url = https://github.com/romgrk/doom-one.vim.git

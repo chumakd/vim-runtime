@@ -1,0 +1,1 @@
+../p/doom-one.vim
