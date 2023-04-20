@@ -2736,8 +2736,9 @@ require'yanky'.setup {
 --vim.keymap.set({'n','x'}, 'P', '<Plug>(YankyPutBefore)')
 --vim.keymap.set('n', '<c-n>', '<Plug>(YankyCycleForward)')
 --vim.keymap.set('n', '<c-p>', '<Plug>(YankyCycleBackward)')
-require'telescope'.load_extension('yank_history')
 EOF
+
+lua require'telescope'.load_extension('yank_history')
 
 nmap y <Plug>(YankyYank)
 xmap y <Plug>(YankyYank)
