@@ -322,7 +322,7 @@ set backspace=indent,eol,start
 " disable timeout for mappings
 set notimeout
 " set timeout for mappings (only used when ':set timeout')
-set timeoutlen=700
+set timeoutlen=500
 " set timeout for keycodes
 set ttimeoutlen=2  " ttimeoutlen=100
 
@@ -1290,6 +1290,10 @@ nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " disable current highlight search
 nmap <silent> ,ti :call MyToggleGutterArea()<CR>
+
+" toggle timeout option, (de)activates which-Key plugin
+nmap <silent> ,tk :set invtimeout<CR>:set timeout?<CR>
+nmap <silent> ,tK :WhichKey<CR>
 
 " toggle list option
 nmap <silent> ,tl :set invlist<CR>:set list?<CR>
