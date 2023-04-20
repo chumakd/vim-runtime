@@ -487,7 +487,7 @@ if has('nvim')
 endif
 let g:airline#extensions#obsession#enabled = 1
 
-"let g:airline_theme='distinguished'
+"let g:airline_theme='onedark'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
 
 function! MyAirlineThemePatch(palette)
@@ -1980,16 +1980,18 @@ function! MyTogBG()
     endif
 endfunction
 
-function! MyToggleBG()
-    "ToggleBG
-    call MyTogBG()
-    " FIXME: find a better place to do it in a generic way
+function! MyHlFix()
     " use thiner vertical window frames
     highlight! VertSplit guibg=NONE
     " better style for TS context
     highlight! link TreesitterContext LineNr
     " better style for LSP hover
     highlight! link NormalFloat LineNr
+endfunction
+
+function! MyToggleBG()
+    call MyTogBG()
+    call MyHlFix()
 endfunction
 
 function! MyToggleMono()
@@ -2006,17 +2008,65 @@ function! MyToggleMono()
             return
         endif
         let g:colors_name = l:cn
-        " FIXME: find a better place to do it in a generic way
-        " use thiner vertical window frames
-        highlight! VertSplit guibg=NONE
-        " better style for TS context
-        highlight! link TreesitterContext LineNr
-        " better style for LSP hover
-        highlight! link NormalFloat LineNr
+        call MyHlFix()
     else
         echowarn 'Current colorscheme is not supported'
     endif
 endfunction
+
+" Toggle Doom colors ----------------------------------------------------- {{{2
+let s:old_colorscheme = ''
+let s:old_background = ''
+
+function! MyToggleDoomColorsVim()
+    if exists("g:colors_name")
+        if g:colors_name ==# 'doom-one'
+            let g:airline_theme='auto'
+            exe "colorscheme " . s:old_colorscheme
+            let g:colors_name = s:old_colorscheme
+            exe "set background=" . s:old_background
+        else
+            let s:old_colorscheme = g:colors_name
+            let s:old_background = &background
+            let g:airline_theme='onedark'
+            colorscheme doom-one
+            let g:colors_name = 'doom-one'
+            set background=dark
+        endif
+        call MyHlFix()
+    else
+        echowarn 'Current colorscheme is not supported'
+    endif
+endfunction
+
+function! MyToggleDoomColorsNVim()
+    if exists("g:colors_name")
+        if g:colors_name ==# 'doom-one'
+            exe "set background=" . s:old_background
+            exe "colorscheme " . s:old_colorscheme
+            let g:colors_name = s:old_colorscheme
+            " TODO: save and restore original lualine theme
+            lua require('lualine').setup{options={theme='solarized'}}
+        else
+            let s:old_colorscheme = g:colors_name
+            let s:old_background = &background
+            set background=dark
+            colorscheme doom-one
+            let g:colors_name = 'doom-one'
+            lua require('lualine').setup{options={theme='dracula'}}
+        endif
+        call MyHlFix()
+    else
+        echowarn 'Current colorscheme is not supported'
+    endif
+endfunction
+
+if has('nvim')
+    command! MyToggleDoomColors call MyToggleDoomColorsNVim()
+else
+    command! MyToggleDoomColors call MyToggleDoomColorsVim()
+endif
+command! DoomColorTheme MyToggleDoomColors
 
 " Set work project styling ----------------------------------------------- {{{2
 function! MySetWorkStyling()
