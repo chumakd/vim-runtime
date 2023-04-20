@@ -2755,6 +2755,13 @@ xmap P <Plug>(YankyPutBefore)
 nmap <c-n> <Plug>(YankyCycleForward)
 nmap <c-p> <Plug>(YankyCycleBackward)
 
+" which-key {{{3
+lua << EOF
+require'which-key'.setup {
+  -- defaults
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
