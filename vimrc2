@@ -2546,6 +2546,31 @@ lua << EOF
 
 EOF
 
+" doom-one.nvim {{{3
+let g:doom_one_cursor_coloring = 1
+let g:doom_one_terminal_colors = 1
+let g:doom_one_italic_comments = 1
+let g:doom_one_enable_treesitter = 1
+let g:doom_one_diagnostics_text_color = 1
+"let g:doom_one_transparent_background = 1
+
+" Pumblend transparency
+"let g:doom_one_pumblend_enable = false
+"let g:doom_one_pumblend_transparency = 20
+
+" Plugins integration
+let g:doom_one_plugin_neorg = 1
+let g:doom_one_plugin_barbar = 1
+let g:doom_one_plugin_telescope = 1
+let g:doom_one_plugin_neogit = 1
+let g:doom_one_plugin_nvim_tree = 1
+let g:doom_one_plugin_dashboard = 1
+let g:doom_one_plugin_startify = 1
+let g:doom_one_plugin_whichkey = 1
+let g:doom_one_plugin_indent_blankline = 1
+let g:doom_one_plugin_vim_illuminate = 1
+let g:doom_one_plugin_lspsaga = 1
+
 " Other plugins ---------------------------------------------------------- {{{2
 "
 
