@@ -760,3 +760,6 @@
 [submodule "p/doom-one.vim"]
 	path = p/doom-one.vim
 	url = https://github.com/romgrk/doom-one.vim.git
+[submodule "p/doom-one.nvim"]
+	path = p/doom-one.nvim
+	url = https://github.com/NTBBloodbath/doom-one.nvim.git
