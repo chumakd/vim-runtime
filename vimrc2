@@ -988,6 +988,7 @@ nmap <silent> <Leader>sl :Startify<CR>
 nmap <silent> <Leader>tt :Telescope<CR>
 
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
+nmap <silent> <Leader>tb :Telescope file_browser<CR>
 nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
 nmap <silent> <Leader>th :Telescope highlights<CR>
 nmap <silent> <Leader>tj :Telescope jumplist<CR>
@@ -2583,8 +2584,18 @@ require'telescope'.setup {
     layout_strategy = 'flex',
     --layout_config = { height = 0.9, width = 0.9 },
   },
+  extensions = {
+    file_browser = {
+      theme = 'ivy',
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = false,
+    },
+  },
 }
 EOF
+
+" file_browser extension {{{3
+lua require'telescope'.load_extension('file_browser')
 
 " Colors ----------------------------------------------------------------- {{{2
 "
