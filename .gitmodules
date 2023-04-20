@@ -763,3 +763,6 @@
 [submodule "p/doom-one.nvim"]
 	path = p/doom-one.nvim
 	url = https://github.com/NTBBloodbath/doom-one.nvim.git
+[submodule "p/telescope-file-browser.nvim"]
+	path = p/telescope-file-browser.nvim
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git
