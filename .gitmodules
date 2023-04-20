@@ -766,3 +766,6 @@
 [submodule "p/telescope-file-browser.nvim"]
 	path = p/telescope-file-browser.nvim
 	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git
+[submodule "p/which-key.nvim"]
+	path = p/which-key.nvim
+	url = https://github.com/folke/which-key.nvim.git
