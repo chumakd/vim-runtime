@@ -2811,6 +2811,14 @@ require'gitsigns'.setup {
     --map('n', '<leader>hD', function() gs.diffthis('~') end)
     --map('n', '<leader>hl', gs.toggle_deleted)
     map('n', '<leader>hD', gs.toggle_deleted)
+    -- show changes against different base (default is index)
+    map('n', '<leader>hh', function() gs.change_base('HEAD') end)
+    map('n', '<leader>h~', function() gs.change_base('~') end)
+    map('n', '<leader>hi', function() gs.reset_base() end)
+    -- global base change
+    map('n', '<leader>HH', function() gs.change_base('HEAD', true) end)
+    map('n', '<leader>H~', function() gs.change_base('~', true) end)
+    map('n', '<leader>HI', function() gs.reset_base(true) end)
 
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
