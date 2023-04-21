@@ -1110,7 +1110,8 @@ endif
 
 " edit buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
-nmap <silent> ,ee :e %:p:h/<C-X>
+"nmap <silent> ,ee :e %:p:h/<C-X>
+nmap <silent> ,ee :e %:p:h/
 
 " edit scratch file
 nmap <silent> ,es :edit  <C-R>=g:scratch_persistence_file<CR><CR>
@@ -1252,8 +1253,10 @@ nmap <silent> ,sw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " split buffer with file from the same directory as current one
 " allowing to autocomplete the name with <Tab>
-nmap <silent> ,sp :sp %:p:h/<C-X>
-nmap <silent> ,sv :vertical split %:p:h/<C-X>
+"nmap <silent> ,sp :sp %:p:h/<C-X>
+"nmap <silent> ,sv :vertical split %:p:h/<C-X>
+nmap <silent> ,sp :sp %:p:h/
+nmap <silent> ,sv :vertical split %:p:h/
 
 " t (toggles) ~~~~~~~~~~~~~~ {{{3
 "
