@@ -775,3 +775,6 @@
 [submodule "p/vim-fetch"]
 	path = p/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch.git
+[submodule "p/diffview.nvim"]
+	path = p/diffview.nvim
+	url = https://github.com/sindrets/diffview.nvim.git
