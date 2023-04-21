@@ -626,6 +626,9 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.6, 'yoffset': 1 } }
 " GitGutter -------------------------------------------------------------- {{{2
 "
 let g:gitgutter_set_sign_backgrounds = 1
+if has('nvim')
+    let g:gitgutter_enabled = 0
+endif
 
 " Gitv ------------------------------------------------------------------- {{{2
 "
@@ -1321,6 +1324,9 @@ nmap <silent> ,tt :call MyToggleTabstop()<CR>
 nmap <silent> ,tT :call MyToggleTextwidthAutoWrap()<CR>
 
 nmap <silent> ,tq :call MyToggleQuickFix()<CR>
+
+nmap <silent> ,tu :GitGutterToggle<CR>
+nmap <silent> ,tU :GitGutterFold<CR>
 
 nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 
