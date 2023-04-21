@@ -769,3 +769,6 @@
 [submodule "p/which-key.nvim"]
 	path = p/which-key.nvim
 	url = https://github.com/folke/which-key.nvim.git
+[submodule "p/gitsigns.nvim"]
+	path = p/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git
