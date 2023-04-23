@@ -2843,6 +2843,9 @@ lua << EOF
 require'diffview'.setup {
   view = {
     merge_tool = { layout = 'diff4_mixed' }
+  },
+  file_panel = {
+    win_config = { position = "right" }
   }
 }
 EOF
