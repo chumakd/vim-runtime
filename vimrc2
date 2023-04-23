@@ -997,7 +997,8 @@ nmap <silent> <Leader>sl :Startify<CR>
 nmap <silent> <Leader>tt :Telescope<CR>
 
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
-nmap <silent> <Leader>tb :Telescope file_browser<CR>
+nmap <silent> <Leader>tb :Telescope buffers<CR>
+nmap <silent> <Leader>tB :Telescope file_browser<CR>
 nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
 nmap <silent> <Leader>th :Telescope highlights<CR>
 nmap <silent> <Leader>tj :Telescope jumplist<CR>
