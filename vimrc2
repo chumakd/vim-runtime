@@ -2827,6 +2827,15 @@ require'gitsigns'.setup {
 }
 EOF
 
+" diffview {{{3
+lua << EOF
+require'diffview'.setup {
+  view = {
+    merge_tool = { layout = 'diff4_mixed' }
+  }
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
