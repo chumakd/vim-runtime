@@ -954,22 +954,26 @@ noremap <silent> <M-Left>   :tabmove -<CR>
 " \ mappings ------------------------------------------------------------- {{{2
 "
 
-" Profiling
-nnoremap <silent> <leader>DD :exe ':profile start profile.log'<cr>:exe ':profile func *'<cr>:exe ':profile file *'<cr>
-nnoremap <silent> <leader>DP :exe ':profile pause'<cr>
-nnoremap <silent> <leader>DC :exe ':profile continue'<cr>
-nnoremap <silent> <leader>DQ :exe ':profile pause'<cr>:noautocmd qall!<cr>
-
 " a (alternate) ~~~~~~~~~~~~~ {{{3
-"
-
-" Alternate
 nmap <silent> <Leader>aa :A<CR>
 nmap <silent> <Leader>as :AS<CR>
 nmap <silent> <Leader>av :AV<CR>
 nmap <silent> <Leader>at :AT<CR>
 
-" d (dash) ~~~~~~~~~~~~~~~~~~ {{{3
+" d (diffview) ~~~~~~~~~~~~~ {{{3
+nmap <Leader>dd :DiffviewOpen<CR>
+nmap <Leader>di :DiffviewOpen<CR>
+nmap <Leader>dh :DiffviewOpen HEAD<CR>
+nmap <Leader>d~ :DiffviewOpen HEAD~<CR>
+nmap <Leader>dt :DiffviewToggleFiles<CR>
+
+" D (Profiling) ~~~~~~~~~~~~~ {{{3
+nnoremap <silent> <leader>DD :exe ':profile start profile.log'<cr>:exe ':profile func *'<cr>:exe ':profile file *'<cr>
+nnoremap <silent> <leader>DP :exe ':profile pause'<cr>
+nnoremap <silent> <leader>DC :exe ':profile continue'<cr>
+nnoremap <silent> <leader>DQ :exe ':profile pause'<cr>:noautocmd qall!<cr>
+
+" k (dash) ~~~~~~~~~~~~~~~~~~ {{{3
 "
 nmap <Leader>k <Plug>DashSearch
 nmap <Leader>K <Plug>DashGlobalSearch
