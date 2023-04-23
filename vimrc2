@@ -178,6 +178,11 @@ set shiftround
 set smarttab
 set expandtab
 
+" Diff ------------------------------------------------------------------- {{{2
+"
+" most accurate but slowest
+set diffopt+=algorithm:histogram
+
 " Spell ------------------------------------------------------------------ {{{2
 "
 set spelllang=en_us
