@@ -1456,8 +1456,12 @@ nmap <F3> :Telescope<CR>
 " TagList/Tagbar
 if has('nvim')
 	nmap <F4>   :SymbolsOutline<CR>
-	nmap <S-F4> :TagbarToggle<CR>
+	nmap <S-F4> :AerialToggle<CR>
+	nmap <C-F4> :TagbarToggle<CR>
+	nmap <M-F4> :TagbarToggle<CR>
     nmap <F16> <S-F4>
+    nmap <F28> <C-F4>
+    nmap <F40> <M-F4>
 else
 	nmap <F4>   :TagbarToggle<CR>
 	nmap <S-F4> :TagbarForceUpdate<CR>
