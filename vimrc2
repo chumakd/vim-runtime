@@ -987,7 +987,7 @@ nmap <silent> <Leader>lD :Telescope lsp_type_definitions<CR>
 nmap <silent> <Leader>li :Telescope lsp_implementations<CR>
 nmap <silent> <Leader>lr :Telescope lsp_references<CR>
 " symbols
-nmap <silent> <Leader>ls :Telescope treesitter<CR>
+nmap <silent> <Leader>ls :Telescope lsp_document_symbols<CR>
 nmap <silent> <Leader>lS :Telescope lsp_dynamic_workspace_symbols<CR>
 
 " s (startify) ~~~~~~~~~~~~ {{{3
