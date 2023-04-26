@@ -692,6 +692,10 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 " disable because we load it manually, via Bash alias
 let g:loaded_linuxsty = 1
 
+" LazyGit ---------------------------------------------------------------- {{{2
+"
+let g:lazygit_use_neovim_remote = 0
+
 " NERDTree --------------------------------------------------------------- {{{2
 "
 let g:NERDTreeWinPos = 'right'
@@ -1202,6 +1206,11 @@ nmap <silent> ,gs :Git<CR>
 nmap <silent> ,gt :Gitv<CR>
 nmap <silent> ,gT :GV<CR>
 nmap <silent> ,gw :Gwrite<CR>
+
+" LazyGit
+"nmap <silent> ,GG :LazyGit<CR>
+"nmap <silent> ,GC :LazyGitCurrentFile<CR>
+nmap <silent> ,GG :LazyGitCurrentFile<CR>
 
 " hjkl ~~~~~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -2647,6 +2656,9 @@ lua require'telescope'.load_extension('file_browser')
 
 " aerial extension {{{3
 lua require'telescope'.load_extension('aerial')
+
+" lazygit extension {{{3
+lua require'telescope'.load_extension('lazygit')
 
 " Colors ----------------------------------------------------------------- {{{2
 "
