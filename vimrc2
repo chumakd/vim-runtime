@@ -1002,6 +1002,7 @@ nmap <silent> <Leader>sl :Startify<CR>
 nmap <silent> <Leader>tt :Telescope<CR>
 
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
+nmap <silent> <Leader>tA :Telescope aerial<CR>
 nmap <silent> <Leader>tb :Telescope buffers<CR>
 nmap <silent> <Leader>tB :Telescope file_browser<CR>
 nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
@@ -2628,12 +2629,23 @@ require'telescope'.setup {
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = false,
     },
+    aerial = {
+      -- Display symbols as <root>.<parent>.<symbol>
+      show_nesting = {
+        ['_'] = false, -- This key will be the default
+        json = true,   -- You can set the option for specific filetypes
+        yaml = true,
+      }
+    },
   },
 }
 EOF
 
 " file_browser extension {{{3
 lua require'telescope'.load_extension('file_browser')
+
+" aerial extension {{{3
+lua require'telescope'.load_extension('aerial')
 
 " Colors ----------------------------------------------------------------- {{{2
 "
