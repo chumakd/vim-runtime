@@ -2566,7 +2566,7 @@ require'symbols-outline'.setup {
 
 -- trouble {{{3
 require'trouble'.setup {
-    --icons = false,
+    icons = false,
     fold_open = '▾', -- icon used for open folds
     fold_closed = '▸', -- icon used for closed folds
     --indent_lines = false, -- add an indent guide below the fold icons
