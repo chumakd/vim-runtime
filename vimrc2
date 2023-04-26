@@ -2485,6 +2485,15 @@ require'lspconfig'.yamlls.setup {
   on_attach = on_attach
 }
 
+-- aerial {{{3
+require'aerial'.setup {
+  layout = {
+    max_width = { 45, 0.25 },
+    default_direction = "prefer_left",
+  },
+  nerd_font = false,
+}
+
 -- symbols-outline {{{3
 --require'symbols-outline'.setup{}
 require'symbols-outline'.setup {
