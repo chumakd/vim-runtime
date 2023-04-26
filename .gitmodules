@@ -778,3 +778,6 @@
 [submodule "p/diffview.nvim"]
 	path = p/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim.git
+[submodule "p/aerial.nvim"]
+	path = p/aerial.nvim
+	url = https://github.com/stevearc/aerial.nvim.git
