@@ -1440,8 +1440,8 @@ cnoremap <ESC>n <Down>
 
 " Neovim:
 "   S-F* keys recognized as F12+n e.g. S-F1->F13 S-F12->F24
-"   C-F* keys recognized as F12+2*n e.g. C-F1->F25 C-F12->F36
-"   M-F* keys recognized as F12+3*n e.g. M-F1->F37 M-F12->F48
+"   C-F* keys recognized as F12*2+n e.g. C-F1->F25 C-F12->F36
+"   M-F* keys recognized as F12*3+n e.g. M-F1->F37 M-F12->F48
 
 " build ctags/cscope for Asm/C/C++/Perl/Python/Shell/Make project in current dir
 nmap <F2> :Startify<CR>
