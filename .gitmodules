@@ -781,3 +781,6 @@
 [submodule "p/aerial.nvim"]
 	path = p/aerial.nvim
 	url = https://github.com/stevearc/aerial.nvim.git
+[submodule "p/lazygit.nvim"]
+	path = p/lazygit.nvim
+	url = https://github.com/kdheepak/lazygit.nvim.git
