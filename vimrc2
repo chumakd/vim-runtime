@@ -2497,6 +2497,7 @@ require'aerial'.setup {
     default_direction = "prefer_left",
   },
   nerd_font = false,
+  show_guides = true,
 }
 
 -- symbols-outline {{{3
