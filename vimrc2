@@ -2277,6 +2277,7 @@ require'nvim-treesitter.configs'.setup {
         ["if"] = "@function.inner",
         ["ac"] = "@class.outer",
         ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
       },
       -- choose the select mode (default is charwise 'v')
       selection_modes = {
@@ -2289,6 +2290,40 @@ require'nvim-treesitter.configs'.setup {
       -- whitespace has priority in order to act similarly to eg the built-in
       -- `ap`.
       include_surrounding_whitespace = true,
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>x"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>X"] = "@parameter.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        [']m'] = '@function.outer',
+      },
+      goto_next_end = {
+        [']M'] = '@function.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+      },
+      goto_previous_end = {
+        ['[M'] = '@function.outer',
+      },
+    },
+    lsp_interop = {
+      enable = true,
+      border = 'none',
+      floating_preview_opts = {},
+      peek_definition_code = {
+        ["<leader>df"] = "@function.outer",
+        ["<leader>dF"] = "@class.outer",
+      },
     },
   },
 }
