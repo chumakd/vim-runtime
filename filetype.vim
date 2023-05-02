@@ -14,6 +14,8 @@ augroup filetypedetect
   " change type of *.patch files to 'git', because
   " it's more sophisticated (folds changes on file basis)
   au! BufRead,BufNewFile *.patch        setfiletype git
+  " OVS include makefiles
+  au! BufRead,BufNewFile automake.mk    setfiletype automake
   " linux kernel makefiles
   au! BufRead,BufNewFile Kbuild,Kbuild.sub setfiletype make
   " Colibri FOP declaration files
