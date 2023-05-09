@@ -601,6 +601,9 @@ let g:DirDiffEnableMappings = 1
 let g:DirDiffAddArgs = '--ignore-all-space'
 "let g:DirDiffExcludes = '/.git/*,.*.swp'
 
+" Dispatch --------------------------------------------------------------- {{{2
+let g:dispatch_no_maps = 1
+
 " EasyMotion ------------------------------------------------------------- {{{2
 "
 "hi EasyMotionTarget cterm=bold ctermbg=NONE ctermfg=red
