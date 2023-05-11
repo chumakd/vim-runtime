@@ -1321,6 +1321,8 @@ nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " disable current highlight search
 nmap <silent> ,ti :call MyToggleGutterArea()<CR>
+" indent lines
+nmap <silent> ,tI :IndentBlanklineToggle<CR>
 
 " toggle timeout option, (de)activates which-Key plugin
 nmap <silent> ,tk :set invtimeout<CR>:set timeout?<CR>
@@ -2926,6 +2928,17 @@ require'diffview'.setup {
   file_panel = {
     win_config = { position = "right" }
   }
+}
+EOF
+
+" indent-blankline {{{3
+lua << EOF
+require'indent_blankline'.setup {
+  enabled = false,
+  --show_current_context = true,
+  --show_current_context_start = true,
+  use_treesitter = true,
+  use_treesitter_scope = true,
 }
 EOF
 
