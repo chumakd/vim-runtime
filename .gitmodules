@@ -784,3 +784,6 @@
 [submodule "p/lazygit.nvim"]
 	path = p/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim.git
+[submodule "p/indent-blankline.nvim"]
+	path = p/indent-blankline.nvim
+	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
