@@ -1322,7 +1322,11 @@ nmap <silent> ,th :nohlsearch<CR>
 nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
 " illuminate / highlight current token under the cursor
-nmap <silent> ,ti :IlluminateToggle<CR>
+if has('nvim')
+    nmap <silent> ,ti :IlluminateToggle<CR>
+else
+    nmap <silent> ,ti :IlluminationToggle<CR>
+endif
 " indent lines
 nmap <silent> ,tI :IndentBlanklineToggle<CR>
 
