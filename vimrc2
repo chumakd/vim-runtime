@@ -1288,6 +1288,8 @@ nmap <silent> ,sv :vertical split %:p:h/
 
 " toggle ack/ag
 nmap <silent> ,ta :call MyToggleAckAg()<CR>
+" disable gutter area (folds, signs, line nums)
+nmap <silent> ,tA :call MyToggleGutterArea()<CR>
 
 " toggle scrollbind
 nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
@@ -1319,8 +1321,8 @@ nmap <silent> ,th :nohlsearch<CR>
 " toggle auto-highlight cword
 nmap <silent> ,tH :ToggleAutoHighlightWord<CR>
 
-" disable current highlight search
-nmap <silent> ,ti :call MyToggleGutterArea()<CR>
+" illuminate / highlight current token under the cursor
+nmap <silent> ,ti :IlluminateToggle<CR>
 " indent lines
 nmap <silent> ,tI :IndentBlanklineToggle<CR>
 
@@ -2032,6 +2034,12 @@ function! MyHlFix()
     highlight! link TreesitterContext LineNr
     " better style for LSP hover
     highlight! link NormalFloat LineNr
+
+    "highlight link AutoHighlightWord CursorLineNr
+
+    highlight! link IlluminatedWordText Question
+    highlight! link IlluminatedWordRead Question
+    highlight! link IlluminatedWordWrite Question
 endfunction
 
 function! MyToggleBG()
@@ -2789,18 +2797,17 @@ nmap <Space><Space>ge :HopAnywhereBC<CR>
 nmap <Space><Space>E :HopAnywhere<CR>
 
 " illuminate {{{3
-"lua << EOF
-"--require'illuminate'.configure({
-"--    providers = {
-"--        'treesitter',
-"--        --'lsp',
-"--    },
-"--    under_cursor = true,
-"--    min_count_to_highlight = 2,
-"--})
-"--require'illuminate'.pause()
-"EOF
-"nmap <silent> ,tH :IlluminateToggle<CR>
+lua << EOF
+require'illuminate'.configure {
+    min_count_to_highlight = 2,
+}
+-- disable by default
+require'illuminate'.pause()
+EOF
+
+highlight! link IlluminatedWordText Question
+highlight! link IlluminatedWordRead Question
+highlight! link IlluminatedWordWrite Question
 
 " comment {{{3
 lua << EOF
