@@ -787,3 +787,6 @@
 [submodule "p/indent-blankline.nvim"]
 	path = p/indent-blankline.nvim
 	url = https://github.com/lukas-reineke/indent-blankline.nvim.git
+[submodule "p/vim-illuminate"]
+	path = p/vim-illuminate
+	url = https://github.com/RRethy/vim-illuminate.git
