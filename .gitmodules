@@ -793,3 +793,6 @@
 [submodule "p/neo-tree.nvim"]
 	path = p/neo-tree.nvim
 	url = https://github.com/nvim-neo-tree/neo-tree.nvim.git
+[submodule "p/nui.nvim"]
+	path = p/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim.git
