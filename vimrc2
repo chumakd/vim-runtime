@@ -717,6 +717,10 @@ let g:NERDTreeIgnore=['\.o$', '\.lo$', '\.ko$', '\.a$', '\.so$']
             " \ '\.embed\.manifest$', '\.embed\.manifest.res$',
             " \ '\.intermediate\.manifest$', '^mt.dep$' ]
 
+" Neo Tree --------------------------------------------------------------- {{{2
+"
+let g:neo_tree_remove_legacy_commands = 1
+
 " Perl syntax ------------------------------------------------------------ {{{2
 "
 
@@ -1206,6 +1210,7 @@ vmap <silent> ,gL :GV!<CR>
 nmap <silent> ,go :GV?<CR>
 vmap <silent> ,go :GV?<CR>
 nmap <silent> ,gs :Git<CR>
+nmap <silent> ,gS :Neotree git_status<CR>
 nmap <silent> ,gt :Gitv<CR>
 nmap <silent> ,gT :GV<CR>
 nmap <silent> ,gw :Gwrite<CR>
@@ -1513,6 +1518,13 @@ if has('nvim')
     nmap <F20> <S-F8>
 endif
 
+if has('nvim')
+nmap <F21> <S-F9>
+nmap <F9>   :Neotree toggle<CR>
+nmap <S-F9> :Neotree reveal_force_cwd<CR>
+
+else " vim
+
 " Show syntax highlighting groups for word under cursor
 nmap <F9> :call <SID>SynStack()<CR>
 
@@ -1522,8 +1534,6 @@ nmap <silent> <S-F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
       \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
       \ . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")
       \ . " BG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"bg#")<CR>
-if has('nvim')
-    nmap <F21> <S-F9>
 endif
 
 " Commands =============================================================== {{{1
@@ -2950,6 +2960,21 @@ require'indent_blankline'.setup {
   --show_current_context_start = true,
   use_treesitter = true,
   use_treesitter_scope = true,
+}
+EOF
+
+" neo-tree {{{3
+lua << EOF
+require'neo-tree'.setup {
+  sources = {
+    'filesystem',
+    'buffers',
+    'git_status',
+    'document_symbols',
+  },
+  window = {
+    position = 'right',
+  },
 }
 EOF
 
