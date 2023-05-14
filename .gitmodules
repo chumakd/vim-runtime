@@ -790,3 +790,6 @@
 [submodule "p/vim-illuminate"]
 	path = p/vim-illuminate
 	url = https://github.com/RRethy/vim-illuminate.git
+[submodule "p/neo-tree.nvim"]
+	path = p/neo-tree.nvim
+	url = https://github.com/nvim-neo-tree/neo-tree.nvim.git
