@@ -1091,7 +1091,7 @@ if has('nvim') && !g:ale_enabled
     nmap ,DD gs
     nmap ,Dd gV
     nmap ,dh gh
-    nmap ,di gi
+    nmap ,di gI
     nmap ,dl <leader>K
     nmap ,dr gr
     nmap ,dR gR
@@ -1101,15 +1101,24 @@ else
     nmap ,DD <Plug>(ale_go_to_definition_in_split)
     nmap ,Dd <Plug>(ale_go_to_definition_in_vsplit)
 
+    nmap gd <Plug>(ale_go_to_definition)
+    nmap gb <Plug>(ale_go_to_definition_in_tab)
+    nmap gs <Plug>(ale_go_to_definition_in_split)
+    nmap gV <Plug>(ale_go_to_definition_in_vsplit)
+
     nmap ,dh <Plug>(ale_hover)
+    nmap gh <Plug>(ale_hover)
 
     nmap ,di <Plug>(ale_go_to_implementation)
     nmap ,dI <Plug>(ale_go_to_implementation_in_tab)
     nmap ,DI <Plug>(ale_go_to_implementation_in_split)
     nmap ,Di <Plug>(ale_go_to_implementation_in_vsplit)
 
+    nmap gI <Plug>(ale_go_to_implementation)
+
     "nmap ,di <Plug>(ale_detail)
     nmap ,dl <Plug>(ale_detail)
+    nmap <leader>K <Plug>(ale_detail)
 
     "nmap ,dr <Plug>(ale_find_references)
     nmap ,dr :ALEFindReferences -quickfix -relative<cr>
@@ -1117,13 +1126,22 @@ else
     nmap ,DR :ALEFindReferences -split -relative<cr>
     nmap ,Dr :ALEFindReferences -vsplit -relative<cr>
 
+    nmap gr :ALEFindReferences -quickfix -relative<cr>
+    nmap gR :ALEFindReferences -tab -relative<cr>
+
     nmap ,ds :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
     xmap ,ds y:ALESymbolSearch <c-r>"<cr>
+
+    nmap <leader>lS :ALESymbolSearch <c-r>=expand("<cword>")<cr><cr>
+    xmap <leader>lS y:ALESymbolSearch <c-r>"<cr>
 
     nmap ,dt <Plug>(ale_go_to_type_definition)
     nmap ,dT <Plug>(ale_go_to_type_definition_in_tab)
     nmap ,DT <Plug>(ale_go_to_type_definition_in_split)
     nmap ,Dt <Plug>(ale_go_to_type_definition_in_vsplit)
+
+    nmap <leader>lt <Plug>(ale_go_to_type_definition)
+    nmap <leader>lT <Plug>(ale_go_to_type_definition_in_tab)
 endif
 
 " Delete all buffers
