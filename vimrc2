@@ -305,7 +305,7 @@ set tags=./tags,tags,~/.vim/tags/stl
 ",~/prg/tags/tags.stl
 ",~/prg/tags/tags.boost
 
-if !has('nvim-0.9')
+if has('cscope')
 " search tags database before cscope database
 set cscopetagorder=1
 
