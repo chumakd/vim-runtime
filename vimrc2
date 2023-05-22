@@ -282,8 +282,9 @@ set number
 set numberwidth=3
 
 " highlight textwidth column
+let s:colorcolumn_default = '81,101,121'
 "set colorcolumn=+1
-set colorcolumn=81,101,121
+let &colorcolumn = s:colorcolumn_default
 
 " show as much as possible when last line doesn't fit on screen
 set display+=lastline
@@ -1960,6 +1961,17 @@ if v:version >= 703
       endif
       set colorcolumn?
     endfunction
+
+    " Toggle textwidth end column highlighting (all windows)
+    function! MyToggleColorcolumnGlobal()
+      if empty(&colorcolumn)
+          let &colorcolumn = s:colorcolumn_default
+      else
+          set colorcolumn=
+      endif
+      set colorcolumn?
+    endfunction
+    command! MyToggleColorcolumnGlobal call MyToggleColorcolumnGlobal()
 endif
 
 " Toggle virtual edit ---------------------------------------------------- {{{2
