@@ -2165,6 +2165,23 @@ else
 endif
 command! DoomColorTheme MyToggleDoomColors
 
+" Toggle Nvim LSP virtual diagnostics ------------------------------------ {{{2
+if has('nvim')
+let s:lsp_diagnostic_virt_text = 1
+
+function! MyToggleLSPdiagVirtText()
+    if s:lsp_diagnostic_virt_text
+        lua vim.diagnostic.config({ virtual_text = false })
+        let s:lsp_diagnostic_virt_text = 0
+    else
+        lua vim.diagnostic.config({ virtual_text = true })
+        let s:lsp_diagnostic_virt_text = 1
+    endif
+endfunction
+
+command! MyToggleLSPdiagVirtText call MyToggleLSPdiagVirtText()
+endif " has('nvim')
+
 " Set work project styling ----------------------------------------------- {{{2
 function! MySetWorkStyling()
     set textwidth=80
