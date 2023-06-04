@@ -249,7 +249,7 @@
 	ignore = untracked
 [submodule "p/vim-css-color"]
 	path = p/vim-css-color
-	url = https://github.com/skammer/vim-css-color.git
+	url = https://github.com/ap/vim-css-color.git
 	ignore = untracked
 [submodule "p/SearchComplete"]
 	path = p/SearchComplete
