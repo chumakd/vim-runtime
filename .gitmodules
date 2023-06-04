@@ -796,3 +796,6 @@
 [submodule "p/nui.nvim"]
 	path = p/nui.nvim
 	url = https://github.com/MunifTanjim/nui.nvim.git
+[submodule "p/nvim-dap"]
+	path = p/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap.git
