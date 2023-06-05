@@ -2261,7 +2261,6 @@ require'nvim-treesitter.configs'.setup {
                      , 'erlang'
                      , 'go'
                      , 'haskell'
-                     , 'help'
                      , 'html'
                      , 'javascript'
                      , 'jq'
