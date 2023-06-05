@@ -2833,7 +2833,13 @@ dap.configurations.c = {
     type = 'cppdbg',
     request = 'attach',
     mode = 'local',
-    processId = require('dap.utils').pick_process,
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    --processId = require('dap.utils').pick_process,
+    processId = function()
+        return vim.fn.input('PID to attach: ')
+    end,
     cwd = '${workspaceFolder}',
     setupCommands = {
       {
