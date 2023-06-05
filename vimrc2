@@ -396,13 +396,13 @@ elseif s:os ==? 'Linux'
     let s:pyhome_linuxbrew_default = '/home/linuxbrew/.linuxbrew/opt/python'
     let s:pyhome_linuxbrew_local = $HOME . '/local_install/homebrew/opt/python'
 
-    if !empty(glob(s:pyhome_linuxbrew_default))
-        let $PYTHONHOME=s:pyhome_linuxbrew_default
-    elseif !empty(glob(s:pyhome_linuxbrew_local))
-        let $PYTHONHOME=s:pyhome_linuxbrew_local
-    else
-        echoerr "Homebrew's PYTHONHOME location cannot be found"
-    endif
+    "if !empty(glob(s:pyhome_linuxbrew_default))
+    "    let $PYTHONHOME=s:pyhome_linuxbrew_default
+    "elseif !empty(glob(s:pyhome_linuxbrew_local))
+    "    let $PYTHONHOME=s:pyhome_linuxbrew_local
+    "else
+    "    echoerr "Homebrew's PYTHONHOME location cannot be found"
+    "endif
 
     let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.11/lib-dynload'
     let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.11/lib-dynload'
