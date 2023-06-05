@@ -1520,8 +1520,12 @@ if has('nvim')
     nmap <F17> <S-F5>
 endif
 
-" Gundo
-nmap <F6>   :GundoToggle<CR>
+" DAP
+nmap <F6>   :lua require('dap').step_over()<CR>
+nmap <S-F6> :lua require('dap').step_into()<CR>
+if has('nvim')
+    nmap <F18> <S-F6>
+endif
 
 " Trouble
 nmap <F7>   :TroubleToggle<CR>
