@@ -2736,6 +2736,10 @@ sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
 "highlight! link FloatBorder Normal
 highlight! link NormalFloat LineNr
 
+" Mason ------------------------------------------------------------------ {{{2
+"
+lua require'mason'.setup()
+
 " Telescope -------------------------------------------------------------- {{{2
 "
 lua << EOF
