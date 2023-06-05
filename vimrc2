@@ -980,10 +980,42 @@ nmap <Leader>d~ :DiffviewOpen HEAD~<CR>
 nmap <Leader>dt :DiffviewToggleFiles<CR>
 
 " D (Profiling) ~~~~~~~~~~~~~ {{{3
-nnoremap <silent> <leader>DD :exe ':profile start profile.log'<cr>:exe ':profile func *'<cr>:exe ':profile file *'<cr>
-nnoremap <silent> <leader>DP :exe ':profile pause'<cr>
-nnoremap <silent> <leader>DC :exe ':profile continue'<cr>
-nnoremap <silent> <leader>DQ :exe ':profile pause'<cr>:noautocmd qall!<cr>
+"nnoremap <silent> <leader>DD :exe ':profile start profile.log'<cr>:exe ':profile func *'<cr>:exe ':profile file *'<cr>
+"nnoremap <silent> <leader>DP :exe ':profile pause'<cr>
+"nnoremap <silent> <leader>DC :exe ':profile continue'<cr>
+"nnoremap <silent> <leader>DQ :exe ':profile pause'<cr>:noautocmd qall!<cr>
+
+" D (DAP) ~~~~~~~~~~~~~~~~~~~ {{{3
+if has('nvim')
+nnoremap <silent> <leader>Db :lua require('dap').toggle_breakpoint()<cr>
+nnoremap <silent> <leader>DB :lua require('dap').set_breakpoint()<cr>
+nnoremap <silent> <leader>Dc :lua require('dap').continue()<cr>
+nnoremap <silent> <leader>DF :lua require('dap').step_out()<cr>
+nnoremap <silent> <leader>Di :lua require('dap').step_into()<cr>
+nnoremap <silent> <leader>Do :lua require('dap').step_over()<cr>
+nnoremap <silent> <leader>Dr :lua require('dap').repl.toggle()<cr>
+
+"nnoremap <silent> <leader>Dh :lua require('dap.ui.widgets').hover()<cr>
+"nnoremap <silent> <leader>Dp :lua require('dap.ui.widgets').preview()<cr>
+nnoremap <silent> <leader>Du :lua require('dapui').toggle()<cr>
+
+lua << EOF
+    vim.keymap.set({'n', 'v'}, '<Leader>Dh', function()
+      require('dap.ui.widgets').hover()
+    end)
+    vim.keymap.set({'n', 'v'}, '<Leader>Dp', function()
+      require('dap.ui.widgets').preview()
+    end)
+    vim.keymap.set('n', '<Leader>Df', function()
+      local widgets = require('dap.ui.widgets')
+      widgets.centered_float(widgets.frames)
+    end)
+    vim.keymap.set('n', '<Leader>Ds', function()
+      local widgets = require('dap.ui.widgets')
+      widgets.centered_float(widgets.scopes)
+    end)
+EOF
+endif
 
 " k (dash) ~~~~~~~~~~~~~~~~~~ {{{3
 "
@@ -2801,6 +2833,8 @@ dap.configurations.c = {
   },
 }
 dap.configurations.cpp = dap.configurations.c
+
+require'dapui'.setup()
 
 EOF
 
