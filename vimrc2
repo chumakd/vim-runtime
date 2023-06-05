@@ -993,6 +993,7 @@ nmap <Leader>K <Plug>DashGlobalSearch
 " l (lsp) ~~~~~~~~~~~~~~~~~ {{{3
 "
 
+if has('nvim')
 nmap <silent> <Leader>le :Telescope diagnostics<CR>
 nmap <silent> <Leader>ld :Telescope lsp_definitions<CR>
 nmap <silent> <Leader>lD :Telescope lsp_type_definitions<CR>
@@ -1001,6 +1002,7 @@ nmap <silent> <Leader>lr :Telescope lsp_references<CR>
 " symbols
 nmap <silent> <Leader>ls :Telescope lsp_document_symbols<CR>
 nmap <silent> <Leader>lS :Telescope lsp_dynamic_workspace_symbols<CR>
+endif
 
 " s (startify) ~~~~~~~~~~~~ {{{3
 "
@@ -1011,6 +1013,7 @@ nmap <silent> <Leader>sl :Startify<CR>
 
 " t (telescope) ~~~~~~~~~~~ {{{3
 "
+if has('nvim')
 nmap <silent> <Leader>tt :Telescope<CR>
 
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
@@ -1031,6 +1034,7 @@ nmap <silent> <Leader>tq :Telescope quickfix<CR>
 nmap <silent> <Leader>tQ :Telescope quickfixhistory<CR>
 nmap <silent> <Leader>ts :Telescope treesitter<CR>
 nmap <silent> <Leader>ty :Telescope yank_history<CR>
+endif
 
 " , mappings ------------------------------------------------------------- {{{2
 "
