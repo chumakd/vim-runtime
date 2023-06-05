@@ -802,3 +802,6 @@
 [submodule "p/mason.nvim"]
 	path = p/mason.nvim
 	url = https://github.com/williamboman/mason.nvim.git
+[submodule "p/nvim-dap-ui"]
+	path = p/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui.git
