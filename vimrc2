@@ -995,9 +995,19 @@ nnoremap <silent> <leader>Di :lua require('dap').step_into()<cr>
 nnoremap <silent> <leader>Do :lua require('dap').step_over()<cr>
 nnoremap <silent> <leader>Dr :lua require('dap').repl.toggle()<cr>
 
+command! DapUIToggle lua require('dapui').toggle()
+command! DapUIToggleBreakpoints lua require('dapui').toggle({layout = 1})
+command! DapUIToggleStack lua require('dapui').toggle({layout = 2})
+command! DapUIToggleRepl lua require('dapui').toggle({layout = 3})
+command! DapUIToggleConsole lua require('dapui').toggle({layout = 4})
+
 "nnoremap <silent> <leader>Dh :lua require('dap.ui.widgets').hover()<cr>
 "nnoremap <silent> <leader>Dp :lua require('dap.ui.widgets').preview()<cr>
-nnoremap <silent> <leader>Du :lua require('dapui').toggle()<cr>
+nnoremap <silent> <leader>Du  :DapUIToggle<cr>
+nnoremap <silent> <leader>DUb :DapUIToggleBreakpoints<cr>
+nnoremap <silent> <leader>DUs :DapUIToggleStack<cr>
+nnoremap <silent> <leader>DUr :DapUIToggleRepl<cr>
+nnoremap <silent> <leader>DUc :DapUIToggleConsole<cr>
 
 lua << EOF
     vim.keymap.set({'n', 'v'}, '<Leader>Dh', function()
@@ -2785,10 +2795,12 @@ lua require'mason'.setup()
 "
 lua << EOF
 
+vim.fn.sign_define('DapStopped', {text='➤', texthl='CursorLineNr', linehl='CursorLine', numhl=''})
 vim.fn.sign_define('DapBreakpoint', {text='●', texthl='DiffDelete', linehl='', numhl=''})
 vim.fn.sign_define('DapBreakpointCondition', {text='⊜', texthl='DiffDelete', linehl='', numhl=''})
-vim.fn.sign_define('DapLogPoint', {text='㏒', texthl='', linehl='CursorLineNr', numhl=''})
+vim.fn.sign_define('DapLogPoint', {text='㏒', texthl='CursorLineNr', linehl='', numhl=''})
 vim.fn.sign_define('DapBreakpointRejected', {text='✗', texthl='DiffDelete', linehl='', numhl=''})
+
 
 local dap = require('dap')
 
@@ -2837,7 +2849,7 @@ dap.configurations.cpp = dap.configurations.c
 require'dapui'.setup {
     controls = {
       element = 'repl',
-      enabled = true,
+      enabled = false,
       icons = {
         disconnect = '',
         pause = '',
@@ -2853,7 +2865,9 @@ require'dapui'.setup {
     element_mappings = {},
     expand_lines = true,
     floating = {
-      border = 'single',
+      max_height = 0.9,
+      max_width = 0.5, -- Floats will be treated as percentage of your screen.
+      border = 'rounded',
       mappings = {
         close = { 'q', '<Esc>' }
       }
@@ -2867,31 +2881,26 @@ require'dapui'.setup {
     layouts = {
       {
         elements = {
-          {
-            id = 'breakpoints',
-            size = 0.25
-          },{
-            id = 'scopes',
-            size = 0.75
-          }
+          { id = 'breakpoints', size = 0.25 },
+          { id = 'scopes', size = 0.75 },
         },
         position = 'left',
         size = 60
       },{
         elements = {
-          {
-            id = 'stacks',
-            size = 1
-          }
+          { id = 'stacks', size = 1 },
         },
         position = 'bottom',
         size = 15
       },{
         elements = {
-          {
-            id = 'console',
-            size = 1
-          }
+          { id = 'repl', size = 1 },
+        },
+        position = 'bottom',
+        size = 10
+      },{
+        elements = {
+          { id = 'console', size = 1 },
         },
         position = 'top',
         size = 5
