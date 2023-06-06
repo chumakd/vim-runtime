@@ -987,13 +987,26 @@ nmap <Leader>dt :DiffviewToggleFiles<CR>
 
 " D (DAP) ~~~~~~~~~~~~~~~~~~~ {{{3
 if has('nvim')
+command! DapSession lua require('dap').session()
+command! DapSessions lua require('dap').sessions()
+command! DapStatus lua require('dap').status()
+command! DapFocusFrame lua require('dap').focus_frame()
+command! DapListBreakpoints lua require('dap').list_breakpoints()
+command! DapClearBreakpoints lua require('dap').clear_breakpoints()
+
 nnoremap <silent> <leader>Db :lua require('dap').toggle_breakpoint()<cr>
 nnoremap <silent> <leader>DB :lua require('dap').set_breakpoint()<cr>
 nnoremap <silent> <leader>Dc :lua require('dap').continue()<cr>
-nnoremap <silent> <leader>DF :lua require('dap').step_out()<cr>
+nnoremap <silent> <leader>DC :lua require('dap').run_to_cursor()<cr>
+nnoremap <silent> <leader>DF :lua require('dap').focus_frame()<cr>
 nnoremap <silent> <leader>Di :lua require('dap').step_into()<cr>
+nnoremap <silent> <leader>Dl :lua require('dap').list_breakpoints()<cr>
 nnoremap <silent> <leader>Do :lua require('dap').step_over()<cr>
 nnoremap <silent> <leader>Dr :lua require('dap').repl.toggle()<cr>
+nnoremap <silent> <leader>Du :lua require('dap').step_out()<cr>
+
+nnoremap <silent> <leader>DU :lua require('dap').up()<cr>
+nnoremap <silent> <leader>DD :lua require('dap').down()<cr>
 
 command! DapUIToggle lua require('dapui').toggle()
 command! DapUIToggleBreakpoints lua require('dapui').toggle({layout = 1})
@@ -1003,11 +1016,11 @@ command! DapUIToggleConsole lua require('dapui').toggle({layout = 4})
 
 "nnoremap <silent> <leader>Dh :lua require('dap.ui.widgets').hover()<cr>
 "nnoremap <silent> <leader>Dp :lua require('dap.ui.widgets').preview()<cr>
-nnoremap <silent> <leader>Du  :DapUIToggle<cr>
-nnoremap <silent> <leader>DUb :DapUIToggleBreakpoints<cr>
-nnoremap <silent> <leader>DUs :DapUIToggleStack<cr>
-nnoremap <silent> <leader>DUr :DapUIToggleRepl<cr>
-nnoremap <silent> <leader>DUc :DapUIToggleConsole<cr>
+nnoremap <silent> <leader>Duu :DapUIToggle<cr>
+nnoremap <silent> <leader>Dub :DapUIToggleBreakpoints<cr>
+nnoremap <silent> <leader>Dus :DapUIToggleStack<cr>
+nnoremap <silent> <leader>Dur :DapUIToggleRepl<cr>
+nnoremap <silent> <leader>Duc :DapUIToggleConsole<cr>
 
 lua << EOF
     vim.keymap.set({'n', 'v'}, '<Leader>Dh', function()
@@ -2837,10 +2850,17 @@ dap.configurations.c = {
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     --processId = require('dap.utils').pick_process,
+    --processId = function()
+    --    return vim.fn.input('PID to attach: ')
+    --end,
     processId = function()
-        return vim.fn.input('PID to attach: ')
+      name = vim.fn.input('Process name to attach: ')
+      return require('dap.utils').pick_process({
+        filter = function(proc) return vim.fn.match(proc.name, name) ~= -1 end
+      })
     end,
     cwd = '${workspaceFolder}',
+    stopAtEntry = true,
     setupCommands = {
       {
         text = '-enable-pretty-printing',
