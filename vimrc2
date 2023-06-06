@@ -991,6 +991,7 @@ command! DapSession lua require('dap').session()
 command! DapSessions lua require('dap').sessions()
 command! DapStatus lua require('dap').status()
 command! DapFocusFrame lua require('dap').focus_frame()
+command! DapPause lua require('dap').pause()
 command! DapListBreakpoints lua require('dap').list_breakpoints()
 command! DapClearBreakpoints lua require('dap').clear_breakpoints()
 
@@ -1002,6 +1003,7 @@ nnoremap <silent> <leader>DF :lua require('dap').focus_frame()<cr>
 nnoremap <silent> <leader>Di :lua require('dap').step_into()<cr>
 nnoremap <silent> <leader>Dl :lua require('dap').list_breakpoints()<cr>
 nnoremap <silent> <leader>Do :lua require('dap').step_over()<cr>
+nnoremap <silent> <leader>DP :lua require('dap').pause()<cr>
 nnoremap <silent> <leader>Dr :lua require('dap').repl.toggle()<cr>
 nnoremap <silent> <leader>Du :lua require('dap').step_out()<cr>
 
@@ -2860,7 +2862,7 @@ dap.configurations.c = {
       })
     end,
     cwd = '${workspaceFolder}',
-    stopAtEntry = true,
+    stopAtConnect = true,
     setupCommands = {
       {
         text = '-enable-pretty-printing',
@@ -2943,6 +2945,11 @@ require'dapui'.setup {
   }
 
 EOF
+
+augroup dap_repl
+    au!
+    au! FileType dap-repl :lua require('dap.ext.autocompl').attach()
+augroup END
 
 " Telescope -------------------------------------------------------------- {{{2
 "
