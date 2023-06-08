@@ -2986,6 +2986,9 @@ lua require'telescope'.load_extension('aerial')
 " lazygit extension {{{3
 lua require'telescope'.load_extension('lazygit')
 
+" dap extension {{{3
+lua require'telescope'.load_extension('dap')
+
 " Colors ----------------------------------------------------------------- {{{2
 "
 lua << EOF
