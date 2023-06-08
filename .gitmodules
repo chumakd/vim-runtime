@@ -805,3 +805,6 @@
 [submodule "p/nvim-dap-ui"]
 	path = p/nvim-dap-ui
 	url = https://github.com/rcarriga/nvim-dap-ui.git
+[submodule "p/telescope-dap.nvim"]
+	path = p/telescope-dap.nvim
+	url = https://github.com/nvim-telescope/telescope-dap.nvim.git
