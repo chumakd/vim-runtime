@@ -2147,9 +2147,12 @@ function! MyHlFix()
 
     "highlight link AutoHighlightWord CursorLineNr
 
-    highlight! link IlluminatedWordText Question
-    highlight! link IlluminatedWordRead Question
-    highlight! link IlluminatedWordWrite Question
+    "highlight! link IlluminatedWordText Question
+    "highlight! link IlluminatedWordRead Question
+    "highlight! link IlluminatedWordWrite Question
+    highlight! link IlluminatedWordText Todo
+    highlight! link IlluminatedWordRead Todo
+    highlight! link IlluminatedWordWrite Todo
 endfunction
 
 function! MyToggleBG()
@@ -3083,9 +3086,12 @@ require'illuminate'.configure {
 require'illuminate'.pause()
 EOF
 
-highlight! link IlluminatedWordText Question
-highlight! link IlluminatedWordRead Question
-highlight! link IlluminatedWordWrite Question
+"highlight! link IlluminatedWordText Question
+"highlight! link IlluminatedWordRead Question
+"highlight! link IlluminatedWordWrite Question
+highlight! link IlluminatedWordText Todo
+highlight! link IlluminatedWordRead Todo
+highlight! link IlluminatedWordWrite Todo
 
 " comment {{{3
 lua << EOF
