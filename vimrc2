@@ -1037,7 +1037,7 @@ lua << EOF
     end)
     vim.keymap.set('n', '<Leader>Ds', function()
       local widgets = require('dap.ui.widgets')
-      widgets.centered_float(widgets.scopes)
+      widgets.sidebar(widgets.scopes)
     end)
 EOF
 endif
@@ -2951,10 +2951,10 @@ require'dapui'.setup {
 
 EOF
 
-augroup dap_repl
-    au!
-    au! FileType dap-repl :lua require('dap.ext.autocompl').attach()
-augroup END
+"augroup dap_repl
+"    au!
+"    au! FileType dap-repl :lua require('dap.ext.autocompl').attach()
+"augroup END
 
 " Telescope -------------------------------------------------------------- {{{2
 "
