@@ -1037,7 +1037,7 @@ lua << EOF
     end)
     vim.keymap.set('n', '<Leader>Ds', function()
       local widgets = require('dap.ui.widgets')
-      widgets.sidebar(widgets.scopes)
+      widgets.centered_float(widgets.scopes)
     end)
 EOF
 endif
