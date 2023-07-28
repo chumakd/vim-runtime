@@ -2854,14 +2854,18 @@ dap.configurations.c = {
     request = 'attach',
     mode = 'local',
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      exe_path = vim.fn.getcwd() .. '/'
+      if vim.env.NVIM_DAP_PROG_PATH then
+        exe_path = vim.env.NVIM_DAP_PROG_PATH
+      end
+      return vim.fn.input('Path to executable: ', exe_path, 'file')
     end,
-    --processId = require('dap.utils').pick_process,
-    --processId = function()
-    --    return vim.fn.input('PID to attach: ')
-    --end,
     processId = function()
-      name = vim.fn.input('Process name to attach: ')
+      default_name = ''
+      if vim.env.NVIM_DAP_PROG_PATH then
+        default_name = vim.fs.basename(vim.env.NVIM_DAP_PROG_PATH)
+      end
+      name = vim.fn.input('Process name to attach: ', default_name)
       return require('dap.utils').pick_process({
         filter = function(proc) return vim.fn.match(proc.name, name) ~= -1 end
       })
