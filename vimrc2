@@ -1319,7 +1319,7 @@ noremap <silent> ,l :wincmd l<CR>
 
 " run make in current directory
 nmap ,m :Make<CR>
-nmap ,M :call MyMlxMake()<CR>
+nmap ,M :call MyMlxMakeOvs()<CR>
 
 " o (lOcation window) ~~~~~~~ {{{3
 "
@@ -1964,6 +1964,13 @@ command! -nargs=1 AckFtype call MyAgFindFilesOfType(<q-args>)
 function! MyMlxMake()
     let l:old_makeprg = &makeprg
     set makeprg=mlx-build-linux
+    :Make
+    let &makeprg = l:old_makeprg
+endfunction
+
+function! MyMlxMakeOvs()
+    let l:old_makeprg = &makeprg
+    set makeprg=mlx-build-ovs
     :Make
     let &makeprg = l:old_makeprg
 endfunction
