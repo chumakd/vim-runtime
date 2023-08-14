@@ -2658,6 +2658,8 @@ end
 -- nvim-lspconfig-clangd {{{3
 require'lspconfig'.clangd.setup {
   on_attach = on_attach,
+  --cmd = { 'clangd', '--enable-config', '--log=verbose' }
+  cmd = { 'clangd', '--enable-config' }
 }
 
 -- nvim-lspconfig-lua {{{3
