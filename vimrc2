@@ -411,6 +411,8 @@ elseif s:os ==? 'Linux'
         python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
     elseif !empty(glob(s:py3dynload_linuxbrew_local))
         python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
+    elseif !empty(glob('/.dockerenv'))
+        " ignored inside docker container
     else
         echoerr "Homebrew's lib/python3.11/lib-dynload cannot be found"
     endif
