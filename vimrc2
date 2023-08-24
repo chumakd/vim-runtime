@@ -1383,7 +1383,8 @@ nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
 
 " toggle textwidth column highlighting
 if v:version >= 703
-    nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
+    "nmap <silent> ,tc :call MyToggleColorcolumn()<CR>
+    nmap <silent> ,tc :call MyToggleColorcolumnGlobal()<CR>
 endif
 " toggle cursor column highliting
 nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
