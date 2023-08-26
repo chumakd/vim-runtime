@@ -2665,6 +2665,25 @@ require'lspconfig'.clangd.setup {
   cmd = { 'clangd', '--enable-config' }
 }
 
+-- nvim-lspconfig-rust-analyzer {{{3
+require'lspconfig'.rust_analyzer.setup {
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      inlayHints = {
+        typeHintsWithVariable = true
+      },
+      workspace = {
+        symbol = {
+          search = {
+            kind = "all_symbols"
+          }
+        }
+      }
+    }
+  }
+}
+
 -- nvim-lspconfig-lua {{{3
 require'lspconfig'.lua_ls.setup {
   settings = {
