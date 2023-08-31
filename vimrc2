@@ -1391,6 +1391,8 @@ nmap <silent> ,tC :call MyToggleCursorColumnHl()<CR>
 
 " Diagnostics
 nmap <silent> ,td :TroubleToggle<CR>
+" LSP diagnostics virt text
+nmap <silent> ,tD :MyToggleLSPdiagVirtText<CR>
 
 " ALE
 nmap <silent> ,te :ALEToggle<CR>
@@ -2829,8 +2831,8 @@ EOF
 " options {{{3
 
 " LSP signs
-sign define DiagnosticSignError texthl=DiagnosticSignError numhl=Error text=‼︎
-sign define DiagnosticSignWarn texthl=DiagnosticSignWarn numhl=DiffDelete text=!
+sign define DiagnosticSignError texthl=DiagnosticSignError numhl=DiffDelete text=🅴
+sign define DiagnosticSignWarn texthl=DiagnosticSignWarn numhl=DiffChange text=🆆
 sign define DiagnosticSignInfo texthl=DiagnosticSignInfo numhl=DiffText text=➮
 sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
 
