@@ -2795,8 +2795,8 @@ require'trouble'.setup {
     fold_closed = '▸', -- icon used for closed folds
     --indent_lines = false, -- add an indent guide below the fold icons
     signs = {
-        error = '‼︎',
-        warning = '!',
+        error = '🅴',
+        warning = '🆆',
         hint = '',
         information = '➮',
         other = '¿',
