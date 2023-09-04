@@ -187,7 +187,7 @@ set diffopt+=algorithm:histogram
 "
 set spelllang=en_us
 set spelllang+=ru
-set spelllang+=ua
+"set spelllang+=ua
 
 " Language --------------------------------------------------------------- {{{2
 "
