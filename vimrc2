@@ -181,7 +181,9 @@ set expandtab
 " Diff ------------------------------------------------------------------- {{{2
 "
 " most accurate but slowest
-set diffopt+=algorithm:histogram
+if v:version >= 900
+    set diffopt+=algorithm:histogram
+endif
 
 " Spell ------------------------------------------------------------------ {{{2
 "
