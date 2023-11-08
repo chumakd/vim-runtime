@@ -68,7 +68,11 @@ function! MySetBG()
         endif
     endif
 
-    if hr >= time_dark
+    if s:iterm_profile =~? '.*dark.*' && s:term_prog !=# 'tmux'
+        set background=dark
+    elseif s:iterm_profile =~? '.*light.*' && s:term_prog !=# 'tmux'
+        set background=light
+    elseif hr >= time_dark
         set background=dark
     elseif hr >= time_light
         set background=light
@@ -81,6 +85,8 @@ endfunction
 if match($TERM, '256color') != -1
     set t_Co=256
 endif
+
+let g:lualine_theme = 'dracula'
 
 if s:term_color ==# 'truecolor'
     if s:os ==? 'Linux' && !empty($TMUX)
@@ -104,21 +110,25 @@ if s:term_color ==# 'truecolor'
         let g:neosolarized_termBoldAsBright = 1
         let g:neosolarized_vertSplitBgTrans = 1
 
-        if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
-            colorscheme chumakd-elflord
-        else
+        if s:iterm_profile =~? '.*solarized.*'
             if has('nvim')
+                let g:lualine_theme = 'solarized'
                 colorscheme solarized-normal
             else
                 colorscheme NeoSolarized
             endif
             call MySetBG()
+        else
+            let g:colors_name = 'doom-one'
+            let g:airline_theme='onedark'
+            set background=dark
+            colorscheme doom-one
         endif
     else
-        if s:term_prog ==# 'iTerm.app' && s:iterm_profile !~? '.*solarized.*'
-            colorscheme chumakd-elflord
-        else
+        if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*'
             colorscheme solarized
+        else
+            colorscheme chumakd-elflord
         endif
     endif
 else
@@ -3079,7 +3089,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'solarized',
+    theme = vim.g.lualine_theme,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
   },
