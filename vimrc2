@@ -190,8 +190,10 @@ set expandtab
 
 " Diff ------------------------------------------------------------------- {{{2
 "
-" most accurate but slowest
-if v:version >= 900
+if has('mac') && $VIM == '/usr/share/vim'
+    " do nothing
+elseif has('patch-8.1.0360')
+    " most accurate but slowest
     set diffopt+=algorithm:histogram
 endif
 
