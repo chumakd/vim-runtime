@@ -1447,9 +1447,9 @@ nmap <silent> ,tL :call MyToggleLocationList()<CR>
 nmap <silent> ,tm :SignatureToggleSigns<CR>
 
 " toggle current line number or 0
-nmap <silent> ,tn :set invnumber<CR>:set number?<CR>
+nmap <silent> ,tN :set invnumber<CR>:set number?<CR>
 " toggle relative line numbers or absolute
-nmap <silent> ,tN :set invrelativenumber<CR>:set relativenumber?<CR>
+nmap <silent> ,tn :set invrelativenumber<CR>:set relativenumber?<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
