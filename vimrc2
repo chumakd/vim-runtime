@@ -1412,7 +1412,8 @@ nmap <silent> ,tD :MyToggleLSPdiagVirtText<CR>
 nmap <silent> ,te :ALEToggle<CR>
 
 " toggle search inside folds
-nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
+"nmap <silent> ,tf :call MyToggleFoldSearch()<CR>
+nmap <silent> ,tf :call MyToggleFolding()<CR>
 " toggle fold marker between syntax and git merge markers
 nmap <silent> ,tF :call MyToggleFoldMarker()<CR>
 
@@ -2120,6 +2121,19 @@ function! MyToggleFoldSearch()
         echo 'foldopen+=search'
     endif
 endfunction
+
+command! MyToggleFoldSearch call MyToggleFoldSearch()
+
+" Toggle folding --------------------------------------------------------- {{{2
+function! MyToggleFolding()
+    if &foldenable
+        setl nofoldenable
+    else
+        setl foldenable
+    endif
+endfunction
+
+command! MyToggleFolding call MyToggleFolding()
 
 " Toggle ack/ag search --------------------------------------------------- {{{2
 let s:old_ackprg = ''
