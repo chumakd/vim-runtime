@@ -2127,9 +2127,9 @@ command! MyToggleFoldSearch call MyToggleFoldSearch()
 " Toggle folding --------------------------------------------------------- {{{2
 function! MyToggleFolding()
     if &foldenable
-        setl nofoldenable
+        set nofoldenable
     else
-        setl foldenable
+        set foldenable
     endif
 endfunction
 
