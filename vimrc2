@@ -2400,7 +2400,6 @@ require'nvim-treesitter.configs'.setup {
                      , 'scheme'
                      , 'scss'
                      , 'sql'
-                     , 'swift'
                      , 'thrift'
                      , 'toml'
                      , 'typescript'
