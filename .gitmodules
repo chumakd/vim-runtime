@@ -640,9 +640,6 @@
 [submodule "p/material"]
 	path = p/material
 	url = https://github.com/kaicataldo/material.vim.git
-[submodule "p/nova-vim"]
-	path = p/nova-vim
-	url = https://github.com/trevordmiller/nova-vim.git
 [submodule "p/typewriter-vim"]
 	path = p/typewriter-vim
 	url = https://github.com/logico/typewriter-vim.git
