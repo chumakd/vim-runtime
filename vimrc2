@@ -2281,6 +2281,32 @@ else
 endif
 command! DoomColorTheme MyToggleDoomColors
 
+function! MyToggleOnedarkColorsNVim()
+    if exists("g:colors_name")
+        if g:colors_name ==# 'onedark'
+            exe "set background=" . s:old_background
+            exe "colorscheme " . s:old_colorscheme
+            let g:colors_name = s:old_colorscheme
+            " TODO: save and restore original lualine theme
+            lua require('lualine').setup{options={theme='solarized'}}
+        else
+            let s:old_colorscheme = g:colors_name
+            let s:old_background = &background
+            set background=dark
+            colorscheme onedark
+            let g:colors_name = 'onedark'
+            lua require('lualine').setup{options={theme='onedark'}}
+        endif
+        call MyHlFix()
+    else
+        echowarn 'Current colorscheme is not supported'
+    endif
+endfunction
+
+if has('nvim')
+    command! MyToggleOnedarkColors call MyToggleOnedarkColorsNVim()
+endif
+
 " Toggle Nvim LSP virtual diagnostics ------------------------------------ {{{2
 if has('nvim')
 let s:lsp_diagnostic_virt_text = 1
