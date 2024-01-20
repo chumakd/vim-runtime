@@ -3081,6 +3081,11 @@ lua << EOF
 --require'solarized.solarized-normal.highlights'
 --vim.cmd[[ colorscheme solarized-normal ]]
 
+-- onedark.nvim {{{3
+require('onedark').setup {
+    style = 'dark'
+}
+
 EOF
 
 " doom-one.nvim {{{3
