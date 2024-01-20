@@ -422,16 +422,18 @@ elseif s:os ==? 'Linux'
     let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.11/lib-dynload'
     let s:py3dynload_linuxbrew_system = '/usr/lib/python3.11/lib-dynload'
 
-    if !empty(glob(s:py3dynload_linuxbrew_default))
-        python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
-    elseif !empty(glob(s:py3dynload_linuxbrew_local))
-        python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
-    elseif !empty(glob('/.dockerenv'))
-        " ignored inside docker container
-    elseif !empty(glob(s:py3dynload_linuxbrew_system)) " lowest priority
-        python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_system)"))
-    else
-        echoerr "Homebrew's lib/python3.11/lib-dynload cannot be found"
+    if has('python3')
+        if !empty(glob(s:py3dynload_linuxbrew_default))
+            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
+        elseif !empty(glob(s:py3dynload_linuxbrew_local))
+            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
+        elseif !empty(glob('/.dockerenv'))
+            " ignored inside docker container
+        elseif !empty(glob(s:py3dynload_linuxbrew_system)) " lowest priority
+            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_system)"))
+        else
+            echoerr "Homebrew's lib/python3.11/lib-dynload cannot be found"
+        endif
     endif
 endif
 
