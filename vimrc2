@@ -2136,7 +2136,9 @@ command! MyToggleFoldSearch call MyToggleFoldSearch()
 function! MyToggleFolding()
     if &foldenable
         set nofoldenable
+        set foldcolumn=0
     else
+        set foldcolumn=4
         set foldenable
     endif
 endfunction
