@@ -2286,6 +2286,27 @@ else
 endif
 command! DoomColorTheme MyToggleDoomColors
 
+function! MyToggleOnedarkColorsVim()
+    if exists("g:colors_name")
+        if g:colors_name ==# 'onedark'
+            let g:airline_theme='auto'
+            exe "colorscheme " . s:old_colorscheme
+            let g:colors_name = s:old_colorscheme
+            exe "set background=" . s:old_background
+        else
+            let s:old_colorscheme = g:colors_name
+            let s:old_background = &background
+            let g:airline_theme='onedark'
+            colorscheme onedark
+            let g:colors_name = 'onedark'
+            set background=dark
+        endif
+        call MyHlFix()
+    else
+        echowarn 'Current colorscheme is not supported'
+    endif
+endfunction
+
 function! MyToggleOnedarkColorsNVim()
     if exists("g:colors_name")
         if g:colors_name ==# 'onedark'
@@ -2310,7 +2331,10 @@ endfunction
 
 if has('nvim')
     command! MyToggleOnedarkColors call MyToggleOnedarkColorsNVim()
+else
+    command! MyToggleOnedarkColors call MyToggleOnedarkColorsVim()
 endif
+command! OnedarkColorTheme MyToggleOnedarkColors
 
 " Toggle Nvim LSP virtual diagnostics ------------------------------------ {{{2
 if has('nvim')
