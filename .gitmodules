@@ -808,3 +808,6 @@
 [submodule "p/onedark.nvim"]
 	path = p/onedark.nvim
 	url = https://github.com/navarasu/onedark.nvim.git
+[submodule "p/onedark.vim"]
+	path = p/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
