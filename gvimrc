@@ -41,7 +41,8 @@ set lines=44
 "set guifont=Terminus\ 10
 
 if s:os ==? 'Darwin'
-    set guifont=Input:h17
+    "set guifont=Input:h17
+    set guifont=Essential\ PragmataPro:h18
 elseif s:os ==? 'Linux'
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
     set guifont=JetBrains\ Mono\ 13
