@@ -302,8 +302,9 @@ set numberwidth=3
 
 " highlight textwidth column
 let s:colorcolumn_default = '81,101,121'
+"let &colorcolumn = s:colorcolumn_default
 "set colorcolumn=+1
-let &colorcolumn = s:colorcolumn_default
+set colorcolumn=
 
 " show as much as possible when last line doesn't fit on screen
 set display+=lastline
