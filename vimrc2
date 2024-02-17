@@ -121,13 +121,9 @@ if s:term_color ==# 'truecolor'
         else
             set background=dark
             let g:airline_theme='onedark'
-            if has('nvim')
-                let g:colors_name = 'doom-one'
-                colorscheme doom-one
-            else
-                let g:colors_name = 'onedark'
-                colorscheme onedark
-            endif
+            let g:lualine_theme = 'onedark'
+            let g:colors_name = 'onedark'
+            colorscheme onedark
         endif
     else
         if s:term_prog ==# 'iTerm.app' && s:iterm_profile =~? '.*solarized.*'
