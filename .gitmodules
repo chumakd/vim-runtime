@@ -811,3 +811,6 @@
 [submodule "p/onedark.vim"]
 	path = p/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
+[submodule "p/d2-vim"]
+	path = p/d2-vim
+	url = https://github.com/terrastruct/d2-vim.git
