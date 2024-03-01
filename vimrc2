@@ -1976,6 +1976,11 @@ function! <SID>SynStack()
   " vint: +ProhibitUnnecessaryDoubleQuote
 endfunc
 
+function! MyHiShow()
+    call <SID>SynStack()
+endfunction
+command! MyHiShow call MyHiShow()
+
 highlight link gitvSubject GitvSubj
 
 " example how to toggle a var w/o using temp value
