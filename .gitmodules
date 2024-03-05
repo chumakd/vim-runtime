@@ -814,3 +814,6 @@
 [submodule "p/d2-vim"]
 	path = p/d2-vim
 	url = https://github.com/terrastruct/d2-vim.git
+[submodule "p/catppuccin.nvim"]
+	path = p/catppuccin.nvim
+	url = https://github.com/catppuccin/nvim.git
