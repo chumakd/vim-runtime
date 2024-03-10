@@ -1,0 +1,1 @@
+../p/nvim-colorizer.lua

@@ -820,3 +820,6 @@
 [submodule "p/lualine-lsp-progress"]
 	path = p/lualine-lsp-progress
 	url = https://github.com/arkav/lualine-lsp-progress.git
+[submodule "p/nvim-colorizer.lua"]
+	path = p/nvim-colorizer.lua
+	url = https://github.com/NvChad/nvim-colorizer.lua.git
