@@ -817,3 +817,6 @@
 [submodule "p/catppuccin.nvim"]
 	path = p/catppuccin.nvim
 	url = https://github.com/catppuccin/nvim.git
+[submodule "p/lualine-lsp-progress"]
+	path = p/lualine-lsp-progress
+	url = https://github.com/arkav/lualine-lsp-progress.git
