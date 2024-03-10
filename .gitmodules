@@ -823,3 +823,6 @@
 [submodule "p/nvim-colorizer.lua"]
 	path = p/nvim-colorizer.lua
 	url = https://github.com/NvChad/nvim-colorizer.lua.git
+[submodule "p/todo-comments.nvim"]
+	path = p/todo-comments.nvim
+	url = https://github.com/folke/todo-comments.nvim.git
