@@ -3402,6 +3402,21 @@ require'neo-tree'.setup {
 }
 EOF
 
+" colorizer {{{3
+lua << EOF
+require'colorizer'.setup {
+  filetypes = {
+    'css',
+    'html',
+    'javascript',
+    'lua',
+  },
+  user_default_options = {
+      names = false,
+  },
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
