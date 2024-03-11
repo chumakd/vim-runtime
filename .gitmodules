@@ -829,3 +829,6 @@
 [submodule "p/neogit"]
 	path = p/neogit
 	url = https://github.com/NeogitOrg/neogit.git
+[submodule "p/toggleterm.nvim"]
+	path = p/toggleterm.nvim
+	url = https://github.com/akinsho/toggleterm.nvim.git
