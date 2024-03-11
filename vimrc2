@@ -3447,6 +3447,11 @@ vim.keymap.set('n', '[T', function() require('todo-comments').jump_prev() end,
                           { desc = 'Previous todo comment' })
 EOF
 
+" neogit {{{3
+lua << EOF
+require'neogit'.setup()
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
