@@ -1119,6 +1119,12 @@ nmap <silent> <Leader>ts :Telescope treesitter<CR>
 nmap <silent> <Leader>ty :Telescope yank_history<CR>
 endif
 
+" T (trouble) ~~~~~~~~~~~ {{{3
+"
+nmap <silent> <Leader>Tr <cmd>TroubleToggle lsp_references<cr>
+nmap <silent> <Leader>Td <cmd>TroubleToggle document_diagnostics<cr>
+nmap <silent> <Leader>TD <cmd>TroubleToggle workspace_diagnostics<cr>
+
 " , mappings ------------------------------------------------------------- {{{2
 "
 
