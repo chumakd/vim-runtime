@@ -3417,6 +3417,30 @@ require'colorizer'.setup {
 }
 EOF
 
+" todo-comments {{{3
+lua << EOF
+require'todo-comments'.setup {
+  signs = false,
+  gui_style = {
+    fg = 'BOLD',
+  },
+  highlight = {
+    multiline = false,
+    keyword = 'fg',
+    after = '',
+  },
+  colors = {
+    info = { 'Todo' }
+  }
+}
+
+vim.keymap.set('n', ']T', function() require('todo-comments').jump_next() end,
+                          { desc = 'Next todo comment' })
+
+vim.keymap.set('n', '[T', function() require('todo-comments').jump_prev() end,
+                          { desc = 'Previous todo comment' })
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
