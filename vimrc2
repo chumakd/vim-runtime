@@ -518,6 +518,9 @@ if has('nvim')
 endif
 let g:airline#extensions#obsession#enabled = 1
 
+" do not analyze and display mixed indent and trailing spaces
+let g:airline#extensions#whitespace#enabled = 0
+
 "let g:airline_theme='onedark'
 let g:airline_theme_patch_func = 'MyAirlineThemePatch'
 
