@@ -826,3 +826,6 @@
 [submodule "p/todo-comments.nvim"]
 	path = p/todo-comments.nvim
 	url = https://github.com/folke/todo-comments.nvim.git
+[submodule "p/neogit"]
+	path = p/neogit
+	url = https://github.com/NeogitOrg/neogit.git
