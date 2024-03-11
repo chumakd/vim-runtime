@@ -3452,6 +3452,13 @@ lua << EOF
 require'neogit'.setup()
 EOF
 
+" toggleterm {{{3
+lua << EOF
+require'toggleterm'.setup {
+    size = 30,
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
