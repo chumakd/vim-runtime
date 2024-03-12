@@ -2531,9 +2531,6 @@ require'nvim-treesitter.configs'.setup {
   --indent = {
   --  enable = true,
   --},
-  context_commentstring = {
-    enable = true,
-  },
   textobjects = {
     select = {
       enable = true,
@@ -2688,6 +2685,11 @@ require'treesitter-context'.setup {
     -- Separator between context and content. Should be a single character string, like '-'.
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = nil,
+}
+
+-- treesitter-context-commentstring {{{3
+require'ts_context_commentstring'.setup {
+    enable = true,
 }
 
 -- playground {{{3
