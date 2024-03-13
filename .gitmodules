@@ -351,3 +351,6 @@
 [submodule "p/harpoon"]
 	path = p/harpoon
 	url = https://github.com/ThePrimeagen/harpoon.git
+[submodule "p/nvim-tree.lua"]
+	path = p/nvim-tree.lua
+	url = https://github.com/nvim-tree/nvim-tree.lua.git
