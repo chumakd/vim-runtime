@@ -3471,6 +3471,12 @@ EOF
 lua << EOF
 require'toggleterm'.setup {
     size = 30,
+    open_mapping = [[<M-t>]],
+    insert_mappings = false,
+    on_create = function(term)
+        vim.bo[term.bufnr].bufhidden = 'hide'
+        vim.wo.foldcolumn = '0'
+    end,
 }
 EOF
 
