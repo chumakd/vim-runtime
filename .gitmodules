@@ -354,3 +354,6 @@
 [submodule "p/nvim-tree.lua"]
 	path = p/nvim-tree.lua
 	url = https://github.com/nvim-tree/nvim-tree.lua.git
+[submodule "p/LuaSnip"]
+	path = p/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip.git
