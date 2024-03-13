@@ -79,6 +79,14 @@ function! MySetBG()
     elseif hr >= 0
         set background=dark
     endif
+
+    if has('nvim')
+        if &background == 'light'
+            lua require'toggleterm'.setup { shading_factor = 2 }
+        else
+            lua require'toggleterm'.setup { shading_factor = -30 }
+        endif
+    endif
 endfunction
 
 " enable 256 colors in terminal
@@ -2214,6 +2222,13 @@ endfunction
 "   origin: https://github.com/altercation/vim-colors-solarized/blob/master/autoload/togglebg.vim
 function! MyTogBG()
     let &background = ( &background == "dark"? "light" : "dark" )
+    if has('nvim')
+        if &background == 'light'
+            lua require'toggleterm'.setup { shading_factor = 2 }
+        else
+            lua require'toggleterm'.setup { shading_factor = -30 }
+        endif
+    endif
     if exists("g:colors_name")
         exe "colorscheme " . g:colors_name
     endif
