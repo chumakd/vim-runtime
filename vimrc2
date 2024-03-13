@@ -2867,9 +2867,19 @@ cmp.setup {
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
+    snippet = {
+      expand = function(args)
+         require('luasnip').lsp_expand(args.body)
+      end,
+    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-    })
+        { name = 'luasnip' },
+    }
+    --,{
+    --  { name = 'buffer' },
+    --}
+    )
 }
 
 -- cmp-capabilities {{{4
@@ -2877,6 +2887,9 @@ local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 require'lspconfig'['clangd'].setup {
     capabilities = cmp_capabilities
 }
+
+-- luasnip {{{3
+require'luasnip.loaders.from_vscode'.lazy_load()
 
 -- aerial {{{3
 require'aerial'.setup {
