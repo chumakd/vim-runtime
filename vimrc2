@@ -3438,6 +3438,20 @@ require'neo-tree'.setup {
 }
 EOF
 
+" nvim-tree {{{3
+lua << EOF
+require'nvim-tree'.setup {
+    hijack_netrw = false,
+    sort = {
+        sorter = 'case_sensitive',
+    },
+    view = {
+        side = 'right',
+        width = 30,
+    },
+}
+EOF
+
 " colorizer {{{3
 lua << EOF
 require'colorizer'.setup {
