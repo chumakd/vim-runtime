@@ -369,3 +369,6 @@
 [submodule "p/cmp-nvim-lsp-signature-help"]
 	path = p/cmp-nvim-lsp-signature-help
 	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
+[submodule "p/cmp-nvim-lua"]
+	path = p/cmp-nvim-lua
+	url = https://github.com/hrsh7th/cmp-nvim-lua.git
