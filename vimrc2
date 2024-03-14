@@ -2396,6 +2396,25 @@ endfunction
 command! MyToggleLSPdiagVirtText call MyToggleLSPdiagVirtText()
 endif " has('nvim')
 
+" Toggle Nvim LSP completion --------------------------------------------- {{{2
+if has('nvim')
+let s:nvim_cmp_enabled = 1
+
+function! MyToggleLSPcmp()
+    if s:nvim_cmp_enabled
+        lua require('cmp').setup { enabled = false }
+        let s:nvim_cmp_enabled = 0
+        echo 'nvim-cmp disabled'
+    else
+        lua require('cmp').setup { enabled = true }
+        let s:nvim_cmp_enabled = 1
+        echo 'nvim-cmp enabled'
+    endif
+endfunction
+
+command! MyToggleLSPcmp call MyToggleLSPcmp()
+endif " has('nvim')
+
 " Set work project styling ----------------------------------------------- {{{2
 function! MySetWorkStyling()
     set textwidth=80
