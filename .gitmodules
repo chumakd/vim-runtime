@@ -375,3 +375,6 @@
 [submodule "p/nvim-lsp-file-operations"]
 	path = p/nvim-lsp-file-operations
 	url = https://github.com/antosha417/nvim-lsp-file-operations.git
+[submodule "p/undotree"]
+	path = p/undotree
+	url = https://github.com/mbbill/undotree.git
