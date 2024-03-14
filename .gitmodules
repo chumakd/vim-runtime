@@ -378,3 +378,6 @@
 [submodule "p/undotree"]
 	path = p/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "p/telescope-undo.nvim"]
+	path = p/telescope-undo.nvim
+	url = https://github.com/debugloop/telescope-undo.nvim.git
