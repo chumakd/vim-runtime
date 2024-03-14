@@ -2802,65 +2802,9 @@ local on_attach = function(client, bufnr)
   end, bufopts)
 end
 
--- nvim-lspconfig-clangd {{{3
-require'lspconfig'.clangd.setup {
-  on_attach = on_attach,
-  --cmd = { 'clangd', '--enable-config', '--log=verbose' }
-  cmd = { 'clangd', '--enable-config' }
-}
-
--- nvim-lspconfig-rust-analyzer {{{3
-require'lspconfig'.rust_analyzer.setup {
-  on_attach = on_attach,
-  settings = {
-    ['rust-analyzer'] = {
-      inlayHints = {
-        typeHintsWithVariable = true
-      },
-      workspace = {
-        symbol = {
-          search = {
-            kind = "all_symbols"
-          }
-        }
-      }
-    }
-  }
-}
-
--- nvim-lspconfig-lua {{{3
-require'lspconfig'.lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      },
-      telemetry = {
-        enable = false
-      }
-    }
-  },
-  on_attach = on_attach
-}
-
--- nvim-lspconfig-yaml {{{3
-require'lspconfig'.yamlls.setup {
-  settings = {
-    yaml = {
-      schemaStore = {
-        url = "https://www.schemastore.org/api/json/catalog.json",
-        enable = true,
-      }
-    }
-  },
-  on_attach = on_attach
-}
-
--- nvim-lsp-file-operations {{{3
-require'lsp-file-operations'.setup()
-
 -- nvim-cmp {{{3
 local cmp = require'cmp'
+local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local luasnip = require'luasnip'
 
 cmp.setup {
@@ -2917,11 +2861,64 @@ cmp.setup {
     },
 }
 
--- cmp-capabilities {{{4
-local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-require'lspconfig'['clangd'].setup {
-    capabilities = cmp_capabilities
+-- nvim-lspconfig-clangd {{{3
+require'lspconfig'.clangd.setup {
+  capabilities = cmp_capabilities,
+  on_attach = on_attach,
+  --cmd = { 'clangd', '--enable-config', '--log=verbose' }
+  cmd = { 'clangd', '--enable-config' },
 }
+
+-- nvim-lspconfig-rust-analyzer {{{3
+require'lspconfig'.rust_analyzer.setup {
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      inlayHints = {
+        typeHintsWithVariable = true
+      },
+      workspace = {
+        symbol = {
+          search = {
+            kind = "all_symbols"
+          }
+        }
+      }
+    }
+  }
+}
+
+-- nvim-lspconfig-lua {{{3
+require'lspconfig'.lua_ls.setup {
+  capabilities = cmp_capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+      telemetry = {
+        enable = false
+      }
+    }
+  },
+  on_attach = on_attach
+}
+
+-- nvim-lspconfig-yaml {{{3
+require'lspconfig'.yamlls.setup {
+  settings = {
+    yaml = {
+      schemaStore = {
+        url = "https://www.schemastore.org/api/json/catalog.json",
+        enable = true,
+      }
+    }
+  },
+  on_attach = on_attach
+}
+
+-- nvim-lsp-file-operations {{{3
+require'lsp-file-operations'.setup()
 
 -- luasnip {{{3
 require'luasnip.loaders.from_vscode'.lazy_load()
