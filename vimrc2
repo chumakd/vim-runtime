@@ -2907,7 +2907,14 @@ cmp.setup {
         { name = 'luasnip' },
     },{
       { name = 'buffer' },
-    })
+    }),
+    -- display type info in the main list
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.menu = entry:get_completion_item().detail
+            return vim_item
+        end
+    },
 }
 
 -- cmp-capabilities {{{4
