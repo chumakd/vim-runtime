@@ -1511,7 +1511,8 @@ nmap <silent> ,tq :call MyToggleQuickFix()<CR>
 
 "nmap <silent> ,tu :GitGutterToggle<CR>
 "nmap <silent> ,tU :GitGutterFold<CR>
-nmap <silent> ,tu :GundoToggle<CR>
+"nmap <silent> ,tu :GundoToggle<CR>
+nmap <silent> ,tu :UndotreeToggle<CR>
 
 nmap <silent> ,tv :call MyToggleVirtualEdit()<CR>
 
