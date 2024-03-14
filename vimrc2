@@ -2856,6 +2856,9 @@ require'lspconfig'.yamlls.setup {
   on_attach = on_attach
 }
 
+-- nvim-lsp-file-operations {{{3
+require'lsp-file-operations'.setup()
+
 -- nvim-cmp {{{3
 local cmp = require'cmp'
 local luasnip = require'luasnip'
