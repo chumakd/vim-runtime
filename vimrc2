@@ -1140,7 +1140,8 @@ nmap <silent> <Leader>tO :Telescope vim_options<CR>
 nmap <silent> <Leader>tr :Telescope registers<CR>
 nmap <silent> <Leader>tq :Telescope quickfix<CR>
 nmap <silent> <Leader>tQ :Telescope quickfixhistory<CR>
-nmap <silent> <Leader>ts :Telescope treesitter<CR>
+nmap <silent> <Leader>ts :Telescope luasnip<CR>
+nmap <silent> <Leader>tS :Telescope treesitter<CR>
 nmap <silent> <Leader>tT :Telescope toggleterm_manager<CR>
 nmap <silent> <Leader>ty :Telescope yank_history<CR>
 nmap <silent> <Leader>tu :Telescope undo<CR>
@@ -3260,6 +3261,7 @@ lua require'telescope'.load_extension('aerial')
 lua require'telescope'.load_extension('dap')
 lua require'telescope'.load_extension('file_browser')
 lua require'telescope'.load_extension('lazygit')
+lua require'telescope'.load_extension('luasnip')
 lua require'telescope'.load_extension('toggleterm_manager')
 lua require'telescope'.load_extension('undo')
 
