@@ -381,3 +381,6 @@
 [submodule "p/telescope-undo.nvim"]
 	path = p/telescope-undo.nvim
 	url = https://github.com/debugloop/telescope-undo.nvim.git
+[submodule "p/toggleterm-manager.nvim"]
+	path = p/toggleterm-manager.nvim
+	url = https://github.com/ryanmsnyder/toggleterm-manager.nvim.git
