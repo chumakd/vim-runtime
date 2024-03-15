@@ -1127,6 +1127,7 @@ nmap <silent> <Leader>tt :Telescope builtin include_extensions=true<CR>
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
 nmap <silent> <Leader>tA :Telescope aerial<CR>
 nmap <silent> <Leader>tb :Telescope buffers<CR>
+nmap <silent> <Leader>tc :Telescope conflicts<CR>
 nmap <silent> <Leader>tB :Telescope file_browser<CR>
 nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
 nmap <silent> <Leader>th :Telescope help_tags<CR>
@@ -3259,6 +3260,7 @@ EOF
 
 " extensions {{{3
 lua require'telescope'.load_extension('aerial')
+lua require'telescope'.load_extension('conflicts')
 lua require'telescope'.load_extension('dap')
 lua require'telescope'.load_extension('file_browser')
 lua require'telescope'.load_extension('helpgrep')
