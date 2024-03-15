@@ -1129,7 +1129,8 @@ nmap <silent> <Leader>tA :Telescope aerial<CR>
 nmap <silent> <Leader>tb :Telescope buffers<CR>
 nmap <silent> <Leader>tB :Telescope file_browser<CR>
 nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
-nmap <silent> <Leader>th :Telescope highlights<CR>
+nmap <silent> <Leader>th :Telescope help_tags<CR>
+nmap <silent> <Leader>tH :Telescope helpgrep<CR>
 nmap <silent> <Leader>tj :Telescope jumplist<CR>
 nmap <silent> <Leader>tk :Telescope keymaps<CR>
 nmap <silent> <Leader>tl :Telescope loclist<CR>
@@ -3260,6 +3261,7 @@ EOF
 lua require'telescope'.load_extension('aerial')
 lua require'telescope'.load_extension('dap')
 lua require'telescope'.load_extension('file_browser')
+lua require'telescope'.load_extension('helpgrep')
 lua require'telescope'.load_extension('lazygit')
 lua require'telescope'.load_extension('luasnip')
 lua require'telescope'.load_extension('toggleterm_manager')
