@@ -1141,6 +1141,7 @@ nmap <silent> <Leader>tr :Telescope registers<CR>
 nmap <silent> <Leader>tq :Telescope quickfix<CR>
 nmap <silent> <Leader>tQ :Telescope quickfixhistory<CR>
 nmap <silent> <Leader>ts :Telescope treesitter<CR>
+nmap <silent> <Leader>tT :Telescope toggleterm_manager<CR>
 nmap <silent> <Leader>ty :Telescope yank_history<CR>
 nmap <silent> <Leader>tu :Telescope undo<CR>
 endif
@@ -3233,14 +3234,6 @@ require'telescope'.setup {
     --layout_config = { height = 0.9, width = 0.9 },
   },
   extensions = {
-    file_browser = {
-      theme = 'ivy',
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = false,
-    },
-    undo = {
-      layout_strategy = 'vertical',
-    },
     aerial = {
       -- Display symbols as <root>.<parent>.<symbol>
       show_nesting = {
@@ -3249,15 +3242,25 @@ require'telescope'.setup {
         yaml = true,
       }
     },
+    file_browser = {
+      theme = 'ivy',
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = false,
+    },
+    toggleterm_manager,
+    undo = {
+      layout_strategy = 'vertical',
+    },
   },
 }
 EOF
 
 " extensions {{{3
-lua require'telescope'.load_extension('file_browser')
 lua require'telescope'.load_extension('aerial')
-lua require'telescope'.load_extension('lazygit')
 lua require'telescope'.load_extension('dap')
+lua require'telescope'.load_extension('file_browser')
+lua require'telescope'.load_extension('lazygit')
+lua require'telescope'.load_extension('toggleterm_manager')
 lua require'telescope'.load_extension('undo')
 
 " Colors ----------------------------------------------------------------- {{{2
