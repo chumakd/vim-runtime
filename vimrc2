@@ -1122,7 +1122,7 @@ nmap <silent> <Leader>sl :Startify<CR>
 " t (telescope) ~~~~~~~~~~~ {{{3
 "
 if has('nvim')
-nmap <silent> <Leader>tt :Telescope<CR>
+nmap <silent> <Leader>tt :Telescope builtin include_extensions=true<CR>
 
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
 nmap <silent> <Leader>tA :Telescope aerial<CR>
