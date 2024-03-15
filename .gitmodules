@@ -390,3 +390,6 @@
 [submodule "p/telescope-helpgrep.nvim"]
 	path = p/telescope-helpgrep.nvim
 	url = https://github.com/catgoose/telescope-helpgrep.nvim.git
+[submodule "p/telescope-git-conflicts.nvim"]
+	path = p/telescope-git-conflicts.nvim
+	url = https://github.com/Snikimonkd/telescope-git-conflicts.nvim.git
