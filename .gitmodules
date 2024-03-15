@@ -384,3 +384,6 @@
 [submodule "p/toggleterm-manager.nvim"]
 	path = p/toggleterm-manager.nvim
 	url = https://github.com/ryanmsnyder/toggleterm-manager.nvim.git
+[submodule "p/telescope-luasnip.nvim"]
+	path = p/telescope-luasnip.nvim
+	url = https://github.com/benfowler/telescope-luasnip.nvim.git
