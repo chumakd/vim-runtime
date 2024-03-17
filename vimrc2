@@ -1513,6 +1513,7 @@ nmap <silent> ,tt :call MyToggleTabstop()<CR>
 nmap <silent> ,tT :call MyToggleTextwidthAutoWrap()<CR>
 
 nmap <silent> ,tq :call MyToggleQuickFix()<CR>
+nmap <silent> ,tQ :call MyBqfToggle()<CR>
 
 "nmap <silent> ,tu :GitGutterToggle<CR>
 "nmap <silent> ,tU :GitGutterFold<CR>
@@ -2080,6 +2081,11 @@ function! MyToggleQuickFix()
     endfor
 
     copen
+endfunction
+
+function! MyBqfToggle()
+    BqfAutoToggle
+    BqfToggle
 endfunction
 
 " Toggle location window ------------------------------------------------- {{{2
@@ -3609,6 +3615,13 @@ EOF
 "lua << EOF
 "require'harpoon'.setup()
 "EOF
+
+" bqf {{{3
+lua << EOF
+require'bqf'.setup {
+    auto_enable = false,
+}
+EOF
 
 endif " has('nvim')
 
