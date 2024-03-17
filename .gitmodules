@@ -393,3 +393,6 @@
 [submodule "p/telescope-git-conflicts.nvim"]
 	path = p/telescope-git-conflicts.nvim
 	url = https://github.com/Snikimonkd/telescope-git-conflicts.nvim.git
+[submodule "p/nvim-bqf"]
+	path = p/nvim-bqf
+	url = https://github.com/kevinhwang91/nvim-bqf.git
