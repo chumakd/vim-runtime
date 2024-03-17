@@ -396,3 +396,6 @@
 [submodule "p/nvim-bqf"]
 	path = p/nvim-bqf
 	url = https://github.com/kevinhwang91/nvim-bqf.git
+[submodule "p/nvim-dap-virtual-text"]
+	path = p/nvim-dap-virtual-text
+	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
