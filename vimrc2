@@ -1560,7 +1560,11 @@ nmap ,u :update<CR>
 "
 
 " edit the vimrc file
-nmap <silent> ,ve :e $MYVIMRC<CR>
+if has('nvim')
+    nmap <silent> ,ve :e $HOME/.vim/vimrc2<CR>
+else
+    nmap <silent> ,ve :e $MYVIMRC<CR>
+endif
 nmap <silent> ,vs :so $MYVIMRC<CR>
 
 " w (window) ~~~~~~~~~~~~~~~~ {{{3
