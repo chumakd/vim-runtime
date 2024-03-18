@@ -2472,13 +2472,14 @@ function! MyTabLine2()
       let l:s .= '%' . l:tab . 'T'
       let l:s .= (l:tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
       let l:s .= ' ' . l:tab .':'
-      let l:s .= l:bufname !=# '' ? '['. fnamemodify(l:bufname, ':t') .'] '
-             \ : l:buftype !=# '' ? '['. l:buftype .'] '
-             \ : '[No Name] '
+      let l:s .= l:bufname !=# '' ? '['. fnamemodify(l:bufname, ':t')
+             \ : l:buftype !=# '' ? '['. l:buftype
+             \ : '[No Name'
 
       if l:bufmodified
-          let l:s .= '[+] '
+          let l:s .= ' ●'
       endif
+      let l:s .= '] '
   endfor
 
   let l:s .= '%#TabLineFill#'
