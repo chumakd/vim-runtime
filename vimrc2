@@ -3328,7 +3328,7 @@ lua require'nvim-web-devicons'.setup()
 lua << END
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = vim.g.lualine_theme,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
