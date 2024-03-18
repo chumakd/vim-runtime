@@ -399,3 +399,6 @@
 [submodule "p/nvim-dap-virtual-text"]
 	path = p/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
+[submodule "p/zen-mode.nvim"]
+	path = p/zen-mode.nvim
+	url = https://github.com/folke/zen-mode.nvim.git
