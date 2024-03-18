@@ -1441,6 +1441,8 @@ nmap <silent> ,tA :call MyToggleGutterArea()<CR>
 
 " toggle scrollbind
 nmap <silent> ,tb :set invscrollbind<CR>:set scrollbind?<CR>
+" toggle background dark theme
+nmap <silent> ,tB :MyToggleOnedarkColors<CR>
 
 " toggle textwidth column highlighting
 if v:version >= 703
@@ -2292,8 +2294,9 @@ function! MyToggleMono()
 endfunction
 
 " Toggle Doom colors ----------------------------------------------------- {{{2
-let s:old_colorscheme = ''
-let s:old_background = ''
+let s:old_colorscheme = 'solarized-normal'
+let s:old_background = 'light'
+let s:old_lualine_theme = 'solarized'
 
 function! MyToggleDoomColorsVim()
     if exists("g:colors_name")
@@ -2371,6 +2374,9 @@ function! MyToggleOnedarkColorsNVim()
             exe "set background=" . s:old_background
             exe "colorscheme " . s:old_colorscheme
             let g:colors_name = s:old_colorscheme
+            if g:lualine_theme ==# 'onedark'
+                let g:lualine_theme = s:old_lualine_theme
+            endif
             lua require('lualine').setup{options={theme=vim.g.lualine_theme}}
         else
             let s:old_colorscheme = g:colors_name
