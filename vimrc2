@@ -3336,7 +3336,13 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {
-        {'filename', path = 1},
+        {'filename',
+         path = 1,
+         symbols = {
+           modified = '[+]',
+           readonly = '',
+         }
+        },
         { 'lsp_progress',
           --spinner_symbols = { '◐','◓','◑','◒' },
         },
