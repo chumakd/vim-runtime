@@ -1000,6 +1000,13 @@ noremap <silent> <M-Down>   :tabnext<CR>
 noremap <silent> <M-Right>  :tabmove +<CR>
 noremap <silent> <M-Left>   :tabmove -<CR>
 
+" zen-mode
+if has('nvim')
+    noremap <silent> <M-z>  :ZenMode<CR>
+    " zoom full screen
+    noremap <silent> <M-Z>  :lua require('zen-mode').toggle({ window = {width = 1} })<CR>
+endif
+
 " \ mappings ------------------------------------------------------------- {{{2
 "
 
@@ -3635,6 +3642,30 @@ EOF
 lua << EOF
 require'bqf'.setup {
     auto_enable = false,
+}
+EOF
+
+" zen-mode {{{3
+lua << EOF
+require'zen-mode'.setup {
+    window = {
+        backdrop = 1,
+        width = function()
+            factor = 0.9
+            if vim.o.columns <= 100 then factor = 1
+            elseif vim.o.columns >= 200 then factor = 0.5
+            elseif vim.o.columns >= 170 then factor = 0.65
+            elseif vim.o.columns >= 150 then factor = 0.75 end
+            return vim.fn.ceil(vim.o.columns * factor)
+        end,
+    },
+    plugins = {
+        options = {
+            --laststatus = 3, -- enable status line
+            ruler = true,
+            showcmd = true,
+        },
+    },
 }
 EOF
 
