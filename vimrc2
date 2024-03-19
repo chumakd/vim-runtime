@@ -2915,6 +2915,13 @@ cmp.setup {
     },
 }
 
+-- nvim-lspconfig-bashls {{{3
+require'lspconfig'.bashls.setup {
+  capabilities = cmp_capabilities,
+  on_attach = on_attach,
+  filetypes = { 'sh', 'bash' },
+}
+
 -- nvim-lspconfig-clangd {{{3
 require'lspconfig'.clangd.setup {
   capabilities = cmp_capabilities,
