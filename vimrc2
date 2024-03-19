@@ -1000,6 +1000,15 @@ noremap <silent> <M-Down>   :tabnext<CR>
 noremap <silent> <M-Right>  :tabmove +<CR>
 noremap <silent> <M-Left>   :tabmove -<CR>
 
+" harpoon
+if has('nvim')
+nmap <silent> <M-h> :lua require('harpoon.ui').toggle_quick_menu()<CR>
+nmap <silent> <M-1> :lua require('harpoon.ui').nav_file(1)<CR>
+nmap <silent> <M-2> :lua require('harpoon.ui').nav_file(2)<CR>
+nmap <silent> <M-3> :lua require('harpoon.ui').nav_file(3)<CR>
+nmap <silent> <M-4> :lua require('harpoon.ui').nav_file(4)<CR>
+endif
+
 " zen-mode
 if has('nvim')
     noremap <silent> <M-z>  :ZenMode<CR>
@@ -1090,15 +1099,9 @@ endif
 " j (harpoon) ~~~~~~~~~~~~~ {{{3
 "
 if has('nvim')
-nmap <silent> <C-k>      :lua require('harpoon.ui').toggle_quick_menu()<CR>
 nmap <silent> <Leader>na :lua require('harpoon.mark').add_file()<CR>
 nmap <silent> <Leader>nn :lua require('harpoon.ui').nav_next()<CR>
 nmap <silent> <Leader>np :lua require('harpoon.ui').nav_prev()<CR>
-
-nmap <silent> <M-1> :lua require('harpoon.ui').nav_file(1)<CR>
-nmap <silent> <M-2> :lua require('harpoon.ui').nav_file(2)<CR>
-nmap <silent> <M-3> :lua require('harpoon.ui').nav_file(3)<CR>
-nmap <silent> <M-4> :lua require('harpoon.ui').nav_file(4)<CR>
 endif
 
 " k (dash) ~~~~~~~~~~~~~~~~~~ {{{3
