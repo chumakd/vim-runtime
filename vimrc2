@@ -2308,7 +2308,7 @@ function! MyToggleMono()
 endfunction
 
 " Toggle Doom colors ----------------------------------------------------- {{{2
-let s:old_colorscheme = 'solarized-normal'
+let s:old_colorscheme = has('nvim') ? 'solarized-normal' : 'NeoSolarized'
 let s:old_background = 'light'
 let s:old_lualine_theme = 'solarized'
 
