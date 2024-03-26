@@ -3656,6 +3656,9 @@ EOF
 lua << EOF
 require'bqf'.setup {
     auto_enable = false,
+    preview = {
+        winblend = 0,
+    },
 }
 EOF
 
