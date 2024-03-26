@@ -2315,7 +2315,7 @@ let s:old_lualine_theme = 'solarized'
 function! MyToggleDoomColorsVim()
     if exists("g:colors_name")
         if g:colors_name ==# 'doom-one'
-            let g:airline_theme='auto'
+            let g:airline_theme='solarized'
             exe "colorscheme " . s:old_colorscheme
             let g:colors_name = s:old_colorscheme
             exe "set background=" . s:old_background
@@ -2364,7 +2364,7 @@ command! DoomColorTheme MyToggleDoomColors
 function! MyToggleOnedarkColorsVim()
     if exists("g:colors_name")
         if g:colors_name ==# 'onedark'
-            let g:airline_theme='auto'
+            let g:airline_theme='solarized'
             exe "colorscheme " . s:old_colorscheme
             let g:colors_name = s:old_colorscheme
             exe "set background=" . s:old_background
