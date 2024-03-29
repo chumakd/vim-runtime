@@ -2932,14 +2932,13 @@ require'lspconfig'.clangd.setup {
 
 -- nvim-lspconfig-elixir {{{3
 function lsp_path(name)
-    local full_path = vim.fn.exepath(name)
-
-    if full_path ~= '' then
+    local full_path =  vim.fn.stdpath('data') .. '/mason/bin/' .. name
+    if vim.fn.glob(full_path) ~= '' then
         return full_path
     end
 
-    full_path =  vim.fn.stdpath('data') .. '/mason/bin/' .. name
-    if vim.fn.glob(full_path) ~= '' then
+    full_path = vim.fn.exepath(name)
+    if full_path ~= '' then
         return full_path
     end
 
