@@ -2988,6 +2988,15 @@ require'lspconfig'.rust_analyzer.setup {
   }
 }
 
+-- nvim-lspconfig-zig {{{3
+if lsp_path('zls') then
+require'lspconfig'.zls.setup{
+  capabilities = cmp_capabilities,
+  on_attach = on_attach,
+  cmd = { lsp_path('zls') },
+}
+end
+
 -- nvim-lspconfig-yaml {{{3
 require'lspconfig'.yamlls.setup {
   settings = {
