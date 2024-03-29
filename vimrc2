@@ -2931,11 +2931,28 @@ require'lspconfig'.clangd.setup {
 }
 
 -- nvim-lspconfig-elixir {{{3
+function lsp_path(name)
+    local full_path = vim.fn.exepath(name)
+
+    if full_path ~= '' then
+        return full_path
+    end
+
+    full_path =  vim.fn.stdpath('data') .. '/mason/bin/' .. name
+    if vim.fn.glob(full_path) ~= '' then
+        return full_path
+    end
+
+    return nil
+end
+
+if lsp_path('elixir-ls') then
 require'lspconfig'.elixirls.setup{
   capabilities = cmp_capabilities,
   on_attach = on_attach,
-  cmd = { vim.fn.stdpath('data') .. '/mason/bin/elixir-ls' },
+  cmd = { lsp_path('elixir-ls') },
 }
+end
 
 -- nvim-lspconfig-lua {{{3
 require'lspconfig'.lua_ls.setup {
