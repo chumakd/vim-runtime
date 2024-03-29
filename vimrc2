@@ -2930,6 +2930,13 @@ require'lspconfig'.clangd.setup {
   cmd = { 'clangd', '--enable-config' },
 }
 
+-- nvim-lspconfig-elixir {{{3
+require'lspconfig'.elixirls.setup{
+  capabilities = cmp_capabilities,
+  on_attach = on_attach,
+  cmd = { vim.fn.stdpath('data') .. '/mason/bin/elixir-ls' },
+}
+
 -- nvim-lspconfig-lua {{{3
 require'lspconfig'.lua_ls.setup {
   capabilities = cmp_capabilities,
@@ -3127,6 +3134,7 @@ vim.fn.sign_define('DapBreakpointRejected', {text='✗', texthl='DiffDelete', li
 
 local dap = require('dap')
 
+-- c/c++ {{{3
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
@@ -3186,6 +3194,30 @@ dap.configurations.c = {
 }
 dap.configurations.cpp = dap.configurations.c
 
+-- elixir {{{3
+dap.adapters.mix_task = {
+  type = 'executable',
+  command = vim.fn.stdpath('data') .. '/mason/bin/elixir-ls-debugger',
+  args = {}
+}
+
+dap.configurations.elixir = {
+  {
+    type = 'mix_task',
+    name = 'mix test',
+    task = 'test',
+    taskArgs = {'--trace'},
+    request = 'launch',
+    startApps = true, -- for Phoenix projects
+    projectDir = '${workspaceFolder}',
+    requireFiles = {
+      'test/**/test_helper.exs',
+      'test/**/*_test.exs'
+    }
+  },
+}
+
+-- UI {{{3
 require'dapui'.setup {
     controls = {
       element = 'repl',
