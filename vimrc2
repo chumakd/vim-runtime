@@ -2531,6 +2531,7 @@ require'nvim-treesitter.configs'.setup {
                      , 'elixir'
                      , 'elm'
                      , 'erlang'
+                     , 'gleam'
                      , 'go'
                      , 'haskell'
                      , 'html'
@@ -2952,6 +2953,12 @@ require'lspconfig'.elixirls.setup{
   cmd = { lsp_path('elixir-ls') },
 }
 end
+
+-- nvim-lspconfig-gleam {{{3
+require'lspconfig'.gleam.setup{
+  capabilities = cmp_capabilities,
+  on_attach = on_attach,
+}
 
 -- nvim-lspconfig-lua {{{3
 require'lspconfig'.lua_ls.setup {
