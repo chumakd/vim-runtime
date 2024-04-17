@@ -428,9 +428,9 @@ elseif s:os ==? 'Linux'
     "    echoerr "Homebrew's PYTHONHOME location cannot be found"
     "endif
 
-    let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.11/lib-dynload'
-    let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.11/lib-dynload'
-    let s:py3dynload_linuxbrew_system = '/usr/lib/python3.11/lib-dynload'
+    let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.12/lib-dynload'
+    let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.12/lib-dynload'
+    let s:py3dynload_linuxbrew_system = '/usr/lib/python3.12/lib-dynload'
 
     if has('python3')
         if !empty(glob(s:py3dynload_linuxbrew_default))
@@ -442,7 +442,7 @@ elseif s:os ==? 'Linux'
         elseif !empty(glob(s:py3dynload_linuxbrew_system)) " lowest priority
             python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_system)"))
         else
-            echoerr "Homebrew's lib/python3.11/lib-dynload cannot be found"
+            echoerr "Homebrew's lib/python3.12/lib-dynload cannot be found"
         endif
     endif
 endif
