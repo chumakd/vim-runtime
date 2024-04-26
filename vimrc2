@@ -1142,13 +1142,14 @@ nmap <silent> <Leader>ta :Telescope keymaps<CR>
 nmap <silent> <Leader>tA :Telescope aerial<CR>
 nmap <silent> <Leader>tb :Telescope buffers<CR>
 nmap <silent> <Leader>tc :Telescope conflicts<CR>
-nmap <silent> <Leader>tB :Telescope file_browser<CR>
-nmap <silent> <Leader>tf :Telescope current_buffer_fuzzy_find<CR>
+nmap <silent> <Leader>tf :Telescope find_files<CR>
+nmap <silent> <Leader>tF :Telescope file_browser<CR>
 nmap <silent> <Leader>th :Telescope help_tags<CR>
 nmap <silent> <Leader>tH :Telescope helpgrep<CR>
 nmap <silent> <Leader>tj :Telescope jumplist<CR>
 nmap <silent> <Leader>tk :Telescope keymaps<CR>
-nmap <silent> <Leader>tl :Telescope loclist<CR>
+nmap <silent> <Leader>tl :Telescope current_buffer_fuzzy_find<CR>
+nmap <silent> <Leader>tL :Telescope loclist<CR>
 nmap <silent> <Leader>tm :Telescope marks<CR>
 nmap <silent> <Leader>tM :Telescope man_pages<CR>
 nmap <silent> <Leader>to :Telescope oldfiles<CR>
