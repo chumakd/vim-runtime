@@ -402,3 +402,6 @@
 [submodule "p/zen-mode.nvim"]
 	path = p/zen-mode.nvim
 	url = https://github.com/folke/zen-mode.nvim.git
+[submodule "p/outline.nvim"]
+	path = p/outline.nvim
+	url = https://github.com/hedyhli/outline.nvim.git
