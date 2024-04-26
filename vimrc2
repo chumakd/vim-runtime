@@ -1653,7 +1653,7 @@ nmap <F3> :Telescope<CR>
 
 " TagList/Tagbar
 if has('nvim')
-	nmap <F4>   :SymbolsOutline<CR>
+	nmap <F4>   :Outline<CR>
 	nmap <S-F4> :AerialToggle<CR>
 	nmap <C-F4> :TagbarToggle<CR>
 	nmap <M-F4> :TagbarToggle<CR>
@@ -3098,6 +3098,25 @@ require'symbols-outline'.setup {
     Operator = {icon = "+", hl = "TSOperator"},
     TypeParameter = {icon = "𝙏", hl = "TSParameter"}
   }
+}
+
+-- outline {{{3
+require'outline'.setup {
+  outline_window = {
+    position = 'left',
+    relative_width = false,
+    width = 45,
+  },
+  keymaps = {
+    close = {},
+  },
+  symbols = {
+    icons = {
+      Method = { icon = '', hl = 'Function' },
+      Function = { icon = 'ƒ', hl = 'Function' },
+      StaticMethod = { icon = ' ', hl = 'Function' },
+    },
+  },
 }
 
 -- trouble {{{3
