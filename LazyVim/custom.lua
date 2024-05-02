@@ -4,7 +4,16 @@
 -- * override the configuration of LazyVim plugins
 return {
   -- use lates version
-  { "folke/lazy.nvim", version = false },
+  {
+    "folke/lazy.nvim",
+    version = false,
+    opts = {
+      checker = {
+        -- automatically check for plugin updates
+        enabled = false,
+      },
+    },
+  },
   { "LazyVim/LazyVim", version = false },
 
   -- disable default plugins
@@ -51,6 +60,13 @@ return {
       return {
         --[[add your custom lualine config here]]
       }
+    end,
+  },
+
+  {
+    "RRethy/vim-illuminate",
+    config = function(_, opts)
+      require("illuminate").pause()
     end,
   },
 }
