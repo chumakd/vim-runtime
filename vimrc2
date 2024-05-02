@@ -3065,7 +3065,7 @@ require'trouble'.setup {
     signs = {
         error = '🅴',
         warning = '🆆',
-        hint = '', --   󱐋 󰠠 󱐌     󰋼   
+        hint = '', --   󱐋 󰠠 󱐌      󰋼   
         information = '➮',
         other = '¿',
     },
@@ -3102,7 +3102,7 @@ EOF
 sign define DiagnosticSignError texthl=DiagnosticSignError numhl=DiffDelete text=🅴
 sign define DiagnosticSignWarn texthl=DiagnosticSignWarn numhl=DiffChange text=🆆
 sign define DiagnosticSignInfo texthl=DiagnosticSignInfo numhl=DiffText text=➮
-sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
+sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
 
 " hover window style
 "highlight! link FloatBorder Normal
