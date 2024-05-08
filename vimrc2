@@ -2453,6 +2453,23 @@ endfunction
 command! MyToggleLSPcmp call MyToggleLSPcmp()
 endif " has('nvim')
 
+" Toggle italic comments ------------------------------------------------- {{{2
+let s:comment_style = 'italic'
+
+function! MyToggleCommentsItalic()
+    if s:comment_style ==# 'italic'
+        highlight Comment gui=NONE
+        highlight @comment gui=NONE
+        let s:comment_style = 'NONE'
+    else
+        highlight Comment gui=italic
+        highlight @comment gui=italic
+        let s:comment_style = 'italic'
+    endif
+endfunction
+
+command! MyToggleCommentsItalic call MyToggleCommentsItalic()
+
 " Set work project styling ----------------------------------------------- {{{2
 function! MySetWorkStyling()
     set textwidth=80
