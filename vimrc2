@@ -1318,6 +1318,7 @@ nmap ,fg :GFiles<CR>
 nmap ,fG :GFiles?<CR>
 " command history
 nmap ,fh :History:<CR>
+nmap ,f: :History:<CR>
 nmap ,fH :FZFhelptags<CR>
 " keymaps
 nmap ,fk :Maps<CR>
@@ -1331,6 +1332,7 @@ nmap ,fr :Rg<CR>
 
 " search history
 nmap ,fs :History/<CR>
+nmap ,f/ :History/<CR>
 nmap ,fS :Snippets<CR>
 nmap ,ft :FZFtags<CR>
 nmap ,fT :BTags<CR>
