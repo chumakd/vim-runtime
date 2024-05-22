@@ -402,3 +402,6 @@
 [submodule "p/outline.nvim"]
 	path = p/outline.nvim
 	url = https://github.com/hedyhli/outline.nvim.git
+[submodule "p/zoxide.vim"]
+	path = p/zoxide.vim
+	url = https://github.com/nanotee/zoxide.vim.git
