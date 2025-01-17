@@ -2274,9 +2274,9 @@ function! MyHlFix()
     " use thiner vertical window frames
     highlight! VertSplit guibg=NONE
     " better style for TS context
-    highlight! link TreesitterContext LineNr
+    "highlight! link TreesitterContext LineNr
     " better style for LSP hover
-    highlight! link NormalFloat LineNr
+    "highlight! link NormalFloat LineNr
 
     "highlight link AutoHighlightWord CursorLineNr
 
@@ -2828,7 +2828,7 @@ EOF
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-highlight! link TreesitterContext LineNr
+"highlight! link TreesitterContext LineNr
 
 " LSP -------------------------------------------------------------------- {{{2
 "
@@ -3125,7 +3125,7 @@ sign define DiagnosticSignHint texthl=DiagnosticSignHint numhl=DiffAdd text=
 
 " hover window style
 "highlight! link FloatBorder Normal
-highlight! link NormalFloat LineNr
+"highlight! link NormalFloat LineNr
 
 " Mason ------------------------------------------------------------------ {{{2
 "
