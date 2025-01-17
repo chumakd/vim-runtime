@@ -131,6 +131,10 @@ if s:term_color ==# 'truecolor'
             let g:airline_theme='onedark'
             let g:lualine_theme = 'onedark'
             let g:colors_name = 'onedark'
+            if has('nvim')
+                " disable folded lines BG
+                lua require('onedark').setup { style = 'dark', highlights = { ['Folded'] = { bg = 'none' } } }
+            endif
             colorscheme onedark
         endif
     else
@@ -3357,7 +3361,10 @@ lua << EOF
 
 -- onedark.nvim {{{3
 require('onedark').setup {
-    style = 'dark'
+    style = 'dark',
+    highlights = {
+      ['Folded'] = { bg = 'none' }
+    }
 }
 
 EOF
