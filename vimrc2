@@ -434,16 +434,19 @@ elseif s:os ==? 'Linux'
 
     let s:py3dynload_linuxbrew_default = '/home/linuxbrew/.linuxbrew/lib/python3.12/lib-dynload'
     let s:py3dynload_linuxbrew_local = $HOME . '/local_install/homebrew/lib/python3.12/lib-dynload'
+    let s:py3dynload_system_new = '/usr/lib/python3.13/lib-dynload'
     let s:py3dynload_system = '/usr/lib/python3.12/lib-dynload'
     let s:py3dynload_system_old = '/usr/lib/python3.11/lib-dynload'
 
     if has('python3')
-        if !empty(glob(s:py3dynload_linuxbrew_default))
+        if !empty(glob('/.dockerenv'))
+            " ignored inside docker container
+        elseif !empty(glob(s:py3dynload_linuxbrew_default))
             python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_default)"))
         elseif !empty(glob(s:py3dynload_linuxbrew_local))
             python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_linuxbrew_local)"))
-        elseif !empty(glob('/.dockerenv'))
-            " ignored inside docker container
+        elseif !empty(glob(s:py3dynload_system_new)) " lowest priority
+            python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_system_new)"))
         elseif !empty(glob(s:py3dynload_system))
             python3 import sys; sys.path.append(vim.eval("expand(s:py3dynload_system)"))
         elseif !empty(glob(s:py3dynload_system_old)) " lowest priority
