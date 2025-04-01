@@ -405,3 +405,6 @@
 [submodule "p/zoxide.vim"]
 	path = p/zoxide.vim
 	url = https://github.com/nanotee/zoxide.vim.git
+[submodule "p/nvim-nio"]
+	path = p/nvim-nio
+	url = https://github.com/nvim-neotest/nvim-nio.git
