@@ -3532,7 +3532,20 @@ nmap <c-p> <Plug>(YankyCycleBackward)
 " which-key {{{3
 lua << EOF
 require'which-key'.setup {
-  -- defaults
+    delay = function(ctx)
+      return ctx.plugin and 0 or 500
+    end,
+    plugins = {
+      presets = {
+        operators = false, -- adds help for operators like d, y, ...
+        motions = false, -- adds help for motions
+        text_objects = true, -- help for text objects triggered after entering an operator
+        windows = false, -- default bindings on <c-w>
+        nav = false, -- misc bindings to work with windows
+        z = false, -- bindings for folds, spelling and others prefixed with z
+        g = false, -- bindings for prefixed with g
+      },
+    },
 }
 EOF
 
