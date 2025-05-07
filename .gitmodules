@@ -408,3 +408,6 @@
 [submodule "p/nvim-nio"]
 	path = p/nvim-nio
 	url = https://github.com/nvim-neotest/nvim-nio.git
+[submodule "p/copilot.vim"]
+	path = p/copilot.vim
+	url = https://github.com/github/copilot.vim.git
