@@ -635,6 +635,9 @@ augroup clang_format
   autocmd FileType c,cpp,objc map <buffer><Leader>= <Plug>(operator-clang-format)
 augroup END
 
+" Copilot (GitHub) ------------------------------------------------------- {{{2
+let g:copilot_enabled = 0
+
 " Cscope_quickfix -------------------------------------------------------- {{{2
 "
 let g:Cscope_OpenQuickfixWindow = 1
@@ -1523,6 +1526,9 @@ nmap <silent> ,tm :SignatureToggleSigns<CR>
 nmap <silent> ,tN :set invnumber<CR>:set number?<CR>
 " toggle relative line numbers or absolute
 nmap <silent> ,tn :set invrelativenumber<CR>:set relativenumber?<CR>
+
+" toggle copilot
+nmap <silent> ,to :MyToggleCopilot<CR>
 
 " toggle paste mode
 nmap <silent> ,tp :set invpaste<CR>:set paste?<CR>
@@ -2478,6 +2484,19 @@ function! MyToggleCommentsItalic()
 endfunction
 
 command! MyToggleCommentsItalic call MyToggleCommentsItalic()
+
+" Toggle copilot --------------------------------------------------------- {{{2
+function! MyToggleCopilot()
+    if g:copilot_enabled
+        Copilot disable
+        echo 'copilot disabled'
+    else
+        Copilot enable
+        echo 'copilot enabled'
+    endif
+endfunction
+
+command! MyToggleCopilot call MyToggleCopilot()
 
 " Set work project styling ----------------------------------------------- {{{2
 function! MySetWorkStyling()
