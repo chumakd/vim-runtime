@@ -2872,6 +2872,12 @@ vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']e', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist, opts)
 
+-- unmap unwanted default LSP keymaps added since nvim 0.11
+vim.keymap.del('n', 'grn')
+vim.keymap.del('n', 'gra')
+vim.keymap.del('n', 'grr')
+vim.keymap.del('n', 'gri')
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
