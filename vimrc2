@@ -880,6 +880,10 @@ let g:xml_syntax_folding = 1
 "
 let g:yankstack_yank_keys = ['y', 'Y']
 
+" Ziglang ---------------------------------------------------------------- {{{2
+"
+let g:zig_fmt_autosave = 1
+
 " Mappings =============================================================== {{{1
 
 " disable default space behavior as right arrow
