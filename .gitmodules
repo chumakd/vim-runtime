@@ -411,3 +411,6 @@
 [submodule "p/copilot.vim"]
 	path = p/copilot.vim
 	url = https://github.com/github/copilot.vim.git
+[submodule "p/zig.vim"]
+	path = p/zig.vim
+	url = https://github.com/ziglang/zig.vim.git
