@@ -414,3 +414,6 @@
 [submodule "p/zig.vim"]
 	path = p/zig.vim
 	url = https://github.com/ziglang/zig.vim.git
+[submodule "p/mini.icons"]
+	path = p/mini.icons
+	url = https://github.com/echasnovski/mini.icons.git
