@@ -3484,6 +3484,9 @@ let g:doom_one_plugin_lspsaga = 1
 " devicons {{{3
 lua require'nvim-web-devicons'.setup()
 
+" mini.icons {{{3
+lua require'mini.icons'.setup()
+
 " lualine {{{3
 lua << END
 require('lualine').setup {
