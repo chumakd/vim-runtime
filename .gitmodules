@@ -417,3 +417,6 @@
 [submodule "p/mini.icons"]
 	path = p/mini.icons
 	url = https://github.com/echasnovski/mini.icons.git
+[submodule "p/vim-dirdiff"]
+	path = p/vim-dirdiff
+	url = https://github.com/will133/vim-dirdiff.git
