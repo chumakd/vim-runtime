@@ -420,3 +420,6 @@
 [submodule "p/vim-dirdiff"]
 	path = p/vim-dirdiff
 	url = https://github.com/will133/vim-dirdiff.git
+[submodule "p/telescope-tabs"]
+	path = p/telescope-tabs
+	url = https://github.com/LukasPietzschmann/telescope-tabs.git
