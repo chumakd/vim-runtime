@@ -1155,6 +1155,7 @@ nmap <silent> <Leader>tt :Telescope builtin include_extensions=true<CR>
 nmap <silent> <Leader>ta :Telescope keymaps<CR>
 nmap <silent> <Leader>tA :Telescope aerial<CR>
 nmap <silent> <Leader>tb :Telescope buffers<CR>
+nmap <silent> <Leader>tB :Telescope telescope-tabs list_tabs<CR>
 nmap <silent> <Leader>tc :Telescope conflicts<CR>
 nmap <silent> <Leader>tf :Telescope find_files<CR>
 nmap <silent> <Leader>tF :Telescope file_browser<CR>
@@ -3436,6 +3437,7 @@ lua require'telescope'.load_extension('helpgrep')
 lua require'telescope'.load_extension('lazygit')
 lua require'telescope'.load_extension('luasnip')
 lua require'telescope'.load_extension('toggleterm_manager')
+lua require'telescope'.load_extension('telescope-tabs')
 lua require'telescope'.load_extension('undo')
 
 " Colors ----------------------------------------------------------------- {{{2
