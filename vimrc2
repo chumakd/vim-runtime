@@ -2919,6 +2919,14 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " LSP -------------------------------------------------------------------- {{{2
 "
+
+" unmap grn
+" unmap gra
+" unmap grr
+" unmap gri
+" unmap grt
+" unmap gO
+
 lua << EOF
 
 -- nvim-lspconfig {{{3
@@ -2935,9 +2943,11 @@ vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist, opts)
 
 -- unmap unwanted default LSP keymaps added since nvim 0.11
 vim.keymap.del('n', 'grn')
-vim.keymap.del('n', 'gra')
+vim.keymap.del({'n', 'v'}, 'gra')
 vim.keymap.del('n', 'grr')
 vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grt')
+vim.keymap.del('n', 'gO')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
