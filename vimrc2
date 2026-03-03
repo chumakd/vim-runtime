@@ -1523,7 +1523,7 @@ nmap <silent> ,tK :WhichKey<CR>
 " toggle list option
 nmap <silent> ,tL :set invlist<CR>:set list?<CR>
 " toggle location list window
-nmap <silent> ,tl :call MyToggleLocationList()<CR>
+nmap <silent> ,tl :call MyToggleLocationList2()<CR>
 
 " toggle marks signs
 nmap <silent> ,tm :SignatureToggleSigns<CR>
@@ -2143,6 +2143,16 @@ function! MyToggleLocationList()
         endtry
     else
         lclose
+    endif
+endfunction
+
+" https://github.com/Valloric/ListToggle/blob/master/plugin/listtoggle.vim
+function! MyToggleLocationList2()
+    let buffer_count_before = len(filter(range(1, bufnr('$')), 'bufwinnr(v:val) != -1'))
+
+    silent! lclose
+    if buffer_count_before == len(filter(range(1, bufnr('$')), 'bufwinnr(v:val) != -1'))
+        silent! lopen
     endif
 endfunction
 
