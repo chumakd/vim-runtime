@@ -1377,7 +1377,8 @@ nmap <silent> ,/W
 " Fugitive/Git
 nmap <silent> ,gb :Git blame<CR>
 nmap <silent> ,gd :Gvdiffsplit<CR>
-nmap <silent> ,gg :Ggrep <C-r><C-w><CR>
+nmap <silent> ,gg :Glgrep -q <C-r><C-w><CR>
+nmap <silent> ,gG :Ggrep -q <C-r><C-w><CR>
 nmap <silent> ,gl :Gitv!<CR>
 nmap <silent> ,gL :GV!<CR>
 vmap <silent> ,gL :GV!<CR>
@@ -1520,9 +1521,9 @@ nmap <silent> ,tk :set invtimeout<CR>:set timeout?<CR>
 nmap <silent> ,tK :WhichKey<CR>
 
 " toggle list option
-nmap <silent> ,tl :set invlist<CR>:set list?<CR>
+nmap <silent> ,tL :set invlist<CR>:set list?<CR>
 " toggle location list window
-nmap <silent> ,tL :call MyToggleLocationList()<CR>
+nmap <silent> ,tl :call MyToggleLocationList()<CR>
 
 " toggle marks signs
 nmap <silent> ,tm :SignatureToggleSigns<CR>
