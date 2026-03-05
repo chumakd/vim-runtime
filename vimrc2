@@ -1386,8 +1386,13 @@ nmap <silent> ,go :GV?<CR>
 vmap <silent> ,go :GV?<CR>
 nmap <silent> ,gs :Git<CR>
 nmap <silent> ,gS :Neotree git_status<CR>
+if has('nvim')
+nmap <silent> ,gt :lua require("neogit").action("log", "log_current")()<CR>
+nmap <silent> ,gT :Gitv<CR>
+else
 nmap <silent> ,gt :Gitv<CR>
 nmap <silent> ,gT :GV<CR>
+endif
 nmap <silent> ,gw :Gwrite<CR>
 
 " LazyGit
@@ -3810,6 +3815,12 @@ lua << EOF
 require'neogit'.setup {
     graph_style = 'unicode',
 }
+
+--local neogit = require('neogit')
+--
+--vim.keymap.set('n', ',gt',
+--    neogit.action('log', 'log_current')
+--)
 EOF
 
 " toggleterm {{{3
