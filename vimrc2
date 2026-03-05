@@ -3735,6 +3735,9 @@ EOF
 " gitlineage {{{3
 lua require'gitlineage'.setup()
 
+" blame {{{3
+lua require'blame'.setup()
+
 " indent-blankline {{{3
 lua << EOF
 require'ibl'.setup {
