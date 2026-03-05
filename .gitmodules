@@ -429,3 +429,6 @@
 [submodule "p/gitlogdiff.nvim"]
 	path = p/gitlogdiff.nvim
 	url = https://github.com/Salanoid/gitlogdiff.nvim.git
+[submodule "p/gitlineage.nvim"]
+	path = p/gitlineage.nvim
+	url = https://github.com/LionyxML/gitlineage.nvim.git
