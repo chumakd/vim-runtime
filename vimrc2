@@ -3732,6 +3732,9 @@ require'diffview'.setup {
 }
 EOF
 
+" gitlineage {{{3
+lua require'gitlineage'.setup()
+
 " indent-blankline {{{3
 lua << EOF
 require'ibl'.setup {
