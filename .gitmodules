@@ -426,3 +426,6 @@
 [submodule "p/vim-flog"]
 	path = p/vim-flog
 	url = https://github.com/rbong/vim-flog.git
+[submodule "p/gitlogdiff.nvim"]
+	path = p/gitlogdiff.nvim
+	url = https://github.com/Salanoid/gitlogdiff.nvim.git
