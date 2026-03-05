@@ -3807,7 +3807,9 @@ EOF
 
 " neogit {{{3
 lua << EOF
-require'neogit'.setup()
+require'neogit'.setup {
+    graph_style = 'unicode',
+}
 EOF
 
 " toggleterm {{{3
