@@ -435,3 +435,6 @@
 [submodule "p/blame.nvim"]
 	path = p/blame.nvim
 	url = https://github.com/FabijanZulj/blame.nvim.git
+[submodule "p/tabby.nvim"]
+	path = p/tabby.nvim
+	url = https://github.com/nanozuki/tabby.nvim.git
