@@ -3888,6 +3888,16 @@ require'tabby'.setup {
 }
 EOF
 
+" yazi {{{3
+lua << EOF
+require'yazi'.setup()
+EOF
+
+" csvview {{{3
+lua << EOF
+require'csvview'.setup()
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
