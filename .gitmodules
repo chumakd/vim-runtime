@@ -438,3 +438,6 @@
 [submodule "p/tabby.nvim"]
 	path = p/tabby.nvim
 	url = https://github.com/nanozuki/tabby.nvim.git
+[submodule "p/yazi.nvim"]
+	path = p/yazi.nvim
+	url = https://github.com/mikavilpas/yazi.nvim.git
