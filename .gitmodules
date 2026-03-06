@@ -441,3 +441,6 @@
 [submodule "p/yazi.nvim"]
 	path = p/yazi.nvim
 	url = https://github.com/mikavilpas/yazi.nvim.git
+[submodule "p/csvview.nvim"]
+	path = p/csvview.nvim
+	url = https://github.com/hat0uma/csvview.nvim.git
