@@ -3881,6 +3881,13 @@ require'zen-mode'.setup {
 }
 EOF
 
+" tabby {{{3
+lua << EOF
+require'tabby'.setup {
+    preset = 'tab_only',
+}
+EOF
+
 endif " has('nvim')
 
 " vimrc.local ============================================================ {{{1
