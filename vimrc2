@@ -2589,7 +2589,7 @@ let g:loaded_perl_provider = 0
 lua << EOF
 
 -- treesitter {{{3
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { 'awk'
                      , 'bash'
