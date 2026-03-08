@@ -2589,105 +2589,100 @@ let g:loaded_perl_provider = 0
 lua << EOF
 
 -- treesitter {{{3
-require'nvim-treesitter'.setup {
-  -- A list of parser names, or "all"
-  ensure_installed = { 'awk'
-                     , 'bash'
-                     , 'c'
-                     , 'c_sharp'
-                     , 'clojure'
-                     , 'cmake'
-                     , 'comment'
-                     , 'cpp'
-                     , 'css'
-                     , 'csv'
-                     , 'cuda'
-                     --, 'desktop'
-                     , 'dhall'
-                     , 'diff'
-                     , 'dockerfile'
-                     , 'dot'
-                     , 'doxygen'
-                     , 'editorconfig'
-                     , 'elixir'
-                     , 'elm'
-                     , 'erlang'
-                     , 'fish'
-                     , 'git_config'
-                     , 'git_rebase'
-                     , 'git_rebase'
-                     , 'gitattributes'
-                     , 'gitcommit'
-                     , 'gitignore'
-                     , 'gleam'
-                     , 'gnuplot'
-                     , 'go'
-                     , 'gpg'
-                     , 'graphql'
-                     , 'haskell'
-                     , 'helm'
-                     , 'html'
-                     , 'http'
-                     , 'hurl'
-                     , 'ini'
-                     , 'javascript'
-                     --, 'jinja_inline'
-                     --, 'jinja'
-                     , 'jq'
-                     , 'jsdoc'
-                     , 'json'
-                     , 'json5'
-                     , 'jsonc'
-                     , 'julia'
-                     , 'just'
-                     , 'kconfig'
-                     , 'latex'
-                     , 'liquid'
-                     , 'llvm'
-                     , 'lua'
-                     , 'luadoc'
-                     , 'make'
-                     , 'markdown_inline'
-                     , 'markdown'
-                     , 'mermaid'
-                     , 'meson'
-                     , 'muttrc'
-                     , 'nginx'
-                     , 'ninja'
-                     , 'nix'
-                     , 'objdump'
-                     , 'org'
-                     , 'perl'
-                     , 'pod'
-                     , 'powershell'
-                     , 'printf'
-                     , 'python'
-                     , 'r'
-                     , 'racket'
-                     , 'regex'
-                     , 'rst'
-                     , 'ruby'
-                     , 'rust'
-                     , 'scheme'
-                     , 'scss'
-                     , 'sql'
-                     , 'ssh_config'
-                     , 'strace'
-                     , 'systemtap'
-                     , 'terraform'
-                     , 'thrift'
-                     , 'tmux'
-                     , 'toml'
-                     , 'tsv'
-                     , 'typescript'
-                     , 'udev'
-                     , 'vim'
-                     , 'vimdoc'
-                     , 'xml'
-                     , 'yaml'
-                     , 'zig'
-                     },
+require'nvim-treesitter'.install {
+    'awk'
+    , 'bash'
+    , 'c'
+    , 'c_sharp'
+    , 'clojure'
+    , 'cmake'
+    , 'comment'
+    , 'cpp'
+    , 'css'
+    , 'csv'
+    , 'cuda'
+    , 'dhall'
+    , 'diff'
+    , 'dockerfile'
+    , 'dot'
+    , 'doxygen'
+    , 'editorconfig'
+    , 'elixir'
+    , 'elm'
+    , 'erlang'
+    , 'fish'
+    , 'git_config'
+    , 'git_rebase'
+    , 'git_rebase'
+    , 'gitattributes'
+    , 'gitcommit'
+    , 'gitignore'
+    , 'gleam'
+    , 'gnuplot'
+    , 'go'
+    , 'gpg'
+    , 'graphql'
+    , 'haskell'
+    , 'helm'
+    , 'html'
+    , 'http'
+    , 'hurl'
+    , 'ini'
+    , 'javascript'
+    , 'jq'
+    , 'jsdoc'
+    , 'json'
+    , 'json5'
+    , 'julia'
+    , 'just'
+    , 'kconfig'
+    , 'latex'
+    , 'liquid'
+    , 'llvm'
+    , 'lua'
+    , 'luadoc'
+    , 'make'
+    , 'markdown_inline'
+    , 'markdown'
+    , 'mermaid'
+    , 'meson'
+    , 'muttrc'
+    , 'nginx'
+    , 'ninja'
+    , 'nix'
+    , 'objdump'
+    , 'perl'
+    , 'pod'
+    , 'powershell'
+    , 'printf'
+    , 'python'
+    , 'r'
+    , 'racket'
+    , 'regex'
+    , 'rst'
+    , 'ruby'
+    , 'rust'
+    , 'scheme'
+    , 'scss'
+    , 'sql'
+    , 'ssh_config'
+    , 'strace'
+    , 'systemtap'
+    , 'terraform'
+    , 'thrift'
+    , 'tmux'
+    , 'toml'
+    , 'tsv'
+    , 'typescript'
+    , 'udev'
+    , 'vim'
+    , 'vimdoc'
+    , 'xml'
+    , 'yaml'
+    , 'zig'
+}
 
+require'nvim-treesitter'.setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = true,
 
@@ -2739,69 +2734,22 @@ require'nvim-treesitter'.setup {
   --indent = {
   --  enable = true,
   --},
-  textobjects = {
-    select = {
-      enable = true,
-      -- Automatically jump forward to textobjects, similar to targets.vim
-      lookahead = true,
-      keymaps = {
-        ["aa"] = "@parameter.outer",
-        ["ia"] = "@parameter.inner",
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
-      },
-      -- choose the select mode (default is charwise 'v')
-      selection_modes = {
-        ['@parameter.outer'] = 'v', -- charwise
-        ['@parameter.inner'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
-        ['@class.outer'] = '<c-v>', -- blockwise
-      },
-      -- If set to `true` (default is `false`) then any textobject is
-      -- extended to include preceding or succeeding whitespace. Succeeding
-      -- whitespace has priority in order to act similarly to eg the built-in
-      -- `ap`.
-      include_surrounding_whitespace = true,
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>x"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>X"] = "@parameter.inner",
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        [']m'] = '@function.outer',
-      },
-      goto_next_end = {
-        [']M'] = '@function.outer',
-      },
-      goto_previous_start = {
-        ['[m'] = '@function.outer',
-      },
-      goto_previous_end = {
-        ['[M'] = '@function.outer',
-      },
-    },
-    lsp_interop = {
-      enable = true,
-      border = 'none',
-      floating_preview_opts = {},
-      peek_definition_code = {
-        ["<leader>df"] = "@function.outer",
-        ["<leader>dF"] = "@class.outer",
-      },
-    },
-  },
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(args)
+    local treesitter = require('nvim-treesitter')
+    local lang = vim.treesitter.language.get_lang(args.match)
+    if vim.list_contains(treesitter.get_available(), lang) then
+      if not vim.list_contains(treesitter.get_installed(), lang) then
+        treesitter.install(lang):wait()
+      end
+
+      vim.treesitter.start(args.buf)
+    end
+  end,
+  desc = "Enable nvim-treesitter and install parser if not installed"
+})
 
 -- treesitter-context {{{3
 require'treesitter-context'.setup {
@@ -2898,6 +2846,70 @@ require'treesitter-context'.setup {
 -- treesitter-context-commentstring {{{3
 require'ts_context_commentstring'.setup {
     enable = true,
+}
+
+-- nvim-treesitter-textobjects {{{3
+require'nvim-treesitter-textobjects'.setup {
+    select = {
+      enable = true,
+      -- Automatically jump forward to textobjects, similar to targets.vim
+      lookahead = true,
+      keymaps = {
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+        ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+      },
+      -- choose the select mode (default is charwise 'v')
+      selection_modes = {
+        ['@parameter.outer'] = 'v', -- charwise
+        ['@parameter.inner'] = 'v', -- charwise
+        ['@function.outer'] = 'V', -- linewise
+        ['@class.outer'] = '<c-v>', -- blockwise
+      },
+      -- If set to `true` (default is `false`) then any textobject is
+      -- extended to include preceding or succeeding whitespace. Succeeding
+      -- whitespace has priority in order to act similarly to eg the built-in
+      -- `ap`.
+      include_surrounding_whitespace = true,
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>x"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>X"] = "@parameter.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        [']m'] = '@function.outer',
+      },
+      goto_next_end = {
+        [']M'] = '@function.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+      },
+      goto_previous_end = {
+        ['[M'] = '@function.outer',
+      },
+    },
+    lsp_interop = {
+      enable = true,
+      border = 'none',
+      floating_preview_opts = {},
+      peek_definition_code = {
+        ["<leader>df"] = "@function.outer",
+        ["<leader>dF"] = "@class.outer",
+      },
+    },
 }
 
 EOF
