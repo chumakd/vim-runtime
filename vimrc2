@@ -3078,19 +3078,21 @@ cmp.setup {
 }
 
 -- nvim-lspconfig-bashls {{{3
-require'lspconfig'.bashls.setup {
+vim.lsp.config['bashls'] = {
   capabilities = cmp_capabilities,
   on_attach = on_attach,
   filetypes = { 'sh', 'bash' },
 }
+vim.lsp.enable('bashls')
 
 -- nvim-lspconfig-clangd {{{3
-require'lspconfig'.clangd.setup {
+vim.lsp.config['clangd'] = {
   capabilities = cmp_capabilities,
   on_attach = on_attach,
   --cmd = { 'clangd', '--enable-config', '--log=verbose' }
   cmd = { 'clangd', '--enable-config' },
 }
+vim.lsp.enable('clangd')
 
 -- nvim-lspconfig-elixir {{{3
 function lsp_path(name)
@@ -3108,21 +3110,23 @@ function lsp_path(name)
 end
 
 if lsp_path('elixir-ls') then
-require'lspconfig'.elixirls.setup{
+vim.lsp.config['elixirls'] = {
   capabilities = cmp_capabilities,
   on_attach = on_attach,
   cmd = { lsp_path('elixir-ls') },
 }
+vim.lsp.enable('elixir-ls')
 end
 
 -- nvim-lspconfig-gleam {{{3
-require'lspconfig'.gleam.setup{
+vim.lsp.config['gleam'] = {
   capabilities = cmp_capabilities,
   on_attach = on_attach,
 }
+vim.lsp.enable('gleam')
 
 -- nvim-lspconfig-lua {{{3
-require'lspconfig'.lua_ls.setup {
+vim.lsp.config['lua_ls'] = {
   capabilities = cmp_capabilities,
   settings = {
     Lua = {
@@ -3136,9 +3140,10 @@ require'lspconfig'.lua_ls.setup {
   },
   on_attach = on_attach
 }
+vim.lsp.enable('lua_ls')
 
 -- nvim-lspconfig-rust-analyzer {{{3
-require'lspconfig'.rust_analyzer.setup {
+vim.lsp.config['rust_analyzer'] = {
   on_attach = on_attach,
   settings = {
     ['rust-analyzer'] = {
@@ -3155,18 +3160,20 @@ require'lspconfig'.rust_analyzer.setup {
     }
   }
 }
+vim.lsp.enable('rust_analyzer')
 
 -- nvim-lspconfig-zig {{{3
 if lsp_path('zls') then
-require'lspconfig'.zls.setup{
+vim.lsp.config['zls'] = {
   capabilities = cmp_capabilities,
   on_attach = on_attach,
   cmd = { lsp_path('zls') },
 }
+vim.lsp.enable('zls')
 end
 
 -- nvim-lspconfig-yaml {{{3
-require'lspconfig'.yamlls.setup {
+vim.lsp.config['yamlls'] = {
   settings = {
     yaml = {
       schemaStore = {
@@ -3177,6 +3184,7 @@ require'lspconfig'.yamlls.setup {
   },
   on_attach = on_attach
 }
+vim.lsp.enable('yamlls')
 
 -- nvim-lsp-file-operations {{{3
 require'lsp-file-operations'.setup()
