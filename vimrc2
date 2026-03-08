@@ -402,7 +402,13 @@ endif
 "
 
 " Python {{{3
-let g:pymode_python = 'python3'
+if has('nvim')
+    " disable python3 for nvim completely
+    let g:loaded_python3_provider = 0
+else
+    let g:pymode_python = 'python3'
+endif
+
 " disable python2
 let g:loaded_python_provider = 0
 
@@ -458,6 +464,11 @@ elseif s:os ==? 'Linux'
 endif
 
 " Ruby {{{3
+if has('nvim')
+    " disable ruby for nvim completely
+    let g:loaded_ruby_provider = 0
+endif
+
 if s:os ==? 'Linux'
     let s:ruby_linuxbrew_default = '/home/linuxbrew/.linuxbrew/bin/ruby'
     let s:ruby_linuxbrew_local = $HOME . '/local_install/homebrew/bin/ruby'
