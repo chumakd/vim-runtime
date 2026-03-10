@@ -3910,8 +3910,79 @@ EOF
 
 " tabby {{{3
 lua << EOF
+local theme = {
+    fill = 'TabLineFill',
+    head = 'TabLine',
+    current_tab = 'TabLineSel',
+    tab = 'TabLine',
+    win = 'TabLine',
+    tail = 'TabLine',
+}
+
+local api = require('tabby.module.api')
+local devicons = require('nvim-web-devicons')
+
+function get_tab_name(tab)
+    return string.gsub(tab.name(), '%[..%]', '')
+end
+
+function get_tab_window_count(tab)
+    local count = #tab.wins().wins
+
+    return count > 1 and '[' .. count .. ']' or ''
+end
+
+local function get_modified(tab)
+    local win_ids = api.get_tab_wins(tab.id)
+
+    for _, win_id in ipairs(win_ids) do
+        if pcall(vim.api.nvim_win_get_buf, win_id) then
+            local bufid = vim.api.nvim_win_get_buf(win_id)
+
+            if vim.api.nvim_buf_get_option(bufid, 'modified') then
+                return '󰏫'
+            end
+        end
+    end
+
+    return ''
+end
+
+local function get_current_buffer_icon()
+    local current_buffer_filename = vim.fn.expand('%:t')
+    local current_buffer_extension = vim.fn.expand('%:e')
+
+    return devicons.get_icon(current_buffer_filename, current_buffer_extension, { default = true })
+end
+
 require'tabby'.setup {
     preset = 'tab_only',
+    line = function(line)
+    return {
+        {
+          { '   ', hl = theme.head },
+        },
+        line.tabs().foreach(function(tab)
+          local hl = tab.is_current() and theme.current_tab or theme.tab
+          return {
+            line.sep('', hl, theme.fill),
+            '|' .. tab.number() .. '| ',
+            devicons.get_icon(get_tab_name(tab), nil, { default = true }),
+            get_tab_name(tab),
+            get_tab_window_count(tab),
+            get_modified(tab),
+            line.sep('', hl, theme.fill),
+            hl = hl,
+            margin = ' ',
+          }
+        end),
+        line.spacer(),
+        {
+          { ' ', get_current_buffer_icon(), '  ', hl = theme.tail },
+        },
+        hl = theme.fill,
+      }
+    end,
 }
 EOF
 
