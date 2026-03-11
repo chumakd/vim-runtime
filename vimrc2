@@ -1388,6 +1388,7 @@ nmap <silent> ,/W
 " Fugitive/Git
 nmap <silent> ,gb :Git blame<CR>
 nmap <silent> ,gd :Gvdiffsplit<CR>
+nmap <silent> ,gD :vert Git diff<CR>
 nmap <silent> ,gg :Glgrep -q <C-r><C-w><CR>
 nmap <silent> ,gG :Ggrep -q <C-r><C-w><CR>
 nmap <silent> ,gl :Gitv!<CR>
