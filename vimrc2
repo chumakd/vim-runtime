@@ -444,7 +444,11 @@ elseif s:os ==? 'Linux'
     let s:py3dynload_system = '/usr/lib/python3.12/lib-dynload'
     let s:py3dynload_system_old = '/usr/lib/python3.11/lib-dynload'
 
-    if has('python3')
+    " Vim only: works around if_python3 being loaded dynamically, so the
+    " interpreter needs an explicit sys.path entry for its lib-dynload dir.
+    " Nvim runs python3 in a separate host process, where ':python3' would only
+    " spawn that host (and error out if pynvim is missing).
+    if has('python3') && !has('nvim')
         if !empty(glob('/.dockerenv'))
             " ignored inside docker container
         elseif !empty(glob(s:py3dynload_linuxbrew_default))
@@ -2595,6 +2599,9 @@ if has('nvim')
 
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
+" no plugin in bundle2-nvim needs it, and it breaks whenever Homebrew bumps
+" its python minor version out from under the installed pynvim
+let g:loaded_python3_provider = 0
 
 " TreeSitter ------------------------------------------------------------- {{{2
 "
