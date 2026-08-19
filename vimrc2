@@ -3258,7 +3258,17 @@ require'litee.lib'.setup {
         panel_size  = 60
     }
 }
-require'litee.calltree'.setup()
+-- litee-calltree wraps its LSP handlers in vim.lsp.with(handler, {}), which is a no-op
+-- (tbl_deep_extend with an empty table) but emits a deprecation warning on every startup.
+-- The warning fires inside setup(), so stub vim.lsp.with out just for that call rather
+-- than reassigning the handlers afterwards. Upstream is unmaintained (last commit 2024-10).
+do
+  local lsp_with = vim.lsp.with
+  vim.lsp.with = function(handler) return handler end
+  local ok, err = pcall(require'litee.calltree'.setup)
+  vim.lsp.with = lsp_with
+  if not ok then error(err) end
+end
 
 -- lspsaga {{{3
 --require'lspsaga'.init_lsp_saga {
