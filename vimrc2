@@ -7,11 +7,21 @@ scriptencoding utf-8
 " forget being compatible with good old vi
 set nocompatible
 
+" Cache compiled Lua bytecode. With ~700 require() calls resolved over NFS this
+" is worth ~1s of startup, but only if stdpath('cache') is on a local disk --
+" set XDG_CACHE_HOME to something machine-local in the shell rc.
+" NB: :lua swallows a trailing bar, so this needs a multi-line if.
+if has('nvim')
+    lua vim.loader.enable()
+endif
+
 " disable some of the plugings, depending on OS and Vim features available
 let g:pathogen_blacklist = []
-if !has('python3')
-    let g:pathogen_blacklist += ['ultisnips']
-endif
+" NB: don't test has('python3') here -- under nvim that loads the python3
+" provider (~40ms) long before g:loaded_python3_provider is set below.
+"if !has('python3')
+"    let g:pathogen_blacklist += ['ultisnips']
+"endif
 
 " this should be at the beginning to allow pathogen plugin to generate
 " runtimepath before other plugings are loaded
@@ -22,15 +32,19 @@ else
     runtime bundle2-vim/vim-pathogen/autoload/pathogen.vim
     execute pathogen#infect('bundle2-vim/{}')
 endif
-call pathogen#helptags()
+" pathogen#helptags() rewrites the tags file in all 96 plugin doc/ dirs, which
+" costs ~0.5s over NFS on every startup. Run :Helptags after adding/updating a
+" plugin instead.
+"call pathogen#helptags()
+command! Helptags call pathogen#helptags()
 
 " detect operating system
 let s:os = substitute(system('uname'), "\n", '', '')
 
 " detect terminal emulator
-let s:term_prog     = substitute(system('printenv TERM_PROGRAM'), "\n", '', '')
-let s:term_color    = substitute(system('printenv COLORTERM'), "\n", '', '')
-let s:iterm_profile = substitute(system('printenv ITERM_PROFILE'), "\n", '', '')
+let s:term_prog     = $TERM_PROGRAM
+let s:term_color    = $COLORTERM
+let s:iterm_profile = $ITERM_PROFILE
 
 " Filetype --------------------------------------------------------------- {{{2
 "
